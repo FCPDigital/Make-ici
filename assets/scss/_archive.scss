@@ -1,0 +1,20 @@
+.archive-type {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: $big-pad;
+  .book {
+    flex: 1;
+    max-width: 250px;
+
+    img {
+      margin-bottom: $small-pad;
+      width: 100%;
+    }
+    a {
+      text-align: center;
+      display: block;
+      color: $color-3;
+    }
+  }
+}
