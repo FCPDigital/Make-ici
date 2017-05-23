@@ -1,17 +1,21 @@
 // Entrer votre charte graphique
 $color-1: #FFF;
-$color-2: #333;
-$color-4: #666;
-$color-3: #A10D59;
-$color-3-light : #BD558A;
-$color-4: #eff1f1;
+$color-2: #000;
+$color-3: #ffed00;
+$color-4: #eaeaea;
+
 
 // Entrez vos fonts
-$main-font: "Open Sans";
-$font-2: "Roboto Bold";
+$main-font: "CenturyGothic Regular";
+$second-font: "CenturyGothic Bold";
 
 // Quelques dimmensions récurrentes
-$wrapper: 1080px;
-$small-pad: 15px;
+$small-pad: 16px;
 $medium-pad: 32px;
 $big-pad: 64px;
+
+$height-btn : 40px;
+$width-btn: 100px;
+
+
+$wrapper: 1040px;

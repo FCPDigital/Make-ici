@@ -17,3 +17,11 @@ Les différentes fonctionnalité, shortcode, plugin nécessaire sont précisé c
 ## Dépendance du thème
 - WooCommerce : Gestion des formations
 - WP-Form : Gestion des formulaires
+- ACF : Gestion des Custom Field
+
+## Shortcodes
+Ci dessous sont listés l'ensemble des shortcodes ajouté dans ce thème
+
+## Fonctions du thème
+
+`display_website_logo()` : Helpers qui affiche le logo  
