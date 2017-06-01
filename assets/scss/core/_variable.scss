@@ -2,7 +2,7 @@
 $color-1: #FFF;
 $color-2: #000;
 $color-3: #ffed00;
-$color-4: #eaeaea;
+$color-4: rgba(255, 255, 255, .9);
 
 
 // Entrez vos fonts
@@ -19,3 +19,8 @@ $width-btn: 100px;
 
 
 $wrapper: 1040px;
+
+
+$break-point-1 : 1160px;
+$break-point-2 : 860px;
+$break-point-3 : 420px;

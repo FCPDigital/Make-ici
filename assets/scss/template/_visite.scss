@@ -1,0 +1,32 @@
+#visite {
+  perspective: 1000px;
+
+  .plan-container {
+    position: relative;
+    height: 100vh;
+    transform: rotateX(100deg) rotateZ(60deg);
+    transition: 10s;
+    transform-style: preserve-3d;
+    .stage {
+      position: absolute;
+      opacity: 0.3;
+      width: 400px;
+      height: 250px;
+      left: calc(50% - 200px);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      @include transition(.5s);
+      top: 200px;
+      &:hover { opacity: 1;  }
+      @for $i from 1 through 6 {
+        &:nth-child(#{$i}) {
+          @include transform(translateZ(#{($i - 1)*120}px));
+          &:hover {
+            @include transform(translateZ(#{($i - 1)*120 + 10}px));
+          }
+        }
+      }
+    }
+  }
+}

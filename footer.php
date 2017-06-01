@@ -1,6 +1,8 @@
 
 <footer class="container-fluid" role="contentinfo">
-	<a href="#" class="scroll-manage" data-id=".item-scroll"></a>
+	<!-- <a href="#" class="scroll-manage" data-scroll data-id=".item-scroll"></a> -->
+	<a href="#" class="scroll-to-top" data-scroll></a>
+
 	<div class="row">
 		<?php get_template_part( 'template-parts/footer/footer', 'widgets' );
 
@@ -16,6 +18,14 @@
 
 			</nav><!-- .social-navigation -->
 		<?php endif; ?>
+	</div>
+	<div class="copyright">
+		<p>
+			<?php if (get_page_by_title("Mention Légales")): ?>
+				<a href="<?php get_permalink(get_page_by_title("Mention Légales")); ?>">Mentions légales</a> -
+			<?php endif;?>
+			Copyright © Make ICI - Tous droits réservés - Assemblés par FCP
+		</p>
 	</div>
 </footer>
 <?php wp_footer(); ?>

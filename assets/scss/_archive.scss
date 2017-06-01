@@ -2,16 +2,49 @@ h1 {
   font-size: 2.5em;
   font-weight: bold;
 }
+
+.landing {
+  min-height: calc(100vh - 100px);
+  // min-height: 600px;
+  padding: 50px 0;
+  padding-top: 120px;
+  background-image: url("assets/images/bg-abonnements.jpg");
+  background-color: rgba(0, 0, 0, .8);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+  position: relative;
+  &::before{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    z-index: 0;
+    background-color: rgba(0,0,0,0.8);
+  }
+}
+
+
 .timeline {
   position: fixed;
-  height: 80vh;
+  height: calc(100vh - 120px);
+  width: 90px;
   border-right: 1px solid yellow;
   z-index: 1004;
-  bottom: 5vh;
+  top: 95px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  left: calc(50% - 620px + 32px);
+  left: calc(50% - 620px + 16px);
+  @include transition(.4s);
+  @include transform(translateX(0px));
+  &.hide-state {
+    @include transform(translateX(-200px));
+  }
   .timeline-item {
     left: 0;
     color: $color-3;
@@ -25,9 +58,13 @@ h1 {
     font-size: 12px;
     cursor: pointer;
     text-decoration: none;
+    opacity: .6;
     @include transition(.4s);
-    &.active::after , &:hover::after  {
-      @include transform(translateX(50%) translateY(-50%) scale(1.4));
+    &.active {
+      opacity: 1;
+      &::after  {
+        @include transform(translateX(50%) translateY(-50%) scale(1.6));
+      }
     }
     &::after {
       content:"";
@@ -38,18 +75,26 @@ h1 {
       height: 10px;
       border-radius: 50%;
       background-color: $color-3;
+      @include transition(.4s);
       @include transform(translateX(50%) translateY(-50%) scale(1));
     }
+  }
+  .active-point {
+    position: absolute;
+    display: block;
+    width: 15px;
+    height: 15px;
+    background-color: $color-3;
+    border-radius: 50%;
+    right: -7px;
+    top: 0;
+    @include transition(.4s);
   }
 }
 
 
 .archive-head {
-  flex-wrap : wrap;
-  justify-content: space-between;
   .archive-head-item  {
-    min-width: 150px;
-    flex: 1;
     margin: 30px 5px;
     text-align: center;
     background-color: rgba(0,0,0,.5);
@@ -87,7 +132,6 @@ h1 {
         width: 100%;
       }
     }
-
     .excerpt {
       padding: 20px 10px;
       font-size: 11px;
@@ -99,140 +143,42 @@ h1 {
       transform: translateX(-50%);
     }
   }
-}
-
-.archive-body-item {
-  height: 100vh;
-  min-height: 600px;
-  position: relative;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: white;
-  padding: 50px 0;
-  &::before{
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: block;
-    z-index: 0;
-    background-color: rgba(0,0,0,0.8);
-  }
-
-  .container {
-    transform: translateX(32px);
-  }
-  .archive-main {
-    width: 75%;
-    float: left;
-    position: relative;
-    z-index: 1;
-    padding-right: 3*$small-pad;
-    .archive-main-head {
-      margin-bottom: $medium-pad;
-      h2 {
-        font-size: 2.5em;
-        font-weight: bold;
-        display: inline-block;
-      }
-      h3 {
-        display: inline-block;
-        margin-left: 50px;
-      }
-    }
-    .archive-main-body {
-      font-size: 14px;
-      line-height: 2em;
-      p {
-
-      }
-    }
-  }
-  .archive-sidebar {
-    position: relative;
-    z-index: 1;
-    background-color: rgba(0,0,0,.8);
-    border: 1px solid $color-3;
-    font-size: 12px;
-    width: 25%;
-    float: left;
-    .cost_per_month, .cost_registration {
-      padding: 5px 40px;
-      i {
-        font-size: 3em;
-        width: 30px;
-        margin-right: 20px;
-        margin-top: 5px;
-        color: $color-3;
-        float: left;
-      }
-      p {
-        line-height: 2em;
-        font-size: 12px;
-        display: inline-block;
-        width: calc(100% - 55px);
-      }
-    }
-    .cost_per_month {
-      margin-top: 10px;
-    }
-    .cost_registration {
-      margin-bottom: 10px;
-      .fa-inscription {
-        width: 30px;
-        height: 30px;
-        background-image: url("assets/images/picto-inscription.png");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-      }
-    }
-    .mention {
-      margin-top: 0;
-      text-align: center;
-      margin: 10px;
-      font-size: 12px;
-    }
-    img {
-      width: 100%;
-      margin-bottom: $small-pad;
-    }
-    //Mention supplémentaire
-    ul {
-      padding-left: 15px;
-      li {
-        margin-bottom: 10px;
-        font-size: 12px;
-        list-style: "+";
-        padding-left: 10px;
-        line-height: 1.3em;
-      }
-    }
-    .action-abonnement {
-      margin: auto;
-      display: block;
-      width: 160px;
-      margin-bottom: 20px;
-      margin-top: 30px;
+  &.classic-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    .archive-head-item {
+      min-width: 200px;
+      flex: 1;
+      max-width: 230px;
     }
   }
 }
 
-#abonnements-archive {
-  .landing {
-    height: calc(100vh - 100px);
+.loop-archive {
+  background-color: $color-2;
+  &.scale-min {
+    .archive-body-item {
+      @include transform(scale(.9));
+    }
+  }
+  #scroll-container {
+    perspective: 1000px;
+  }
+  .archive-body-item {
+    border-top: 1px solid #494441;
+    min-height: calc(100vh - 100px);
     min-height: 600px;
-    padding: 50px 0;
-    background-image: url("assets/images/bg-abonnements.jpg");
-    background-color: rgba(0, 0, 0, .8);
+    transform-style: preserve-3d;
+    position: relative;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     color: white;
-    position: relative;
+    padding: 50px 0;
+    @include transition(.25s);
+    @include transform(scale3d(1, 1, 1) );
+    overflow: hidden;
     &::before{
       position: absolute;
       content: "";
@@ -245,9 +191,108 @@ h1 {
       background-color: rgba(0,0,0,0.8);
     }
 
-
+    .container {
+      transform: translateX(48px) translateZ(0);
+    }
+    .archive-main {
+      width: 75%;
+      float: left;
+      position: relative;
+      z-index: 1;
+      padding-right: 3*$small-pad;
+      .archive-main-head {
+        margin-bottom: $medium-pad;
+        h2 {
+          font-size: 2.5em;
+          font-weight: bold;
+          display: inline-block;
+        }
+        h3 {
+          display: inline-block;
+          margin-left: 50px;
+        }
+      }
+      .archive-main-body {
+        font-size: 14px;
+        line-height: 2em;
+        p {
+          margin-bottom: $small-pad;
+        }
+      }
+    }
+    .archive-sidebar {
+      position: relative;
+      z-index: 1;
+      background-color: rgba(0,0,0,.8);
+      border: 1px solid $color-3;
+      font-size: 12px;
+      width: 25%;
+      float: left;
+      .cost_per_month, .cost_registration, .fa-container {
+        padding: 5px 40px;
+        i {
+          font-size: 3em;
+          width: 30px;
+          margin-right: 20px;
+          margin-top: 5px;
+          color: $color-3;
+          float: left;
+        }
+        p {
+          line-height: 2em;
+          font-size: 12px;
+          display: inline-block;
+          width: calc(100% - 55px);
+        }
+      }
+      .cost_per_month {
+        margin-top: 10px;
+      }
+      .cost_registration {
+        margin-bottom: 10px;
+        .fa-inscription {
+          width: 30px;
+          height: 30px;
+          background-image: url("assets/images/picto-inscription.png");
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: contain;
+        }
+      }
+      .mention {
+        margin-top: 0;
+        text-align: center;
+        margin: 10px;
+        font-size: 12px;
+      }
+      img {
+        width: 100%;
+        margin-bottom: $small-pad;
+      }
+      //Mention supplémentaire
+      ul {
+        padding-left: 15px;
+        li {
+          margin-bottom: 10px;
+          font-size: 12px;
+          list-style: "+";
+          padding-left: 10px;
+          line-height: 1.3em;
+        }
+      }
+      .action-abonnement {
+        margin: auto;
+        display: block;
+        width: 160px;
+        margin-bottom: 20px;
+        margin-top: 30px;
+      }
+    }
   }
 }
+
+
+
 
 
 .archive-type {
@@ -267,6 +312,118 @@ h1 {
       text-align: center;
       display: block;
       color: $color-3;
+    }
+  }
+}
+
+
+
+@media screen and (max-width: $break-point-1){
+  .timeline {
+    left: 16px;
+  }
+  .loop-archive .archive-body-item {
+    .container {
+      @include transform(translateX($big-pad));
+    }
+    .archive-main {
+      padding-right: $small-pad;
+    }
+    .archive-sidebar {
+      .cost_per_month, .cost_registration {
+        padding: 10px;
+        i {
+          display: block;
+          float: none;
+          margin: auto;
+        }
+        p {
+          display: block;
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width:860px){
+  .timeline {
+    visibility: hidden;
+    left: -100px;
+  }
+  .timeline {
+    visibility: hidden;
+    left: -100px;
+  }
+  .loop-archive .archive-body-item {
+    .container {
+      @include transform(translateX(0));
+    }
+    .archive-main {
+      padding-right: 0;
+      width: 100%;
+      margin-bottom: 50px;
+    }
+    .archive-sidebar {
+      width: 100%;
+      .cost_per_month, .cost_registration {
+        height: 70px;
+        padding: 10px 50px;
+        i {
+          display: inline-block;
+          float: left;
+          margin: auto;
+          margin-right: 20px;
+        }
+        p {
+          display: block;
+          float: left;
+          width: calc(100% - 100px);
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width:860px){
+  .timeline {
+    visibility: hidden;
+    left: -100px;
+  }
+  .timeline {
+    visibility: hidden;
+    left: -100px;
+  }
+  .loop-archive .archive-body-item {
+    .container {
+      @include transform(translateX(0));
+    }
+    .archive-main {
+      padding-right: 0;
+      width: 100%;
+      margin-bottom: 50px;
+    }
+    .archive-sidebar {
+      width: 100%;
+      .cost_per_month, .cost_registration {
+        height: 70px;
+        padding: 10px 50px;
+        i {
+          display: inline-block;
+          float: left;
+          margin: auto;
+          margin-right: 20px;
+        }
+        p {
+          display: block;
+          float: left;
+          width: calc(100% - 100px);
+          text-align: left;
+        }
+      }
     }
   }
 }

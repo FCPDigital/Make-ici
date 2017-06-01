@@ -61,8 +61,84 @@ header {
     height: 60px;
   }
 
+  .navbar-collapse {
+    .navbar-nav {
+      float: none;
+      margin: 0;
+      display: flex;
+      justify-content: space-around;
+    }
+    &.collapse.in {
+      .navbar-nav {
+        float: none;
+        margin: 0;
+        display: block;
+        justify-content:center;
+        &> li > a {
+          text-align: center;
+          &::before {
+            content:"";
+          }
+        }
+      }
+    }
+  }
+
+  .navbar-nav > li.btn.btn-light {
+    padding: 10px 20px;
+    height: 45px;
+    margin-top: 12px;
+    &:hover {
+      background-color: $color-3;
+      a {
+        color: black;
+      }
+    }
+    a {
+      font-size: 13px;
+      padding: 0;
+      font-weight: bold;
+      color: black;
+      &::before, &::after {
+        display: none !important;
+      }
+    }
+  }
+  .navbar-nav >li.dropdown {
+    height: 45px;
+    margin: 12px 10px;
+    padding: 12px 20px;
+    background-color: $color-3;
+    font-weight: bold;
+    a {
+      padding: 0;
+      color:black;
+      background-color: $color-3 !important;
+      &::before, &::after {
+        display: none !important;
+      }
+    }
+    .dropdown-menu {
+      margin-top: 10px;
+      border: 0;
+      padding: 0;
+      li {
+        padding: 10px;
+        text-align: center;
+        &.active {
+          background-color: $color-3;
+        }
+        a {
+          background-color: transparent !important;
+          &:hover {
+            color: black;
+          }
+        }
+      }
+    }
+  }
   .navbar-nav > li > a {
-    padding-top: 25px; padding-bottom: 25px;
+    padding: 25px 10px;
     color: $color-2;
     text-transform: none;
     letter-spacing: 1px;
@@ -85,11 +161,17 @@ header {
     &::before {
       content: "|";
       position: absolute;
-      left: -3px;
+      left: -7px;
       font-weight: bold;
     }
-    &:hover::after {
-      @include transform(scaleX(1));
+    &:hover {
+      color: black !important;
+      &::after {
+        @include transform(scaleX(1));
+      }
+      &::before {
+        color: #777;
+      }
     }
   }
   .navbar-nav > li:first-child a::before {
@@ -154,5 +236,23 @@ header {
   }
   100% {
     @include transform(translateY(0%));
+  }
+}
+
+
+@media screen and (max-width: $break-point-1){
+  header .navbar-collapse {
+    .navbar-nav {
+      float: none;
+      margin: 0;
+      display: block;
+      justify-content:center;
+      &> li > a {
+        text-align: center;
+        &::before {
+          content:"";
+        }
+      }
+    }
   }
 }

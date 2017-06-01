@@ -1,4 +1,4 @@
-<section id="item-<?php echo get_the_slug(); ?>" class="archive-body-item item-scroll container-fluid page-section" style="background-image:url('<?php echo get_the_post_thumbnail_url(); ?>')">
+<section id="item-<?php echo get_the_slug(); ?>" class=" perspective-corner  archive-body-item awesome-panel-item container-fluid page-section" style="background-image:url('<?php echo get_the_post_thumbnail_url(); ?>')">
 
   <div class="container">
 
@@ -34,7 +34,7 @@
       <p class="mention">Durée minimale <?php echo get_field("duration_min");  ?> / Préavis <?php echo get_field("duration_preavis");  ?></p>
       <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="">
       <?php echo get_field("mention_supplementaire"); ?>
-      <a href="#" class="btn btn-colored action-abonnement">Je m'abonne</a>
+      <a href="#" data-wpxhr="mon_action" class="btn btn-colored action-abonnement">Je m'abonne</a>
 
     </div>
 

@@ -1,0 +1,110 @@
+/*
+Style de la page formations, pour voir la plupart
+des styles générique, aller dans la page _archive.scss
+*/
+
+#boutique {
+  h1 {
+    margin-bottom: $medium-pad;
+  }
+  .archive-head .archive-head-item {
+    background-color: transparent;
+    padding-bottom: 0px;
+    .title-container {
+      padding: 20px 0;
+      height: 60px;
+    }
+    .btn {
+      position: static;
+      width: 100%;
+      margin-top: 10px;
+      @include transform(none);
+
+    }
+  }
+  .loop-archive .archive-body-item .archive-main {
+    width: 100%;
+  }
+}
+
+.carousel.product-carousel {
+  .carousel-item {
+    background-color: white;
+    color: black;
+    padding-bottom: 60px;
+    .title {
+      margin-top: $small-pad;
+      padding: 0  $small-pad;
+      margin-bottom:  $small-pad;
+      font-weight: bold;
+    }
+    .excerpt {
+      padding: 0  $small-pad;
+      font-size: .8em;
+    }
+    .link-more {
+      display: none;
+    }
+    .btn {
+      margin: 16px;
+      width: calc(100% - 32px);
+      position: absolute;
+      bottom: 0;
+      &:hover {
+        color: black;
+        background-color: $color-3;
+      }
+    }
+  }
+}
+
+#single-product {
+  .loop-archive {
+    .fa-container {
+      min-height: 50px;
+      padding: 5px 25px;
+      p {
+        font-size: 12px;
+        padding-top: 10px;
+      }
+      i {
+        margin-right: 10px;
+      }
+      &.formator {
+        p {
+          font-size: 10px;
+          strong {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+    #scroll-container {
+      padding-top: 30px;
+    }
+    .archive-body-item {
+      border-top: 0;
+
+    }
+    .related_products {
+      float: left;
+      margin-top: 32px;
+    }
+
+    .single_variation_wrap {
+      padding: 20px;
+      padding-top: 0;
+    }
+    .single_add_to_cart_button {
+      margin-top: 10px;
+      background-color: $color-3;
+      opacity: 1;
+      color: black;
+      width: 100%;
+      border-radius: 0;
+      padding: 13px 10px;
+      font-weight: bold;
+      font-size: 1.1em;
+    }
+  }
+}

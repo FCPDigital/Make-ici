@@ -1,11 +1,18 @@
 body {
   font-family: $main-font;
-  background: white;
+  background: black;
+  // padding-top: $small-pad;
 }
 .margin-top-big { margin-top: $big-pad !important; }
 .margin-bottom-big { margin-bottom: $big-pad !important; }
 .margin-left-big { margin-left: $big-pad !important; }
 .margin-right-big { margin-right: $big-pad !important; }
+
+.margin-top-small { margin-top: $small-pad !important; }
+.margin-bottom-small { margin-bottom: $small-pad !important; }
+.margin-left-small { margin-left: $small-pad !important; }
+.margin-right-small { margin-right: $small-pad !important; }
+
 
 .left {float: left;}
 .right {float: right;}
@@ -45,6 +52,57 @@ pre {
 }
 
 
+////////////////////////////////////////////////////////////////////////////////
+//
+//                Scroll btn
+//
+////////////////////////////////////////////////////////////////////////////////
+
+
+.scroll-manage {
+  width: $medium-pad;
+  height: $medium-pad;
+  background-image: url("assets/images/scroll.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: fixed;
+  bottom: $medium-pad;
+  left: 50%;
+  z-index: 999;
+  @include transform(translateX(-50%) translateY(0));
+  @include transition(.4s);
+  &.hide {
+    display: block;
+    @include transform(translateX(-50%) translateY(100px));
+  }
+}
+
+.scroll-to-top {
+  width: $medium-pad;
+  height: $medium-pad;
+  background-color: $color-3;
+  background-image: url("assets/images/arrow-top.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 50%;
+  position: fixed;
+  bottom: $small-pad;
+  right: $small-pad;
+  z-index: 999;
+  @include transition(.4s);
+  @include transform(translateX(0));
+  &.hide {
+    display: block !important;
+    @include transform(translateX(100px));
+  }
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//
+//                Notice
+//
+////////////////////////////////////////////////////////////////////////////////
 
 
 #notice {
@@ -113,7 +171,7 @@ pre {
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-.btn {
+.btn,  .single_add_to_cart_button {
   display: inline-block;
   text-decoration: none;
   padding: 10px 20px;
@@ -303,4 +361,17 @@ pre {
     .collapse.in{
         display:block !important;
     }
+}
+
+@media screen and (max-width: $break-point-1){
+  .container {
+    width: calc(100% - 160px);
+  }
+}
+
+
+@media screen and (max-width: $break-point-2){
+  .container {
+    width: 100%;
+  }
 }

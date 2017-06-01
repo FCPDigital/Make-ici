@@ -1,11 +1,6 @@
 <?php
 
 
-if ( version_compare( $GLOBALS['wp_version'], '4.7-alpha', '<' ) ) {
-	require get_template_directory() . '/inc/back-compat.php';
-	return;
-}
-
 require_once('helpers/wp_bootstrap_navwalker.php');
 
 
@@ -14,6 +9,46 @@ require_once('helpers/wp_bootstrap_navwalker.php');
 //						HELPERS
 //
 //////////////////////////////////////////////////////
+
+function shortcode_carousel($atts){
+
+	$args = shortcode_atts( array(
+		'category' => null,
+		'baz' => 'default baz',
+	), $atts );
+
+	$category = $args["category"] ? $args["category"] : null;
+
+	if($category){
+		$products = get_products_from_category($category);
+		$count = $products->post_count;
+		$active = ($count > 4) ? "active-control" : "";
+
+
+		?>
+		<div class="archive-main-body">
+			<div class="product-carousel carousel <?php echo $active; ?>">
+				<div class="carousel-body">
+					<div class="archive-head carousel-container">
+						<?php while ( $products->have_posts() ) :  $products->the_post();
+							include( locate_template("template-parts/woocommerce/content-boutique-product.php") );
+							$count++;
+						endwhile; ?>
+					</div>
+				</div>
+				<div class="carousel-control">
+					<p class="carousel-control-mention">Voir d\'autres abonnements</p>
+					<a href="#" class="carousel-control-btn" data-direction="left"></a>
+					<a href="#" class="carousel-control-btn" data-direction="right"></a>
+				</div>
+			</div>
+		</div>
+		<?php
+
+	}
+}
+
+add_shortcode( 'carousel', 'shortcode_carousel' );
 
 function display_website_logo(){
 	$custom_logo_id = get_theme_mod( 'custom_logo' );
@@ -25,6 +60,75 @@ function display_website_logo(){
 
 function get_the_slug(){
 	return get_post_field( 'post_name', get_post() );
+}
+
+function get_woocommerce_categories(){
+
+  $taxonomy     = 'product_cat';
+  $orderby      = 'name';
+  $show_count   = 0;      // 1 for yes, 0 for no
+  $pad_counts   = 0;      // 1 for yes, 0 for no
+  $hierarchical = 1;      // 1 for yes, 0 for no
+  $title        = '';
+  $empty        = 0;
+
+  $args = array(
+  	'taxonomy'     => $taxonomy,
+  	'orderby'      => $orderby,
+  	'show_count'   => $show_count,
+  	'pad_counts'   => $pad_counts,
+  	'hierarchical' => $hierarchical,
+  	'title_li'     => $title,
+  	'hide_empty'   => $empty
+  );
+
+	return get_categories( $args );
+}
+
+function get_category_thumbnail($category){
+	$id = $category->term_id;
+	$thumbnail_id = get_woocommerce_term_meta( $id, 'thumbnail_id', true );
+	$image = wp_get_attachment_url( $thumbnail_id );
+	if($image){
+		return $image;
+	}
+}
+
+function manage_date_order_variable_product($options){
+	$optionsManage = [];
+	$c = date_create_from_format('dmY', date("dmY"))->getTimestamp();
+	for($i=0; $i<count($options); $i++){
+		$date = date_create_from_format( "dmY" , $options[$i] )->getTimestamp();
+		if($date > $c){
+			array_push($optionsManage, $options[$i]);
+		}
+	}
+	return $optionsManage;
+}
+
+function get_category_title($category){
+	if($category){
+		$name = $category->name;
+		if($name){
+			return $name;
+		}
+	}
+}
+
+function get_category_slug($category) {
+	if($category){
+		$slug = $category->slug;
+		if($slug){
+			return $slug;
+		}
+	}
+}
+
+function get_products_from_category($category){
+
+	$productArgs = array( 'post_type' => 'product', 'posts_per_page' => -1, 'product_cat' => $category->name, 'orderby' => 'rand' );
+	$products = new WP_Query( $productArgs );
+	return $products ;
 }
 
 //////////////////////////////////////////////////////
@@ -51,17 +155,147 @@ function create_post_type_abonnement() {
 add_action( 'init', 'create_post_type_abonnement' );
 
 
+function make_ici_scripts() {
+	wp_register_script('smoothScroll', get_template_directory_uri() . '/assets/js/smoothScroll.js', array('jquery'),'1.1', true);
+	wp_register_script('main', get_template_directory_uri() . '/assets/js/main.js', array('jquery'),'1.1', true);
+
+	wp_enqueue_script('smoothScroll');
+	wp_enqueue_script('main');
+
+	wp_localize_script('main', 'ajaxurl', admin_url( 'admin-ajax.php' ) );
+}
+
+add_action( 'wp_enqueue_scripts', 'make_ici_scripts' );
+
+
+function get_excerpt_truncate($post, $value){
+	return wp_trim_words( get_the_excerpt($post), $value, "...");
+}
+
+
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10);
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50);
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20);
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 10);
+
+
+function wc_remove_all_quantity_fields( $return, $product ) {
+    return true;
+}
+add_filter( 'woocommerce_is_sold_individually', 'wc_remove_all_quantity_fields', 10, 2 );// * @hooked woocommerce_template_single_rating - 10
+// * @hooked woocommerce_template_single_price - 10
+// * @hooked woocommerce_template_single_excerpt - 20
+// * @hooked woocommerce_template_single_add_to_cart - 30
+// * @hooked woocommerce_template_single_meta - 40
+// * @hooked woocommerce_template_single_sharing - 50
+// * @hooked WC_Structured_Data::generate_product_data() - 60
+// */
+
+
+
+add_action( 'wp_ajax_mon_action', 'abonnement_form' );
+add_action( 'wp_ajax_nopriv_mon_action', 'abonnement_form' );
+
+function abonnement_form() {
+	$param = $_POST['param'];
+	echo $param;
+	die();
+}
+
+
+
+function my_login_logo() { ?>
+    <style type="text/css">
+				#login {
+					padding-top: 4%;
+				}
+        #login h1 a, .login h1 a {
+          background-image: url(<?php echo get_template_directory_uri(); ?>/assets/images/logo.png);
+					height:65px;
+					width:320px;
+					background-size: 320px 65px;
+					background-repeat: no-repeat;
+        	padding-bottom: 30px;
+					background-size: contain;
+					margin-bottom: 10px;
+        }
+				body {
+					background-color: #222 !important;
+					color:#ffed00 !important;
+				}
+				.login label {
+					font-size: 12px !important;
+					text-transform: uppercase;
+					color: #ffed00 !important;
+					font-weight: 100 !important;
+				}
+				.message {
+					background-color: black;
+				}
+
+				.login #login_error, .login .message {
+					border-left: 0 !important;
+					background-color: #222 !important;
+					text-align: center;
+				}
+				#loginform {
+					background-color: #333;
+					padding: 26px 24px 26px;
+				}
+				.submit {
+					padding-top: 22px !important;
+				}
+				.login #backtoblog a, .login #nav a {
+					text-decoration: none;
+					color: #dedede !important;
+					text-transform: uppercase;
+					text-align: center;
+					display: block;
+				}
+				#wp-submit {
+					display: block;
+					float: none;
+					width: 100%;
+					background-color: #ffed00;
+					color: black;
+					text-transform: uppercase;
+					border: 0;
+					border-radius: 0;
+					padding: 6px 20px;
+					height: 40px;
+					font-weight: 100;
+					letter-spacing: 1px;
+					margin-top: 16px;
+					text-shadow: unset;
+				}
+				.forgetmenot label {
+					color: white !important;
+					text-transform: none !important;
+				}
+				.login form .input, .login input[type="text"] {
+					font-size: 12px !important;
+					width: 100%;
+					padding: 8px !important;
+					margin: 2px 6px 16px 0;
+					font-weight: 100;
+				}
+    </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'my_login_logo' );
+
+
 //////////////////////////////////////////////////////
 //
 //						twentyseventeen
 //
 //////////////////////////////////////////////////////
 
-function twentyseventeen_setup() {
+function makeici_setup() {
 
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'title-tag' );
-
 	add_theme_support( 'post-thumbnails' );
 	add_image_size( 'twentyseventeen-featured-image', 2000, 1200, true );
 	add_image_size( 'twentyseventeen-thumbnail-avatar', 100, 100, true );
@@ -83,74 +317,6 @@ function twentyseventeen_setup() {
 
 	// Define and register starter content to showcase the theme on new sites.
 	$starter_content = array(
-		'widgets' => array(
-			// Place three core-defined widgets in the sidebar area.
-			'sidebar-1' => array(
-				'text_business_info',
-				'search',
-				'text_about',
-			),
-
-			// Add the core-defined business info widget to the footer 1 area.
-			'sidebar-2' => array(
-				'text_business_info',
-			),
-
-			// Put two core-defined widgets in the footer 2 area.
-			'sidebar-3' => array(
-				'text_about',
-				'search',
-			),
-		),
-
-		// Specify the core-defined pages to create and add custom thumbnails to some of them.
-		'posts' => array(
-			'home',
-			'about' => array(
-				'thumbnail' => '{{image-sandwich}}',
-			),
-			'contact' => array(
-				'thumbnail' => '{{image-espresso}}',
-			),
-			'blog' => array(
-				'thumbnail' => '{{image-coffee}}',
-			),
-			'homepage-section' => array(
-				'thumbnail' => '{{image-espresso}}',
-			),
-		),
-
-		// Create the custom image attachments used as post thumbnails for pages.
-		'attachments' => array(
-			'image-espresso' => array(
-				'post_title' => _x( 'Espresso', 'Theme starter content', 'twentyseventeen' ),
-				'file' => 'assets/images/espresso.jpg', // URL relative to the template directory.
-			),
-			'image-sandwich' => array(
-				'post_title' => _x( 'Sandwich', 'Theme starter content', 'twentyseventeen' ),
-				'file' => 'assets/images/sandwich.jpg',
-			),
-			'image-coffee' => array(
-				'post_title' => _x( 'Coffee', 'Theme starter content', 'twentyseventeen' ),
-				'file' => 'assets/images/coffee.jpg',
-			),
-		),
-
-		// Default to a static front page and assign the front and posts pages.
-		'options' => array(
-			'show_on_front' => 'page',
-			'page_on_front' => '{{home}}',
-			'page_for_posts' => '{{blog}}',
-		),
-
-		// Set the front page section theme mods to the IDs of the core-registered pages.
-		'theme_mods' => array(
-			'panel_1' => '{{homepage-section}}',
-			'panel_2' => '{{about}}',
-			'panel_3' => '{{blog}}',
-			'panel_4' => '{{contact}}',
-		),
-
 		// Set up nav menus for each of the two areas registered in the theme.
 		'nav_menus' => array(
 			// Assign a menu to the "top" location.
@@ -178,63 +344,14 @@ function twentyseventeen_setup() {
 		),
 	);
 
-	/**
-	 * Filters Twenty Seventeen array of starter content.
-	 *
-	 * @since Twenty Seventeen 1.1
-	 *
-	 * @param array $starter_content Array of starter content.
-	 */
 	$starter_content = apply_filters( 'twentyseventeen_starter_content', $starter_content );
-
 	add_theme_support( 'starter-content', $starter_content );
 }
-add_action( 'after_setup_theme', 'twentyseventeen_setup' );
-
-
-function twentyseventeen_content_width() {
-
-	$content_width = $GLOBALS['content_width'];
-
-	// Get layout.
-	$page_layout = get_theme_mod( 'page_layout' );
-
-	// Check if layout is one column.
-	if ( 'one-column' === $page_layout ) {
-		if ( twentyseventeen_is_frontpage() ) {
-			$content_width = 644;
-		} elseif ( is_page() ) {
-			$content_width = 740;
-		}
-	}
-
-	// Check if is single post and there is no sidebar.
-	if ( is_single() && ! is_active_sidebar( 'sidebar-1' ) ) {
-		$content_width = 740;
-	}
-
-	$GLOBALS['content_width'] = apply_filters( 'twentyseventeen_content_width', $content_width );
-}
-add_action( 'template_redirect', 'twentyseventeen_content_width', 0 );
+add_action( 'after_setup_theme', 'makeici_setup' );
 
 
 
-/**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-function twentyseventeen_widgets_init() {
-	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'twentyseventeen' ),
-		'id'            => 'sidebar-1',
-		'description'   => __( 'Add widgets here to appear in your sidebar.', 'twentyseventeen' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-
+function init_sidebars() {
 	register_sidebar( array(
 		'name'          => __( 'Footer 1', 'twentyseventeen' ),
 		'id'            => 'sidebar-2',
@@ -255,37 +372,16 @@ function twentyseventeen_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 }
-add_action( 'widgets_init', 'twentyseventeen_widgets_init' );
-
-/**
- * Replaces "[...]" (appended to automatically generated excerpts) with ... and
- * a 'Continue reading' link.
- *
- * @since Twenty Seventeen 1.0
- *
- * @return string 'Continue reading' link prepended with an ellipsis.
- */
-function twentyseventeen_excerpt_more( $link ) {
-	if ( is_admin() ) {
-		return $link;
-	}
-
-	$link = sprintf( '<p class="link-more"><a href="%1$s" class="more-link">%2$s</a></p>',
-		esc_url( get_permalink( get_the_ID() ) ),
-		/* translators: %s: Name of current post */
-		sprintf( __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'twentyseventeen' ), get_the_title( get_the_ID() ) )
-	);
-	return ' &hellip; ' . $link;
-}
-add_filter( 'excerpt_more', 'twentyseventeen_excerpt_more' );
+add_action( 'widgets_init', 'init_sidebars' );
 
 
 
  //Adds a `js` class to the root `<html>` element when JavaScript is detected.
-function twentyseventeen_javascript_detection() {
+function javascript_detection() {
 	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
 }
-add_action( 'wp_head', 'twentyseventeen_javascript_detection', 0 );
+add_action( 'wp_head', 'javascript_detection', 0 );
+
 
 
 // Add a pingback url auto-discovery header for singularly identifiable articles.
@@ -294,141 +390,24 @@ function twentyseventeen_pingback_header() {
 		printf( '<link rel="pingback" href="%s">' . "\n", get_bloginfo( 'pingback_url' ) );
 	}
 }
-add_action( 'wp_head', 'twentyseventeen_pingback_header' );
-
-
-// Display custom color CSS.
-function twentyseventeen_colors_css_wrap() {
-	if ( 'custom' !== get_theme_mod( 'colorscheme' ) && ! is_customize_preview() ) {
-		return;
-	}
-	require_once( get_parent_theme_file_path( '/inc/color-patterns.php' ) );
-	$hue = absint( get_theme_mod( 'colorscheme_hue', 250 ) ); ?>
-	<style type="text/css" id="custom-theme-colors" <?php if ( is_customize_preview() ) { echo 'data-hue="' . $hue . '"'; } ?>>
-		<?php echo twentyseventeen_custom_colors_css(); ?>
-	</style>
-	<?php
-}
-add_action( 'wp_head', 'twentyseventeen_colors_css_wrap' );
+// add_action( 'wp_head', 'twentyseventeen_pingback_header' );
 
 
 
 // Enqueue scripts and styles.
-function twentyseventeen_scripts() {
+function cross_browser_scripts() {
 
 	// Theme stylesheet.
 	wp_enqueue_style( 'twentyseventeen-style', get_stylesheet_uri() );
 
-	// Load the dark colorscheme.
-	if ( 'dark' === get_theme_mod( 'colorscheme', 'light' ) || is_customize_preview() ) {
-		wp_enqueue_style( 'twentyseventeen-colors-dark', get_theme_file_uri( '/assets/css/colors-dark.css' ), array( 'twentyseventeen-style' ), '1.0' );
-	}
-
-	// Load the Internet Explorer 9 specific stylesheet, to fix display issues in the Customizer.
-	if ( is_customize_preview() ) {
-		wp_enqueue_style( 'twentyseventeen-ie9', get_theme_file_uri( '/assets/css/ie9.css' ), array( 'twentyseventeen-style' ), '1.0' );
-		wp_style_add_data( 'twentyseventeen-ie9', 'conditional', 'IE 9' );
-	}
-
-	// Load the Internet Explorer 8 specific stylesheet.
-	wp_enqueue_style( 'twentyseventeen-ie8', get_theme_file_uri( '/assets/css/ie8.css' ), array( 'twentyseventeen-style' ), '1.0' );
-	wp_style_add_data( 'twentyseventeen-ie8', 'conditional', 'lt IE 9' );
 
 	// Load the html5 shiv.
 	wp_enqueue_script( 'html5', get_theme_file_uri( '/assets/js/html5.js' ), array(), '3.7.3' );
 	wp_script_add_data( 'html5', 'conditional', 'lt IE 9' );
-
-	wp_enqueue_script( 'twentyseventeen-skip-link-focus-fix', get_theme_file_uri( '/assets/js/skip-link-focus-fix.js' ), array(), '1.0', true );
-
-	wp_enqueue_script( 'twentyseventeen-global', get_theme_file_uri( '/assets/js/global.js' ), array( 'jquery' ), '1.0', true );
-
-	wp_enqueue_script( 'jquery-scrollto', get_theme_file_uri( '/assets/js/jquery.scrollTo.js' ), array( 'jquery' ), '2.1.2', true );
 
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'twentyseventeen_scripts' );
-
-/**
- * Add custom image sizes attribute to enhance responsive image functionality
- * for content images.
- *
- * @since Twenty Seventeen 1.0
- *
- * @param string $sizes A source size value for use in a 'sizes' attribute.
- * @param array  $size  Image size. Accepts an array of width and height
- *                      values in pixels (in that order).
- * @return string A source size value for use in a content image 'sizes' attribute.
- */
-function twentyseventeen_content_image_sizes_attr( $sizes, $size ) {
-	$width = $size[0];
-
-	if ( 740 <= $width ) {
-		$sizes = '(max-width: 706px) 89vw, (max-width: 767px) 82vw, 740px';
-	}
-
-	if ( is_active_sidebar( 'sidebar-1' ) || is_archive() || is_search() || is_home() || is_page() ) {
-		if ( ! ( is_page() && 'one-column' === get_theme_mod( 'page_options' ) ) && 767 <= $width ) {
-			 $sizes = '(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px';
-		}
-	}
-
-	return $sizes;
-}
-add_filter( 'wp_calculate_image_sizes', 'twentyseventeen_content_image_sizes_attr', 10, 2 );
-
-/**
- * Filter the `sizes` value in the header image markup.
- *
- * @since Twenty Seventeen 1.0
- *
- * @param string $html   The HTML image tag markup being filtered.
- * @param object $header The custom header object returned by 'get_custom_header()'.
- * @param array  $attr   Array of the attributes for the image tag.
- * @return string The filtered header image HTML.
- */
-function twentyseventeen_header_image_tag( $html, $header, $attr ) {
-	if ( isset( $attr['sizes'] ) ) {
-		$html = str_replace( $attr['sizes'], '100vw', $html );
-	}
-	return $html;
-}
-add_filter( 'get_header_image_tag', 'twentyseventeen_header_image_tag', 10, 3 );
-
-/**
- * Add custom image sizes attribute to enhance responsive image functionality
- * for post thumbnails.
- *
- * @since Twenty Seventeen 1.0
- *
- * @param array $attr       Attributes for the image markup.
- * @param int   $attachment Image attachment ID.
- * @param array $size       Registered image size or flat array of height and width dimensions.
- * @return string A source size value for use in a post thumbnail 'sizes' attribute.
- */
-function twentyseventeen_post_thumbnail_sizes_attr( $attr, $attachment, $size ) {
-	if ( is_archive() || is_search() || is_home() ) {
-		$attr['sizes'] = '(max-width: 767px) 89vw, (max-width: 1000px) 54vw, (max-width: 1071px) 543px, 580px';
-	} else {
-		$attr['sizes'] = '100vw';
-	}
-
-	return $attr;
-}
-add_filter( 'wp_get_attachment_image_attributes', 'twentyseventeen_post_thumbnail_sizes_attr', 10, 3 );
-
-/**
- * Use front-page.php when Front page displays is set to a static page.
- *
- * @since Twenty Seventeen 1.0
- *
- * @param string $template front-page.php.
- *
- * @return string The template to be used: blank if is_home() is true (defaults to index.php), else $template.
- */
-function twentyseventeen_front_page_template( $template ) {
-	return is_home() ? '' : $template;
-}
-add_filter( 'frontpage_template',  'twentyseventeen_front_page_template' );
+add_action( 'wp_enqueue_scripts', 'cross_browser_scripts' );
