@@ -451,18 +451,9 @@ h1 {
   -moz-transition: 0.4s;
   -ms-transition: 0.4s;
   -o-transition: 0.4s;
-  transition: 0.4s;
-  -webkit-transform: translateX(0px);
-  -moz-transform: translateX(0px);
-  -ms-transform: translateX(0px);
-  -o-transform: translateX(0px);
-  transform: translateX(0px); }
+  transition: 0.4s; }
   .timeline.hide-state {
-    -webkit-transform: translateX(-200px);
-    -moz-transform: translateX(-200px);
-    -ms-transform: translateX(-200px);
-    -o-transform: translateX(-200px);
-    transform: translateX(-200px); }
+    left: -100px; }
   .timeline .timeline-item {
     left: 0;
     color: #ffed00;
@@ -1292,6 +1283,68 @@ form select {
         font-size: 11px;
         color: red; }
 
+.wpforms-container .quart-input, .wpforms-container .half-input {
+  margin-right: 20px;
+  float: left; }
+  .wpforms-container .quart-input *, .wpforms-container .half-input * {
+    width: 100%; }
+.wpforms-container .quart-input {
+  width: calc(25% - 20px); }
+.wpforms-container .half-input {
+  width: calc(50% - 20px); }
+.wpforms-container .wpforms-field-textarea {
+  width: calc(100% - 20px); }
+  .wpforms-container .wpforms-field-textarea textarea {
+    width: 100%;
+    height: 130px; }
+.wpforms-container .wpforms-submit-container {
+  text-align: center;
+  margin-top: 30px;
+  clear: both; }
+  .wpforms-container .wpforms-submit-container .wpforms-submit {
+    padding: 10px 20px;
+    border: 1px solid #ffed00;
+    background-color: #ffed00;
+    color: black;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s; }
+    .wpforms-container .wpforms-submit-container .wpforms-submit:hover {
+      background-color: transparent;
+      color: #ffed00; }
+.wpforms-container .wpforms-field {
+  margin-bottom: 10px; }
+.wpforms-container .wpforms-field-medium {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  border: 1px solid #ffed00;
+  border-radius: 0;
+  height: 40px;
+  font-size: 12px;
+  padding: 10px 20px;
+  line-height: 1em;
+  font-weight: 500; }
+  .wpforms-container .wpforms-field-medium::-webkit-input-placeholder {
+    color: white;
+    opacity: 1; }
+  .wpforms-container .wpforms-field-medium::-moz-placeholder  {
+    color: white;
+    opacity: 1; }
+  .wpforms-container .wpforms-field-medium:-ms-input-placeholder {
+    color: white;
+    opacity: 1; }
+  .wpforms-container .wpforms-field-medium:-moz-placeholder {
+    color: white;
+    opacity: 1; }
+  .wpforms-container .wpforms-field-medium::placeholder {
+    color: white;
+    opacity: 1; }
+.wpforms-container #wpform-field-hp {
+  display: none; }
+
 #visite {
   perspective: 1000px; }
   #visite .plan-container {
@@ -1389,5 +1442,55 @@ form select {
           -ms-transform: translateZ(610px);
           -o-transform: translateZ(610px);
           transform: translateZ(610px); }
+
+#popin {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 600px;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 99;
+  overflow: scroll; }
+  #popin .close-popin {
+    position: absolute;
+    top: 100px;
+    right: 50px;
+    width: 30px;
+    height: 30px;
+    display: block;
+    cursor: pointer;
+    text-align: center;
+    color: #ffed00;
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 5px; }
+  #popin .content-popin {
+    width: 800px;
+    margin: auto;
+    margin-top: 100px;
+    height: 550px; }
+  #popin .title-container {
+    margin-bottom: 32px;
+    color: white; }
+    #popin .title-container h2 {
+      font-size: 2.5em;
+      font-weight: bold;
+      display: inline-block; }
+    #popin .title-container h3 {
+      display: inline-block;
+      margin-left: 50px; }
+
+@media screen and (max-width: 1160px) {
+  #popin .content-popin {
+    width: 800px;
+    margin: auto;
+    margin-top: 100px; } }
+@media screen and (max-width: 860px) {
+  #popin .content-popin {
+    width: 90%;
+    margin: auto;
+    margin-top: 100px; } }
 
 /*# sourceMappingURL=style.css.map */

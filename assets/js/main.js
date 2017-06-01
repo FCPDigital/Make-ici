@@ -447,13 +447,36 @@ perspectivecorner = {
 
 ////////////////////////////////////////////////////////////////////////////////
 //
+//                POPIN MANAGE
+//
+////////////////////////////////////////////////////////////////////////////////
+
+Popin = {
+  get content(){ return this.contentEl.innerHTML; },
+  set content(arg){ this.contentEl.innerHTML = arg; },
+  open:function(){ Popin.el.classList.remove("hide"); },
+  close:function(){ Popin.el.classList.add("hide"); },
+  initEvent:function(){ if(this.closeEl) this.closeEl.addEventListener("click", this.close); },
+  init:function(){
+    this.el = document.querySelector("#popin");
+    if (this.el){
+      this.closeEl = this.el.querySelector(".close-popin");
+      this.contentEl = this.el.querySelector(".content-popin");
+      this.initEvent();
+    }
+  }
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//
 //                XHR Manage
 //
 ////////////////////////////////////////////////////////////////////////////////
 
 Callback = {
-  abonnement: function(response){
-    alert(response)
+  abonnement: function(form){
+    Popin.content = form;
+    Popin.open();
   }
 }
 
@@ -466,16 +489,16 @@ XhrManage = {
     var self = this;
     el.addEventListener("click", function(e){
       var action = this.getAttribute("data-wpxhr");
+      var arg = this.getAttribute("data-xhrarg");
       if( action == "abonnement_form") {
         var callback = Callback.abonnement;
       }
+
       jQuery.post(
         ajaxurl, {
           'action': action,
-          'param': 'coucou'
-        }, function(response){
-            alert(response)
-        }
+          'param': arg
+        }, callback
       );
       e.preventDefault();
     }, false)
@@ -612,6 +635,7 @@ window.addEventListener("load", function(){
   AwesomePanel.init({
     snapping: false
   });
+  Popin.init();
   scrollToTop();
   manageProductCarousel();
   var carousel = new MakeCarousel(document.querySelector("#main-carousel"));

@@ -41,9 +41,8 @@ h1 {
   justify-content: space-around;
   left: calc(50% - 620px + 16px);
   @include transition(.4s);
-  @include transform(translateX(0px));
   &.hide-state {
-    @include transform(translateX(-200px));
+    left: -100px;
   }
   .timeline-item {
     left: 0;

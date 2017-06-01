@@ -37,3 +37,7 @@
 			</nav>
 			<!--<a href="#" id="newDevis" class="btn btn-light">Demande de devis</a>-->
 	</header>
+	<div id="popin" class="hide">
+		<span class="close-popin">X</span>
+		<div class="content-popin"></div>
+	</div>

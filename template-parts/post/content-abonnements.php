@@ -34,7 +34,9 @@
       <p class="mention">Durée minimale <?php echo get_field("duration_min");  ?> / Préavis <?php echo get_field("duration_preavis");  ?></p>
       <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="">
       <?php echo get_field("mention_supplementaire"); ?>
-      <a href="#" data-wpxhr="mon_action" class="btn btn-colored action-abonnement">Je m'abonne</a>
+      <?php if(get_field("form_code")){ ?>
+        <a href="#" data-wpxhr="abonnement_form" data-xhrarg="<?php echo get_the_ID(); ?>" class="btn btn-colored action-abonnement">Je m'abonne</a>
+      <?php } ?>
 
     </div>
 

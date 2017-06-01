@@ -195,12 +195,20 @@ add_filter( 'woocommerce_is_sold_individually', 'wc_remove_all_quantity_fields',
 
 
 
-add_action( 'wp_ajax_mon_action', 'abonnement_form' );
-add_action( 'wp_ajax_nopriv_mon_action', 'abonnement_form' );
+add_action( 'wp_ajax_abonnement_form', 'abonnement_form' );
+add_action( 'wp_ajax_nopriv_abonnement_form', 'abonnement_form' );
 
 function abonnement_form() {
-	$param = $_POST['param'];
-	echo $param;
+	$param = (int) $_POST['param'];
+	$post = get_post($param);
+	if(get_field('subtitle', $post)){
+		$h3 = "<h3>".get_field('subtitle', $post)."</h3>";
+	} else {
+		$h3 = "";
+	}
+	$content =  "<div class='title-container'><h2 class='title'>".get_the_title($post)."</h2>".$h3."</div>";
+	echo $content;
+	echo do_shortcode("[wpforms id='".get_field('form_code', $post)."']");
 	die();
 }
 
