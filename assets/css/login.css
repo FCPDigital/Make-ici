@@ -1,0 +1,73 @@
+#login {
+  padding-top: 4%;
+}
+#login h1 a, .login h1 a {
+  background-image: url("../images/logo.png");
+  height:65px;
+  width:320px;
+  background-size: 320px 65px;
+  background-repeat: no-repeat;
+  padding-bottom: 30px;
+  background-size: contain;
+  margin-bottom: 10px;
+}
+body {
+  background-color: #222 !important;
+  color:#ffed00 !important;
+}
+.login label {
+  font-size: 12px !important;
+  text-transform: uppercase;
+  color: #ffed00 !important;
+  font-weight: 500 !important;
+}
+.message {
+  background-color: black;
+}
+
+.login #login_error, .login .message {
+  border-left: 0 !important;
+  background-color: #222 !important;
+  text-align: center;
+}
+#loginform {
+  background-color: #333;
+  padding: 26px 24px 26px;
+}
+.submit {
+  padding-top: 22px !important;
+}
+.login #backtoblog a, .login #nav a {
+  text-decoration: none;
+  color: #dedede !important;
+  text-transform: uppercase;
+  text-align: center;
+  display: block;
+}
+#wp-submit {
+  display: block;
+  float: none;
+  width: 100%;
+  background-color: #ffed00;
+  color: black;
+  text-transform: uppercase;
+  border: 0;
+  border-radius: 0;
+  padding: 6px 20px;
+  height: 40px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-top: 16px;
+  text-shadow: unset;
+}
+.forgetmenot label {
+  color: white !important;
+  text-transform: none !important;
+}
+.login form .input, .login input[type="text"] {
+  font-size: 12px !important;
+  width: 100%;
+  padding: 8px !important;
+  margin: 2px 6px 16px 0;
+  font-weight: 500;
+}
