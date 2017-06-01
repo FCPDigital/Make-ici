@@ -7,6 +7,7 @@ Afin de faciliter le travail en collaboration, le thème est versionner sur gith
 
 Les différentes fonctionnalité, shortcode, plugin nécessaire sont précisé ci-dessous.
 
+
 ## Fonctionnement de SCSS
  <a href="http://sass-lang.com/install">Installer sass / scss</a>
 - Tous les fichiers de style sont situés dans le dossier scss et doivent être modifier depuis ce dossier.  
