@@ -477,6 +477,7 @@ Callback = {
   abonnement: function(form){
     Popin.content = form;
     Popin.open();
+    if(form) document.querySelector(".btn.loading[data-wpxhr]").classList.remove("loading");
   }
 }
 
@@ -493,7 +494,13 @@ XhrManage = {
       if( action == "abonnement_form") {
         var callback = Callback.abonnement;
       }
-
+      this.classList.add("loading");
+      setTimeout(function(){
+        if(el.className.match("loading")){
+          el.classList.remove("loading");
+          el.innerHTML = "Erreur";
+        }
+      }, 5000)
       jQuery.post(
         ajaxurl, {
           'action': action,

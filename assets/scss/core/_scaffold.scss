@@ -222,8 +222,28 @@ pre {
     padding: 10px 30px;
   }
 
-}
+  &[data-wpxhr].loading {
+    color: transparent;
+    &::after {
+      content: "";
+      border-top: 2px solid black;
+      border-right: 2px solid black;
+      width: 20px;
+      height: 20px;
+      border-radius: 10px;
+      background-color: transparent;
+      display: block;
+      position: absolute;
+      top: 8px;
+      left: calc(50% - 10px);
+      animation-name: "rotate";
+      animation-duration: 1s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+  }
 
+}
 
 .btn-svg {
   color: #fdec01;
@@ -306,6 +326,14 @@ pre {
       background-color: #FDEC01;
       @include transform(translateZ($height-btn/2-4px) rotateX(0));
     }
+  }
+}
+@keyframes rotate {
+  0%{
+    @include transform(rotate(0deg));
+  }
+  100%{
+    @include transform(rotate(360deg));
   }
 }
 

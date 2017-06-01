@@ -268,6 +268,24 @@ pre {
     font-weight: bold;
     font-size: 12px;
     padding: 10px 30px; }
+  .btn[data-wpxhr].loading, .single_add_to_cart_button[data-wpxhr].loading {
+    color: transparent; }
+    .btn[data-wpxhr].loading::after, .single_add_to_cart_button[data-wpxhr].loading::after {
+      content: "";
+      border-top: 2px solid black;
+      border-right: 2px solid black;
+      width: 20px;
+      height: 20px;
+      border-radius: 10px;
+      background-color: transparent;
+      display: block;
+      position: absolute;
+      top: 8px;
+      left: calc(50% - 10px);
+      animation-name: "rotate";
+      animation-duration: 1s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite; }
 
 .btn-svg {
   color: #fdec01;
@@ -358,6 +376,19 @@ pre {
       -o-transform: translateZ(16px) rotateX(0);
       transform: translateZ(16px) rotateX(0); }
 
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg); } }
 @media (min-width: 1300px) {
   .container {
     max-width: 900px; } }
@@ -1452,9 +1483,27 @@ form select {
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 99;
-  overflow: scroll; }
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+  transform: translateX(0);
+  overflow: scroll;
+  display: block !important; }
+  #popin.hide {
+    display: block !important;
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    transform: translateX(100%); }
   #popin .close-popin {
-    position: absolute;
+    position: fixed;
     top: 100px;
     right: 50px;
     width: 30px;
