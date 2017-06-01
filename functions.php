@@ -156,7 +156,7 @@ add_action( 'init', 'create_post_type_abonnement' );
 
 
 function make_ici_scripts() {
-	wp_register_script('smoothScroll', get_template_directory_uri() . '/assets/js/smoothScroll.js', array('jquery'),'1.1', true);
+	wp_register_script('smoothScroll', get_template_directory_uri() . '/assets/js/smoothscroll.js', array('jquery'),'1.1', true);
 	wp_register_script('main', get_template_directory_uri() . '/assets/js/main.js', array('jquery'),'1.1', true);
 
 	wp_enqueue_script('smoothScroll');
