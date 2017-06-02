@@ -16,6 +16,8 @@ footer {
       margin-top: 20px;
       @include transform(scale(1));
       @include transition(.3s);
+      padding-left: 0;
+      padding-right: 30px;
       &:hover {
         background-color: transparent;
         @include transform(scale(1.3));
