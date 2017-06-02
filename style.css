@@ -1015,7 +1015,7 @@ header .navbar-nav > li.dropdown {
         header .navbar-nav > li.dropdown .dropdown-menu li a:hover {
           color: black; }
 header .navbar-nav > li > a {
-  padding: 25px 13px;
+  padding: 25px 20px;
   color: #000;
   text-transform: none;
   letter-spacing: 1px;
@@ -1026,6 +1026,9 @@ header .navbar-nav > li > a {
   -ms-transition: 0.4s;
   -o-transition: 0.4s;
   transition: 0.4s; }
+  header .navbar-nav > li > a .fa.fa-home {
+    margin-top: 3px;
+    font-size: 1.2em; }
   header .navbar-nav > li > a::after {
     content: "";
     display: block;
@@ -1061,6 +1064,10 @@ header .navbar-nav > li > a {
       transform: scaleX(1); }
     header .navbar-nav > li > a:hover::before {
       color: #777; }
+header .navbar-nav > li:first-child a {
+  padding-left: 0 !important; }
+header .navbar-nav > li:last-child a {
+  padding-right: 0 !important; }
 header .navbar-nav > li:first-child a::before {
   content: ""; }
 header .dropdown-menu > li > a {
@@ -1550,23 +1557,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 150px;
-          top: 25px; }
+          left: 315px;
+          top: 116px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 89px;
-          top: 81px; }
+          left: 356px;
+          top: 175px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 89px;
-          top: 129px; }
+          left: 82px;
+          top: 236px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 139px;
-          top: 62px; }
+          left: 107px;
+          top: 179px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 110px;
-          top: 42px; }
+          left: 256px;
+          top: 192px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 118px;
-          top: 139px; }
+          left: 227px;
+          top: 33px; }
 
 @keyframes scale {
   0% {

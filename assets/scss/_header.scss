@@ -138,14 +138,19 @@ header {
       }
     }
   }
+
   .navbar-nav > li > a {
-    padding: 25px 13px;
+    padding: 25px 20px;
     color: $color-2;
     text-transform: none;
     letter-spacing: 1px;
     font-size: .85em;
     position: relative;
     @include transition(.4s);
+    .fa.fa-home {
+      margin-top: 3px;
+      font-size: 1.2em;
+    }
     &::after {
       content: "";
       display: block;
@@ -174,6 +179,13 @@ header {
         color: #777;
       }
     }
+
+  }
+  .navbar-nav > li:first-child a {
+    padding-left: 0 !important;
+  }
+  .navbar-nav > li:last-child a {
+    padding-right: 0 !important;
   }
   .navbar-nav > li:first-child a::before {
     content:"";
