@@ -6,15 +6,12 @@
     position: relative;
     overflow: hidden;
     .carousel-container {
-      flex-wrap : wrap;
-      justify-content: space-between;
-      display: flex;
       @include transition(.4s);
+      display: flex;
       .carousel-item {
-        min-width: 220px;
-        flex: 1;
         margin: 30px 5px;
         position: relative;
+        flex: 1; 
         .crop-img {
           height: 120px;
           overflow: hidden;

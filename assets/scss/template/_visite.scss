@@ -9,7 +9,7 @@
     transform-style: preserve-3d;
     .stage {
       position: absolute;
-      opacity: 0.3;
+      opacity: 5;
       width: 400px;
       height: 250px;
       left: calc(50% - 200px);
@@ -17,16 +17,49 @@
       background-size: contain;
       background-position: center;
       @include transition(.5s);
+      transform-style: preserve-3d;
       top: 200px;
-      &:hover { opacity: 1;  }
+      &:hover {
+        opacity: 1;
+        .pointer {
+          @include transform(translateZ(10px));
+        }
+      }
       @for $i from 1 through 6 {
         &:nth-child(#{$i}) {
           @include transform(translateZ(#{($i - 1)*120}px));
-          &:hover {
-            @include transform(translateZ(#{($i - 1)*120 + 10}px));
+        }
+      }
+      .pointer {
+        position: absolute;
+        background-color: white;
+        border-radius: 100%;
+        width: 20px;
+        height: 20px;
+        @include transition(.4s);
+        @include transform(translateZ(0));
+        // animation-name: scale;
+        animation-iteration-count: infinite;
+        animation-duration: 1s;
+        @for $i from 1 through 6 {
+          &:nth-child(#{$i}) {
+            left: random(400px)+px;
+            top: random(250px)+px;
           }
         }
       }
     }
+  }
+}
+
+@keyframes scale {
+  0%{
+    @include transform(scale(1));
+  }
+  50%{
+    @include transform(scale(1.5));
+  }
+  100%{
+    @include transform(scale(1));
   }
 }

@@ -88,7 +88,9 @@ des styles générique, aller dans la page _archive.scss
     }
     .related_products {
       float: left;
-      margin-top: 32px;
+      .carousel-item {
+        margin-top: 20px;
+      }
     }
 
     .single_variation_wrap {

@@ -495,12 +495,6 @@ XhrManage = {
         var callback = Callback.abonnement;
       }
       this.classList.add("loading");
-      setTimeout(function(){
-        if(el.className.match("loading")){
-          el.classList.remove("loading");
-          el.innerHTML = "Erreur";
-        }
-      }, 5000)
       jQuery.post(
         ajaxurl, {
           'action': action,
@@ -530,6 +524,10 @@ function MakeCarousel(el){
   this.currentItem= 0;
   this.nbItemRow = 3;
 
+  // for(i=0; i<this.items.length; i++){
+  //   // this.items[i].setAttribute("style", "width: calc("+100/this.items.length+"% - 15px)");
+  // }
+
   if(this.carousel && this.carousel.className.match("active-control")){
 
     this.body = this.carousel.querySelector(".carousel-body");
@@ -537,9 +535,9 @@ function MakeCarousel(el){
       left: this.carousel.querySelector(".carousel-control .carousel-control-btn[data-direction='left']"),
       right: this.carousel.querySelector(".carousel-control .carousel-control-btn[data-direction='right']")
     }
-
-    this.container = this.carousel.querySelector(".carousel-container");
     this.items = this.carousel.querySelectorAll(".carousel-container .carousel-item");
+    this.container = this.carousel.querySelector(".carousel-container");
+
     var self = this;
     this.control.left.addEventListener("click", function(e){
       e.preventDefault();
@@ -559,6 +557,8 @@ function MakeCarousel(el){
 MakeCarousel.prototype.move = function(direction){
   this.updateSize();
 
+
+
   if(direction == "right"){
     if(this.items.length - this.currentItem > this.nbItemRow ) this.currentItem++;
   } else if(direction == "left"){
@@ -573,6 +573,7 @@ MakeCarousel.prototype.updateSize=function(){
   if(window.innerWidth < 1160 && window.innerWidth > 800 && this.nbItemRow != 2){
     this.nbItemRow = 2;
   }
+
 
   if(window.innerWidth > 1160){
     this.nbItemRow = 3;

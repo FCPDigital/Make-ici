@@ -30,20 +30,40 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 
     <div class="variations">
       <?php foreach ( $attributes as $attribute_name => $options ) : ?>
+
 				<?php
-				// Les options sont des dates ici, on vérifie donc que aucune n'est déja passer en regardant le jour actue
-				$options = manage_date_order_variable_product($options); //Voir dans function.php
-				//Si on a au moins une date de valide, on affiche
-				if(count($options)){ ?>
 
-        <div class="variation form-group">
+				// On surcharge la gestion de l'attribut DATE
+				if($attribute_name == "pa_date"){
+					// Les options sont des dates ici, on vérifie donc que aucune n'est déja passer en regardant le jour actue
+					$options = manage_date_order_variable_product($options); //Voir dans function.php
+					//Si on a au moins une date de valide, on affiche
+					if(count($options) > 0){ ?>
+					<div class="variation form-group">
+						<label for="<?php echo sanitize_title( $attribute_name ); ?>">
+							Dates Disponibles
+						</label>
+						<select class="" name="attribute_<?php echo $attribute_name ?>">
+							<option value="">Sélectionnez votre date</option>
+							<?php for($i = 0; $i < count($options); $i++) {?>
+								<option value="<?php echo $options[$i] ?>"><?php echo get_format_date($options[$i]); ?></option>
+							<?php } ?>
+						</select>
+					</div>
+				<?php }
 
-			    <label for="<?php echo sanitize_title( $attribute_name ); ?>"><?php echo wc_attribute_label( $attribute_name ); ?></label>
-          <?php $selected = isset( $_REQUEST[ 'attribute_' . sanitize_title( $attribute_name ) ] ) ? wc_clean( stripslashes( urldecode( $_REQUEST[ 'attribute_' . sanitize_title( $attribute_name ) ] ) ) ) : $product->get_variation_default_attribute( $attribute_name );
-						wc_dropdown_variation_attribute_options( array( 'options' => $options, 'attribute' => $attribute_name, 'product' => $product, 'selected' => $selected ) );  ?>
-
-			  </div>
-
+				//Comportement de Woocommerce
+			} else { ?>
+				<div class="variation form-group">
+					<label for="<?php echo sanitize_title( $attribute_name ); ?>"><?php echo wc_attribute_label( $attribute_name ); ?></label>
+					<div class="value">
+						<?php
+							$selected = isset( $_REQUEST[ 'attribute_' . sanitize_title( $attribute_name ) ] ) ? wc_clean( stripslashes( urldecode( $_REQUEST[ 'attribute_' . sanitize_title( $attribute_name ) ] ) ) ) : $product->get_variation_default_attribute( $attribute_name );
+							wc_dropdown_variation_attribute_options( array( 'options' => $options, 'attribute' => $attribute_name, 'product' => $product, 'selected' => $selected ) );
+							echo end( $attribute_keys ) === $attribute_name ? apply_filters( 'woocommerce_reset_variations_link', '<a class="reset_variations" href="#">' . esc_html__( 'Clear', 'woocommerce' ) . '</a>' ) : '';
+						?>
+					</div>
+				</div>
 				<?php } ?>
       <?php endforeach;?>
     </div>

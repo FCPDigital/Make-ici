@@ -14,14 +14,21 @@ function shortcode_carousel($atts){
 
 	$args = shortcode_atts( array(
 		'category' => null,
+		'except' => null,
+		'style' => 'detail',
 		'baz' => 'default baz',
 	), $atts );
 
+	$except  = ( (int) $args["except"]) ? (int) $args["except"] : null;
 	$category = $args["category"] ? $args["category"] : null;
+	$style =  $args["style"] ? $args["style"] : null;
 
 	if($category){
 		$products = get_products_from_category($category);
 		$count = $products->post_count;
+
+
+		// var_dump($products->posts);
 		$active = ($count > 4) ? "active-control" : "";
 
 
@@ -30,9 +37,13 @@ function shortcode_carousel($atts){
 			<div class="product-carousel carousel <?php echo $active; ?>">
 				<div class="carousel-body">
 					<div class="archive-head carousel-container">
+						<?php $count = 0; ?>
+
 						<?php while ( $products->have_posts() ) :  $products->the_post();
-							include( locate_template("template-parts/woocommerce/content-boutique-product.php") );
-							$count++;
+							if ( get_the_ID($products->get_post()) != $except ) {
+								include( locate_template("template-parts/woocommerce/content-boutique-product.php") );
+								$count++;
+							}
 						endwhile; ?>
 					</div>
 				</div>
@@ -42,6 +53,7 @@ function shortcode_carousel($atts){
 					<a href="#" class="carousel-control-btn" data-direction="right"></a>
 				</div>
 			</div>
+
 		</div>
 		<?php
 
@@ -94,15 +106,23 @@ function get_category_thumbnail($category){
 	}
 }
 
+function get_format_date($string){
+	 return preg_replace("/(\d{2})(\d{2})(\d{4})/",  "$1/$2/$3", $string);
+}
+
 function manage_date_order_variable_product($options){
 	$optionsManage = [];
 	$c = date_create_from_format('dmY', date("dmY"))->getTimestamp();
-	for($i=0; $i<count($options); $i++){
-		$date = date_create_from_format( "dmY" , $options[$i] )->getTimestamp();
-		if($date > $c){
-			array_push($optionsManage, $options[$i]);
+
+	foreach( $options as $option) {
+		if( $option ){
+			$date = date_create_from_format( "dmY" , $option ) -> getTimestamp();
+			if($date > $c){
+				array_push($optionsManage, $option);
+			}
 		}
 	}
+
 	return $optionsManage;
 }
 

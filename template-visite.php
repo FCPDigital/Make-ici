@@ -10,11 +10,17 @@ get_header(); ?>
     <div class="container left-border">
 
       <div class="plan-container">
-        <div class="stage" style="background-image:url('<?php echo get_template_directory_uri(); ?>/assets/images/plan.png')">
+        <div class="stage" style="background-image:url('<?php echo get_template_directory_uri(); ?>/assets/images/plan-opacity.png')">
         </div>
-        <div class="stage" style="background-image:url('<?php echo get_template_directory_uri(); ?>/assets/images/plan.png')">
+        <div class="stage" style="background-image:url('<?php echo get_template_directory_uri(); ?>/assets/images/plan-opacity.png')">
         </div>
-        <div class="stage" style="background-image:url('<?php echo get_template_directory_uri(); ?>/assets/images/plan.png')">
+        <div class="stage" style="background-image:url('<?php echo get_template_directory_uri(); ?>/assets/images/plan-opacity.png')">
+          <div class="pointer"></div>
+          <div class="pointer"></div>
+          <div class="pointer"></div>
+          <div class="pointer"></div>
+          <div class="pointer"></div>
+          <div class="pointer"></div>
         </div>
       </div>
 

@@ -75,6 +75,9 @@ body {
 .margin-right-small {
   margin-right: 16px !important; }
 
+.bold {
+  font-weight: bold; }
+
 .left {
   float: left; }
 
@@ -658,6 +661,12 @@ h1 {
         line-height: 2em; }
         .loop-archive .archive-body-item .archive-main .archive-main-body p {
           margin-bottom: 16px; }
+      .loop-archive .archive-body-item .archive-main .actions {
+        margin: 32px 0; }
+        .loop-archive .archive-body-item .archive-main .actions a {
+          text-decoration: underline;
+          color: #ffed00;
+          font-size: 14px; }
     .loop-archive .archive-body-item .archive-sidebar {
       position: relative;
       z-index: 1;
@@ -884,8 +893,9 @@ des styles générique, aller dans la page _archive.scss
 #single-product .loop-archive .archive-body-item {
   border-top: 0; }
 #single-product .loop-archive .related_products {
-  float: left;
-  margin-top: 32px; }
+  float: left; }
+  #single-product .loop-archive .related_products .carousel-item {
+    margin-top: 20px; }
 #single-product .loop-archive .single_variation_wrap {
   padding: 20px;
   padding-top: 0; }
@@ -1130,19 +1140,16 @@ footer {
   position: relative;
   overflow: hidden; }
   .carousel .carousel-body .carousel-container {
-    flex-wrap: wrap;
-    justify-content: space-between;
-    display: flex;
     -webkit-transition: 0.4s;
     -moz-transition: 0.4s;
     -ms-transition: 0.4s;
     -o-transition: 0.4s;
-    transition: 0.4s; }
+    transition: 0.4s;
+    display: flex; }
     .carousel .carousel-body .carousel-container .carousel-item {
-      min-width: 220px;
-      flex: 1;
       margin: 30px 5px;
-      position: relative; }
+      position: relative;
+      flex: 1; }
       .carousel .carousel-body .carousel-container .carousel-item .crop-img {
         height: 120px;
         overflow: hidden; }
@@ -1386,7 +1393,7 @@ form select {
     transform-style: preserve-3d; }
     #visite .plan-container .stage {
       position: absolute;
-      opacity: 0.3;
+      opacity: 5;
       width: 400px;
       height: 250px;
       left: calc(50% - 200px);
@@ -1398,82 +1405,108 @@ form select {
       -ms-transition: 0.5s;
       -o-transition: 0.5s;
       transition: 0.5s;
+      transform-style: preserve-3d;
       top: 200px; }
       #visite .plan-container .stage:hover {
         opacity: 1; }
+        #visite .plan-container .stage:hover .pointer {
+          -webkit-transform: translateZ(10px);
+          -moz-transform: translateZ(10px);
+          -ms-transform: translateZ(10px);
+          -o-transform: translateZ(10px);
+          transform: translateZ(10px); }
       #visite .plan-container .stage:nth-child(1) {
         -webkit-transform: translateZ(0px);
         -moz-transform: translateZ(0px);
         -ms-transform: translateZ(0px);
         -o-transform: translateZ(0px);
         transform: translateZ(0px); }
-        #visite .plan-container .stage:nth-child(1):hover {
-          -webkit-transform: translateZ(10px);
-          -moz-transform: translateZ(10px);
-          -ms-transform: translateZ(10px);
-          -o-transform: translateZ(10px);
-          transform: translateZ(10px); }
       #visite .plan-container .stage:nth-child(2) {
         -webkit-transform: translateZ(120px);
         -moz-transform: translateZ(120px);
         -ms-transform: translateZ(120px);
         -o-transform: translateZ(120px);
         transform: translateZ(120px); }
-        #visite .plan-container .stage:nth-child(2):hover {
-          -webkit-transform: translateZ(130px);
-          -moz-transform: translateZ(130px);
-          -ms-transform: translateZ(130px);
-          -o-transform: translateZ(130px);
-          transform: translateZ(130px); }
       #visite .plan-container .stage:nth-child(3) {
         -webkit-transform: translateZ(240px);
         -moz-transform: translateZ(240px);
         -ms-transform: translateZ(240px);
         -o-transform: translateZ(240px);
         transform: translateZ(240px); }
-        #visite .plan-container .stage:nth-child(3):hover {
-          -webkit-transform: translateZ(250px);
-          -moz-transform: translateZ(250px);
-          -ms-transform: translateZ(250px);
-          -o-transform: translateZ(250px);
-          transform: translateZ(250px); }
       #visite .plan-container .stage:nth-child(4) {
         -webkit-transform: translateZ(360px);
         -moz-transform: translateZ(360px);
         -ms-transform: translateZ(360px);
         -o-transform: translateZ(360px);
         transform: translateZ(360px); }
-        #visite .plan-container .stage:nth-child(4):hover {
-          -webkit-transform: translateZ(370px);
-          -moz-transform: translateZ(370px);
-          -ms-transform: translateZ(370px);
-          -o-transform: translateZ(370px);
-          transform: translateZ(370px); }
       #visite .plan-container .stage:nth-child(5) {
         -webkit-transform: translateZ(480px);
         -moz-transform: translateZ(480px);
         -ms-transform: translateZ(480px);
         -o-transform: translateZ(480px);
         transform: translateZ(480px); }
-        #visite .plan-container .stage:nth-child(5):hover {
-          -webkit-transform: translateZ(490px);
-          -moz-transform: translateZ(490px);
-          -ms-transform: translateZ(490px);
-          -o-transform: translateZ(490px);
-          transform: translateZ(490px); }
       #visite .plan-container .stage:nth-child(6) {
         -webkit-transform: translateZ(600px);
         -moz-transform: translateZ(600px);
         -ms-transform: translateZ(600px);
         -o-transform: translateZ(600px);
         transform: translateZ(600px); }
-        #visite .plan-container .stage:nth-child(6):hover {
-          -webkit-transform: translateZ(610px);
-          -moz-transform: translateZ(610px);
-          -ms-transform: translateZ(610px);
-          -o-transform: translateZ(610px);
-          transform: translateZ(610px); }
+      #visite .plan-container .stage .pointer {
+        position: absolute;
+        background-color: white;
+        border-radius: 100%;
+        width: 20px;
+        height: 20px;
+        -webkit-transition: 0.4s;
+        -moz-transition: 0.4s;
+        -ms-transition: 0.4s;
+        -o-transition: 0.4s;
+        transition: 0.4s;
+        -webkit-transform: translateZ(0);
+        -moz-transform: translateZ(0);
+        -ms-transform: translateZ(0);
+        -o-transform: translateZ(0);
+        transform: translateZ(0);
+        animation-iteration-count: infinite;
+        animation-duration: 1s; }
+        #visite .plan-container .stage .pointer:nth-child(1) {
+          left: 166px;
+          top: 52px; }
+        #visite .plan-container .stage .pointer:nth-child(2) {
+          left: 302px;
+          top: 68px; }
+        #visite .plan-container .stage .pointer:nth-child(3) {
+          left: 91px;
+          top: 4px; }
+        #visite .plan-container .stage .pointer:nth-child(4) {
+          left: 276px;
+          top: 100px; }
+        #visite .plan-container .stage .pointer:nth-child(5) {
+          left: 98px;
+          top: 80px; }
+        #visite .plan-container .stage .pointer:nth-child(6) {
+          left: 146px;
+          top: 149px; }
 
+@keyframes scale {
+  0% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1); }
+  50% {
+    -webkit-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    transform: scale(1.5); }
+  100% {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1); } }
 #popin {
   position: fixed;
   top: 0;

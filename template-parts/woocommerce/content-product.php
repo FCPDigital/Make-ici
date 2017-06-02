@@ -17,7 +17,7 @@
           <?php echo get_the_content(); ?>
         </div>
         <div class="actions">
-          <a href="<?php echo get_permalink( get_page_by_title("Formations") ) ?>#item-<?php echo $slug; ?>">Retours aux formations</a>
+          <a href="<?php echo get_permalink( get_page_by_title("Formations") ) ?>#item-<?php echo $slug; ?>"> < Retours aux formations</a>
         </div>
       </div>
 
@@ -55,8 +55,8 @@
       </div>
 
       <div class="related_products">
-        <?php do_shortcode("[carousel category='".$category."']") ?>
+        <p class="bold">Autres formations  <?php echo $category; ?></p>
+        <?php do_shortcode("[carousel category='".$category."' except='".get_the_ID($product)."' style='compact' ]") ?>
       </div>
-
     </div>
 </section>

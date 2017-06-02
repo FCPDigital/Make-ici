@@ -1,31 +1,32 @@
 <?php
-/*
-Template Name: Boutique
-*/
 
 get_header();
 
-$terms = get_the_terms( $product->id, 'product_cat' );
-$brand = get_the_terms( $product->id, 'product_brand' );
-$category = $terms[0]->name;
-$slug = $terms[0]->slug;
 
 ?>
+<?php
+  /* Start the Loop */
+  while ( have_posts() ) : the_post();
 
+  $product = get_post();
+  $terms = get_the_terms( $product->id, 'product_cat' );
+  $brand = get_the_terms( $product->id, 'product_brand' );
+  $category = $terms[0]->name;
+  $slug = $terms[0]->slug;
 
+?>
 <main id="single-product" class="site-main" role="main">
   <div class="body loop-archive" id="looper-snap">
     <div id="scroll-container">
+
       <?php
         include( locate_template('template-parts/woocommerce/content-product.php') );
       ?>
     </div>
   </div>
-
   <div class="timeline no-hide">
     <?php
     $categories = get_woocommerce_categories();
-
     if ( count($categories) > 0 ) :
       /* Start the Loop */
       for ( $i=0; $i<count($categories); $i++ ) :  $tmp_category = $categories[$i] ?>
@@ -41,5 +42,7 @@ $slug = $terms[0]->slug;
   </div>
 
 </main>
+
+<?php endwhile; ?>
 
 <?php get_footer();

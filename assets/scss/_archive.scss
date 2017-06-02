@@ -218,6 +218,15 @@ h1 {
           margin-bottom: $small-pad;
         }
       }
+      .actions {
+        margin: $medium-pad 0;
+        a {
+          text-decoration: underline;
+          color: $color-3;
+          font-size: 14px;
+        }
+      }
+
     }
     .archive-sidebar {
       position: relative;
