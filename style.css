@@ -1165,6 +1165,7 @@ footer {
     footer .row .flex-item {
       flex: 1;
       max-width: 310px;
+      line-height: 2em;
       margin: 32px 0; }
       footer .row .flex-item .widget-title {
         font-size: 14px;
@@ -1175,6 +1176,16 @@ footer {
         footer .row .flex-item .menu li a {
           text-decoration: none;
           color: black; }
+      footer .row .flex-item #mc_embed_signup input[type="email"] {
+        width: calc(100% - 55px);
+        float: left;
+        border-radius: 0; }
+      footer .row .flex-item #mc_embed_signup #mc-embedded-subscribe {
+        width: 50px;
+        float: right;
+        text-align: center;
+        padding: 9px 0;
+        font-size: 1.1em; }
 
 .carousel .carousel-control {
   display: none; }
@@ -1534,23 +1545,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 45px;
-          top: 150px; }
+          left: 214px;
+          top: 189px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 18px;
-          top: 11px; }
+          left: 46px;
+          top: 9px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 390px;
-          top: 217px; }
+          left: 87px;
+          top: 218px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 6px;
-          top: 157px; }
+          left: 364px;
+          top: 183px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 58px;
-          top: 104px; }
+          left: 340px;
+          top: 19px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 149px;
-          top: 34px; }
+          left: 2px;
+          top: 219px; }
 
 @keyframes scale {
   0% {

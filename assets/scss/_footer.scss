@@ -31,6 +31,7 @@ footer {
     .flex-item {
       flex: 1;
       max-width: 310px;
+      line-height: 2em;
       margin: $medium-pad 0;
       .widget-title {
         font-size: 14px;
@@ -44,6 +45,20 @@ footer {
             text-decoration: none;
             color: black;
           }
+        }
+      }
+      #mc_embed_signup {
+        input[type="email"] {
+          width: calc(100% - 55px);
+          float: left;
+          border-radius: 0;
+        }
+        #mc-embedded-subscribe {
+          width: 50px;
+          float: right;
+          text-align: center;
+          padding: 9px 0;
+          font-size: 1.1em;
         }
       }
     }
