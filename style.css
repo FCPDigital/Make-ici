@@ -961,10 +961,11 @@ header .navbar-brand {
 header nav > li > a {
   height: 60px; }
 header .navbar-collapse .navbar-nav {
-  float: none;
+  float: right;
   margin: 0;
-  display: flex;
   justify-content: space-around; }
+  header .navbar-collapse .navbar-nav .menu-item {
+    padding: 0; }
 header .navbar-collapse.collapse.in .navbar-nav {
   float: none;
   margin: 0;
@@ -992,12 +993,12 @@ header .navbar-nav > li.btn.btn-light {
 header .navbar-nav > li.dropdown {
   height: 45px;
   margin: 12px 10px;
-  padding: 12px 20px;
   background-color: #ffed00;
   font-weight: bold; }
   header .navbar-nav > li.dropdown a {
     padding: 0;
     color: black;
+    padding: 12px 10px;
     background-color: #ffed00 !important; }
     header .navbar-nav > li.dropdown a::before, header .navbar-nav > li.dropdown a::after {
       display: none !important; }
@@ -1006,7 +1007,6 @@ header .navbar-nav > li.dropdown {
     border: 0;
     padding: 0; }
     header .navbar-nav > li.dropdown .dropdown-menu li {
-      padding: 10px;
       text-align: center; }
       header .navbar-nav > li.dropdown .dropdown-menu li.active {
         background-color: #ffed00; }
@@ -1015,7 +1015,7 @@ header .navbar-nav > li.dropdown {
         header .navbar-nav > li.dropdown .dropdown-menu li a:hover {
           color: black; }
 header .navbar-nav > li > a {
-  padding: 25px 10px;
+  padding: 25px 13px;
   color: #000;
   text-transform: none;
   letter-spacing: 1px;
@@ -1130,7 +1130,9 @@ footer {
   padding: 15px;
   color: black;
   font-size: .8em;
-  padding-bottom: 0; }
+  padding-bottom: 0;
+  position: relative;
+  z-index: 1005; }
   footer .copyright {
     padding: 15px;
     text-align: center;
@@ -1186,6 +1188,9 @@ footer {
         text-align: center;
         padding: 9px 0;
         font-size: 1.1em; }
+      footer .row .flex-item .widget_text a {
+        color: black;
+        text-decoration: underline; }
 
 .carousel .carousel-control {
   display: none; }
@@ -1545,23 +1550,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 214px;
-          top: 189px; }
+          left: 150px;
+          top: 25px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 46px;
-          top: 9px; }
+          left: 89px;
+          top: 81px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 87px;
-          top: 218px; }
+          left: 89px;
+          top: 129px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 364px;
-          top: 183px; }
+          left: 139px;
+          top: 62px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 340px;
-          top: 19px; }
+          left: 110px;
+          top: 42px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 2px;
-          top: 219px; }
+          left: 118px;
+          top: 139px; }
 
 @keyframes scale {
   0% {
