@@ -11,11 +11,37 @@
       .carousel-item {
         margin: 30px 5px;
         position: relative;
-        flex: 1; 
+        flex: 1;
         .crop-img {
           height: 120px;
           overflow: hidden;
           img {
+            width: 100%;
+          }
+        }
+        &.compact {
+          background-color: transparent;
+          .title-container {
+            text-align: center;
+            background-color: $color-3;
+            color: black;
+            line-height: 1em;
+            padding: 12px 0;
+            height: 70px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .title {
+              font-size: 1.1em;
+              font-weight: bold;
+              line-height: 1em;
+              margin-top: 0px;
+              margin-bottom: 0;
+            }
+          }
+          .btn {
+            margin: 0;
+            margin-top: $small-pad;
             width: 100%;
           }
         }

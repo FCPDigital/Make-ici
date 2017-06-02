@@ -4,20 +4,22 @@
 	<a href="#" class="scroll-to-top" data-scroll></a>
 
 	<div class="row">
-		<?php get_template_part( 'template-parts/footer/footer', 'widgets' );
-
-		if ( has_nav_menu( 'social' ) ) : ?>
-			<nav class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Footer Social Links Menu', 'twentyseventeen' ); ?>">
-				<?php wp_nav_menu( array(
-					'theme_location' => 'social',
-					'menu_class'     => 'social-links-menu',
-					'depth'          => 1,
-					'link_before'    => '<span class="screen-reader-text">',
-					'link_after'     => '</span>' . twentyseventeen_get_svg( array( 'icon' => 'chain' ) ),
-				) ); ?>
-
-			</nav><!-- .social-navigation -->
-		<?php endif; ?>
+			<div class="col-sm-4">
+				<?php dynamic_sidebar( 'sidebar-1' ); ?>
+			</div>
+			<div class="col-sm-4">
+				<?php dynamic_sidebar( 'sidebar-2' );
+				wp_nav_menu( array(
+					'menu' => 'social',
+					'depth' => 2,
+					'container' => false,
+					'menu_class' => 'nav  navbar-nav'
+				));
+				?>
+			</div>
+			<div class="col-sm-4">
+				<?php dynamic_sidebar( 'sidebar-3' ); ?>
+			</div>
 	</div>
 	<div class="copyright">
 		<p>

@@ -23,14 +23,17 @@ function shortcode_carousel($atts){
 	$category = $args["category"] ? $args["category"] : null;
 	$style =  $args["style"] ? $args["style"] : null;
 
+
+
 	if($category){
 		$products = get_products_from_category($category);
 		$count = $products->post_count;
 
-
+		if($except){
+			$count--;
+		}
 		// var_dump($products->posts);
 		$active = ($count > 4) ? "active-control" : "";
-
 
 		?>
 		<div class="archive-main-body">
@@ -38,7 +41,6 @@ function shortcode_carousel($atts){
 				<div class="carousel-body">
 					<div class="archive-head carousel-container">
 						<?php $count = 0; ?>
-
 						<?php while ( $products->have_posts() ) :  $products->the_post();
 							if ( get_the_ID($products->get_post()) != $except ) {
 								include( locate_template("template-parts/woocommerce/content-boutique-product.php") );
@@ -205,14 +207,6 @@ function wc_remove_all_quantity_fields( $return, $product ) {
     return true;
 }
 add_filter( 'woocommerce_is_sold_individually', 'wc_remove_all_quantity_fields', 10, 2 );// * @hooked woocommerce_template_single_rating - 10
-// * @hooked woocommerce_template_single_price - 10
-// * @hooked woocommerce_template_single_excerpt - 20
-// * @hooked woocommerce_template_single_add_to_cart - 30
-// * @hooked woocommerce_template_single_meta - 40
-// * @hooked woocommerce_template_single_sharing - 50
-// * @hooked WC_Structured_Data::generate_product_data() - 60
-// */
-
 
 
 add_action( 'wp_ajax_abonnement_form', 'abonnement_form' );
@@ -244,6 +238,38 @@ function my_login_logo() {
 add_action( 'login_enqueue_scripts', 'my_login_logo' );
 
 
+function init_sidebar(){
+	register_sidebar( array(
+		 'name'          => __( 'Footer 1', 'makeici' ),
+		 'id'            => 'sidebar-1',
+		 'description'   => __( 'Appears in the footer section of the site.', 'makeici' ),
+		 'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		 'after_widget'  => '</aside>',
+		 'before_title'  => '<h3 class="widget-title">',
+		 'after_title'   => '</h3>',
+ ));
+ register_sidebar( array(
+		 'name'          => __( 'Footer 2', 'makeici' ),
+		 'id'            => 'sidebar-2',
+		 'description'   => __( 'Appears in the footer section of the site.', 'makeici' ),
+		 'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		 'after_widget'  => '</aside>',
+		 'before_title'  => '<h3 class="widget-title">',
+		 'after_title'   => '</h3>',
+ ));
+ register_sidebar( array(
+		'name'          => __( 'Footer 3', 'makeici' ),
+		'id'            => 'sidebar-3',
+		'description'   => __( 'Appears in the footer section of the site.', 'makeici' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+ ));
+}
+
+add_action( 'widgets_init', 'init_sidebar' );
+
 //////////////////////////////////////////////////////
 //
 //						twentyseventeen
@@ -273,65 +299,8 @@ function makeici_setup() {
 	add_theme_support( 'custom-logo', array( 'width' => 250, 'height' => 250, 'flex-width'  => true) );
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
-	// Define and register starter content to showcase the theme on new sites.
-	$starter_content = array(
-		// Set up nav menus for each of the two areas registered in the theme.
-		'nav_menus' => array(
-			// Assign a menu to the "top" location.
-			'top' => array(
-				'name' => __( 'Top Menu', 'twentyseventeen' ),
-				'items' => array(
-					'link_home', // Note that the core "home" page is actually a link in case a static front page is not used.
-					'page_about',
-					'page_blog',
-					'page_contact',
-				),
-			),
-
-			// Assign a menu to the "social" location.
-			'social' => array(
-				'name' => __( 'Social Links Menu', 'twentyseventeen' ),
-				'items' => array(
-					'link_yelp',
-					'link_facebook',
-					'link_twitter',
-					'link_instagram',
-					'link_email',
-				),
-			),
-		),
-	);
-
-	$starter_content = apply_filters( 'twentyseventeen_starter_content', $starter_content );
-	add_theme_support( 'starter-content', $starter_content );
 }
 add_action( 'after_setup_theme', 'makeici_setup' );
-
-
-
-function init_sidebars() {
-	register_sidebar( array(
-		'name'          => __( 'Footer 1', 'twentyseventeen' ),
-		'id'            => 'sidebar-2',
-		'description'   => __( 'Add widgets here to appear in your footer.', 'twentyseventeen' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-
-	register_sidebar( array(
-		'name'          => __( 'Footer 2', 'twentyseventeen' ),
-		'id'            => 'sidebar-3',
-		'description'   => __( 'Add widgets here to appear in your footer.', 'twentyseventeen' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-}
-add_action( 'widgets_init', 'init_sidebars' );
-
 
 
  //Adds a `js` class to the root `<html>` element when JavaScript is detected.

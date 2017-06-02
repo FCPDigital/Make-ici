@@ -3,8 +3,29 @@ footer {
   padding: 15px;
   color: black;
   font-size: .8em;
+  padding-bottom: 0;
   .copyright {
-    padding: 10px;
+    padding: 15px;
     text-align: center;
+    border-top: 1px solid black;
+  }
+  .row {
+    .col-sm-4 {
+      padding: $medium-pad !important;
+      .widget-title {
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: $small-pad;
+      }
+      .menu {
+        li {
+          line-height: 2em;
+          a {
+            text-decoration: none;
+            color: black;
+          }
+        }
+      }
+    }
   }
 }
