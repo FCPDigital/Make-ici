@@ -4,10 +4,10 @@
 	<a href="#" class="scroll-to-top" data-scroll></a>
 
 	<div class="row">
-			<div class="col-sm-4">
+			<div class="flex-item">
 				<?php dynamic_sidebar( 'sidebar-1' ); ?>
 			</div>
-			<div class="col-sm-4">
+			<div class="flex-item">
 				<?php dynamic_sidebar( 'sidebar-2' );
 				wp_nav_menu( array(
 					'menu' => 'social',
@@ -17,7 +17,7 @@
 				));
 				?>
 			</div>
-			<div class="col-sm-4">
+			<div class="flex-item">
 				<?php dynamic_sidebar( 'sidebar-3' ); ?>
 			</div>
 	</div>
