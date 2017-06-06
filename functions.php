@@ -270,6 +270,14 @@ function init_sidebar(){
 
 add_action( 'widgets_init', 'init_sidebar' );
 
+
+add_filter('add_to_cart_redirect', 'themeprefix_add_to_cart_redirect');
+function themeprefix_add_to_cart_redirect() {
+	global $woocommerce;
+	$checkout_url = $woocommerce->cart->get_checkout_url();
+	return $checkout_url;
+}
+
 //////////////////////////////////////////////////////
 //
 //						twentyseventeen

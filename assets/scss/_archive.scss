@@ -189,7 +189,6 @@ h1 {
       z-index: 0;
       background-color: rgba(0,0,0,0.8);
     }
-
     .container {
       transform: translateX(48px) translateZ(0);
     }
@@ -226,7 +225,13 @@ h1 {
           font-size: 14px;
         }
       }
+    }
 
+    &.no-sidebar {
+      .archive-main {
+        width: 100%;
+        padding-right: $medium-pad;
+      }
     }
     .archive-sidebar {
       position: relative;

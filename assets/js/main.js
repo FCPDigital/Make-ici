@@ -629,6 +629,39 @@ function scrollToTop(){
   }, false)
 }
 
+
+
+////////////////////////////////////////////////////////////////////////////////
+//
+//               Visite Guidée
+//
+////////////////////////////////////////////////////////////////////////////////
+// 
+// Visite = {
+//   setConfig:function(args){
+//     this.config = {};
+//     this.config.plan = {};
+//     if(args.plan){
+//       this.config.plan.hoverClass = (args.plan.hoverClass) ? args.plan.hoverClass : null;
+//       this.config.plan.clickClass = (args.plan.clickClass) ? args.plan.clickClass : "active-stage";
+//       this.config.plan.inactiveClass = (args.plan.inactiveClass) ? args.plan.inactiveClass : "inactive-stage";
+//     }
+//   },
+//   initEvents:function(){
+//     for(i=0; i<this.plan.stage.length; i++){
+//
+//     }
+//   },
+//   init:function(args){
+//     this.plan = document.querySelector(".plan-container");
+//     if(this.plan){
+//       this.stage = this.plan.querySelectorAll(".stage");
+//       this.setConfig(args);
+//
+//     }
+//   }
+// }
+
 ////////////////////////////////////////////////////////////////////////////////
 //
 //                Window load

@@ -667,6 +667,9 @@ h1 {
           text-decoration: underline;
           color: #ffed00;
           font-size: 14px; }
+    .loop-archive .archive-body-item.no-sidebar .archive-main {
+      width: 100%;
+      padding-right: 32px; }
     .loop-archive .archive-body-item .archive-sidebar {
       position: relative;
       z-index: 1;
@@ -1557,23 +1560,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 315px;
-          top: 116px; }
+          left: 23px;
+          top: 28px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 356px;
-          top: 175px; }
+          left: 146px;
+          top: 193px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 82px;
-          top: 236px; }
+          left: 217px;
+          top: 64px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 107px;
-          top: 179px; }
+          left: 248px;
+          top: 201px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 256px;
-          top: 192px; }
+          left: 6px;
+          top: 191px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 227px;
-          top: 33px; }
+          left: 91px;
+          top: 133px; }
 
 @keyframes scale {
   0% {

@@ -1,62 +1,88 @@
-<?php
-/**
- * The template for displaying archive pages
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package WordPress
- * @subpackage Twenty_Seventeen
- * @since 1.0
- * @version 1.0
- */
+<?php get_header(); ?>
 
-get_header(); ?>
+<main id="abonnements-archive" class="site-main" role="main">
+  <div class="landing">
+    <div class="container left-border">
+      <h1><?php echo single_cat_title(); ?></h1>
 
+      <?php $count = $GLOBALS['wp_query']->post_count; ?>
+      <div id="main-carousel" class="carousel <?php if($count > 4){echo 'active-control';} ?>">
+        <div class="carousel-body">
+          <div class="archive-head carousel-container">
+            <?php  /* Start the Loop */
+              while ( have_posts() ) : the_post();
+                get_template_part( 'template-parts/post/content-head', get_post_format() );
+                $count++;
+              endwhile;  ?>
+          </div>
+        </div>
 
-<div class="wrap">
+        <div class="carousel-control">
+          <p class="carousel-control-mention">Voir d'autres abonnements</p>
+          <a href="#" class="carousel-control-btn" data-direction="left"></a>
+          <a href="#" class="carousel-control-btn" data-direction="right"></a>
+        </div>
+      </div>
 
-	<?php if ( have_posts() ) : ?>
-		<header class="page-header">
-			<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
-				the_archive_description( '<div class="taxonomy-description">', '</div>' );
-			?>
-		</header><!-- .page-header -->
-	<?php endif; ?>
+    </div>
+  </div>
+  <div class="body loop-archive" id="looper-snap">
+    <div id="scroll-container">
+      <?php
+      if ( have_posts() ) : ?>
+        <?php
+        /* Start the Loop */
+        while ( have_posts() ) : the_post();
+				?>
+				<section id="item-<?php echo get_the_slug(); ?>" class="no-sidebar archive-body-item awesome-panel-item container-fluid page-section" style="background-image:url('<?php echo get_the_post_thumbnail_url(); ?>')">
+				  <div class="container">
+				    <div class="archive-main">
+				      <div class="archive-main-head">
+				        <h2 class="title">
+				          <?php echo get_the_title(); ?>
+				        </h2>
+				        <h3>
+				          <?php echo get_field("subtitle"); ?>
+				        </h3>
+				      </div>
+				      <div class="archive-main-body">
+				        <?php echo get_the_content(); ?>
+				      </div>
+				    </div>
+				  </div>
+				</section>
+				<?php
+        endwhile;
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+        the_posts_pagination( array(
+          'prev_text' => '<span class="screen-reader-text">' . __( 'Previous page', 'twentyseventeen' ) . '</span>',
+          'next_text' => '<span class="screen-reader-text">' . __( 'Next page', 'twentyseventeen' ) . '</span>',
+          'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentyseventeen' ) . ' </span>',
+        ) );
 
-		<?php
-		if ( have_posts() ) : ?>
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+      else :
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/post/content', get_post_format() );
+        get_template_part( 'template-parts/post/content', 'none' );
 
-			endwhile;
+      endif; ?>
+    </div>
 
-			the_posts_pagination( array(
-				'prev_text' => twentyseventeen_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="screen-reader-text">' . __( 'Previous page', 'twentyseventeen' ) . '</span>',
-				'next_text' => '<span class="screen-reader-text">' . __( 'Next page', 'twentyseventeen' ) . '</span>' . twentyseventeen_get_svg( array( 'icon' => 'arrow-right' ) ),
-				'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentyseventeen' ) . ' </span>',
-			) );
+  </div>
 
-		else :
+  <div class="timeline hide-state">
+    <?php
+    if ( have_posts() ) :  /* Start the Loop */
+      while ( have_posts() ) : the_post(); ?>
 
-			get_template_part( 'template-parts/post/content', 'none' );
+      <a class="timeline-item" data-target="#item-<?php echo get_the_slug(); ?>" href="#item-<?php echo get_the_slug(); ?>">
+        <?php echo get_the_title(); ?>
+      </a>
 
-		endif; ?>
+      <?php endwhile;
+    endif; ?>
+    <span class="active-point"></span>
+  </div>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
-	<?php get_sidebar(); ?>
-</div><!-- .wrap -->
+</main>
 
 <?php get_footer();
