@@ -42,9 +42,15 @@ function shortcode_carousel($atts){
 					<div class="archive-head carousel-container">
 						<?php $count = 0; ?>
 						<?php while ( $products->have_posts() ) :  $products->the_post();
-							if ( get_the_ID($products->get_post()) != $except ) {
+							if ( get_the_ID($products->get_post()) != $except) {
+								$cCat = get_the_terms( $products->get_post()->id, 'product_cat' )[0]->name;
+								if( $cCat == $category ){
+
+								// var_dump($category);
+								// var_dump(get_the_terms( $products->get_post()->id, 'product_cat' ));
 								include( locate_template("template-parts/woocommerce/content-boutique-product.php") );
 								$count++;
+								}
 							}
 						endwhile; ?>
 					</div>
