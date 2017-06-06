@@ -45,14 +45,16 @@ function shortcode_carousel($atts){
 							if ( get_the_ID($products->get_post()) != $except) {
 								$cCat = get_the_terms( $products->get_post()->id, 'product_cat' )[0]->name;
 								if( $cCat == $category ){
-
-								// var_dump($category);
-								// var_dump(get_the_terms( $products->get_post()->id, 'product_cat' ));
 								include( locate_template("template-parts/woocommerce/content-boutique-product.php") );
 								$count++;
 								}
 							}
 						endwhile; ?>
+						<?php
+						if ($count < 1){
+							echo "<p class='no-product'>Il n'y a pas d'autre produit correspondant à cette catégorie.</p>";
+						}
+						 ?>
 					</div>
 				</div>
 				<div class="carousel-control">

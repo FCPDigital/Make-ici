@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main id="abonnements-archive" class="site-main" role="main">
+<main id="archive" class="site-main" role="main">
   <div class="landing">
     <div class="container left-border">
       <h1><?php echo single_cat_title(); ?></h1>

@@ -1202,6 +1202,9 @@ footer {
         color: black;
         text-decoration: underline; }
 
+#page h1 {
+  margin-bottom: 32px; }
+
 .carousel .carousel-control {
   display: none; }
 .carousel .carousel-body {
@@ -1560,23 +1563,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 23px;
-          top: 28px; }
+          left: 318px;
+          top: 238px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 146px;
-          top: 193px; }
+          left: 15px;
+          top: 206px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 217px;
-          top: 64px; }
+          left: 282px;
+          top: 189px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 248px;
-          top: 201px; }
+          left: 259px;
+          top: 138px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 6px;
-          top: 191px; }
+          left: 77px;
+          top: 204px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 91px;
-          top: 133px; }
+          left: 113px;
+          top: 81px; }
 
 @keyframes scale {
   0% {

@@ -351,7 +351,7 @@ AwesomePanel = {
       this.config.snapping = (args.snapping || args.snapping == false) ? args.snapping : true;
     }
 
-    if(this.panels){
+    if(this.panels && this.panels.length > 0){
       if(this.config.enableTimeline){
         this.timeline = document.querySelector(".timeline");
         this.timelineItems = document.querySelectorAll(".timeline-item");
@@ -636,7 +636,7 @@ function scrollToTop(){
 //               Visite Guidée
 //
 ////////////////////////////////////////////////////////////////////////////////
-// 
+//
 // Visite = {
 //   setConfig:function(args){
 //     this.config = {};
