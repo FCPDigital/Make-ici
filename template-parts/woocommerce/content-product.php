@@ -25,7 +25,7 @@
         <?php if( get_field("duration") ){ ?>
           <div class="cost_per_month fa-container">
             <i class="fa fa-clock-o" aria-hidden="true"></i>
-            <p>Durée : </p>
+            <p>Durée : <?php echo get_field("duration"); ?></p>
           </div>
         <?php } ?>
 
