@@ -636,31 +636,114 @@ function scrollToTop(){
 //               Visite Guidée
 //
 ////////////////////////////////////////////////////////////////////////////////
-//
-// Visite = {
-//   setConfig:function(args){
-//     this.config = {};
-//     this.config.plan = {};
-//     if(args.plan){
-//       this.config.plan.hoverClass = (args.plan.hoverClass) ? args.plan.hoverClass : null;
-//       this.config.plan.clickClass = (args.plan.clickClass) ? args.plan.clickClass : "active-stage";
-//       this.config.plan.inactiveClass = (args.plan.inactiveClass) ? args.plan.inactiveClass : "inactive-stage";
-//     }
-//   },
-//   initEvents:function(){
-//     for(i=0; i<this.plan.stage.length; i++){
-//
-//     }
-//   },
-//   init:function(args){
-//     this.plan = document.querySelector(".plan-container");
-//     if(this.plan){
-//       this.stage = this.plan.querySelectorAll(".stage");
-//       this.setConfig(args);
-//
-//     }
-//   }
-// }
+
+
+Visite = {
+  currentActive: null,
+  currentHover: null,
+  setConfig:function(args){
+    this.config = {};
+    this.config.plan = {};
+    if(args.plan){
+      this.config.plan.hoverClass = (args.plan.hoverClass) ? args.plan.hoverClass : null;
+      this.config.plan.notHoverClass = (args.plan.notHoverClass) ? args.plan.notHoverClass : null;
+      this.config.plan.clickClass = (args.plan.clickClass) ? args.plan.clickClass : "active-stage";
+      this.config.plan.inactiveClass = (args.plan.inactiveClass) ? args.plan.inactiveClass : "inactive-stage";
+    }
+  },
+
+  //////// EVENTS
+  initHoverPlan:function(el){
+    var self = this;
+    el.addEventListener("mouseenter", function(e){
+      for(i=0; i<self.stage.length; i++){
+        self.stage[i].classList.remove(self.config.plan.hoverClass);
+        if(self.config.plan.notHoverClass) {
+          self.stage[i].classList.add(self.config.plan.notHoverClass);
+        }
+      }
+      if(self.config.plan.notHoverClass) {
+        this.classList.remove(self.config.plan.notHoverClass);
+      }
+      this.classList.add(self.config.plan.hoverClass);
+      self.currentHover = this;
+      e.stopPropagation();
+    }, false)
+
+    el.addEventListener("mouseout", function(){
+      this.classList.remove(self.config.plan.hoverClass);
+      for(i=0; i<self.stage.length; i++){
+        if(self.config.plan.notHoverClass) {
+          self.stage[i].classList.remove(self.config.plan.notHoverClass);
+        }
+      }
+      self.currentHover = null;
+    })
+  },
+
+  initClickClass:function(el){
+    var self = this;
+    el.addEventListener("click", function(){
+      for(i=0; i<self.stage.length; i++){
+        self.stage[i].classList.remove(self.config.plan.clickClass);
+      }
+      if(self.currentActive) {
+        self.currentActive = null;
+        this.classList.remove(self.config.plan.clickClass);
+        self.plan.classList.remove("has-active-stage")
+      } else {
+        this.classList.add(self.config.plan.clickClass);
+        self.plan.classList.add("has-active-stage")
+        self.currentActive = this;
+      }
+    })
+  },
+
+  setActiveStage:function(el){
+
+  },
+
+  genPathPointer:function(){
+
+  },
+
+  initPointerHover:function(el){
+    el.addEventListener("mouseenter", function(){
+      var left = this.offsetTop;
+      var top = this.offsetLeft;
+      this.genPathPointer();
+    })
+    el.addEventListener("click", function(e){
+      if(this.className.match("pointer-active")) {
+        this.classList.remove("pointer-active")
+      } else {
+        this.classList.add("pointer-active")
+      }
+      e.stopPropagation();
+    })
+  },
+
+  initEvents:function(){
+    for(i=0; i<this.stage.length; i++){
+      console.log(this.stage[i]);
+      if(this.config.plan.hoverClass) this.initHoverPlan(this.stage[i]);
+      if(this.config.plan.hoverClass) this.initClickClass(this.stage[i]);
+    }
+    for(i=0; i<this.pointer.length; i++){
+      this.initPointerHover(this.pointer[i]);
+    }
+  },
+  init:function(args){
+    this.plan = document.querySelector(".plan-container");
+    if(this.plan){
+      this.path = document.getElementById("path");
+      this.stage = this.plan.querySelectorAll(".stage");
+      this.pointer = this.plan.querySelectorAll(".stage .pointer");
+      this.setConfig(args);
+      this.initEvents();
+    }
+  }
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 //
@@ -682,6 +765,13 @@ window.addEventListener("load", function(){
   var carousel = new MakeCarousel(document.querySelector("#main-carousel"));
   // perspectivecorner.init();
   XhrManage.init();
+
+  Visite.init({
+    plan: {
+      hoverClass: "active-hover",
+      notHoverClass: "inactive-hover"
+    }
+  });
 
 
 }, false)

@@ -1482,7 +1482,11 @@ form select {
     position: relative;
     height: 100vh;
     transform: rotateX(100deg) rotateZ(60deg);
-    transition: 10s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
     transform-style: preserve-3d; }
     #visite .plan-container .stage {
       position: absolute;
@@ -1498,16 +1502,15 @@ form select {
       -ms-transition: 0.5s;
       -o-transition: 0.5s;
       transition: 0.5s;
-      transform-style: preserve-3d;
       top: 200px; }
       #visite .plan-container .stage:hover {
         opacity: 1; }
         #visite .plan-container .stage:hover .pointer {
-          -webkit-transform: translateZ(10px);
-          -moz-transform: translateZ(10px);
-          -ms-transform: translateZ(10px);
-          -o-transform: translateZ(10px);
-          transform: translateZ(10px); }
+          -webkit-transform: translateZ(10px) rotate(180deg);
+          -moz-transform: translateZ(10px) rotate(180deg);
+          -ms-transform: translateZ(10px) rotate(180deg);
+          -o-transform: translateZ(10px) rotate(180deg);
+          transform: translateZ(10px) rotate(180deg); }
       #visite .plan-container .stage:nth-child(1) {
         -webkit-transform: translateZ(0px);
         -moz-transform: translateZ(0px);
@@ -1550,36 +1553,146 @@ form select {
         border-radius: 100%;
         width: 20px;
         height: 20px;
+        background-size: cover;
+        background-position: 20px;
+        background-repeat: no-repeat;
+        cursor: pointer;
         -webkit-transition: 0.4s;
         -moz-transition: 0.4s;
         -ms-transition: 0.4s;
         -o-transition: 0.4s;
         transition: 0.4s;
-        -webkit-transform: translateZ(0);
-        -moz-transform: translateZ(0);
-        -ms-transform: translateZ(0);
-        -o-transform: translateZ(0);
-        transform: translateZ(0);
+        -webkit-transform: translateZ(0) rotate(180deg);
+        -moz-transform: translateZ(0) rotate(180deg);
+        -ms-transform: translateZ(0) rotate(180deg);
+        -o-transform: translateZ(0) rotate(180deg);
+        transform: translateZ(0) rotate(180deg);
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 318px;
-          top: 238px; }
+          left: 29px;
+          top: 214px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 15px;
-          top: 206px; }
+          left: 204px;
+          top: 88px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 282px;
-          top: 189px; }
+          left: 80px;
+          top: 10px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 259px;
-          top: 138px; }
+          left: 375px;
+          top: 87px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 77px;
-          top: 204px; }
+          left: 28px;
+          top: 207px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 113px;
-          top: 81px; }
+          left: 115px;
+          top: 149px; }
+    #visite .plan-container .stage.active-hover:nth-child(1) {
+      -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
+      -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);
+      -ms-transform: translateZ(0px) scale(1.1) rotateX(10deg);
+      -o-transform: translateZ(0px) scale(1.1) rotateX(10deg);
+      transform: translateZ(0px) scale(1.1) rotateX(10deg); }
+    #visite .plan-container .stage.active-hover:nth-child(2) {
+      -webkit-transform: translateZ(120px) scale(1.1) rotateX(10deg);
+      -moz-transform: translateZ(120px) scale(1.1) rotateX(10deg);
+      -ms-transform: translateZ(120px) scale(1.1) rotateX(10deg);
+      -o-transform: translateZ(120px) scale(1.1) rotateX(10deg);
+      transform: translateZ(120px) scale(1.1) rotateX(10deg); }
+    #visite .plan-container .stage.active-hover:nth-child(3) {
+      -webkit-transform: translateZ(240px) scale(1.1) rotateX(10deg);
+      -moz-transform: translateZ(240px) scale(1.1) rotateX(10deg);
+      -ms-transform: translateZ(240px) scale(1.1) rotateX(10deg);
+      -o-transform: translateZ(240px) scale(1.1) rotateX(10deg);
+      transform: translateZ(240px) scale(1.1) rotateX(10deg); }
+    #visite .plan-container .stage.active-hover:nth-child(4) {
+      -webkit-transform: translateZ(360px) scale(1.1) rotateX(10deg);
+      -moz-transform: translateZ(360px) scale(1.1) rotateX(10deg);
+      -ms-transform: translateZ(360px) scale(1.1) rotateX(10deg);
+      -o-transform: translateZ(360px) scale(1.1) rotateX(10deg);
+      transform: translateZ(360px) scale(1.1) rotateX(10deg); }
+    #visite .plan-container .stage.active-hover:nth-child(5) {
+      -webkit-transform: translateZ(480px) scale(1.1) rotateX(10deg);
+      -moz-transform: translateZ(480px) scale(1.1) rotateX(10deg);
+      -ms-transform: translateZ(480px) scale(1.1) rotateX(10deg);
+      -o-transform: translateZ(480px) scale(1.1) rotateX(10deg);
+      transform: translateZ(480px) scale(1.1) rotateX(10deg); }
+    #visite .plan-container .stage.active-hover:nth-child(6) {
+      -webkit-transform: translateZ(600px) scale(1.1) rotateX(10deg);
+      -moz-transform: translateZ(600px) scale(1.1) rotateX(10deg);
+      -ms-transform: translateZ(600px) scale(1.1) rotateX(10deg);
+      -o-transform: translateZ(600px) scale(1.1) rotateX(10deg);
+      transform: translateZ(600px) scale(1.1) rotateX(10deg); }
+    #visite .plan-container .stage.inactive-hover:nth-child(1) {
+      -webkit-transform: translateZ(0px) scale(0.8) rotateX(0deg);
+      -moz-transform: translateZ(0px) scale(0.8) rotateX(0deg);
+      -ms-transform: translateZ(0px) scale(0.8) rotateX(0deg);
+      -o-transform: translateZ(0px) scale(0.8) rotateX(0deg);
+      transform: translateZ(0px) scale(0.8) rotateX(0deg); }
+    #visite .plan-container .stage.inactive-hover:nth-child(2) {
+      -webkit-transform: translateZ(120px) scale(0.8) rotateX(0deg);
+      -moz-transform: translateZ(120px) scale(0.8) rotateX(0deg);
+      -ms-transform: translateZ(120px) scale(0.8) rotateX(0deg);
+      -o-transform: translateZ(120px) scale(0.8) rotateX(0deg);
+      transform: translateZ(120px) scale(0.8) rotateX(0deg); }
+    #visite .plan-container .stage.inactive-hover:nth-child(3) {
+      -webkit-transform: translateZ(240px) scale(0.8) rotateX(0deg);
+      -moz-transform: translateZ(240px) scale(0.8) rotateX(0deg);
+      -ms-transform: translateZ(240px) scale(0.8) rotateX(0deg);
+      -o-transform: translateZ(240px) scale(0.8) rotateX(0deg);
+      transform: translateZ(240px) scale(0.8) rotateX(0deg); }
+    #visite .plan-container .stage.inactive-hover:nth-child(4) {
+      -webkit-transform: translateZ(360px) scale(0.8) rotateX(0deg);
+      -moz-transform: translateZ(360px) scale(0.8) rotateX(0deg);
+      -ms-transform: translateZ(360px) scale(0.8) rotateX(0deg);
+      -o-transform: translateZ(360px) scale(0.8) rotateX(0deg);
+      transform: translateZ(360px) scale(0.8) rotateX(0deg); }
+    #visite .plan-container .stage.inactive-hover:nth-child(5) {
+      -webkit-transform: translateZ(480px) scale(0.8) rotateX(0deg);
+      -moz-transform: translateZ(480px) scale(0.8) rotateX(0deg);
+      -ms-transform: translateZ(480px) scale(0.8) rotateX(0deg);
+      -o-transform: translateZ(480px) scale(0.8) rotateX(0deg);
+      transform: translateZ(480px) scale(0.8) rotateX(0deg); }
+    #visite .plan-container .stage.inactive-hover:nth-child(6) {
+      -webkit-transform: translateZ(600px) scale(0.8) rotateX(0deg);
+      -moz-transform: translateZ(600px) scale(0.8) rotateX(0deg);
+      -ms-transform: translateZ(600px) scale(0.8) rotateX(0deg);
+      -o-transform: translateZ(600px) scale(0.8) rotateX(0deg);
+      transform: translateZ(600px) scale(0.8) rotateX(0deg); }
+    #visite .plan-container.has-active-stage {
+      -webkit-transform: rotateX(100deg) rotateZ(0deg);
+      -moz-transform: rotateX(100deg) rotateZ(0deg);
+      -ms-transform: rotateX(100deg) rotateZ(0deg);
+      -o-transform: rotateX(100deg) rotateZ(0deg);
+      transform: rotateX(100deg) rotateZ(0deg); }
+      #visite .plan-container.has-active-stage .stage, #visite .plan-container.has-active-stage .stage.inactive-hover {
+        -webkit-transform: translateZ(-300px) rotateX(0deg);
+        -moz-transform: translateZ(-300px) rotateX(0deg);
+        -ms-transform: translateZ(-300px) rotateX(0deg);
+        -o-transform: translateZ(-300px) rotateX(0deg);
+        transform: translateZ(-300px) rotateX(0deg); }
+        #visite .plan-container.has-active-stage .stage.active-stage, #visite .plan-container.has-active-stage .stage.inactive-hover.active-stage {
+          -webkit-transform: translateZ(100px) rotateX(90deg);
+          -moz-transform: translateZ(100px) rotateX(90deg);
+          -ms-transform: translateZ(100px) rotateX(90deg);
+          -o-transform: translateZ(100px) rotateX(90deg);
+          transform: translateZ(100px) rotateX(90deg); }
+          #visite .plan-container.has-active-stage .stage.active-stage .pointer:hover, #visite .plan-container.has-active-stage .stage.inactive-hover.active-stage .pointer:hover {
+            -webkit-transform: translateZ(12px) scale(3) rotate(180deg);
+            -moz-transform: translateZ(12px) scale(3) rotate(180deg);
+            -ms-transform: translateZ(12px) scale(3) rotate(180deg);
+            -o-transform: translateZ(12px) scale(3) rotate(180deg);
+            transform: translateZ(12px) scale(3) rotate(180deg);
+            background-position: 0; }
+          #visite .plan-container.has-active-stage .stage.active-stage .pointer.pointer-active, #visite .plan-container.has-active-stage .stage.inactive-hover.active-stage .pointer.pointer-active {
+            -webkit-transform: translateZ(12px) scale(50) rotate(180deg);
+            -moz-transform: translateZ(12px) scale(50) rotate(180deg);
+            -ms-transform: translateZ(12px) scale(50) rotate(180deg);
+            -o-transform: translateZ(12px) scale(50) rotate(180deg);
+            transform: translateZ(12px) scale(50) rotate(180deg);
+            background-position: 20px; }
+        #visite .plan-container.has-active-stage .stage:not(.active-stage), #visite .plan-container.has-active-stage .stage.inactive-hover:not(.active-stage) {
+          opacity: 0; }
 
 @keyframes scale {
   0% {
