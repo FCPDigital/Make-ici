@@ -58,7 +58,7 @@ function shortcode_carousel($atts){
 					</div>
 				</div>
 				<div class="carousel-control">
-					<p class="carousel-control-mention">Voir d\'autres abonnements</p>
+					<p class="carousel-control-mention">Voir d'autres abonnements</p>
 					<a href="#" class="carousel-control-btn" data-direction="left"></a>
 					<a href="#" class="carousel-control-btn" data-direction="right"></a>
 				</div>

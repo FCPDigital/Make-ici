@@ -9,7 +9,7 @@
       <div class="archive-main-body">
         <?php $products = get_products_from_category($category);
         $count = $products->post_count;?>
-        <div class="product-carousel carousel <?php if($count > 4){echo 'active-control';} ?>">
+        <div class="product-carousel carousel <?php if($count > 3){echo 'active-control';} ?>">
           <div class="carousel-body">
             <div class="archive-head carousel-container">
               <?php  /* Start the Loop */
