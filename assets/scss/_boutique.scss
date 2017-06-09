@@ -7,23 +7,25 @@ des styles générique, aller dans la page _archive.scss
   h1 {
     margin-bottom: $medium-pad;
   }
-  .archive-head .archive-head-item {
-    background-color: transparent;
-    padding-bottom: 0px;
-    .title-container {
-      padding: 20px 0;
-      height: 60px;
-    }
-    .btn {
-      position: static;
+  .loop-archive {
+    .archive-body-item .archive-main {
       width: 100%;
-      margin-top: 10px;
-      @include transform(none);
-
     }
-  }
-  .loop-archive .archive-body-item .archive-main {
-    width: 100%;
+    .archive-head .archive-head-item {
+      background-color: transparent;
+      padding-bottom: 0px;
+      .title-container {
+        padding: 20px 0;
+        height: 60px;
+      }
+      .btn {
+        position: static;
+        width: 100%;
+        margin-top: 10px;
+        @include transform(none);
+
+      }
+    }
   }
 }
 

@@ -5,6 +5,7 @@
   .carousel-body {
     position: relative;
     overflow: hidden;
+    width: 75%;
     .carousel-container {
       @include transition(.4s);
       display: flex;
@@ -13,10 +14,11 @@
         position: relative;
         flex: 1;
         .crop-img {
-          height: 120px;
+          height: 160px;
           overflow: hidden;
           img {
-            width: 100%;
+            width: 130%;
+            margin-left: -15px;
           }
         }
         &.compact {
@@ -32,12 +34,15 @@
             flex-direction: column;
             justify-content: center;
             .title {
-              font-size: 1.1em;
+              font-size: 15px;
               font-weight: bold;
               line-height: 1em;
               margin-top: 0px;
               margin-bottom: 0;
             }
+          }
+          .crop-img img {
+            margin-left:0;
           }
           .btn {
             margin: 0;
@@ -95,17 +100,21 @@
 }
 
 @media screen and (max-width:$break-point-2){
-  .carousel.active-control {
-    position: relative;
+  .carousel {
     .carousel-body {
       width: 100%;
-      padding-top: 100px;
     }
-    .carousel-control {
-      position: absolute;
-      width: 100%;
-      padding: 20px 0;
-      top: 0;
+    &.active-control {
+      position: relative;
+      .carousel-body {
+        padding-top: 100px;
+      }
+      .carousel-control {
+        position: absolute;
+        width: 100%;
+        padding: 20px 0;
+        top: 0;
+      }
     }
   }
 }

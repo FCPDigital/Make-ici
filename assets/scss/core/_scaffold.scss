@@ -34,7 +34,7 @@ body {
     position: absolute;
     display: block;
     left: -50px;
-    width: 20px;
+    width: 17px;
     height: 60%;
     background-color: $color-3;
   }
@@ -219,7 +219,8 @@ pre {
     border-radius: 0;
     font-weight: bold;
     font-size: 12px;
-    padding: 10px 30px;
+    padding: 10px 20px;
+    letter-spacing: 1px;
   }
 
   &[data-wpxhr].loading {
@@ -346,9 +347,6 @@ pre {
 ////////////////////////////////////////////////////////////////////////////////
 
 
-@media (min-width: 1300px) {
- .container{max-width: 900px;}
-}
 
 
 @media (max-width: 1230px) {
