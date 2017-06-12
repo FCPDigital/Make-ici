@@ -27,13 +27,21 @@ function shortcode_carousel($atts){
 
 	if($category){
 		$products = get_products_from_category($category);
-		$count = $products->post_count;
-
-		if($except){
-			$count--;
-		}
 		// var_dump($products->posts);
-		$active = ($count > 4) ? "active-control" : "";
+
+		$count=0;
+		//Parcours les posts
+		while ( $products->have_posts() ) :  $products->the_post();
+			//Si l'ID est différent de l'exception
+			if ( get_the_ID($products->get_post()) != $except) {
+				$cCat = get_the_terms( $products->get_post()->id, 'product_cat' )[0]->name;
+				//Si la catégorie du post est bien celle qu'on parcours on incrémente
+				if( $cCat == $category ){
+					$count++;
+				}
+			}
+		endwhile;
+		$active = ($count > 3) ? "active-control" : "";
 
 		?>
 		<div class="archive-main-body">
