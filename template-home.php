@@ -24,6 +24,7 @@ get_header(); ?>
     <div class="container">
       <h2 class="left-full-border">Prochaines formations</h2>
       <?php get_last_posts(); ?>
+      <div class="clr"></div>
     </div>
   </div>
   <div class="section-post equipements" style="background-image:url(<?php echo get_field('bg_equipement'); ?>);">
