@@ -27,7 +27,7 @@ function get_last_posts(){
 					$count = 0;
 					foreach ( $products as $product ) : setup_postdata( $product );
 					if($count < $limit){
-						include( locate_template("template-parts/woocommerce/content-boutique-product.php") );
+						include( locate_template("template-parts/woocommerce/content-last-products.php") );
 						$count++;
 					}
 				 	endforeach;

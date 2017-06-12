@@ -1,6 +1,5 @@
 
 <?php
-$product = $products->get_post();
 ?>
 
 
