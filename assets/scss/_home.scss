@@ -1,3 +1,35 @@
-#home {
-  
+.homepage {
+  color: white;
+  h2 {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: white;
+  }
+  & > div, .container {
+    position: relative;
+  }
+
+  .section-post {
+    padding: 75px 0;
+    &.last-posts {
+      .carousel-body {
+        float: left;
+      }
+      .see-all {
+        width: 25%;
+        float: left;
+        text-align: right;
+        padding-top: 200px;
+        .btn {
+          padding: 10px;
+        }
+      }
+    }
+    &.equipements {
+      .center {
+        max-width: 600px;
+        margin:auto; text-align: center;
+      }
+    }
+  }
 }

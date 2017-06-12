@@ -112,3 +112,14 @@ des styles générique, aller dans la page _archive.scss
     }
   }
 }
+
+.checkout-page {
+  background-color: white;
+  .landing {
+    color: black;
+    padding-top: $big-pad;
+    &::before {
+      background-color: white;
+    }
+  }
+}

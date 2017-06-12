@@ -1,4 +1,9 @@
-<?php $product = $products->get_post(); ?>
+
+<?php
+if(!$product){
+  $product = $products->get_post();
+}
+?>
 
 
 <?php if( isset($style) && $style=="compact" ){ ?>

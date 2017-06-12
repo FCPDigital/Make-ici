@@ -10,8 +10,47 @@ require_once('helpers/wp_bootstrap_navwalker.php');
 //
 //////////////////////////////////////////////////////
 
-function shortcode_carousel($atts){
+function get_last_posts(){
+	$products = get_posts(array(
+		'post_type' => 'product',
+		'orderby' => 'post_date',
+		'order' => "DESC",
+		'limit' => 3,
+	));
+	?>
+	<div class="archive-main-body">
+		<div class="product-carousel carousel">
+			<div class="carousel-body">
+				<div class="archive-head carousel-container">
+					<?php
+					foreach ( $products as $product ) : setup_postdata( $product );
+						include( locate_template("template-parts/woocommerce/content-boutique-product.php") );
+				 	endforeach;
+					?>
+				</div>
+			</div>
+			<div class="see-all">
+				<a href="<?php echo get_permalink(get_page_by_title('Formations')); ?>" class="btn btn-colored">Voir toute les formations</a>
+			</div>
+		</div>
+	</div>
+	<?php
+}
 
+
+function shortcode_frames($atts){
+	$args = shortcode_atts( array(
+		'value' => null
+	), $atts );
+	$value = $args["value"];
+	if($value){
+		echo "<span class='framed'>".$value."</span>";
+	}
+}
+
+add_shortcode( 'frame', 'shortcode_frames' );
+
+function shortcode_carousel($atts){
 	$args = shortcode_atts( array(
 		'category' => null,
 		'except' => null,
@@ -45,7 +84,6 @@ function shortcode_carousel($atts){
 		} else {
 			$active = "";
 		}
-		
 		?>
 		<div class="archive-main-body">
 			<div class="product-carousel carousel <?php echo $active; ?>">
@@ -74,7 +112,6 @@ function shortcode_carousel($atts){
 					<a href="#" class="carousel-control-btn" data-direction="right"></a>
 				</div>
 			</div>
-
 		</div>
 		<?php
 
@@ -167,7 +204,7 @@ function get_category_slug($category) {
 
 function get_products_from_category($category){
 
-	$productArgs = array( 'post_type' => 'product', 'posts_per_page' => -1, 'product_cat' => $category->name, 'orderby' => 'rand' );
+	$productArgs = array( 'post_type' => 'product', 'posts_per_page' => -1, 'product_cat' => $category->name, 'orderby' => 'post_date', 'order' => "DESC" );
 	$products = new WP_Query( $productArgs );
 	return $products ;
 }
