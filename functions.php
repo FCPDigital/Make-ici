@@ -23,8 +23,6 @@ function shortcode_carousel($atts){
 	$category = $args["category"] ? $args["category"] : null;
 	$style =  $args["style"] ? $args["style"] : null;
 
-
-
 	if($category){
 		$products = get_products_from_category($category);
 		// var_dump($products->posts);
@@ -41,8 +39,13 @@ function shortcode_carousel($atts){
 				}
 			}
 		endwhile;
-		$active = ($count > 3) ? "active-control" : "";
 
+		if($count > 3){
+			$active = "active-control";
+		} else {
+			$active = "";
+		}
+		
 		?>
 		<div class="archive-main-body">
 			<div class="product-carousel carousel <?php echo $active; ?>">
