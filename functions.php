@@ -11,11 +11,12 @@ require_once('helpers/wp_bootstrap_navwalker.php');
 //////////////////////////////////////////////////////
 
 function get_last_posts(){
+	$limit = 3;
 	$products = get_posts(array(
 		'post_type' => 'product',
 		'orderby' => 'post_date',
 		'order' => "DESC",
-		'limit' => 3,
+		'limit' => $limit,
 	));
 	?>
 	<div class="archive-main-body">
@@ -23,8 +24,12 @@ function get_last_posts(){
 			<div class="carousel-body">
 				<div class="archive-head carousel-container">
 					<?php
+					$count = 0;
 					foreach ( $products as $product ) : setup_postdata( $product );
+					if($count < $limit){
 						include( locate_template("template-parts/woocommerce/content-boutique-product.php") );
+						$count++;
+					}
 				 	endforeach;
 					?>
 				</div>
