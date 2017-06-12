@@ -1,8 +1,4 @@
 
-<?php
-?>
-
-
 <?php if( isset($style) && $style=="compact" ){ ?>
 
 

@@ -6,10 +6,10 @@
 get_header(); ?>
 
 <main id="page" class="site-main homepage" role="main">
-  <div class="landing">
-
+  <div class="landing" style="background-image:url(<?php echo get_field('bg_main'); ?>);">
+    <a id="scroll" href="#anchor-1" data-scroll>Découvrez ICI Montreuil</a>
   </div>
-  <div class="section-post" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>);">
+  <div id="anchor-1" class="section-post" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>);">
     <div class="container">
 			<?php
 			while ( have_posts() ) : the_post(); ?>

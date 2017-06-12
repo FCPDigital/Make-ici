@@ -1003,6 +1003,41 @@ des styles générique, aller dans la page _archive.scss
     color: white; }
   .homepage > div, .homepage .container {
     position: relative; }
+  .homepage .landing {
+    min-height: 600px;
+    height: 100vh;
+    text-align: center;
+    position: relative; }
+    .homepage .landing #scroll {
+      color: #ffed00;
+      position: absolute;
+      text-decoration: none;
+      bottom: 100px;
+      display: inline-block;
+      padding-bottom: 10px;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      -moz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+      -o-transform: translateX(-50%);
+      transform: translateX(-50%); }
+      .homepage .landing #scroll::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        left: calc(50% - 15px);
+        bottom: -30px;
+        background-image: url("assets/images/arrow.png");
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg); }
   .homepage .section-post {
     padding: 75px 0; }
     .homepage .section-post.last-posts .carousel-body {
@@ -1658,23 +1693,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 329px;
-          top: 12px; }
+          left: 278px;
+          top: 232px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 233px;
-          top: 20px; }
+          left: 287px;
+          top: 128px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 239px;
-          top: 104px; }
+          left: 400px;
+          top: 183px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 217px;
-          top: 33px; }
+          left: 48px;
+          top: 58px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 263px;
-          top: 237px; }
+          left: 1px;
+          top: 128px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 378px;
-          top: 106px; }
+          left: 142px;
+          top: 45px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);

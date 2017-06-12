@@ -8,6 +8,36 @@
   & > div, .container {
     position: relative;
   }
+  .landing {
+    min-height: 600px;
+    height: 100vh;
+    text-align: center;
+    position: relative;
+    #scroll {
+      color: $color-3;
+      position: absolute;
+      text-decoration: none;
+      bottom: 100px;
+      display: inline-block;
+      padding-bottom: 10px;
+      left: 50%;
+      @include transform(translateX(-50%));
+      &::after {
+        content:"";
+        display: block;
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        left: calc(50% - 15px);
+        bottom: -30px;
+        background-image: url("assets/images/arrow.png");
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        @include transform(rotate(90deg));
+      }
+    }
+  }
 
   .section-post {
     padding: 75px 0;
