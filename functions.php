@@ -198,12 +198,12 @@ function get_category_title($category){
 }
 
 function get_woocommerce_category_name($post){
-	$cats = get_terms( array(
-		'taxonomy' => 'product_cat',
-		'hide_empty' => 0,
-		'orderby' => 'ASC',
-		'parent' =>0
-	));
+	// $cats = get_terms( array(
+	// 	'taxonomy' => 'product_cat',
+	// 	'hide_empty' => 0,
+	// 	'orderby' => 'ASC',
+	// 	'parent' =>0
+	// ));
 }
 
 function get_category_slug($category) {

@@ -2,9 +2,9 @@
 
 
   <div class="carousel-item">
-    <p class="out-name">
+    <!-- <p class="out-name">
       <?php echo $product->get_categories( ', ', '<span>' . _n( 'Category:', 'Categories:', sizeof( get_the_terms( $post->ID, 'product_cat' ) ), 'woocommerce' ) . ' ', '.</span>' ); ?>
-    </p>
+    </p> -->
 
     <?php if(has_post_thumbnail($product)) : ?>
       <div class="crop-img">
