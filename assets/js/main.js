@@ -753,9 +753,6 @@ Visite = {
 ////////////////////////////////////////////////////////////////////////////////
 
 HeaderScroll = {
-  get function(){
-    return this.el;
-  },
   initScroll:function(){
     var top = window.scrollTop;
     if(top>window.innerHeight/3) {
@@ -766,7 +763,9 @@ HeaderScroll = {
   },
   init:function(){
     this.el = document.querySelector("#main-header");
-    window.addEventListener("scroll", this.initScroll, false);
+    if( this.el ){
+      window.addEventListener("scroll", this.initScroll, false);
+    }
   }
 }
 

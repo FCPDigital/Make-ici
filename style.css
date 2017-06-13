@@ -867,7 +867,7 @@ h1 {
         width: calc(100% - 100px);
         text-align: left; } }
 @media screen and (min-height: 600px) {
-  .loop-archive .archive-body-item {
+  .loop-archive .archive-body-item, .section-post {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -1709,23 +1709,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 314px;
-          top: 135px; }
+          left: 68px;
+          top: 143px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 355px;
-          top: 101px; }
+          left: 34px;
+          top: 142px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 291px;
-          top: 210px; }
+          left: 378px;
+          top: 28px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 328px;
-          top: 1px; }
+          left: 62px;
+          top: 139px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 1px;
-          top: 90px; }
+          left: 121px;
+          top: 75px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 159px;
-          top: 49px; }
+          left: 324px;
+          top: 50px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);

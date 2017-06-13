@@ -26,6 +26,7 @@ h1 {
   }
 }
 
+
 .landing {
   min-height: calc(100vh - 100px);
   // min-height: 600px;
@@ -455,7 +456,7 @@ h1 {
 }
 
 @media screen and (min-height: 600px) {
-  .loop-archive .archive-body-item {
+  .loop-archive .archive-body-item, .section-post  {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
