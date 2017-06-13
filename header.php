@@ -11,7 +11,7 @@
 	</head>
 
 	<body <?php body_class(); ?>>
-		<header class="">
+		<header id="main-header" class="transparent">
 			<nav id="navbar" class="navbar navbar-default navbar-fixed-top">
 				<div class="container-fluid">
 					<div class="navbar-header">

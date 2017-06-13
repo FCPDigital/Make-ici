@@ -1,29 +1,9 @@
 
-<?php if( isset($style) && $style=="compact" ){ ?>
-
-
-  <div class="carousel-item compact">
-
-    <div class="title-container">
-      <p class="title">
-        <?php echo get_the_title($product); ?>
-      </p>
-    </div>
-
-    <?php if(has_post_thumbnail($product)) : ?>
-      <div class="crop-img">
-        <img src="<?php echo get_the_post_thumbnail_url($product); ?>" alt="">
-      </div>
-    <?php endif; ?>
-
-    <a href="<?php echo get_permalink($product); ?>" data-by-xhr class="btn btn-light">En savoir plus</a>
-  </div>
-
-
-<?php } else { ?>
 
 
   <div class="carousel-item">
+    <p class="out-name"><?php echo get_woocommerce_category_name(get_post()); ?></p>
+
     <?php if(has_post_thumbnail($product)) : ?>
       <div class="crop-img">
         <img src="<?php echo get_the_post_thumbnail_url($product); ?>" alt="">
@@ -38,6 +18,3 @@
 
     <a href="<?php echo get_permalink($product); ?>" data-by-xhr class="btn btn-light">En savoir plus</a>
   </div>
-
-
-<?php } ?>

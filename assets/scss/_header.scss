@@ -51,6 +51,7 @@ header {
       animation-iteration-count: 1;
     }
   }
+
   .navbar-brand {
     height: 70px;
     padding: 10px 15px;
@@ -60,7 +61,9 @@ header {
       margin-top: -5px;
     }
   }
-
+  .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
+    background-color: transparent;
+  }
   .navbar-collapse {
     .navbar-nav {
       float: right;
@@ -207,6 +210,26 @@ header {
             }
           }
         }
+      }
+    }
+  }
+  &.transparent .navbar {
+    background-color: transparent;
+    color: white;
+    &.navbar-default {
+      border-color: transparent;
+    }
+    .navbar-nav .menu-item > a {
+      color: white;
+      &:hover {
+        color: white !important;
+        &::before {
+          border-color: white;
+        }
+      }
+      &::after { background-color: white; }
+      &.dropdown-toggle {
+        color: black;
       }
     }
   }

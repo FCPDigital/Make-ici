@@ -81,10 +81,11 @@ des styles générique, aller dans la page _archive.scss
         }
       }
     }
-    #scroll-container {
-      padding-top: 30px;
-    }
+
     .archive-body-item {
+      &:first-child {
+        padding-top: 100px;
+      }
       border-top: 0;
 
     }

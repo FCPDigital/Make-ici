@@ -198,6 +198,13 @@ function get_category_title($category){
 	}
 }
 
+function get_woocommerce_category_name($post){
+	var_dump($post->ID);
+	$terms = get_the_terms( $post->ID, 'product_cat' );
+	var_dump($terms);
+	return $terms;
+}
+
 function get_category_slug($category) {
 	if($category){
 		$slug = $category->slug;

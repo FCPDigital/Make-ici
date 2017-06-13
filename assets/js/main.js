@@ -745,6 +745,31 @@ Visite = {
   }
 }
 
+
+////////////////////////////////////////////////////////////////////////////////
+//
+//                Header Manage
+//
+////////////////////////////////////////////////////////////////////////////////
+
+HeaderScroll = {
+  get function(){
+    return this.el;
+  },
+  initScroll:function(){
+    var top = window.scrollTop;
+    if(top>window.innerHeight/3) {
+      HeaderScroll.el.className = HeaderScroll.el.className.replace("transparent", "");
+    } else if ( !HeaderScroll.el.className.match("transparent") ){
+      HeaderScroll.el.className += "transparent";
+    }
+  },
+  init:function(){
+    this.el = document.querySelector("#main-header");
+    window.addEventListener("scroll", this.initScroll, false);
+  }
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 //
 //                Window load
@@ -772,6 +797,8 @@ window.addEventListener("load", function(){
       notHoverClass: "inactive-hover"
     }
   });
+
+  HeaderScroll.init();
 
 
 }, false)

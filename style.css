@@ -471,7 +471,7 @@ h1 {
   min-height: 600px;
   padding: 50px 0;
   padding-top: 120px;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(40, 32, 28, 0.85);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -486,7 +486,7 @@ h1 {
     height: 100%;
     display: block;
     z-index: 0;
-    background-color: rgba(0, 0, 0, 0.8); }
+    background-color: rgba(40, 32, 28, 0.85); }
 
 .landing {
   min-height: calc(100vh - 100px);
@@ -508,7 +508,7 @@ h1 {
     height: 100%;
     display: block;
     z-index: 0;
-    background-color: rgba(0, 0, 0, 0.8); }
+    background-color: rgba(40, 32, 28, 0.85); }
   .landing .carousel .carousel-body {
     width: 100%; }
   .landing .carousel.active-control .carousel-body {
@@ -701,7 +701,7 @@ h1 {
       height: 100%;
       display: block;
       z-index: 0;
-      background-color: rgba(0, 0, 0, 0.8); }
+      background-color: rgba(40, 32, 28, 0.85); }
     .loop-archive .archive-body-item .container {
       transform: translateX(48px) translateZ(0); }
     .loop-archive .archive-body-item .archive-main {
@@ -965,10 +965,10 @@ des styles générique, aller dans la page _archive.scss
     font-size: 10px; }
     #single-product .loop-archive .fa-container.formator p strong {
       font-size: 12px; }
-#single-product .loop-archive #scroll-container {
-  padding-top: 30px; }
 #single-product .loop-archive .archive-body-item {
   border-top: 0; }
+  #single-product .loop-archive .archive-body-item:first-child {
+    padding-top: 100px; }
 #single-product .loop-archive .related_products {
   float: left; }
   #single-product .loop-archive .related_products .carousel-item {
@@ -1106,6 +1106,8 @@ header .navbar-brand {
     display: block;
     height: 60px;
     margin-top: -5px; }
+header .navbar-default .navbar-nav > .active > a, header .navbar-default .navbar-nav > .active > a:focus, header .navbar-default .navbar-nav > .active > a:hover {
+  background-color: transparent; }
 header .navbar-collapse .navbar-nav {
   float: right;
   margin: 0;
@@ -1231,6 +1233,21 @@ header .navbar-nav .menu-item.dropdown {
     header .navbar-nav .menu-item.dropdown .dropdown-menu .active a, header .navbar-nav .menu-item.dropdown .dropdown-menu .active a:focus, header .navbar-nav .menu-item.dropdown .dropdown-menu .active a:hover {
       background-color: #DDD;
       color: #444; }
+header.transparent .navbar {
+  background-color: transparent;
+  color: white; }
+  header.transparent .navbar.navbar-default {
+    border-color: transparent; }
+  header.transparent .navbar .navbar-nav .menu-item > a {
+    color: white; }
+    header.transparent .navbar .navbar-nav .menu-item > a:hover {
+      color: white !important; }
+      header.transparent .navbar .navbar-nav .menu-item > a:hover::before {
+        border-color: white; }
+    header.transparent .navbar .navbar-nav .menu-item > a::after {
+      background-color: white; }
+    header.transparent .navbar .navbar-nav .menu-item > a.dropdown-toggle {
+      color: black; }
 
 @media screen and (max-width: 585px) {
   header .static {
@@ -1314,9 +1331,6 @@ footer {
 
 #page h1 {
   margin-bottom: 32px; }
-
-#single-product {
-  margin-top: 16px; }
 
 .carousel .carousel-control {
   display: none; }
@@ -1693,23 +1707,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 278px;
-          top: 232px; }
+          left: 41px;
+          top: 83px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 287px;
-          top: 128px; }
+          left: 171px;
+          top: 55px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 400px;
-          top: 183px; }
+          left: 283px;
+          top: 62px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 48px;
-          top: 58px; }
+          left: 392px;
+          top: 205px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 1px;
-          top: 128px; }
+          left: 328px;
+          top: 12px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 142px;
-          top: 45px; }
+          left: 276px;
+          top: 7px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);
