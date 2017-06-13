@@ -26,3 +26,13 @@ Ci dessous sont listés l'ensemble des shortcodes ajouté dans ce thème
 ## Fonctions du thème
 
 `display_website_logo()` : Helpers qui affiche le logo  
+
+
+## Todo
+
+- Call to action homepage appelle au scroll
+- Super bloc dans Formations
+- timeline
+- Formation => c2a prochaine session | Pas de prochaine session
+- Ajout au panier même quand il n'y a pas de session
+- barre du footer au scroll

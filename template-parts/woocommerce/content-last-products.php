@@ -2,8 +2,6 @@
 
 
   <div class="carousel-item">
-    <!-- <p class="out-name">
-    </p> -->
 
     <?php if(has_post_thumbnail($product)) : ?>
       <div class="crop-img">

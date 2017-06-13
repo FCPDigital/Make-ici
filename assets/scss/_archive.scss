@@ -13,6 +13,7 @@ h1 {
   background-size: cover;
   color: white;
   position: relative;
+  border-top: 1px solid #494441;
   &::before{
     position: absolute;
     content: "";
@@ -64,8 +65,8 @@ h1 {
 .timeline {
   position: fixed;
   height: calc(100vh - 120px);
-  width: 90px;
-  border-right: 1px solid yellow;
+  width: 110px;
+  border-right: 1px solid $color-3;
   z-index: 1004;
   top: 95px;
   display: flex;
@@ -156,6 +157,7 @@ h1 {
         padding: 0px 5px;
         font-weight: bold;
         line-height: 1.2em;
+        font-style: italic;
       }
     }
     .crop-img {

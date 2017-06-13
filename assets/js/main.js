@@ -755,7 +755,7 @@ Visite = {
 HeaderScroll = {
   initScroll:function(){
     var top = window.scrollTop;
-    if(top>window.innerHeight/3) {
+    if(top>70) {
       HeaderScroll.el.className = HeaderScroll.el.className.replace("transparent", "");
     } else if ( !HeaderScroll.el.className.match("transparent") ){
       HeaderScroll.el.className += "transparent";
