@@ -1248,6 +1248,8 @@ header.transparent .navbar {
       background-color: white; }
     header.transparent .navbar .navbar-nav .menu-item > a.dropdown-toggle {
       color: black; }
+  header.transparent .navbar .navbar-nav .menu-item.btn-light a {
+    color: black !important; }
 
 @media screen and (max-width: 585px) {
   header .static {
@@ -1707,23 +1709,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 41px;
-          top: 83px; }
+          left: 314px;
+          top: 135px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 171px;
-          top: 55px; }
+          left: 355px;
+          top: 101px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 283px;
-          top: 62px; }
+          left: 291px;
+          top: 210px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 392px;
-          top: 205px; }
-        #visite .plan-container .stage .pointer:nth-child(5) {
           left: 328px;
-          top: 12px; }
+          top: 1px; }
+        #visite .plan-container .stage .pointer:nth-child(5) {
+          left: 1px;
+          top: 90px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 276px;
-          top: 7px; }
+          left: 159px;
+          top: 49px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);

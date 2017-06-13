@@ -219,18 +219,23 @@ header {
     &.navbar-default {
       border-color: transparent;
     }
-    .navbar-nav .menu-item > a {
-      color: white;
-      &:hover {
-        color: white !important;
-        &::before {
-          border-color: white;
-        }
-      }
-      &::after { background-color: white; }
-      &.dropdown-toggle {
-        color: black;
-      }
+    .navbar-nav .menu-item {
+      & > a {
+       color: white;
+       &:hover {
+         color: white !important;
+         &::before {
+           border-color: white;
+         }
+       }
+       &::after { background-color: white; }
+       &.dropdown-toggle {
+         color: black;
+       }
+     }
+     &.btn-light a {
+       color: black !important;
+     }
     }
   }
 }
