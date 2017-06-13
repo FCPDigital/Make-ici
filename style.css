@@ -49,7 +49,8 @@ table {
 
 body {
   font-family: "CenturyGothic Regular";
-  background: black; }
+  background: black;
+  letter-spacing: 1px; }
 
 .margin-top-big {
   margin-top: 64px !important; }
@@ -1709,23 +1710,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 68px;
-          top: 143px; }
+          left: 103px;
+          top: 167px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 34px;
-          top: 142px; }
+          left: 124px;
+          top: 36px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 378px;
-          top: 28px; }
+          left: 277px;
+          top: 38px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 62px;
-          top: 139px; }
+          left: 146px;
+          top: 224px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 121px;
-          top: 75px; }
+          left: 256px;
+          top: 149px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 324px;
-          top: 50px; }
+          left: 5px;
+          top: 135px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);

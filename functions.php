@@ -69,7 +69,6 @@ function shortcode_carousel($atts){
 
 	if($category){
 		$products = get_products_from_category($category);
-		// var_dump($products->posts);
 
 		$count=0;
 		//Parcours les posts
@@ -199,10 +198,12 @@ function get_category_title($category){
 }
 
 function get_woocommerce_category_name($post){
-	var_dump($post->ID);
-	$terms = get_the_terms( $post->ID, 'product_cat' );
-	var_dump($terms);
-	return $terms;
+	$cats = get_terms( array(
+		'taxonomy' => 'product_cat',
+		'hide_empty' => 0,
+		'orderby' => 'ASC',
+		'parent' =>0
+	));
 }
 
 function get_category_slug($category) {
@@ -226,6 +227,16 @@ function get_products_from_category($category){
 //						THEMES FUNCTIONNALITY
 //
 //////////////////////////////////////////////////////
+
+
+
+function my_get_woo_cats() {
+    $cats = get_terms( array( 'taxonomy' => 'product_cat','hide_empty' => 0, 'orderby' => 'ASC',  'parent' =>0) );
+    //print_r($cats);
+}
+add_action('init', 'my_get_woo_cats');
+
+
 
 function create_post_type_abonnement() {
   register_post_type( 'abonnements',

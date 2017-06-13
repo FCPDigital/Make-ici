@@ -2,6 +2,8 @@ body {
   font-family: $main-font;
   background: black;
   // padding-top: $small-pad;
+  letter-spacing: 1px;
+
 }
 .margin-top-big { margin-top: $big-pad !important; }
 .margin-bottom-big { margin-bottom: $big-pad !important; }

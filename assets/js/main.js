@@ -187,9 +187,9 @@ if (!isScrollSnapSupported) {
       txt  = document.createTextNode('Your browser does not support CSS Scroll Snap Points :( '),
       local = document.body;
 
-  elem.appendChild(txt);
-  elem.classList.add('warning');
-  local.insertBefore(elem, local.firstChild);
+  // elem.appendChild(txt);
+  // elem.classList.add('warning');
+  // local.insertBefore(elem, local.firstChild);
 }
 
 
