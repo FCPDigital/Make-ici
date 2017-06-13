@@ -533,7 +533,7 @@ h1 {
   -o-transition: 0.4s;
   transition: 0.4s; }
   .timeline.hide-state {
-    left: -100px; }
+    left: -150px; }
   .timeline .timeline-item {
     left: 0;
     color: #ffed00;
@@ -1719,23 +1719,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 284px;
-          top: 163px; }
+          left: 343px;
+          top: 19px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 162px;
-          top: 205px; }
+          left: 226px;
+          top: 160px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 356px;
-          top: 154px; }
+          left: 150px;
+          top: 150px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 320px;
-          top: 24px; }
+          left: 65px;
+          top: 65px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 107px;
-          top: 241px; }
+          left: 356px;
+          top: 80px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 282px;
-          top: 231px; }
+          left: 200px;
+          top: 199px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);

@@ -75,7 +75,7 @@ h1 {
   left: calc(50% - 620px + 16px);
   @include transition(.4s);
   &.hide-state {
-    left: -100px;
+    left: -150px;
   }
   .timeline-item {
     left: 0;
