@@ -479,6 +479,11 @@ Callback = {
     Popin.open();
     if(form) document.querySelector(".btn.loading[data-wpxhr]").classList.remove("loading");
     var form = Popin.contentEl.querySelector(".wpcf7-form");
+    var param = form.getAttribute("action").match("admin-ajax.+?(#wpcf7.+)$")[1];
+    var action = window.location.href + param; 
+    console.log(action);
+
+    form.setAttribute("action", action)
     form.addEventListener("change", function() {
       var val = $.trim($(this).val());
       // check the scheme part
