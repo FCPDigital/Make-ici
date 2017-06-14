@@ -98,7 +98,7 @@ header {
         color: #555;
         text-transform: none;
         letter-spacing: 1px;
-        font-size: .85em;
+        font-size: 12px;
         position: relative;
         @include transition(.4s);
         .fa.fa-home {
@@ -225,7 +225,6 @@ header {
     .navbar-nav .menu-item {
       & > a {
        color: white;
-       font-size: 12px;
        &:hover {
          color: white !important;
          &::before {
