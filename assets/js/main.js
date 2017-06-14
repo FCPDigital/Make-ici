@@ -296,7 +296,6 @@ AwesomePanel = {
   resizeEvent:function(){
     setTimeout(function(){
       var c = document.querySelector(".timeline-item.active");
-      console.log(c, c.offsetTop);
       AwesomePanel.activeBtn.setAttribute("style", setPrefix("transform", "translateY("+c.offsetTop+"px)"));
     }, 300)
   },
@@ -497,8 +496,14 @@ perspectivecorner = {
 Popin = {
   get content(){ return this.contentEl.innerHTML; },
   set content(arg){ this.contentEl.innerHTML = arg; },
-  open:function(){ Popin.el.classList.remove("hide"); },
-  close:function(){ Popin.el.classList.add("hide"); },
+  open:function(){
+    Popin.el.classList.remove("hide");
+    AwesomePanel.hideTimeline();
+  },
+  close:function(){
+    Popin.el.classList.add("hide");
+    AwesomePanel.displayTimeline();
+  },
   initEvent:function(){ if(this.closeEl) this.closeEl.addEventListener("click", this.close); },
   init:function(){
     this.el = document.querySelector("#popin");
@@ -517,7 +522,7 @@ Popin = {
 ////////////////////////////////////////////////////////////////////////////////
 
 Callback = {
-  abonnement_success: function(){
+  abonnementSuccess: function(){
     Popin.close();
     new Notification("Votre e-mail a bien été envoyé !", {confirm: true})
   },

@@ -133,6 +133,7 @@ h1 {
     background-color: rgba(0,0,0,.5);
     padding-bottom: 60px;
     position: relative;
+    min-width: 200px;
     &:first-child {
       margin-left: 0;
     }

@@ -260,3 +260,19 @@ form {
     display: none;
   }
 }
+
+@media screen and (max-width: 720px) {
+
+}
+@media screen and (max-width: 600px) {
+  .wpforms-container .quart-input,
+  .wpcf7 .quart-input,
+  .wpforms-container .half-input,
+  .wpcf7 .half-input,
+  .wpforms-container .wpforms-field-textarea,
+  .wpforms-container .textarea-container,
+  .wpcf7 .wpforms-field-textarea,
+  .wpcf7 .textarea-container {
+    width: 100%;
+  }
+}

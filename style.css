@@ -615,7 +615,8 @@ h1 {
   text-align: center;
   background-color: rgba(0, 0, 0, 0.5);
   padding-bottom: 60px;
-  position: relative; }
+  position: relative;
+  min-width: 200px; }
   .archive-head .archive-head-item:first-child {
     margin-left: 0; }
   .archive-head .archive-head-item:last-child {
@@ -1371,14 +1372,16 @@ footer {
 .carousel .carousel-body {
   position: relative;
   overflow: hidden;
-  width: 75%; }
+  width: 75%;
+  flex-wrap: wrap; }
   .carousel .carousel-body .carousel-container {
     -webkit-transition: 0.4s;
     -moz-transition: 0.4s;
     -ms-transition: 0.4s;
     -o-transition: 0.4s;
     transition: 0.4s;
-    display: flex; }
+    display: flex;
+    flex-wrap: wrap; }
     .carousel .carousel-body .carousel-container .carousel-item {
       margin: 30px 5px;
       position: relative;
@@ -1416,7 +1419,10 @@ footer {
 .carousel.active-control .carousel-body {
   width: 75%;
   display: inline-block;
-  float: left; }
+  float: left;
+  flex-wrap: nowrap; }
+  .carousel.active-control .carousel-body .carousel-container {
+    flex-wrap: nowrap; }
 .carousel.active-control .carousel-control {
   display: flex;
   width: 25%;
@@ -1454,8 +1460,8 @@ footer {
       background-image: url("assets/images/right-arrow.png"); }
 
 @media screen and (max-width: 860px) {
-  .carousel .carousel-body {
-    width: 100%; }
+  .carousel .carousel-body, .carousel .active-control.carousel-body {
+    width: 100% !important; }
   .carousel.active-control {
     position: relative; }
     .carousel.active-control .carousel-body {
@@ -1673,6 +1679,16 @@ form select {
 .wpforms-container #wpform-field-hp, .wpcf7 #wpform-field-hp {
   display: none; }
 
+@media screen and (max-width: 600px) {
+  .wpforms-container .quart-input,
+  .wpcf7 .quart-input,
+  .wpforms-container .half-input,
+  .wpcf7 .half-input,
+  .wpforms-container .wpforms-field-textarea,
+  .wpforms-container .textarea-container,
+  .wpcf7 .wpforms-field-textarea,
+  .wpcf7 .textarea-container {
+    width: 100%; } }
 #visite {
   perspective: 1000px; }
   #visite .plan-container {
@@ -1767,23 +1783,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 12px;
-          top: 16px; }
+          left: 229px;
+          top: 24px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 147px;
-          top: 171px; }
+          left: 383px;
+          top: 228px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 352px;
-          top: 126px; }
+          left: 119px;
+          top: 208px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 322px;
-          top: 162px; }
+          left: 207px;
+          top: 38px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 211px;
-          top: 94px; }
+          left: 164px;
+          top: 205px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 332px;
-          top: 88px; }
+          left: 216px;
+          top: 104px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);
