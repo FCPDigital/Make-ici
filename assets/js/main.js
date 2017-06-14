@@ -491,7 +491,7 @@ XhrManage = {
     el.addEventListener("click", function(e){
       var action = this.getAttribute("data-wpxhr");
       var arg = this.getAttribute("data-xhrarg");
-      var get = (this.getAttribute("data-getarg")) ? "?title="+this.getAttribute("data-getarg") : "";
+      var get = (this.getAttribute("data-getarg")) ? "?"+this.getAttribute("data-getarg") : "";
 
       if( action == "abonnement_form") {
         var callback = Callback.abonnement;
