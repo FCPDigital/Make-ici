@@ -6,7 +6,7 @@
   min-height: 600px;
   height: 100vh;
   background-color: rgba(0,0,0,.8);
-  z-index: 99;
+  z-index: 1000;
   @include transition(.4s);
   @include transform(translateX(0));
   overflow: scroll;

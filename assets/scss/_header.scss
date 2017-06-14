@@ -37,7 +37,7 @@ header {
     border-radius: 0;
     width: 100%;
     background-color: $color-4;
-    z-index: 1000;
+    z-index: 1001;
     @include transition(.4s);
     &.normal {
       position: relative;

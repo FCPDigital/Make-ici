@@ -67,7 +67,7 @@ h1 {
   height: calc(100vh - 120px);
   width: 110px;
   border-right: 1px solid $color-3;
-  z-index: 1004;
+  z-index: 998;
   top: 95px;
   display: flex;
   flex-direction: column;
@@ -378,9 +378,6 @@ h1 {
 }
 
 
-
-
-
 .archive-type {
   display: flex;
   flex-wrap: wrap;
@@ -402,6 +399,13 @@ h1 {
   }
 }
 
+
+#entreprise-archive {
+  .loop-archive .archive-body-item .archive-main {
+    width: 100%;
+    padding-right: 0;
+  }
+}
 
 
 @media screen and (max-width: $break-point-1){

@@ -535,7 +535,7 @@ h1 {
   height: calc(100vh - 120px);
   width: 110px;
   border-right: 1px solid #ffed00;
-  z-index: 1004;
+  z-index: 998;
   top: 95px;
   display: flex;
   flex-direction: column;
@@ -839,6 +839,10 @@ h1 {
       display: block;
       color: #ffed00; }
 
+#entreprise-archive .loop-archive .archive-body-item .archive-main {
+  width: 100%;
+  padding-right: 0; }
+
 @media screen and (max-width: 1160px) {
   .timeline {
     left: 16px; }
@@ -1113,7 +1117,7 @@ header .navbar {
   border-radius: 0;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.95);
-  z-index: 1000;
+  z-index: 1001;
   -webkit-transition: 0.4s;
   -moz-transition: 0.4s;
   -ms-transition: 0.4s;
@@ -1306,7 +1310,7 @@ footer {
   font-size: .8em;
   padding-bottom: 0;
   position: relative;
-  z-index: 1005; }
+  z-index: 999; }
   footer .copyright {
     padding: 15px;
     text-align: center;
@@ -1785,23 +1789,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 177px;
-          top: 132px; }
+          left: 193px;
+          top: 161px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 246px;
-          top: 112px; }
+          left: 283px;
+          top: 73px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 275px;
-          top: 165px; }
+          left: 134px;
+          top: 8px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 387px;
-          top: 186px; }
+          left: 203px;
+          top: 105px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 90px;
-          top: 125px; }
+          left: 129px;
+          top: 1px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 176px;
-          top: 57px; }
+          left: 32px;
+          top: 220px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);
@@ -1936,7 +1940,7 @@ form select {
   min-height: 600px;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.8);
-  z-index: 99;
+  z-index: 1000;
   -webkit-transition: 0.4s;
   -moz-transition: 0.4s;
   -ms-transition: 0.4s;
