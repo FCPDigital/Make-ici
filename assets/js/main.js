@@ -478,6 +478,26 @@ Callback = {
     Popin.content = form;
     Popin.open();
     if(form) document.querySelector(".btn.loading[data-wpxhr]").classList.remove("loading");
+    var form = Popin.contentEl.querySelector(".wpcf7-form");
+    form.addEventListener("change", function() {
+      var val = $.trim($(this).val());
+      // check the scheme part
+      if (val && !val.match(/^[a-z][a-z0-9.+-]*:/i)) {
+        val = val.replace(/^\/+/, '');
+        val = 'http://' + val;
+      }
+      $(this).val(val);
+    })
+    form.addEventListener("click", function(){
+      wpcf7.toggleSubmit(this);
+    })
+    form.addEventListener("submit", function(event) {
+      if (typeof window.FormData !== 'function') {
+        return;
+      }
+      wpcf7.submit(this);
+      event.preventDefault();
+    })
   }
 }
 
