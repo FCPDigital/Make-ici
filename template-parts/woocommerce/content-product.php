@@ -14,7 +14,7 @@
 
         <div class="archive-main-body">
           <?php setup_postdata(get_post()); ?>
-          <?php echo get_the_content(); ?>
+          <?php the_content(); ?>
         </div>
         <div class="actions">
           <a href="<?php echo get_permalink( get_page_by_title("Formations") ) ?>#item-<?php echo $slug; ?>"> < Retours aux formations</a>
