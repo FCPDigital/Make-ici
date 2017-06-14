@@ -32,7 +32,9 @@ Ci dessous sont listés l'ensemble des shortcodes ajouté dans ce thème
 
 - Call to action homepage appelle au scroll
 - Super bloc dans Formations
-- timeline
 - Formation => c2a prochaine session | Pas de prochaine session
 - Ajout au panier même quand il n'y a pas de session
 - barre du footer au scroll
+
+- Formulaire de contact => En dessous de la page contact
+- Formulaire de Visite => En dessous de la page visite avec une ancre

@@ -177,6 +177,17 @@ h1 {
       left: 50%;
       transform: translateX(-50%);
     }
+    &.text-item {
+      .content {
+        padding: 20px 10px;
+        background-color: white;
+        color: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: calc(100% - 52px); // Remove btn height : border(4) + margin-top(8) + line-height(20) + padding(20)
+      }
+    }
   }
   &.classic-list{
     display: flex;
@@ -202,6 +213,7 @@ h1 {
         bottom: 0;
         position: relative;
         margin-top: $small-pad/2;
+        line-height: 20px; // Specify to calcul exact height of btn
       }
     }
   }

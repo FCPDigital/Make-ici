@@ -637,6 +637,14 @@ h1 {
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%); }
+  .archive-head .archive-head-item.text-item .content {
+    padding: 20px 10px;
+    background-color: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: calc(100% - 52px); }
 .archive-head.classic-list {
   display: flex;
   flex-wrap: wrap;
@@ -662,7 +670,8 @@ h1 {
       transform: translateX(0);
       bottom: 0;
       position: relative;
-      margin-top: 8px; }
+      margin-top: 8px;
+      line-height: 20px; }
 
 .loop-archive {
   background-color: #000; }
@@ -1563,40 +1572,61 @@ form select {
         font-size: 11px;
         color: red; }
 
-.wpforms-container .quart-input, .wpforms-container .half-input {
+.wpforms-container .quart-input, .wpforms-container .half-input, .wpcf7 .quart-input, .wpcf7 .half-input {
   margin-right: 20px;
   float: left; }
-  .wpforms-container .quart-input *, .wpforms-container .half-input * {
+  .wpforms-container .quart-input *, .wpforms-container .half-input *, .wpcf7 .quart-input *, .wpcf7 .half-input * {
     width: 100%; }
-.wpforms-container .quart-input {
+.wpforms-container .quart-input, .wpcf7 .quart-input {
   width: calc(25% - 20px); }
-.wpforms-container .half-input {
+.wpforms-container .half-input, .wpcf7 .half-input {
   width: calc(50% - 20px); }
-.wpforms-container .wpforms-field-textarea {
+.wpforms-container .input-checkbox-container, .wpcf7 .input-checkbox-container {
+  margin: 20px 0;
+  color: white;
+  float: left; }
+  .wpforms-container .input-checkbox-container label, .wpcf7 .input-checkbox-container label {
+    color: white; }
+  .wpforms-container .input-checkbox-container .wpcf7-list-item, .wpcf7 .input-checkbox-container .wpcf7-list-item {
+    font-size: 11px; }
+  .wpforms-container .input-checkbox-container input[type="checkbox"], .wpcf7 .input-checkbox-container input[type="checkbox"] {
+    display: inline-block;
+    height: 15px;
+    float: left;
+    width: 15px;
+    margin-top: -2px;
+    margin-right: 5px; }
+  .wpforms-container .input-checkbox-container .wpcf7-checkbox, .wpcf7 .input-checkbox-container .wpcf7-checkbox {
+    margin-top: 10px;
+    display: block; }
+.wpforms-container .wpforms-field-textarea, .wpforms-container .textarea-container, .wpcf7 .wpforms-field-textarea, .wpcf7 .textarea-container {
   width: calc(100% - 20px); }
-  .wpforms-container .wpforms-field-textarea textarea {
+  .wpforms-container .wpforms-field-textarea textarea, .wpforms-container .textarea-container textarea, .wpcf7 .wpforms-field-textarea textarea, .wpcf7 .textarea-container textarea {
     width: 100%;
-    height: 130px; }
-.wpforms-container .wpforms-submit-container {
+    height: 130px !important; }
+.wpforms-container .wpforms-submit-container, .wpforms-container .submit-container, .wpcf7 .wpforms-submit-container, .wpcf7 .submit-container {
   text-align: center;
   margin-top: 30px;
-  clear: both; }
-  .wpforms-container .wpforms-submit-container .wpforms-submit {
+  clear: both;
+  width: calc(100% - 20px); }
+  .wpforms-container .wpforms-submit-container .wpforms-submit, .wpforms-container .wpforms-submit-container .submit, .wpforms-container .submit-container .wpforms-submit, .wpforms-container .submit-container .submit, .wpcf7 .wpforms-submit-container .wpforms-submit, .wpcf7 .wpforms-submit-container .submit, .wpcf7 .submit-container .wpforms-submit, .wpcf7 .submit-container .submit {
     padding: 10px 20px;
     border: 1px solid #ffed00;
     background-color: #ffed00;
     color: black;
+    display: inline-block;
+    width: auto;
     -webkit-transition: 0.4s;
     -moz-transition: 0.4s;
     -ms-transition: 0.4s;
     -o-transition: 0.4s;
     transition: 0.4s; }
-    .wpforms-container .wpforms-submit-container .wpforms-submit:hover {
+    .wpforms-container .wpforms-submit-container .wpforms-submit:hover, .wpforms-container .wpforms-submit-container .submit:hover, .wpforms-container .submit-container .wpforms-submit:hover, .wpforms-container .submit-container .submit:hover, .wpcf7 .wpforms-submit-container .wpforms-submit:hover, .wpcf7 .wpforms-submit-container .submit:hover, .wpcf7 .submit-container .wpforms-submit:hover, .wpcf7 .submit-container .submit:hover {
       background-color: transparent;
       color: #ffed00; }
-.wpforms-container .wpforms-field {
+.wpforms-container .wpforms-field, .wpcf7 .wpforms-field {
   margin-bottom: 10px; }
-.wpforms-container .wpforms-field-medium {
+.wpforms-container .wpforms-field-medium, .wpforms-container .wpcf7-form-control:not(.wpcf7-checkbox), .wpcf7 .wpforms-field-medium, .wpcf7 .wpcf7-form-control:not(.wpcf7-checkbox) {
   background-color: black;
   color: white;
   font-weight: bold;
@@ -1607,22 +1637,22 @@ form select {
   padding: 10px 20px;
   line-height: 1em;
   font-weight: 500; }
-  .wpforms-container .wpforms-field-medium::-webkit-input-placeholder {
+  .wpforms-container .wpforms-field-medium::-webkit-input-placeholder, .wpforms-container .wpcf7-form-control:not(.wpcf7-checkbox)::-webkit-input-placeholder, .wpcf7 .wpforms-field-medium::-webkit-input-placeholder, .wpcf7 .wpcf7-form-control:not(.wpcf7-checkbox)::-webkit-input-placeholder {
     color: white;
     opacity: 1; }
-  .wpforms-container .wpforms-field-medium::-moz-placeholder  {
+  .wpforms-container .wpforms-field-medium::-moz-placeholder , .wpforms-container .wpcf7-form-control:not(.wpcf7-checkbox)::-moz-placeholder , .wpcf7 .wpforms-field-medium::-moz-placeholder , .wpcf7 .wpcf7-form-control:not(.wpcf7-checkbox)::-moz-placeholder  {
     color: white;
     opacity: 1; }
-  .wpforms-container .wpforms-field-medium:-ms-input-placeholder {
+  .wpforms-container .wpforms-field-medium:-ms-input-placeholder, .wpforms-container .wpcf7-form-control:not(.wpcf7-checkbox):-ms-input-placeholder, .wpcf7 .wpforms-field-medium:-ms-input-placeholder, .wpcf7 .wpcf7-form-control:not(.wpcf7-checkbox):-ms-input-placeholder {
     color: white;
     opacity: 1; }
-  .wpforms-container .wpforms-field-medium:-moz-placeholder {
+  .wpforms-container .wpforms-field-medium:-moz-placeholder, .wpforms-container .wpcf7-form-control:not(.wpcf7-checkbox):-moz-placeholder, .wpcf7 .wpforms-field-medium:-moz-placeholder, .wpcf7 .wpcf7-form-control:not(.wpcf7-checkbox):-moz-placeholder {
     color: white;
     opacity: 1; }
-  .wpforms-container .wpforms-field-medium::placeholder {
+  .wpforms-container .wpforms-field-medium::placeholder, .wpforms-container .wpcf7-form-control:not(.wpcf7-checkbox)::placeholder, .wpcf7 .wpforms-field-medium::placeholder, .wpcf7 .wpcf7-form-control:not(.wpcf7-checkbox)::placeholder {
     color: white;
     opacity: 1; }
-.wpforms-container #wpform-field-hp {
+.wpforms-container #wpform-field-hp, .wpcf7 #wpform-field-hp {
   display: none; }
 
 #visite {
@@ -1719,23 +1749,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 269px;
-          top: 21px; }
+          left: 240px;
+          top: 207px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 267px;
-          top: 65px; }
+          left: 295px;
+          top: 207px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 390px;
-          top: 97px; }
+          left: 395px;
+          top: 118px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 25px;
-          top: 67px; }
+          left: 345px;
+          top: 17px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 22px;
-          top: 161px; }
+          left: 223px;
+          top: 73px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 23px;
-          top: 148px; }
+          left: 224px;
+          top: 48px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);

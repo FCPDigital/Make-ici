@@ -156,7 +156,7 @@ form {
   }
 }
 
-.wpforms-container {
+.wpforms-container, .wpcf7 {
   .quart-input, .half-input {
     margin-right: 20px;
     float: left;
@@ -167,22 +167,48 @@ form {
   .quart-input {    width: calc(25% - 20px); }
   .half-input { width: calc(50% - 20px); }
 
-  .wpforms-field-textarea {
+  .input-checkbox-container {
+    margin: 20px 0;
+    color: white;
+    float: left;
+    label {
+      color: white;
+    }
+    .wpcf7-list-item {
+      font-size: 11px;
+    }
+    input[type="checkbox"] {
+      display: inline-block;
+      height: 15px;
+      float: left;
+      width: 15px;
+      margin-top: -2px;
+      margin-right: 5px;
+    }
+    .wpcf7-checkbox {
+      margin-top: 10px;
+      display: block;
+    }
+  }
+  .wpforms-field-textarea, .textarea-container {
     width: calc(100% - 20px);
     textarea {
       width: 100%;
-      height: 130px;
+      height: 130px !important;
     }
   }
-  .wpforms-submit-container {
+  .wpforms-submit-container, .submit-container {
     text-align: center;
     margin-top: 30px;
     clear: both;
-    .wpforms-submit {
+    width: calc(100% - 20px);
+    .wpforms-submit, .submit {
       padding: 10px 20px;
       border: 1px solid $color-3;
       background-color: $color-3;
       color: black;
+      display: inline-block;
+      width: auto;
       @include transition(.4s);
       &:hover {
         background-color: transparent;
@@ -193,7 +219,7 @@ form {
   .wpforms-field {
     margin-bottom: 10px;
   }
-  .wpforms-field-medium {
+  .wpforms-field-medium, .wpcf7-form-control:not(.wpcf7-checkbox) {
     background-color: black;
     color: white;
     font-weight: bold;

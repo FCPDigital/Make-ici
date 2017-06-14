@@ -36,6 +36,16 @@ $categories = get_woocommerce_categories();
                 <a href="#item-<?php echo get_category_slug($category); ?>" data-scroll data-target="#item-<?php echo get_category_slug($category); ?>" class="btn btn-light">En savoir plus</a>
               </div>
             <?php } ?>
+            <?php if (count($categories) % 4 == 3) { ?>
+              <div class="archive-head-item carousel-item text-item">
+                <div class="content">
+                  <p>
+                    Tous les jeudis, visite de nos ateliers, rencontre avec le staff et les résidents
+                  </p>
+                </div>
+                <a href="#" data-wpxhr="visite_form" data-xhrarg="<?php echo get_the_ID(); ?>" class="btn btn-colored action-abonnement">Inscrivez vous</a>
+              </div>
+            <?php } ?>
           </div>
         </div>
 

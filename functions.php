@@ -228,6 +228,11 @@ function get_products_from_category($category){
 //
 //////////////////////////////////////////////////////
 
+//Remove span wrapper in input form wp_contact_form_7
+add_filter('wpcf7_form_elements', function($content) {
+    $content = preg_replace('/<(span).*?class="\s*(?:.*\s)?wpcf7-form-control-wrap(?:\s[^"]+)?\s*"[^\>]*>(.*)<\/\1>/i', '\2', $content);
+    return $content;
+});
 
 
 function my_get_woo_cats() {
@@ -301,7 +306,9 @@ function abonnement_form() {
 	}
 	$content =  "<div class='title-container'><h2 class='title'>".get_the_title($post)."</h2>".$h3."</div>";
 	echo $content;
-	echo do_shortcode("[wpforms id='".get_field('form_code', $post)."']");
+	// echo do_shortcode("[wpforms id='".get_field('form_code', $post)."']");
+	echo do_shortcode("[contact-form-7 id='".get_field('form_code', $post)."' title='Abonnement']");
+
 	die();
 }
 
