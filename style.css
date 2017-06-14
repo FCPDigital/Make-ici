@@ -1248,7 +1248,8 @@ header.transparent .navbar {
   header.transparent .navbar.navbar-default {
     border-color: transparent; }
   header.transparent .navbar .navbar-nav .menu-item > a {
-    color: white; }
+    color: white;
+    font-size: 12px; }
     header.transparent .navbar .navbar-nav .menu-item > a:hover {
       color: white !important; }
       header.transparent .navbar .navbar-nav .menu-item > a:hover::before {
@@ -1719,23 +1720,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 374px;
-          top: 73px; }
+          left: 353px;
+          top: 44px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 103px;
-          top: 217px; }
+          left: 293px;
+          top: 158px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 131px;
-          top: 20px; }
+          left: 62px;
+          top: 6px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 243px;
-          top: 164px; }
+          left: 39px;
+          top: 43px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 88px;
-          top: 4px; }
+          left: 52px;
+          top: 89px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 14px;
-          top: 246px; }
+          left: 34px;
+          top: 237px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);

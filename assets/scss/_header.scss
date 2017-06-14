@@ -225,6 +225,7 @@ header {
     .navbar-nav .menu-item {
       & > a {
        color: white;
+       font-size: 12px;
        &:hover {
          color: white !important;
          &::before {
