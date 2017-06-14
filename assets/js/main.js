@@ -245,6 +245,7 @@ if (!isScrollSnapSupported) {
 
 
 AwesomePanel = {
+  timelineBlocked:false, //Block timeline position
   callbackTransitionEnd:function(){
     var self = AwesomePanel;
     var anchor = this.animParams.anchor;
@@ -302,15 +303,17 @@ AwesomePanel = {
 
 
   hideTimeline:function(){
-    if( !this.timeline.className.match("no-hide") ){
+    if( !this.timeline.className.match("no-hide" && !this.timelineBlocked) ){
       this.timeline.classList.add("hide-state");
       self.timelineDisplay = false;
     }
   },
 
   displayTimeline:function(){
-    this.timeline.classList.remove("hide-state");
-    self.timelineDisplay = true;
+    if( !this.timelineBlocked ){
+      this.timeline.classList.remove("hide-state");
+      self.timelineDisplay = true;
+    }
   },
 
   updateCurrentAnchor:function(anchor, isSnaping){
@@ -362,9 +365,9 @@ AwesomePanel = {
     var scrollTop = window.scrollTop;
 
     if( self.config.enableTimeline ){
-      if(scrollTop < (self.panels[0].getPosition().y/2)){
+      if(scrollTop < (self.panels[0].getPosition().y/1.5)){
         self.hideTimeline();
-      } else if(scrollTop > (self.panels[0].getPosition().y/2)){
+      } else if(scrollTop > (self.panels[0].getPosition().y/1.5)){
         self.displayTimeline();
       }
     }
@@ -499,9 +502,11 @@ Popin = {
   open:function(){
     Popin.el.classList.remove("hide");
     AwesomePanel.hideTimeline();
+    AwesomePanel.timelineBlocked = true;
   },
   close:function(){
     Popin.el.classList.add("hide");
+    AwesomePanel.timelineBlocked = false;
     AwesomePanel.displayTimeline();
   },
   initEvent:function(){ if(this.closeEl) this.closeEl.addEventListener("click", this.close); },

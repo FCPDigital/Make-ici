@@ -260,6 +260,21 @@ function create_post_type_abonnement() {
 
 add_action( 'init', 'create_post_type_abonnement' );
 
+function create_post_type_entreprise() {
+  register_post_type( 'entreprises',
+    array(
+      'labels' => array(
+        'name' => __( 'Entreprise' ),
+        'singular_name' => __( 'Entreprise' )
+      ),
+      'public' => true,
+      'has_archive' => true,
+			'menu_icon' => 'dashicons-businessman',
+			'supports' => array( 'title', 'editor', 'custom-fields', 'thumbnail', 'excerpt' )
+    )
+  );
+}
+add_action( 'init', 'create_post_type_entreprise' );
 
 function make_ici_scripts() {
 	wp_register_script('smoothScroll', get_template_directory_uri() . '/assets/js/smoothscroll.js', array('jquery'),'1.1', true);

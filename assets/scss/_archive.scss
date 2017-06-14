@@ -284,6 +284,9 @@ h1 {
         p {
           margin-bottom: $small-pad;
         }
+        strong {
+          font-weight: bold;
+        }
       }
       .actions {
         margin: $medium-pad 0;

@@ -14,7 +14,7 @@
       </div>
 
       <div class="archive-main-body">
-        <?php echo get_the_content(); ?>
+        <?php the_content(); ?>
       </div>
 
     </div>
