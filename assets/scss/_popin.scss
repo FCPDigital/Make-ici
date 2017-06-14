@@ -66,3 +66,14 @@
     margin-top: 100px;
   }
 }
+
+@media screen and (min-height: 780px){
+  #popin {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    .content-popin {
+      margin-top: auto;
+    }
+  }
+}

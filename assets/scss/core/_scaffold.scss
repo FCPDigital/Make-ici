@@ -129,7 +129,21 @@ pre {
 //                Notice
 //
 ////////////////////////////////////////////////////////////////////////////////
-
+#notification {
+  position: fixed;
+  top: calc(50% - 25px);
+  margin: auto;
+  background-color: white;
+  padding: 20px 40px;
+  color: black;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  #notif-close-btn {
+    padding: 8px 20px;
+    margin-top: 15px;
+  }
+}
 
 #notice {
   position: fixed;

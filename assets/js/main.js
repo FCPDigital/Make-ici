@@ -1,4 +1,47 @@
 
+Node.prototype.remove = function(){
+  var parent = this.parentNode;
+  if(parent){
+    parent.removeChild(this);
+  }
+}
+
+function Notification(message, config){
+  if( message ){
+    var self = this;
+    this.message = message;
+    this.class = (config && config.class) ? config.class : "success";
+    this.confirm = (config && config.confirm !== false) ? true : false;
+    this.timeout = (config && config.timeout) ? config.timeout : null;
+    this.el = document.createElement("div");
+    this.el.setAttribute("id", "notification")
+    this.el.setAttribute("class", this.class);
+    var content = document.createElement("p");
+    content.innerHTML = this.message;
+    if( this.confirm ){
+      var action = document.createElement("a");
+      action.innerHTML = "Ok";
+      action.className = "action btn btn-colored";
+      action.id = "notif-close-btn";
+    }
+    this.el.appendChild(content);
+    document.body.appendChild(this.el);
+    if(action) {
+      this.el.appendChild(action);
+      action.addEventListener("click", function(){
+        self.el.remove();
+      })
+    }
+    if(this.timeout){
+      setTimeout(function(){
+        self.el.remove();
+      }, this.timeout)
+    }
+  } else {
+    console.warn("Vous n'avez pas rentrez de message");
+  }
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 //
 //              Prototype et helpers
@@ -474,13 +517,17 @@ Popin = {
 ////////////////////////////////////////////////////////////////////////////////
 
 Callback = {
+  abonnement_success: function(){
+    Popin.close();
+    new Notification("Votre e-mail a bien été envoyé !", {confirm: true})
+  },
   abonnement: function(form){
     Popin.content = form;
     Popin.open();
     if(form) document.querySelector(".btn.loading[data-wpxhr]").classList.remove("loading");
     var form = Popin.contentEl.querySelector(".wpcf7-form");
     var param = form.getAttribute("action").match("admin-ajax.+?(#wpcf7.+)$")[1];
-    var action = window.location.href.replace("#.+$", "") + param; 
+    var action = window.location.href.replace("#.+$", "") + param;
     console.log(action);
 
     form.setAttribute("action", action)

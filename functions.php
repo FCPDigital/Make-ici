@@ -252,7 +252,7 @@ function create_post_type_abonnement() {
       ),
       'public' => true,
       'has_archive' => true,
-			'menu_icon' => 'dashicons-book-alt',
+			'menu_icon' => 'dashicons-backup',
 			'supports' => array( 'title', 'editor', 'custom-fields', 'thumbnail', 'excerpt' )
     )
   );
