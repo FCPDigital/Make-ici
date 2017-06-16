@@ -72,7 +72,7 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  left: calc(50% - 620px + 16px);
+  left: calc(50% - 625px);
   @include transition(.4s);
   &.hide-state {
     left: -150px;
