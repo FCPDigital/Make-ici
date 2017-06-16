@@ -27,17 +27,15 @@ get_header(); ?>
   <div id="anchor-2" class="section-post equipements" style="background-image:url(<?php echo get_field('bg_hand_made'); ?>);">
     <div class="container">
       <h2 class="left-full-border">Hand Made ICI</h2>
-      <div class="center">
-        <?php echo get_field("hand_made"); ?>
-      </div>
+      <?php echo get_field("hand_made"); ?>
+      <div class="clr"></div>
     </div>
   </div>
   <div id="anchor-3" class="section-post equipements" style="background-image:url(<?php echo get_field('bg_partenaires'); ?>);">
     <div class="container">
       <h2 class="left-full-border">Partenaires</h2>
-      <div class="center">
-        <?php echo get_field("partenaires"); ?>
-      </div>
+      <?php echo get_field("partenaires"); ?>
+      <div class="clr"></div>
     </div>
   </div>
 </main>
