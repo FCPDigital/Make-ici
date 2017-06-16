@@ -1790,23 +1790,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 300px;
-          top: 140px; }
+          left: 185px;
+          top: 171px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 37px;
-          top: 59px; }
+          left: 214px;
+          top: 217px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 11px;
-          top: 144px; }
+          left: 110px;
+          top: 121px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 197px;
-          top: 8px; }
+          left: 380px;
+          top: 66px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 66px;
-          top: 150px; }
+          left: 309px;
+          top: 181px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 106px;
-          top: 209px; }
+          left: 350px;
+          top: 183px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);

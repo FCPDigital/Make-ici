@@ -2,8 +2,8 @@
 
 <main id="entreprise-archive" class="site-main" role="main">
   <div class="landing">
-    <div class="container left-border">
-      <h1>Entreprise</h1>
+    <div class="container">
+      <h1 class="left-full-border">Entreprise</h1>
 
       <?php $count = wp_count_posts('entreprises')->publish; ?>
       <div id="main-carousel" class="carousel <?php if($count > 4){echo 'active-control';} ?>">
