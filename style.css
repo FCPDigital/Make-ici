@@ -95,7 +95,8 @@ body {
   display: flex; }
 
 .container {
-  width: 1000px; }
+  width: 1000px;
+  position: relative; }
 
 .overlay {
   background-color: rgba(0, 0, 0, 0.8); }
@@ -1790,23 +1791,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 185px;
-          top: 171px; }
+          left: 16px;
+          top: 11px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 214px;
-          top: 217px; }
+          left: 142px;
+          top: 170px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 110px;
-          top: 121px; }
+          left: 334px;
+          top: 192px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 380px;
-          top: 66px; }
+          left: 218px;
+          top: 198px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 309px;
-          top: 181px; }
+          left: 252px;
+          top: 186px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 350px;
-          top: 183px; }
+          left: 69px;
+          top: 49px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);
