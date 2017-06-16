@@ -303,14 +303,14 @@ AwesomePanel = {
 
 
   hideTimeline:function(){
-    if( !this.timeline.className.match("no-hide" && !this.timelineBlocked) ){
+    if( this.timeline && !this.timeline.className.match("no-hide" && !this.timelineBlocked) ){
       this.timeline.classList.add("hide-state");
       self.timelineDisplay = false;
     }
   },
 
   displayTimeline:function(){
-    if( !this.timelineBlocked ){
+    if( this.timeline &&  !this.timelineBlocked ){
       this.timeline.classList.remove("hide-state");
       self.timelineDisplay = true;
     }
@@ -527,11 +527,12 @@ Popin = {
 ////////////////////////////////////////////////////////////////////////////////
 
 Callback = {
-  abonnementSuccess: function(){
+  success: function(){
     Popin.close();
     new Notification("Votre e-mail a bien été envoyé !", {confirm: true})
   },
-  abonnement: function(form){
+
+  form: function(form){
     Popin.content = form;
     Popin.open();
     if(form) document.querySelector(".btn.loading[data-wpxhr]").classList.remove("loading");
@@ -575,8 +576,8 @@ XhrManage = {
       var arg = this.getAttribute("data-xhrarg");
       var get = (this.getAttribute("data-getarg")) ? "?"+this.getAttribute("data-getarg") : "";
 
-      if( action == "abonnement_form") {
-        var callback = Callback.abonnement;
+      if( action == "abonnement_form" || action == "contact_form") {
+        var callback = Callback.form ;
       }
 
       this.classList.add("loading");

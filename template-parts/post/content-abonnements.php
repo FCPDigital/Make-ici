@@ -35,7 +35,7 @@
       <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="">
       <?php echo get_field("mention_supplementaire"); ?>
       <?php if(get_field("form_code")){ ?>
-        <a href="#"  data-getarg="title=<?php echo get_the_title(); ?>" data-wpxhr="abonnement_form" data-xhrarg="<?php echo get_the_ID(); ?>" class="btn btn-colored action-abonnement">Je m'abonne</a>
+        <?php echo do_shortcode("[form value=\"Je m'abonne\" action='abonnement_form' get='title=".get_the_title()."' param='".get_the_ID()."']"); ?>
       <?php } ?>
 
     </div>
