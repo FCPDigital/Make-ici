@@ -16,7 +16,7 @@
     </div>
   <?php endif; ?>
 
-  <?php if (get_post_type() == "abonnements" || get_post_type() == "entreprise"): ?>
+  <?php if (get_post_type() == "abonnements" || get_post_type() == "entreprises"): ?>
     <p class="excerpt">
       <?php echo get_the_excerpt(); ?>
     </p>
