@@ -124,7 +124,30 @@ des styles générique, aller dans la page _archive.scss
     }
   }
 }
-
+#order_review {
+  float: right;
+  width: 40%;
+  padding: 10px;
+  border: 3px solid black;
+  padding-top: 60px;
+  table.shop_table {
+    border: 0;
+    margin-top: 15px;
+    thead {
+      th {
+        text-transform: uppercase;
+        color: grey;
+        font-weight: 200;
+        font-size: 14px;
+      }
+    }
+    td {
+      padding: 15px 12px;
+      vertical-align: middle;
+      font-size: 14px;
+    }
+  }
+}
 body.woocommerce-checkout {
   h1 {
     display: none;
@@ -166,30 +189,6 @@ body.woocommerce-checkout {
         height: 1px;
         width: 50px;
         background-color: black;
-      }
-    }
-    #order_review {
-      float: right;
-      width: 40%;
-      padding: 10px;
-      border: 3px solid black;
-      padding-top: 60px;
-      table.shop_table {
-        border: 0;
-        margin-top: 15px;
-        thead {
-          th {
-            text-transform: uppercase;
-            color: grey;
-            font-weight: 200;
-            font-size: 14px;
-          }
-        }
-        td {
-          padding: 15px 12px;
-          vertical-align: middle;
-          font-size: 14px;
-        }
       }
     }
   }
