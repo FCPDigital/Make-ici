@@ -131,14 +131,14 @@ des styles générique, aller dans la page _archive.scss
     padding-bottom: 20px;
     margin-bottom: 20px;
     position: relative;
-    &::after {
-      content:"";
-      position: absolute;
-      bottom: -10px;
-      height: 1px;
-      width: 50px;
-      background-color: black;
-    }
+  }
+  h3::after {
+    content:"";
+    position: absolute;
+    bottom: -10px;
+    height: 1px;
+    width: 50px;
+    background-color: black;
   }
 }
 body.woocommerce-checkout {
