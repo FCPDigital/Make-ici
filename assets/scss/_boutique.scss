@@ -124,6 +124,13 @@ des styles générique, aller dans la page _archive.scss
     }
   }
 }
+#customer_details h3 {
+  text-transform: uppercase;
+  font-size: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  position: relative;
+}
 #customer_details {
   h3 {
     text-transform: uppercase;

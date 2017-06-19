@@ -1030,6 +1030,13 @@ des styles générique, aller dans la page _archive.scss
     .checkout-page .landing::before {
       background-color: white; }
 
+#customer_details h3 {
+  text-transform: uppercase;
+  font-size: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  position: relative; }
+
 #customer_details h3  {
   text-transform: uppercase;
   font-size: 20px;
@@ -1892,23 +1899,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 54px;
-          top: 108px; }
+          left: 351px;
+          top: 114px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 53px;
-          top: 82px; }
+          left: 313px;
+          top: 49px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 4px;
-          top: 226px; }
+          left: 170px;
+          top: 246px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 38px;
-          top: 186px; }
+          left: 121px;
+          top: 217px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 55px;
-          top: 111px; }
+          left: 179px;
+          top: 72px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 300px;
-          top: 101px; }
+          left: 400px;
+          top: 232px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);
