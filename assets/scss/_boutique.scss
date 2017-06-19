@@ -127,6 +127,9 @@ des styles générique, aller dans la page _archive.scss
 
 .woocommerce-cart {
   background-color: white;
+  header.transparent .navbar {
+    background-color: black;
+  }
   .landing {
     background-color: white;
     color: black;
@@ -148,6 +151,9 @@ des styles générique, aller dans la page _archive.scss
       }
       td {
         padding: 10px 12px;
+        a {
+          color: black;
+        }
       }
       td.actions {
         text-align: right;
@@ -192,6 +198,7 @@ des styles générique, aller dans la page _archive.scss
         text-transform: uppercase;
       }
       .shop_table {
+        border: 0;
         tr.cart-subtotal{
           font-size: 12px;
           th, span {
