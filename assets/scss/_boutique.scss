@@ -145,6 +145,7 @@ des styles générique, aller dans la page _archive.scss
   padding: 10px;
   border:3px solid black;
   padding-top: 60px;
+
   table.shop_table{
     border:0;
     margin-top: 15px;
@@ -224,6 +225,20 @@ body.woocommerce-checkout {
       padding-bottom: 20px;
       margin-bottom: 20px;
       position: relative;
+    }
+    .woocommerce-additional-fields{
+      margin-top: 30px;
+      .woocommerce-form__label.woocommerce-form__label-for-checkbox {
+        #createaccount {
+          height: 15px;
+          width: 15px;
+          float: left;
+          margin-right: 15px !important;
+        }
+        span{
+          margin-left: 20px;
+        }
+      }
     }
     h3::after {
       content:"";
