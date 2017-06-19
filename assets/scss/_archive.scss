@@ -25,6 +25,18 @@ h1 {
     z-index: 0;
     background-color: rgba(#28201c, 0.85);
   }
+  .scroll-btn {
+    width: 40px;
+    height: 40px;
+    display: block;
+    margin: auto;
+    background-image: url("assets/images/bottom-arrow.png");
+    background-position: center;
+    background-size: contain;
+    position: relative;
+    z-index: 999;
+    @include transform(translateY(50px));
+  }
 }
 
 

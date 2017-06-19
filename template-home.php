@@ -19,15 +19,17 @@ get_header(); ?>
 			</div>
 			<?php endwhile; // End of the loop. ?>
     </div>
+    <a class="scroll-btn" href="#anchor-2" data-scroll></a>
   </div>
-  <div class="section-post last-posts" style="background-image:url(<?php echo get_field('bg_last_posts'); ?>);">
+  <div id="anchor-2" class="section-post last-posts" style="background-image:url(<?php echo get_field('bg_last_posts'); ?>);">
     <div class="container">
       <h2 class="left-full-border">Prochaines formations</h2>
       <?php get_last_posts(); ?>
       <div class="clr"></div>
     </div>
+    <a class="scroll-btn" href="#anchor-3" data-scroll></a>
   </div>
-  <div class="section-post equipements" style="background-image:url(<?php echo get_field('bg_equipement'); ?>);">
+  <div id="anchor-3" class="section-post equipements" style="background-image:url(<?php echo get_field('bg_equipement'); ?>);">
     <div class="container">
       <h2 class="left-full-border">Équipements</h2>
       <div class="center">
