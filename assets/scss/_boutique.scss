@@ -126,6 +126,14 @@ des styles générique, aller dans la page _archive.scss
 }
 
 body.woocommerce-checkout {
+  .woocommerce-info {
+    border-top-color: transparent;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+}
+
+body.woocommerce-checkout {
   .woocommerce {
     .woocommerce-info {
       border-top-color: transparent;
