@@ -1030,21 +1030,21 @@ des styles générique, aller dans la page _archive.scss
     .checkout-page .landing::before {
       background-color: white; }
 
-#order_review  {
+#orfer_review {
   float: right;
   width: 40%;
   padding: 10px;
   border: 3px solid black;
   padding-top: 60px; }
-  #order_review  table.shop_table {
+  #orfer_review table.shop_table {
     border: 0;
     margin-top: 15px; }
-    #order_review  table.shop_table thead th {
+    #orfer_review table.shop_table thead th {
       text-transform: uppercase;
       color: grey;
       font-weight: 200;
       font-size: 14px; }
-    #order_review  table.shop_table td  {
+    #orfer_review table.shop_table td {
       padding: 15px 12px;
       vertical-align: middle;
       font-size: 14px; }
@@ -1948,23 +1948,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 273px;
-          top: 182px; }
+          left: 331px;
+          top: 35px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 121px;
-          top: 234px; }
+          left: 163px;
+          top: 203px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 93px;
-          top: 240px; }
+          left: 185px;
+          top: 27px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 122px;
-          top: 16px; }
+          left: 185px;
+          top: 170px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 134px;
-          top: 62px; }
+          left: 11px;
+          top: 146px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 28px;
-          top: 231px; }
+          left: 69px;
+          top: 242px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);
