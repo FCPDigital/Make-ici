@@ -11,7 +11,8 @@ require_once('helpers/wp_bootstrap_navwalker.php');
 //////////////////////////////////////////////////////
 
 function get_last_posts(){
-	$limit = 3;
+	$limit = 5;
+	$activeControl = ($limit>3) ?  "active-control" : "";
 	$products = get_posts(array(
 		'post_type' => 'product',
 		'orderby' => 'post_date',
@@ -20,7 +21,7 @@ function get_last_posts(){
 	));
 	?>
 	<div class="archive-main-body">
-		<div class="product-carousel carousel">
+		<div class="product-carousel carousel <?php echo $activeControl; ?>">
 			<div class="carousel-body">
 				<div class="archive-head carousel-container">
 					<?php
@@ -34,8 +35,10 @@ function get_last_posts(){
 					?>
 				</div>
 			</div>
-			<div class="see-all">
-				<a href="<?php echo get_permalink(get_page_by_title('Formations')); ?>" class="btn btn-colored">Voir toute les formations</a>
+			<div class="carousel-control">
+				<p class="carousel-control-mention"></p>
+				<a href="#" class="carousel-control-btn" data-direction="left"></a>
+				<a href="#" class="carousel-control-btn" data-direction="right"></a>
 			</div>
 		</div>
 	</div>
@@ -349,6 +352,24 @@ add_action( 'wp_ajax_contact_form', 'contact_form' );
 add_action( 'wp_ajax_nopriv_contact_form', 'contact_form' );
 
 function contact_form() {
+	$param = (int) $_POST['param'];
+	$post = get_post($param);
+	if(get_field('subtitle', $post)){
+		$h3 = "<h3>".get_field('subtitle', $post)."</h3>";
+	} else {
+		$h3 = "";
+	}
+	$content =  "<div class='title-container'><h2 class='title'>".get_the_title($post)."</h2>".$h3."</div>";
+	echo $content;
+	// echo do_shortcode("[wpforms id='".get_field('form_code', $post)."']");
+	echo do_shortcode("[contact-form-7 id='".get_field('id_form', $post)."' title='Contactez ".get_the_title($post)."']");
+	die();
+}
+
+add_action( 'wp_ajax_classic_form', 'classic_form' );
+add_action( 'wp_ajax_nopriv_classic_form', 'classic_form' );
+
+function classic_form(){
 	$param = (int) $_POST['param'];
 	$post = get_post($param);
 	if(get_field('subtitle', $post)){
