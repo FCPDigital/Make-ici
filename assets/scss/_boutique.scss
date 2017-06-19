@@ -124,6 +124,7 @@ des styles générique, aller dans la page _archive.scss
     }
   }
 }
+
 #payment{
   background-color: #EEE;
   border-radius: 0;
@@ -166,6 +167,9 @@ des styles générique, aller dans la page _archive.scss
 
 }
 body.woocommerce-checkout {
+  label.checkbox {
+    margin-left: 20px;
+  }
   h1 {
     display: none;
   }
@@ -235,7 +239,6 @@ body.woocommerce-checkout {
     .woocommerce-additional-fields{
       margin-top: 30px;
       .woocommerce-form__label.woocommerce-form__label-for-checkbox {
-
         span{
           margin-left: 20px;
         }
