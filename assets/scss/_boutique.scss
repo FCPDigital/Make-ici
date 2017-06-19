@@ -135,21 +135,12 @@ des styles générique, aller dans la page _archive.scss
   h3::after {
     content:"";
     position: absolute;
-    bottom: -10px;
+    bottom: 0px;
+    left: 0;
     height: 1px;
     width: 50px;
     background-color: black;
   }
-}
-#customer_details {
-  h3 {
-    text-transform: uppercase;
-    font-size: 20px;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-    position: relative;
-  }
-
 }
 body.woocommerce-checkout {
 
