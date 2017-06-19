@@ -147,6 +147,21 @@ des styles générique, aller dans la page _archive.scss
       font-size: 14px;
     }
   }
+  #payment {
+    background: #EEE;
+    border-radius: 0;
+    input[type="radio"] {
+      height: 15px;
+      width: 15px;
+      float: left;
+      margin-top: 8px !important;
+      display: inline-block;
+    }
+    label {
+      display: inline-block;
+      max-width: calc(100% - 30px);
+    }
+  }
 }
 body.woocommerce-checkout {
   h1 {
