@@ -1030,21 +1030,21 @@ des styles générique, aller dans la page _archive.scss
     .checkout-page .landing::before {
       background-color: white; }
 
-#orfer_review {
+#order_review {
   float: right;
   width: 40%;
   padding: 10px;
   border: 3px solid black;
   padding-top: 60px; }
-  #orfer_review table.shop_table {
+  #order_review table.shop_table {
     border: 0;
     margin-top: 15px; }
-    #orfer_review table.shop_table thead th {
+    #order_review table.shop_table thead th {
       text-transform: uppercase;
       color: grey;
       font-weight: 200;
       font-size: 14px; }
-    #orfer_review table.shop_table td {
+    #order_review table.shop_table td {
       padding: 15px 12px;
       vertical-align: middle;
       font-size: 14px; }
@@ -1948,23 +1948,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 331px;
-          top: 35px; }
+          left: 352px;
+          top: 108px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 163px;
-          top: 203px; }
+          left: 208px;
+          top: 144px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 185px;
-          top: 27px; }
+          left: 333px;
+          top: 104px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 185px;
-          top: 170px; }
+          left: 114px;
+          top: 176px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 11px;
-          top: 146px; }
+          left: 230px;
+          top: 222px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 69px;
-          top: 242px; }
+          left: 96px;
+          top: 37px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);
