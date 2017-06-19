@@ -124,3 +124,92 @@ des styles générique, aller dans la page _archive.scss
     }
   }
 }
+
+.woocommerce-cart-form {
+  .shop_table.shop_table_responsive.cart.woocommerce-cart-form__contents {
+    border: 0;
+    background-color: white;
+    thead {
+      th {
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 14px;
+        line-height: 30px;
+      }
+    }
+    td {
+      padding: 10px 12px;
+    }
+    td.actions {
+      text-align: right;
+      padding-top: 30px;
+      background-color: #000;
+      margin-top: 20px;
+      * {
+        // color: $color-3;
+      }
+      .coupon {
+        float: left;
+        input.input-text {
+          border-radius: 0;
+          margin-left: 20px;
+          padding-left: 20px;
+          width: calc(100% - 20px);
+        }
+        input.button {
+          background-color: white;
+          color: black !important;
+          border-radius: 0;
+          font-size: 12px;
+          margin: 20px 0 20px 20px;
+          border: 3px solid $color-3;
+          padding: 5px 15px;
+        }
+      }
+      input[disabled] {
+        display: none !important;
+      }
+    }
+  }
+}
+.cart-collaterals {
+  .cart_totals.calculated_shipping {
+    h2 {
+      margin-top: 32px;
+      font-size: 20px;
+      margin-bottom: 10px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #DDD;
+      text-transform: uppercase;
+    }
+    .shop_table {
+      tr.cart-subtotal{
+        font-size: 12px;
+        th, span {
+          color: #888;
+        }
+      }
+    }
+  }
+  .wc-proceed-to-checkout {
+    a.checkout-button {
+      border: 3px solid black;
+      border-radius: 0;
+      font-weight: bold;
+      font-size: 14px;
+      padding: 17px 32px;
+      letter-spacing: 1px;
+      background-color: black;
+      color: #ffed00;
+      width: auto;
+      display: inline-block;
+      text-align: center;
+      margin: auto;
+      @include transition(.4s);
+      &:hover {
+        background-color: white;
+        color: black;
+      }
+    }
+  }
+}
