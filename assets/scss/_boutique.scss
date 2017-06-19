@@ -126,11 +126,6 @@ des styles générique, aller dans la page _archive.scss
 }
 
 body.woocommerce-checkout {
-  .woocommerce-info {
-    border-top-color: transparent;
-    margin-bottom: 10px;
-    font-size: 14px;
-  }
   #customer_details {
     h3 {
       text-transform: uppercase;
@@ -138,7 +133,7 @@ body.woocommerce-checkout {
       padding-bottom: 20px;
       margin-bottom: 20px;
       position: relative;
-      &::after {
+      &::after {
         content:"";
         position: absolute;
         bottom: -10px;
@@ -147,6 +142,11 @@ body.woocommerce-checkout {
         background-color: black;
       }
     }
+  }
+  .woocommerce-info {
+    border-top-color: transparent;
+    margin-bottom: 10px;
+    font-size: 14px;
   }
   .woocommerce-checkout {
     margin-top: 40px;

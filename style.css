@@ -1030,23 +1030,23 @@ des styles générique, aller dans la page _archive.scss
     .checkout-page .landing::before {
       background-color: white; }
 
-body.woocommerce-checkout .woocommerce-info {
-  border-top-color: transparent;
-  margin-bottom: 10px;
-  font-size: 14px; }
 body.woocommerce-checkout #customer_details h3  {
   text-transform: uppercase;
   font-size: 20px;
   padding-bottom: 20px;
   margin-bottom: 20px;
   position: relative; }
-  body.woocommerce-checkout #customer_details h3 ::after {
+  body.woocommerce-checkout #customer_details h3 ::after  {
     content: "";
     position: absolute;
     bottom: -10px;
     height: 1px;
     width: 50px;
     background-color: black; }
+body.woocommerce-checkout .woocommerce-info {
+  border-top-color: transparent;
+  margin-bottom: 10px;
+  font-size: 14px; }
 body.woocommerce-checkout .woocommerce-checkout {
   margin-top: 40px; }
 
@@ -1891,23 +1891,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 297px;
-          top: 212px; }
+          left: 207px;
+          top: 228px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 188px;
-          top: 49px; }
+          left: 5px;
+          top: 216px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 152px;
-          top: 208px; }
+          left: 70px;
+          top: 248px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 295px;
-          top: 136px; }
+          left: 126px;
+          top: 212px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 68px;
-          top: 226px; }
+          left: 391px;
+          top: 172px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 310px;
-          top: 25px; }
+          left: 344px;
+          top: 68px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);
