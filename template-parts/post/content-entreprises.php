@@ -4,13 +4,18 @@
 
     <div class="archive-main">
 
-      <div class="archive-main-head">
-        <h2 class="title">
-          <?php echo get_the_title(); ?>
-        </h2>
-        <h3>
-          <?php echo get_field("subtitle"); ?>
-        </h3>
+      <div class="archive-main-head row">
+        <div class="col-sm-8">
+          <h2 class="title">
+            <?php echo get_the_title(); ?>
+          </h2>
+          <h3>
+            <?php echo get_field("subtitle"); ?>
+          </h3>
+        </div>
+        <div class="col-sm-4">
+          <img src="<?php echo get_field('image'); ?>" alt="">
+        </div>
       </div>
 
       <div class="archive-main-body">
