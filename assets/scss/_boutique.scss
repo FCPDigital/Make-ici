@@ -125,6 +125,35 @@ des styles générique, aller dans la page _archive.scss
   }
 }
 
+body.woocommerce-checkout {
+  .woocommerce {
+    .woocommerce-info {
+      border-top-color: transparent;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+    .woocommerce-checkout {
+      margin-top: 40px;
+      .customer_details {
+        h3 {
+          text-transform: uppercase;
+          font-size: 20px;
+          padding-bottom: 20px;
+          margin-bottom: 20px;
+          position: relative;
+          &::after {
+            content:"";
+            position: absolute;
+            bottom: -10px;
+            height: 1px;
+            width: 50px;
+            background-color: black;
+          }
+        }
+      }
+    }
+  }
+}
 .woocommerce-cart {
   h1 {
     display: none;
@@ -228,36 +257,6 @@ des styles générique, aller dans la page _archive.scss
         &:hover {
           background-color: white;
           color: black;
-        }
-      }
-    }
-  }
-}
-
-body.woocommerce-checkout {
-  .woocommerce {
-    .woocommerce-info {
-      border-top-color: transparent;
-      margin-bottom: 10px;
-      font-size: 14px;
-    }
-    .woocommerce-checkout {
-      margin-top: 40px;
-      .customer_details {
-        h3 {
-          text-transform: uppercase;
-          font-size: 20px;
-          padding-bottom: 20px;
-          margin-bottom: 20px;
-          position: relative;
-          &::after {
-            content:"";
-            position: absolute;
-            bottom: -10px;
-            height: 1px;
-            width: 50px;
-            background-color: black;
-          }
         }
       }
     }

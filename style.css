@@ -1030,6 +1030,26 @@ des styles générique, aller dans la page _archive.scss
     .checkout-page .landing::before {
       background-color: white; }
 
+body.woocommerce-checkout .woocommerce  .woocommerce-info {
+  border-top-color: transparent;
+  margin-bottom: 10px;
+  font-size: 14px; }
+body.woocommerce-checkout .woocommerce  .woocommerce-checkout {
+  margin-top: 40px; }
+  body.woocommerce-checkout .woocommerce  .woocommerce-checkout .customer_details h3 {
+    text-transform: uppercase;
+    font-size: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    position: relative; }
+    body.woocommerce-checkout .woocommerce  .woocommerce-checkout .customer_details h3::after  {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      height: 1px;
+      width: 50px;
+      background-color: black; }
+
 .woocommerce-cart {
   background-color: white; }
   .woocommerce-cart h1 {
@@ -1109,26 +1129,6 @@ des styles générique, aller dans la page _archive.scss
     .woocommerce-cart .cart-collaterals .wc-proceed-to-checkout a.checkout-button:hover  {
       background-color: white;
       color: black; }
-
-body.woocommerce-checkout .woocommerce  .woocommerce-info {
-  border-top-color: transparent;
-  margin-bottom: 10px;
-  font-size: 14px; }
-body.woocommerce-checkout .woocommerce  .woocommerce-checkout {
-  margin-top: 40px; }
-  body.woocommerce-checkout .woocommerce  .woocommerce-checkout .customer_details h3 {
-    text-transform: uppercase;
-    font-size: 20px;
-    padding-bottom: 20px;
-    margin-bottom: 20px;
-    position: relative; }
-    body.woocommerce-checkout .woocommerce  .woocommerce-checkout .customer_details h3::after  {
-      content: "";
-      position: absolute;
-      bottom: -10px;
-      height: 1px;
-      width: 50px;
-      background-color: black; }
 
 .homepage {
   color: white; }
@@ -1891,23 +1891,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 98px;
-          top: 172px; }
+          left: 344px;
+          top: 241px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 94px;
-          top: 62px; }
+          left: 112px;
+          top: 130px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 398px;
-          top: 152px; }
+          left: 21px;
+          top: 176px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 178px;
-          top: 89px; }
+          left: 118px;
+          top: 227px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 218px;
-          top: 89px; }
+          left: 318px;
+          top: 71px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 48px;
-          top: 237px; }
+          left: 182px;
+          top: 193px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);
