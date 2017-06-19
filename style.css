@@ -423,6 +423,7 @@ footer .row .flex-item .widget_text a { color: black; text-decoration: underline
 form select.form-control { width: 100% !important; }
 form .half { display: flex; }
 form .half *:first-child { margin-right: 16px; }
+form .form-hidden { opacity: 0; max-height: 0; overflow: hidden; }
 form legend { font-size: 1.2em; padding: 32px 0 16px; color: #666; text-transform: uppercase; color: #ffed00; }
 form .form-group { margin: 16px 0; }
 form .form-group label { display: block; margin-bottom: 8px; }
@@ -434,16 +435,6 @@ form nav select option { background-color: #fff; box-sizing: border-box; border-
 form input { background-color: #fff; box-sizing: border-box; border-radius: 2px; color: #222; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; display: block; float: none; font-size: 16px; border: 1px solid #ccc; padding: 6px 10px; height: 38px; width: 100%; line-height: 1.3; line-height: 1.6em; font-size: 12px; margin-bottom: 10px; }
 form .actions input { display: inline-block; width: auto; }
 form select { margin-bottom: 10px; }
-
-.calcul-dos-container #calcul-dos { max-width: 560px; margin: auto; }
-.calcul-dos-container #calcul-dos h1.title { width: 100%; }
-.calcul-dos-container #calcul-dos h2 { color: #666; margin-bottom: 32px; font-size: 0.9em; }
-.calcul-dos-container #calcul-dos h2 a { color: #ffed00; }
-.calcul-dos-container #calcul-dos #serializer { display: none; }
-.calcul-dos-container #calcul-dos input[type="submit"] { margin-right: 32px; }
-.calcul-dos-container #calcul-dos #result { display: inline-block; color: #ffed00; font-size: 20px; font-weight: bold; line-height: 1em; margin-top: 16px; }
-.calcul-dos-container #calcul-dos #result span { font-size: 15px; color: #666; font-weight: 200; }
-.calcul-dos-container #calcul-dos #result span.error { font-weight: 500; font-size: 11px; color: red; }
 
 .wpforms-container .quart-input, .wpforms-container .half-input, .wpcf7 .quart-input, .wpcf7 .half-input { margin-right: 20px; float: left; }
 .wpforms-container .quart-input *, .wpforms-container .half-input *, .wpcf7 .quart-input *, .wpcf7 .half-input * { width: 100%; }
@@ -469,6 +460,8 @@ form select { margin-bottom: 10px; }
 .wpforms-container #wpform-field-hp, .wpcf7 #wpform-field-hp { display: none; }
 
 @media screen and (max-width: 600px) { .wpforms-container .quart-input, .wpcf7 .quart-input, .wpforms-container .half-input, .wpcf7 .half-input, .wpforms-container .wpforms-field-textarea, .wpforms-container .textarea-container, .wpcf7 .wpforms-field-textarea, .wpcf7 .textarea-container { width: 100%; } }
+.single-body form { max-width: 500px; margin: auto; padding-top: 40px; }
+
 #visite { perspective: 1000px; }
 #visite .plan-container { position: relative; height: 100vh; transform: rotateX(100deg) rotateZ(60deg); -webkit-transition: 1s; -moz-transition: 1s; -ms-transition: 1s; -o-transition: 1s; transition: 1s; transform-style: preserve-3d; }
 #visite .plan-container .stage { position: absolute; opacity: 5; width: 400px; height: 250px; left: calc(50% - 200px); background-repeat: no-repeat; background-size: contain; background-position: center; -webkit-transition: 0.5s; -moz-transition: 0.5s; -ms-transition: 0.5s; -o-transition: 0.5s; transition: 0.5s; top: 200px; }
@@ -481,12 +474,12 @@ form select { margin-bottom: 10px; }
 #visite .plan-container .stage:nth-child(5) { -webkit-transform: translateZ(480px); -moz-transform: translateZ(480px); -ms-transform: translateZ(480px); -o-transform: translateZ(480px); transform: translateZ(480px); }
 #visite .plan-container .stage:nth-child(6) { -webkit-transform: translateZ(600px); -moz-transform: translateZ(600px); -ms-transform: translateZ(600px); -o-transform: translateZ(600px); transform: translateZ(600px); }
 #visite .plan-container .stage .pointer { position: absolute; background-color: white; border-radius: 100%; width: 20px; height: 20px; background-size: cover; background-position: 20px; background-repeat: no-repeat; cursor: pointer; -webkit-transition: 0.4s; -moz-transition: 0.4s; -ms-transition: 0.4s; -o-transition: 0.4s; transition: 0.4s; -webkit-transform: translateZ(0) rotate(180deg); -moz-transform: translateZ(0) rotate(180deg); -ms-transform: translateZ(0) rotate(180deg); -o-transform: translateZ(0) rotate(180deg); transform: translateZ(0) rotate(180deg); animation-iteration-count: infinite; animation-duration: 1s; }
-#visite .plan-container .stage .pointer:nth-child(1) { left: 309px; top: 149px; }
-#visite .plan-container .stage .pointer:nth-child(2) { left: 274px; top: 229px; }
-#visite .plan-container .stage .pointer:nth-child(3) { left: 110px; top: 247px; }
-#visite .plan-container .stage .pointer:nth-child(4) { left: 201px; top: 124px; }
-#visite .plan-container .stage .pointer:nth-child(5) { left: 189px; top: 58px; }
-#visite .plan-container .stage .pointer:nth-child(6) { left: 50px; top: 230px; }
+#visite .plan-container .stage .pointer:nth-child(1) { left: 355px; top: 97px; }
+#visite .plan-container .stage .pointer:nth-child(2) { left: 398px; top: 17px; }
+#visite .plan-container .stage .pointer:nth-child(3) { left: 67px; top: 23px; }
+#visite .plan-container .stage .pointer:nth-child(4) { left: 92px; top: 88px; }
+#visite .plan-container .stage .pointer:nth-child(5) { left: 21px; top: 240px; }
+#visite .plan-container .stage .pointer:nth-child(6) { left: 176px; top: 214px; }
 #visite .plan-container .stage.active-hover:nth-child(1) { -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg); -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg); -ms-transform: translateZ(0px) scale(1.1) rotateX(10deg); -o-transform: translateZ(0px) scale(1.1) rotateX(10deg); transform: translateZ(0px) scale(1.1) rotateX(10deg); }
 #visite .plan-container .stage.active-hover:nth-child(2) { -webkit-transform: translateZ(120px) scale(1.1) rotateX(10deg); -moz-transform: translateZ(120px) scale(1.1) rotateX(10deg); -ms-transform: translateZ(120px) scale(1.1) rotateX(10deg); -o-transform: translateZ(120px) scale(1.1) rotateX(10deg); transform: translateZ(120px) scale(1.1) rotateX(10deg); }
 #visite .plan-container .stage.active-hover:nth-child(3) { -webkit-transform: translateZ(240px) scale(1.1) rotateX(10deg); -moz-transform: translateZ(240px) scale(1.1) rotateX(10deg); -ms-transform: translateZ(240px) scale(1.1) rotateX(10deg); -o-transform: translateZ(240px) scale(1.1) rotateX(10deg); transform: translateZ(240px) scale(1.1) rotateX(10deg); }

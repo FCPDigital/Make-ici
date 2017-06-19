@@ -33,6 +33,11 @@ form {
       margin-right: 16px;
     }
   }
+  .form-hidden {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+  }
   legend {
     font-size: 1.2em;
     padding: 32px 0 16px;
@@ -116,48 +121,6 @@ form {
   }
   select {
     margin-bottom: 10px;
-  }
-}
-
-.calcul-dos-container {
-  #calcul-dos {
-    max-width: 560px;
-    margin: auto;
-    h1.title {
-      width: 100%;
-    }
-    h2 {
-      color: #666;
-      margin-bottom: 32px;
-      font-size: 0.9em;
-      a {
-        color: $color-3;
-      }
-    }
-    #serializer {
-      display: none;
-    }
-    input[type="submit"] {
-      margin-right: $medium-pad;
-    }
-    #result {
-      display: inline-block;
-      color: $color-3;
-      font-size: 20px;
-      font-weight: bold;
-      line-height: 1em;
-      margin-top: $small-pad;
-      span {
-        font-size: 15px;
-        color: #666;
-        font-weight: 200;
-        &.error {
-          font-weight: 500;
-          font-size: 11px;
-          color: red;
-        }
-      }
-    }
   }
 }
 
@@ -274,5 +237,13 @@ form {
   .wpcf7 .wpforms-field-textarea,
   .wpcf7 .textarea-container {
     width: 100%;
+  }
+}
+
+.single-body {
+  form {
+    max-width: 500px;
+    margin: auto;
+    padding-top: 40px;
   }
 }
