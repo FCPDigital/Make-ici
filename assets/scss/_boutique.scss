@@ -181,7 +181,7 @@ body.woocommerce-checkout {
     margin-top: 40px;
     float: left;
     .col2-set {
-      width: 45%;
+      width: 55%;
       float: left;
       .col-1, .col-2 {
         width: 100%;
@@ -218,6 +218,12 @@ body.woocommerce-checkout {
       }
     }
   }
+  #createaccount {
+    height: 15px;
+    width: 15px;
+    float: left;
+    margin-right: 15px !important;
+  }
   #customer_details {
     h3 {
       text-transform: uppercase;
@@ -229,12 +235,7 @@ body.woocommerce-checkout {
     .woocommerce-additional-fields{
       margin-top: 30px;
       .woocommerce-form__label.woocommerce-form__label-for-checkbox {
-        #createaccount {
-          height: 15px;
-          width: 15px;
-          float: left;
-          margin-right: 15px !important;
-        }
+
         span{
           margin-left: 20px;
         }

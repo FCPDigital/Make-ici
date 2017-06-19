@@ -274,14 +274,14 @@ body.woocommerce-checkout h1 { display: none; }
 body.woocommerce-checkout header.transparent .navbar { background-color: black; }
 body.woocommerce-checkout .woocommerce-info { border-top-color: transparent; margin-bottom: 10px; font-size: 14px; }
 body.woocommerce-checkout .woocommerce-checkout { margin-top: 40px; float: left; }
-body.woocommerce-checkout .woocommerce-checkout .col2-set { width: 45%; float: left; }
+body.woocommerce-checkout .woocommerce-checkout .col2-set { width: 55%; float: left; }
 body.woocommerce-checkout .woocommerce-checkout .col2-set .col-1, body.woocommerce-checkout .woocommerce-checkout .col2-set .col-2 { width: 100%; float: left; }
 body.woocommerce-checkout .woocommerce-checkout #order_review_heading { width: 40%; float: right; padding-left: 25px; text-transform: uppercase; font-size: 20px; padding-bottom: 0px; margin-bottom: -20px; position: relative; -webkit-transform: translateY(20px); -moz-transform: translateY(20px); -ms-transform: translateY(20px); -o-transform: translateY(20px); transform: translateY(20px); }
 body.woocommerce-checkout .woocommerce-checkout #order_review_heading::after { content: ""; position: absolute; bottom: -15px; left: 25px; height: 1px; width: 50px; background-color: black; }
 body.woocommerce-checkout form .form-row input.input-text, body.woocommerce-checkout form .form-row textarea { border-radius: 0; border: 1px solid #DDD; padding: 5px 10px; }
+body.woocommerce-checkout #createaccount { height: 15px; width: 15px; float: left; margin-right: 15px !important; }
 body.woocommerce-checkout #customer_details h3 { text-transform: uppercase; font-size: 20px; padding-bottom: 20px; margin-bottom: 20px; position: relative; }
 body.woocommerce-checkout #customer_details .woocommerce-additional-fields { margin-top: 30px; }
-body.woocommerce-checkout #customer_details .woocommerce-additional-fields .woocommerce-form__label.woocommerce-form__label-for-checkbox #createaccount { height: 15px; width: 15px; float: left; margin-right: 15px !important; }
 body.woocommerce-checkout #customer_details .woocommerce-additional-fields .woocommerce-form__label.woocommerce-form__label-for-checkbox span { margin-left: 20px; }
 body.woocommerce-checkout #customer_details h3::after { content: ""; position: absolute; bottom: 0px; left: 0; height: 1px; width: 50px; background-color: black; }
 
@@ -479,12 +479,12 @@ form select { margin-bottom: 10px; }
 #visite .plan-container .stage:nth-child(5) { -webkit-transform: translateZ(480px); -moz-transform: translateZ(480px); -ms-transform: translateZ(480px); -o-transform: translateZ(480px); transform: translateZ(480px); }
 #visite .plan-container .stage:nth-child(6) { -webkit-transform: translateZ(600px); -moz-transform: translateZ(600px); -ms-transform: translateZ(600px); -o-transform: translateZ(600px); transform: translateZ(600px); }
 #visite .plan-container .stage .pointer { position: absolute; background-color: white; border-radius: 100%; width: 20px; height: 20px; background-size: cover; background-position: 20px; background-repeat: no-repeat; cursor: pointer; -webkit-transition: 0.4s; -moz-transition: 0.4s; -ms-transition: 0.4s; -o-transition: 0.4s; transition: 0.4s; -webkit-transform: translateZ(0) rotate(180deg); -moz-transform: translateZ(0) rotate(180deg); -ms-transform: translateZ(0) rotate(180deg); -o-transform: translateZ(0) rotate(180deg); transform: translateZ(0) rotate(180deg); animation-iteration-count: infinite; animation-duration: 1s; }
-#visite .plan-container .stage .pointer:nth-child(1) { left: 210px; top: 122px; }
-#visite .plan-container .stage .pointer:nth-child(2) { left: 81px; top: 52px; }
-#visite .plan-container .stage .pointer:nth-child(3) { left: 241px; top: 154px; }
-#visite .plan-container .stage .pointer:nth-child(4) { left: 50px; top: 23px; }
-#visite .plan-container .stage .pointer:nth-child(5) { left: 237px; top: 198px; }
-#visite .plan-container .stage .pointer:nth-child(6) { left: 286px; top: 32px; }
+#visite .plan-container .stage .pointer:nth-child(1) { left: 159px; top: 107px; }
+#visite .plan-container .stage .pointer:nth-child(2) { left: 323px; top: 238px; }
+#visite .plan-container .stage .pointer:nth-child(3) { left: 7px; top: 62px; }
+#visite .plan-container .stage .pointer:nth-child(4) { left: 225px; top: 5px; }
+#visite .plan-container .stage .pointer:nth-child(5) { left: 342px; top: 142px; }
+#visite .plan-container .stage .pointer:nth-child(6) { left: 139px; top: 11px; }
 #visite .plan-container .stage.active-hover:nth-child(1) { -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg); -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg); -ms-transform: translateZ(0px) scale(1.1) rotateX(10deg); -o-transform: translateZ(0px) scale(1.1) rotateX(10deg); transform: translateZ(0px) scale(1.1) rotateX(10deg); }
 #visite .plan-container .stage.active-hover:nth-child(2) { -webkit-transform: translateZ(120px) scale(1.1) rotateX(10deg); -moz-transform: translateZ(120px) scale(1.1) rotateX(10deg); -ms-transform: translateZ(120px) scale(1.1) rotateX(10deg); -o-transform: translateZ(120px) scale(1.1) rotateX(10deg); transform: translateZ(120px) scale(1.1) rotateX(10deg); }
 #visite .plan-container .stage.active-hover:nth-child(3) { -webkit-transform: translateZ(240px) scale(1.1) rotateX(10deg); -moz-transform: translateZ(240px) scale(1.1) rotateX(10deg); -ms-transform: translateZ(240px) scale(1.1) rotateX(10deg); -o-transform: translateZ(240px) scale(1.1) rotateX(10deg); transform: translateZ(240px) scale(1.1) rotateX(10deg); }
