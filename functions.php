@@ -369,6 +369,7 @@ function contact_form() {
 add_action( 'wp_ajax_classic_form', 'classic_form' );
 add_action( 'wp_ajax_nopriv_classic_form', 'classic_form' );
 
+
 function classic_form(){
 	$param = (int) $_POST['param'];
 	$post = get_post($param);

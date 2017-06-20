@@ -6,3 +6,16 @@
 
 #single-product {
 }
+
+
+.single-body p {
+  margin-bottom: $small-pad;
+}
+.single-body h2 {
+  text-align: center;
+  color: #FFED00;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
