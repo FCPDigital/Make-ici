@@ -576,9 +576,16 @@ XhrManage = {
       var arg = this.getAttribute("data-xhrarg");
       var get = (this.getAttribute("data-getarg")) ? "?"+this.getAttribute("data-getarg") : "";
 
-      if( action == "abonnement_form" || action == "contact_form") {
+      if( action == "abonnement_form" || action == "contact_form" || action=="classic_form") {
         var callback = Callback.form ;
       }
+
+      var value = ( action == "classic_form" ) ? this.innerHTML : null;
+      if( value ){
+        var id = arg;
+        var arg = {  id: id, value: value };
+      }
+
 
       this.classList.add("loading");
       jQuery.post(

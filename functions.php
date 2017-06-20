@@ -48,16 +48,20 @@ function get_last_posts(){
 function shortcode_formbtn($atts){
 	$args = shortcode_atts( array(
 		'value' => null,
-		'get' => "",
+		'get' => null,
 		'param' => null,
-		'action' => null
+		'class' => "btn btn-colored",
+		'action' => "classic_form"
 	), $atts );
+
 	$value = $args["value"];
-	$get = $args["get"];
+	$get = ($args["get"]) ? "data-getarg='".$args["get"]."'" : "";
 	$param = $args["param"];
 	$action = $args["action"];
+	$class = $args["class"];
+
 	if($value){
-		echo "<a href='#'  data-getarg='".$get."' data-wpxhr='".$action."' data-xhrarg='".$param."' class='btn btn-colored action-abonnement'>".$value."</a>";
+		echo "<a href='#' ".$get." data-wpxhr='".$action."' data-xhrarg='".$param."' class='".$class."'>".$value."</a>";
 	}
 }
 add_shortcode( 'form', 'shortcode_formbtn' );
@@ -371,17 +375,18 @@ add_action( 'wp_ajax_nopriv_classic_form', 'classic_form' );
 
 
 function classic_form(){
-	$param = (int) $_POST['param'];
-	$post = get_post($param);
-	if(get_field('subtitle', $post)){
-		$h3 = "<h3>".get_field('subtitle', $post)."</h3>";
+	$param = $_POST['param'];
+	if (is_array($param)){
+		$id = (isset($param["id"])) ? (int) $param["id"] : null;
+		$value = (isset($param["value"])) ? $param["value"] : "Formulaire";
 	} else {
-		$h3 = "";
+		$id = (int) $param;
+		$value = null;
 	}
-	$content =  "<div class='title-container'><h2 class='title'>".get_the_title($post)."</h2>".$h3."</div>";
+
+	$content =  "<div class='title-container'><h2 class='title'>".$value."</h2></div>";
 	echo $content;
-	// echo do_shortcode("[wpforms id='".get_field('form_code', $post)."']");
-	echo do_shortcode("[contact-form-7 id='".get_field('id_form', $post)."' title='Contactez ".get_the_title($post)."']");
+	echo do_shortcode("[contact-form-7 id='".$id."' title='Contactez']");
 	die();
 }
 
