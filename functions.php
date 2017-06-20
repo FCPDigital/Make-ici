@@ -61,7 +61,7 @@ function shortcode_formbtn($atts){
 	$class = $args["class"];
 
 	if($value){
-		echo "<a href='#' ".$get." data-wpxhr='".$action."' data-xhrarg='".$param."' class='".$class."'>".$value."</a>";
+		return "<a href='#' ".$get." data-wpxhr='".$action."' data-xhrarg='".$param."' class='".$class."'>".$value."</a>";
 	}
 }
 add_shortcode( 'form', 'shortcode_formbtn' );
