@@ -36,6 +36,12 @@ h1 {
     position: relative;
     z-index: 999;
     @include transform(translateY(50px));
+    animation-name: callScroll;
+    animation-duration: 1.5s;
+    animation-delay: 2s;
+    animation-iteration-count: infinite;
+    bottom:0;
+    @include transform(rotate(0deg));
   }
 }
 
@@ -535,5 +541,17 @@ h1 {
         }
       }
     }
+  }
+}
+
+@keyframes callScroll {
+  0% {
+    @include transform(translateY(0px));
+  }
+  50% {
+    @include transform(translateY(-20px));
+  }
+  100%{
+    @include transform(translateY(0px));
   }
 }
