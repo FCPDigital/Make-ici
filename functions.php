@@ -135,7 +135,7 @@ function shortcode_carousel($atts){
 					</div>
 				</div>
 				<div class="carousel-control">
-					<p class="carousel-control-mention">Voir d'autres abonnements</p>
+					<!-- <p class="carousel-control-mention">Voir d'autres abonnements</p> -->
 					<a href="#" class="carousel-control-btn" data-direction="left"></a>
 					<a href="#" class="carousel-control-btn" data-direction="right"></a>
 				</div>
@@ -147,6 +147,37 @@ function shortcode_carousel($atts){
 }
 
 add_shortcode( 'carousel', 'shortcode_carousel' );
+
+
+function shortcode_ico($atts){
+
+	$special = array("atelier-partage", "machine", "2", "casier", "coaching", "entrepreneur", "office", "expo", "financement", "formation", "international", "logistique", "strong");
+	$basic = array("line-chart", "handshake-o", "paint-brush", "lightbulb-o", "wifi", "male", "print", "clock-o");
+
+	$args = shortcode_atts( array(
+		'value' => null,
+		'size' => 'small',
+		'class' =>''
+	), $atts );
+
+	$value = $args["value"];
+	$size = $args["size"];
+	$class = $args["class"];
+
+	if($value){
+		if( in_array($value, $special) ) {
+			$el = "<span class='fa-custom ".$class."'>
+				<img src='".get_template_directory_uri()."/assets/images/ico/picto-".$value.".png'/>
+			</span>";
+		} else {
+			$el = "<i class='".$class." ico fa fa-".$value."' aria-hidden='true'></i>";
+		}
+		return $el;
+	}
+}
+
+add_shortcode( 'ico', 'shortcode_ico' );
+
 
 function display_website_logo(){
 	$custom_logo_id = get_theme_mod( 'custom_logo' );
