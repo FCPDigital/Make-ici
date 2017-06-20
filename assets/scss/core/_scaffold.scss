@@ -27,6 +27,9 @@ body {
   width: $wrapper;
   position: relative;
 }
+
+
+
 .overlay {
   background-color: rgba(0,0,0,.8);
 }
@@ -441,9 +444,16 @@ h2{
     }
 }
 
+
+.page-template-template-checkout, .woocommerce-cart {
+  .container {
+    width: 1150px;
+  }
+}
+
 @media screen and (max-width: $break-point-1){
   .container {
-    width: calc(100% - 160px);
+    width: 100%;
   }
 }
 

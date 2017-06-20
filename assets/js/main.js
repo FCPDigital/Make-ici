@@ -857,6 +857,7 @@ HeaderScroll = {
   init:function(){
     this.el = document.querySelector("#main-header");
     if( this.el ){
+      this.initScroll();
       window.addEventListener("scroll", this.initScroll, false);
     }
   }

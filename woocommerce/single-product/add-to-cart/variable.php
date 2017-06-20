@@ -50,6 +50,10 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 							<?php } ?>
 						</select>
 					</div>
+				<?php } else { ?>
+					<div class="variation form-group">
+						<p>Pas de date disponibles</p>
+					</div>
 				<?php }
 
 				//Comportement de Woocommerce
@@ -70,6 +74,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 
 		<?php do_action( 'woocommerce_before_add_to_cart_button' ); ?>
 
+		<?php if(count($options) > 0){  ?>
 		<div class="single_variation_wrap">
 			<?php
 				/**
@@ -89,6 +94,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 				do_action( 'woocommerce_after_single_variation' );
 			?>
 		</div>
+		<?php } ?>
 
 		<?php do_action( 'woocommerce_after_add_to_cart_button' ); ?>
 	<?php endif; ?>
