@@ -5,7 +5,7 @@
 
 get_header(); ?>
 
-<main id="page" class="site-main homepage" role="main">
+<main id="page" class="site-main ecosystem" role="main">
   <div id="anchor-0" class="section-post" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>);">
     <div class="container">
 			<?php

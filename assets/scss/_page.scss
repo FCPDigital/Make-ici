@@ -24,3 +24,29 @@
     padding:$medium-pad 0 $small-pad 0;
   }
 }
+
+
+.ecosystem {
+  .su-custom-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+    .su-custom-gallery-slide {
+      min-width: 150px;
+      min-height: 120px;
+      a {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        img {
+          border:0;
+          background-color: transparent;
+          &:hover{
+            background-color: transparent;
+          }
+        }
+      }
+    }
+  }
+}
