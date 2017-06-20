@@ -74,6 +74,8 @@ p { line-height: 2; font-size: 14px; }
 
 pre { background-color: white; line-height: 1; overflow: visible; }
 
+h2 { font-size: 2.5em; font-weight: bold; }
+
 .scroll-manage { width: 32px; height: 32px; background-image: url("assets/images/scroll.png"); background-position: center; background-repeat: no-repeat; background-size: contain; position: fixed; bottom: 32px; left: 50%; z-index: 999; -webkit-transform: translateX(-50%) translateY(0); -moz-transform: translateX(-50%) translateY(0); -ms-transform: translateX(-50%) translateY(0); -o-transform: translateX(-50%) translateY(0); transform: translateX(-50%) translateY(0); -webkit-transition: 0.4s; -moz-transition: 0.4s; -ms-transition: 0.4s; -o-transition: 0.4s; transition: 0.4s; }
 .scroll-manage.hide { display: block; -webkit-transform: translateX(-50%) translateY(100px); -moz-transform: translateX(-50%) translateY(100px); -ms-transform: translateX(-50%) translateY(100px); -o-transform: translateX(-50%) translateY(100px); transform: translateX(-50%) translateY(100px); }
 
@@ -394,9 +396,9 @@ footer .row .flex-item .widget_text a { color: black; text-decoration: underline
 .single-body h2 { text-align: center; color: #ffed00; font-size: 1.5em; text-transform: uppercase; font-weight: bold; letter-spacing: 2px; clear: both; }
 .single-body h3, .single-body h2 { padding: 32px 0 16px 0; }
 
-.ecosystem .su-custom-gallery { display: flex; flex-wrap: wrap; justify-content: space-around; align-content: center; }
+.ecosystem .su-custom-gallery { display: flex; flex-wrap: wrap; justify-content: space-around; align-content: center; margin-top: 1.5em; }
 .ecosystem .su-custom-gallery .su-custom-gallery-slide { min-width: 150px; min-height: 120px; }
-.ecosystem .su-custom-gallery .su-custom-gallery-slide a { display: flex; align-items: center; flex-direction: column; }
+.ecosystem .su-custom-gallery .su-custom-gallery-slide a { display: flex; justify-content: center; flex-direction: column; }
 .ecosystem .su-custom-gallery .su-custom-gallery-slide a img { border: 0; background-color: transparent; }
 .ecosystem .su-custom-gallery .su-custom-gallery-slide a img:hover { background-color: transparent; }
 
@@ -483,12 +485,12 @@ form select { margin-bottom: 10px; }
 #visite .plan-container .stage:nth-child(5) { -webkit-transform: translateZ(480px); -moz-transform: translateZ(480px); -ms-transform: translateZ(480px); -o-transform: translateZ(480px); transform: translateZ(480px); }
 #visite .plan-container .stage:nth-child(6) { -webkit-transform: translateZ(600px); -moz-transform: translateZ(600px); -ms-transform: translateZ(600px); -o-transform: translateZ(600px); transform: translateZ(600px); }
 #visite .plan-container .stage .pointer { position: absolute; background-color: white; border-radius: 100%; width: 20px; height: 20px; background-size: cover; background-position: 20px; background-repeat: no-repeat; cursor: pointer; -webkit-transition: 0.4s; -moz-transition: 0.4s; -ms-transition: 0.4s; -o-transition: 0.4s; transition: 0.4s; -webkit-transform: translateZ(0) rotate(180deg); -moz-transform: translateZ(0) rotate(180deg); -ms-transform: translateZ(0) rotate(180deg); -o-transform: translateZ(0) rotate(180deg); transform: translateZ(0) rotate(180deg); animation-iteration-count: infinite; animation-duration: 1s; }
-#visite .plan-container .stage .pointer:nth-child(1) { left: 202px; top: 104px; }
-#visite .plan-container .stage .pointer:nth-child(2) { left: 328px; top: 41px; }
-#visite .plan-container .stage .pointer:nth-child(3) { left: 234px; top: 242px; }
-#visite .plan-container .stage .pointer:nth-child(4) { left: 20px; top: 53px; }
-#visite .plan-container .stage .pointer:nth-child(5) { left: 285px; top: 210px; }
-#visite .plan-container .stage .pointer:nth-child(6) { left: 112px; top: 8px; }
+#visite .plan-container .stage .pointer:nth-child(1) { left: 378px; top: 198px; }
+#visite .plan-container .stage .pointer:nth-child(2) { left: 256px; top: 20px; }
+#visite .plan-container .stage .pointer:nth-child(3) { left: 120px; top: 190px; }
+#visite .plan-container .stage .pointer:nth-child(4) { left: 274px; top: 3px; }
+#visite .plan-container .stage .pointer:nth-child(5) { left: 205px; top: 199px; }
+#visite .plan-container .stage .pointer:nth-child(6) { left: 260px; top: 102px; }
 #visite .plan-container .stage.active-hover:nth-child(1) { -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg); -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg); -ms-transform: translateZ(0px) scale(1.1) rotateX(10deg); -o-transform: translateZ(0px) scale(1.1) rotateX(10deg); transform: translateZ(0px) scale(1.1) rotateX(10deg); }
 #visite .plan-container .stage.active-hover:nth-child(2) { -webkit-transform: translateZ(120px) scale(1.1) rotateX(10deg); -moz-transform: translateZ(120px) scale(1.1) rotateX(10deg); -ms-transform: translateZ(120px) scale(1.1) rotateX(10deg); -o-transform: translateZ(120px) scale(1.1) rotateX(10deg); transform: translateZ(120px) scale(1.1) rotateX(10deg); }
 #visite .plan-container .stage.active-hover:nth-child(3) { -webkit-transform: translateZ(240px) scale(1.1) rotateX(10deg); -moz-transform: translateZ(240px) scale(1.1) rotateX(10deg); -ms-transform: translateZ(240px) scale(1.1) rotateX(10deg); -o-transform: translateZ(240px) scale(1.1) rotateX(10deg); transform: translateZ(240px) scale(1.1) rotateX(10deg); }

@@ -32,12 +32,13 @@
     flex-wrap: wrap;
     justify-content: space-around;
     align-content: center;
+    margin-top: 1.5em;
     .su-custom-gallery-slide {
       min-width: 150px;
       min-height: 120px;
       a {
         display: flex;
-        align-items: center;
+        justify-content: center;
         flex-direction: column;
         img {
           border:0;
