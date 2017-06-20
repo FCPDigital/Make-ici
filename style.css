@@ -476,7 +476,7 @@ form select { margin-bottom: 10px; }
 .wpforms-container #wpform-field-hp, .wpcf7 #wpform-field-hp { display: none; }
 
 @media screen and (max-width: 600px) { .wpforms-container .quart-input, .wpcf7 .quart-input, .wpforms-container .half-input, .wpcf7 .half-input, .wpforms-container .wpforms-field-textarea, .wpforms-container .textarea-container, .wpcf7 .wpforms-field-textarea, .wpcf7 .textarea-container { width: 100%; } }
-.single-body form { max-width: 500px; margin: auto; padding-top: 40px; clear: both; }
+.single-body form.wpcf7-form { max-width: 500px; margin: auto; padding-top: 40px; clear: both; }
 
 #visite { perspective: 1000px; }
 #visite .plan-container { position: relative; height: 100vh; transform: rotateX(100deg) rotateZ(60deg); -webkit-transition: 1s; -moz-transition: 1s; -ms-transition: 1s; -o-transition: 1s; transition: 1s; transform-style: preserve-3d; }
@@ -490,12 +490,12 @@ form select { margin-bottom: 10px; }
 #visite .plan-container .stage:nth-child(5) { -webkit-transform: translateZ(480px); -moz-transform: translateZ(480px); -ms-transform: translateZ(480px); -o-transform: translateZ(480px); transform: translateZ(480px); }
 #visite .plan-container .stage:nth-child(6) { -webkit-transform: translateZ(600px); -moz-transform: translateZ(600px); -ms-transform: translateZ(600px); -o-transform: translateZ(600px); transform: translateZ(600px); }
 #visite .plan-container .stage .pointer { position: absolute; background-color: white; border-radius: 100%; width: 20px; height: 20px; background-size: cover; background-position: 20px; background-repeat: no-repeat; cursor: pointer; -webkit-transition: 0.4s; -moz-transition: 0.4s; -ms-transition: 0.4s; -o-transition: 0.4s; transition: 0.4s; -webkit-transform: translateZ(0) rotate(180deg); -moz-transform: translateZ(0) rotate(180deg); -ms-transform: translateZ(0) rotate(180deg); -o-transform: translateZ(0) rotate(180deg); transform: translateZ(0) rotate(180deg); animation-iteration-count: infinite; animation-duration: 1s; }
-#visite .plan-container .stage .pointer:nth-child(1) { left: 129px; top: 179px; }
-#visite .plan-container .stage .pointer:nth-child(2) { left: 212px; top: 106px; }
-#visite .plan-container .stage .pointer:nth-child(3) { left: 295px; top: 73px; }
-#visite .plan-container .stage .pointer:nth-child(4) { left: 373px; top: 120px; }
-#visite .plan-container .stage .pointer:nth-child(5) { left: 87px; top: 49px; }
-#visite .plan-container .stage .pointer:nth-child(6) { left: 400px; top: 25px; }
+#visite .plan-container .stage .pointer:nth-child(1) { left: 131px; top: 164px; }
+#visite .plan-container .stage .pointer:nth-child(2) { left: 380px; top: 143px; }
+#visite .plan-container .stage .pointer:nth-child(3) { left: 242px; top: 221px; }
+#visite .plan-container .stage .pointer:nth-child(4) { left: 343px; top: 87px; }
+#visite .plan-container .stage .pointer:nth-child(5) { left: 152px; top: 166px; }
+#visite .plan-container .stage .pointer:nth-child(6) { left: 64px; top: 182px; }
 #visite .plan-container .stage.active-hover:nth-child(1) { -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg); -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg); -ms-transform: translateZ(0px) scale(1.1) rotateX(10deg); -o-transform: translateZ(0px) scale(1.1) rotateX(10deg); transform: translateZ(0px) scale(1.1) rotateX(10deg); }
 #visite .plan-container .stage.active-hover:nth-child(2) { -webkit-transform: translateZ(120px) scale(1.1) rotateX(10deg); -moz-transform: translateZ(120px) scale(1.1) rotateX(10deg); -ms-transform: translateZ(120px) scale(1.1) rotateX(10deg); -o-transform: translateZ(120px) scale(1.1) rotateX(10deg); transform: translateZ(120px) scale(1.1) rotateX(10deg); }
 #visite .plan-container .stage.active-hover:nth-child(3) { -webkit-transform: translateZ(240px) scale(1.1) rotateX(10deg); -moz-transform: translateZ(240px) scale(1.1) rotateX(10deg); -ms-transform: translateZ(240px) scale(1.1) rotateX(10deg); -o-transform: translateZ(240px) scale(1.1) rotateX(10deg); transform: translateZ(240px) scale(1.1) rotateX(10deg); }
