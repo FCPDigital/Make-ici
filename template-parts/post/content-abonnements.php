@@ -34,9 +34,15 @@
       <p class="mention">Durée minimale <?php echo get_field("duration_min");  ?> / Préavis <?php echo get_field("duration_preavis");  ?></p>
       <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="">
       <?php echo get_field("mention_supplementaire"); ?>
-      <?php if(get_field("form_code")){ ?>
-        <?php echo do_shortcode("[form value=\"Je m'abonne\" class='btn btn-colored action-abonnement' action='abonnement_form' get='title=".get_the_title()."' param='".get_the_ID()."']"); ?>
-      <?php } ?>
+      <?php
+      if(get_field("form_code")){
+        if(get_field("is_product")){
+          echo "<a class='btn btn-colored action-abonnement' href='".get_the_permalink(get_field("form_code"))."'>Je m'abonne</a>";
+        } else {
+          echo do_shortcode("[form value=\"Je m'abonne\" class='btn btn-colored action-abonnement' action='abonnement_form' get='title=".get_the_title()."' param='".get_the_ID()."']");
+        }
+      }
+      ?>
 
     </div>
 
