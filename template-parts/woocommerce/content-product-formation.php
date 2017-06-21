@@ -54,9 +54,11 @@
         ?>
       </div>
 
-      <div class="related_products">
-        <p class="bold">Autres formations  <?php echo $category; ?></p>
-        <?php do_shortcode("[carousel category='".$category."' except='".get_the_ID($product)."' style='compact' ]") ?>
-      </div>
+      <?php if($category){ ?>
+        <div class="related_products">
+          <p class="bold">Autres formations  <?php echo $category; ?></p>
+          <?php do_shortcode("[carousel category='".$category."' except='".get_the_ID($product)."' style='compact' ]") ?>
+        </div>
+      <?php } ?>
     </div>
 </section>
