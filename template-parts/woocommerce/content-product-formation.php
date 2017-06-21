@@ -25,26 +25,25 @@
         <?php if( get_field("duration") ){ ?>
           <div class="cost_per_month fa-container">
             <i class="fa fa-clock-o" aria-hidden="true"></i>
-            <p>Durée : <?php echo get_field("duration"); ?></p>
+            <p>Durée :<br><?php echo get_field("duration"); ?></p>
           </div>
         <?php } ?>
 
         <div class="cost_max fa-container">
           <i class="fa fa-eur" aria-hidden="true"></i>
-          <p>Tarif abonnés : <?php echo $product->get_price() ?> € H/T</p>
+          <p>Tarif abonnés :<br><?php echo $product->get_price() ?> € H/T</p>
         </div>
 
         <div class="cost_sale fa-container">
           <i class="fa fa-eur" aria-hidden="true"></i>
-          <p>Tarif non abonnées : <?php echo $product->get_price() ?> € H/T</p>
+          <p>Tarif non abonnées :<br><?php echo $product->get_price() ?> € H/T</p>
         </div>
 
         <?php if($brand) { ?>
           <div class="formator fa-container margin-bottom-small">
             <i class="fa fa-user" aria-hidden="true"></i>
             <p><strong>Le Formateur :</strong><br>
-            <?php echo $brand[0]->description; ?>
-            </p>
+              <?php echo $brand[0]->description; ?></p>
           </div>
         <?php } ?>
         <?php

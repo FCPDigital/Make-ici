@@ -23,15 +23,15 @@
 
       <div class="cost_per_month">
         <i class="fa fa-eur" aria-hidden="true"></i>
-        <p>Coût mensuel<br><?php echo get_field("cost_per_month"); ?></p>
+        <p>Coût mensuel :<br><?php echo get_field("cost_per_month"); ?></p>
       </div>
 
       <div class="cost_registration">
         <i class="fa fa-inscription" aria-hidden="true"></i>
-        <p>Frais d'inscription<br><?php echo get_field("cost_registration"); ?></p>
+        <p>Frais d'inscription :<br><?php echo get_field("cost_registration"); ?></p>
       </div>
 
-      <p class="mention">Durée minimale <?php echo get_field("duration_min");  ?> / Préavis <?php echo get_field("duration_preavis");  ?></p>
+      <p class="mention">Durée minimale :<br><?php echo get_field("duration_min");  ?> / Préavis <?php echo get_field("duration_preavis");  ?></p>
       <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="">
       <?php echo get_field("mention_supplementaire"); ?>
       <?php

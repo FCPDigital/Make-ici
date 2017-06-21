@@ -63,11 +63,11 @@ des styles générique, aller dans la page _archive.scss
 #single-product {
   .loop-archive {
     .fa-container {
-      min-height: 50px;
-      padding: 5px 25px;
       p {
         font-size: 12px;
-        padding-top: 10px;
+        margin-top: 10px;
+        width: 100%;
+        padding-left: 40px;
       }
       i {
         margin-right: 10px;
