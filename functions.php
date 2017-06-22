@@ -221,7 +221,7 @@ function manage_date_order_variable_product($options){
 }
 
 function get_variation_attribute($product){
-  $product_variable = new WC_Product_Variable( get_the_ID($product) );
+  $product_variable = new WC_Product_Variable( $product->ID );
   $variations = $product_variable->get_available_variations();
 
   $var_data = [];
@@ -262,6 +262,77 @@ function get_next_date($product, $attibute_name="attribute_pa_date"){
   }
 }
 
+function sort_by_date($products){
+  $products_sort = [];
+  $count = 0;
+  while ( $products->have_posts() ) :  $products->the_post();
+    $post = get_post();
+    $nextDate = get_next_date($post);
+    $count++;
+    $tmp_products_sort = $products_sort;
+    $tmp = [
+      "el" => $post,
+      "date" => $nextDate
+    ];
+
+    for($i=0; $i<count($products_sort); $i++) {
+      //Si une date existe sur le produit parcouru
+
+      // echo "<br>-----DEBUG-----<br>";
+      // var_dump($products_sort[$i]);
+      // echo "<br>-----DEBUG-----<br>";
+
+      if($products_sort[$i]["date"]){
+
+        //Si la date est inferieur à celle du produit on ajoute avant
+        if($nextDate && $nextDate < $products_sort[$i]["date"] ) {
+          // echo "Date courante est inférieur à celle du produit :".$products_sort[$i]["el"];
+          if($i==0){
+            array_unshift($tmp_products_sort, $tmp);
+          } else {
+            array_splice( $tmp_products_sort, $i, 0, [$tmp]);
+          }
+          break;
+
+        //Si c'est le dernier produit on ajoute après
+        } elseif((count($products_sort)-1==$i)||($nextDate==false)){
+          // echo "Dernier produit donc on rajoute après ".$products_sort[$i]["el"];
+          array_push($tmp_products_sort, $tmp);
+
+          break;
+        }
+
+      //Sinon
+      } else {
+        //Si la date du produit est définis,
+        // echo "La date du produit ".$products_sort[$i]["el"]." n'est pas définis, on rajoute donc avant";
+        if( $i==0 ){
+          array_unshift( $tmp_products_sort, $tmp);
+        } else {
+          array_splice( $tmp_products_sort, $i, 0, [$tmp]);
+        }
+        break;
+      }
+    }
+    $products_sort = $tmp_products_sort;
+    //Au début on ajoute le premier post
+    if(count($products_sort) == 0){
+      array_push($products_sort, [
+        "el" => $post,
+        "date" => get_next_date($post)
+      ]);
+    }
+
+
+  endwhile;
+
+  $products_humanize = [];
+  for($i=0; $i<count($products_sort); $i++){
+    array_push($products_humanize, $products_sort[$i]["el"]);
+    // echo $products_sort[$i]["date"]->format("d/m/Y")."<br>";
+  }
+  return $products_humanize;
+}
 
 function get_category_title($category){
 	if($category){
@@ -368,8 +439,9 @@ function shortcode_carousel($atts){
 							if ( get_the_ID($products->get_post()) != $except) {
 								$cCat = get_the_terms( $products->get_post()->id, 'product_cat' )[0]->name;
 								if( $cCat == $category ){
-								include( locate_template("template-parts/woocommerce/content-boutique-product.php") );
-								$count++;
+                  $product = $products->get_post();
+  								include( locate_template("template-parts/woocommerce/content-boutique-product.php") );
+  								$count++;
 								}
 							}
 						endwhile; ?>

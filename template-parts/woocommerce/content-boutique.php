@@ -8,15 +8,22 @@
       </div>
       <div class="archive-main-body">
         <?php $products = get_products_from_category($category);
-        $count = $products->post_count;?>
+        $count = $products->post_count;
+        $products_sort = sort_by_date($products);
+        // var_dump($products_sort);
+        ?>
         <div class="product-carousel carousel <?php if($count > 3){echo 'active-control';} ?>">
           <div class="carousel-body">
             <div class="archive-head carousel-container">
               <?php  /* Start the Loop */
-                while ( $products->have_posts() ) :  $products->the_post();
+                // while ( $products->have_posts() ) :  $products->the_post();
+                //   include( locate_template('template-parts/woocommerce/content-boutique-product.php') );
+                //   $count++;
+                // endwhile;
+                foreach ($products_sort as $product){
                   include( locate_template('template-parts/woocommerce/content-boutique-product.php') );
-                  $count++;
-                endwhile;  ?>
+                }
+                ?>
             </div>
           </div>
           <div class="carousel-control">

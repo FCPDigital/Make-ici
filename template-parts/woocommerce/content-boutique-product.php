@@ -1,11 +1,13 @@
 
 <?php
-$product = $products->get_post();
+global $product;
 ?>
-
 
 <?php if( isset($style) && $style=="compact" ){ ?>
 
+  <?php
+  $product = get_post($product->ID);
+  ?>
 
   <div class="carousel-item compact">
 
@@ -45,7 +47,7 @@ $product = $products->get_post();
     <?php
     $nextDate = get_next_date($product);
     if($nextDate){
-      echo "<a href=\"".get_permalink($product)."\" data-by-xhr class=\"btn btn-colored\">Prochainne session le <br>".$nextDate->format("d/m/Y")."</a>";
+      echo "<a href=\"".get_permalink($product)."\" data-by-xhr class=\"btn btn-colored\">Prochaine session le <br>".$nextDate->format("d/m/Y")."</a>";
     } else {
       echo "<p class='no-date'>Pas de session à venir.</p>";
     }
