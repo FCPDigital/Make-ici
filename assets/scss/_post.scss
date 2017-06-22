@@ -6,9 +6,14 @@
   .archive-main {
     padding-left: 70px;
     .fa-custom, .ico {
-      @include transform(translateX(-70px));
+      @include transform(translateX(-50px));
       position: absolute;
       float: left;
+      max-width: 50px;
+      img {
+        max-width: 35px;
+        max-height: 35px;
+      }
     }
   }
 }
