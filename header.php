@@ -41,3 +41,5 @@
 		<span class="close-popin">X</span>
 		<div class="content-popin"></div>
 	</div>
+	<?php global $woocommerce; ?>
+	<a id="cart-btn" href="<?php echo $woocommerce->cart->get_cart_url(); ?>">Panier</a>

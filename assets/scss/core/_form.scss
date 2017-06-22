@@ -3,14 +3,14 @@
     padding: 0 20px;
     position: relative;
     select {
-      background-color: black;
-      color: white;
+      background-color: rgba(255, 255, 255, 95);
+      color: black;
       font-weight: bold;
-      border: 1px solid #ffed00;
+      border: 2px solid $color-3;
       border-radius: 0;
       height: 40px;
       font-size: 12px;
-      padding: 10px 20px;
+      padding: 10px 7px;
       line-height: 1em;
       font-weight: 500;
       width: 100%;

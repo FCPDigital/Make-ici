@@ -244,6 +244,8 @@ h1 { font-size: 2.5em; font-weight: bold; }
 Style de la page formations, pour voir la plupart
 des styles générique, aller dans la page _archive.scss
 */
+#cart-btn { position: fixed; top: 80px; right: 40px; display: block; width: 50px; height: 40px; background-color: transparent; background-repeat: no-repeat; background-position: center; background-size: 70%; z-index: 2; color: transparent; background-image: url("assets/images/cart.png"); }
+
 #boutique h1 { margin-bottom: 32px; }
 #boutique .loop-archive .archive-body-item .archive-main { width: 100%; }
 #boutique .loop-archive .archive-head .archive-head-item { background-color: transparent; padding-bottom: 0px; }
@@ -274,6 +276,10 @@ des styles générique, aller dans la page _archive.scss
 .checkout-page .landing { color: black; padding-top: 64px; }
 .checkout-page .landing::before { background-color: white; }
 
+#add_payment_method #payment, .woocommerce-cart #payment, .woocommerce-checkout #payment { border-top: 1px solid #DDD; background-color: white; border-radius: 0; }
+
+#add_payment_method #payment ul.payment_methods, .woocommerce-cart #payment ul.payment_methods, .woocommerce-checkout #payment ul.payment_methods { border-bottom: 0; }
+
 #payment { background-color: #EEE; border-radius: 0; }
 #payment #place_order { background-color: black; color: #ffed00; border-radius: 0; font-size: 14px; padding: 15px 20px; height: 50px; }
 #payment input[type="radio"] { height: 15px; width: 15px; float: left; margin-top: 8px !important; display: inline-block; }
@@ -287,7 +293,7 @@ des styles générique, aller dans la page _archive.scss
 body.woocommerce-checkout label.checkbox span { padding-left: 20px; }
 body.woocommerce-checkout h1 { display: none; }
 body.woocommerce-checkout header.transparent .navbar { background-color: black; }
-body.woocommerce-checkout .woocommerce-info { border-top-color: transparent; margin-bottom: 10px; font-size: 14px; }
+body.woocommerce-checkout .woocommerce-info { border-top-color: #ffed00; margin-bottom: 10px; font-size: 14px; }
 body.woocommerce-checkout .woocommerce-checkout { margin-top: 40px; float: left; }
 body.woocommerce-checkout .woocommerce-checkout .col2-set { width: 55%; float: left; }
 body.woocommerce-checkout .woocommerce-checkout .col2-set .col-1, body.woocommerce-checkout .woocommerce-checkout .col2-set .col-2 { width: 100%; float: left; }
@@ -440,7 +446,7 @@ footer .row .flex-item .widget_text a { color: black; text-decoration: underline
   .carousel.active-control .carousel-body { padding-top: 100px; }
   .carousel.active-control .carousel-control { position: absolute; width: 100%; padding: 20px 0; top: 0; } }
 .variations .variation { padding: 0 20px; position: relative; }
-.variations .variation select { background-color: black; color: white; font-weight: bold; border: 1px solid #ffed00; border-radius: 0; height: 40px; font-size: 12px; padding: 10px 20px; line-height: 1em; font-weight: 500; width: 100%; }
+.variations .variation select { background-color: white; color: black; font-weight: bold; border: 2px solid #ffed00; border-radius: 0; height: 40px; font-size: 12px; padding: 10px 7px; line-height: 1em; font-weight: 500; width: 100%; }
 
 .wpcf7-response-output { border: 0 !important; color: white; }
 
@@ -498,12 +504,12 @@ form select { margin-bottom: 20px; }
 #visite .plan-container .stage:nth-child(5) { -webkit-transform: translateZ(480px); -moz-transform: translateZ(480px); -ms-transform: translateZ(480px); -o-transform: translateZ(480px); transform: translateZ(480px); }
 #visite .plan-container .stage:nth-child(6) { -webkit-transform: translateZ(600px); -moz-transform: translateZ(600px); -ms-transform: translateZ(600px); -o-transform: translateZ(600px); transform: translateZ(600px); }
 #visite .plan-container .stage .pointer { position: absolute; background-color: white; border-radius: 100%; width: 20px; height: 20px; background-size: cover; background-position: 20px; background-repeat: no-repeat; cursor: pointer; -webkit-transition: 0.4s; -moz-transition: 0.4s; -ms-transition: 0.4s; -o-transition: 0.4s; transition: 0.4s; -webkit-transform: translateZ(0) rotate(180deg); -moz-transform: translateZ(0) rotate(180deg); -ms-transform: translateZ(0) rotate(180deg); -o-transform: translateZ(0) rotate(180deg); transform: translateZ(0) rotate(180deg); animation-iteration-count: infinite; animation-duration: 1s; }
-#visite .plan-container .stage .pointer:nth-child(1) { left: 240px; top: 96px; }
-#visite .plan-container .stage .pointer:nth-child(2) { left: 259px; top: 51px; }
-#visite .plan-container .stage .pointer:nth-child(3) { left: 19px; top: 104px; }
-#visite .plan-container .stage .pointer:nth-child(4) { left: 368px; top: 113px; }
-#visite .plan-container .stage .pointer:nth-child(5) { left: 400px; top: 215px; }
-#visite .plan-container .stage .pointer:nth-child(6) { left: 312px; top: 241px; }
+#visite .plan-container .stage .pointer:nth-child(1) { left: 185px; top: 214px; }
+#visite .plan-container .stage .pointer:nth-child(2) { left: 311px; top: 107px; }
+#visite .plan-container .stage .pointer:nth-child(3) { left: 187px; top: 200px; }
+#visite .plan-container .stage .pointer:nth-child(4) { left: 178px; top: 65px; }
+#visite .plan-container .stage .pointer:nth-child(5) { left: 166px; top: 165px; }
+#visite .plan-container .stage .pointer:nth-child(6) { left: 376px; top: 14px; }
 #visite .plan-container .stage.active-hover:nth-child(1) { -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg); -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg); -ms-transform: translateZ(0px) scale(1.1) rotateX(10deg); -o-transform: translateZ(0px) scale(1.1) rotateX(10deg); transform: translateZ(0px) scale(1.1) rotateX(10deg); }
 #visite .plan-container .stage.active-hover:nth-child(2) { -webkit-transform: translateZ(120px) scale(1.1) rotateX(10deg); -moz-transform: translateZ(120px) scale(1.1) rotateX(10deg); -ms-transform: translateZ(120px) scale(1.1) rotateX(10deg); -o-transform: translateZ(120px) scale(1.1) rotateX(10deg); transform: translateZ(120px) scale(1.1) rotateX(10deg); }
 #visite .plan-container .stage.active-hover:nth-child(3) { -webkit-transform: translateZ(240px) scale(1.1) rotateX(10deg); -moz-transform: translateZ(240px) scale(1.1) rotateX(10deg); -ms-transform: translateZ(240px) scale(1.1) rotateX(10deg); -o-transform: translateZ(240px) scale(1.1) rotateX(10deg); transform: translateZ(240px) scale(1.1) rotateX(10deg); }
