@@ -424,7 +424,7 @@ footer .row .flex-item .widget_text a { color: black; text-decoration: underline
 .ecosystem .su-custom-gallery .su-custom-gallery-slide a img:hover { background-color: transparent; }
 
 .post-type-archive-abonnements .archive-main { padding-left: 70px; }
-.post-type-archive-abonnements .archive-main .fa-custom, .post-type-archive-abonnements .archive-main .ico { -webkit-transform: translateX(-50px); -moz-transform: translateX(-50px); -ms-transform: translateX(-50px); -o-transform: translateX(-50px); transform: translateX(-50px); position: absolute; float: left; max-width: 50px; }
+.post-type-archive-abonnements .archive-main .fa-custom, .post-type-archive-abonnements .archive-main .ico { -webkit-transform: translateX(-50px); -moz-transform: translateX(-50px); -ms-transform: translateX(-50px); -o-transform: translateX(-50px); transform: translateX(-50px); position: absolute; float: left; max-width: 50px; text-align: center; }
 .post-type-archive-abonnements .archive-main .fa-custom img, .post-type-archive-abonnements .archive-main .ico img { max-width: 35px; max-height: 35px; }
 
 .carousel .carousel-control { display: none; }
@@ -510,12 +510,12 @@ form select { margin-bottom: 20px; }
 #visite .plan-container .stage:nth-child(5) { -webkit-transform: translateZ(480px); -moz-transform: translateZ(480px); -ms-transform: translateZ(480px); -o-transform: translateZ(480px); transform: translateZ(480px); }
 #visite .plan-container .stage:nth-child(6) { -webkit-transform: translateZ(600px); -moz-transform: translateZ(600px); -ms-transform: translateZ(600px); -o-transform: translateZ(600px); transform: translateZ(600px); }
 #visite .plan-container .stage .pointer { position: absolute; background-color: white; border-radius: 100%; width: 20px; height: 20px; background-size: cover; background-position: 20px; background-repeat: no-repeat; cursor: pointer; -webkit-transition: 0.4s; -moz-transition: 0.4s; -ms-transition: 0.4s; -o-transition: 0.4s; transition: 0.4s; -webkit-transform: translateZ(0) rotate(180deg); -moz-transform: translateZ(0) rotate(180deg); -ms-transform: translateZ(0) rotate(180deg); -o-transform: translateZ(0) rotate(180deg); transform: translateZ(0) rotate(180deg); animation-iteration-count: infinite; animation-duration: 1s; }
-#visite .plan-container .stage .pointer:nth-child(1) { left: 333px; top: 212px; }
-#visite .plan-container .stage .pointer:nth-child(2) { left: 2px; top: 53px; }
-#visite .plan-container .stage .pointer:nth-child(3) { left: 147px; top: 155px; }
-#visite .plan-container .stage .pointer:nth-child(4) { left: 294px; top: 130px; }
-#visite .plan-container .stage .pointer:nth-child(5) { left: 235px; top: 209px; }
-#visite .plan-container .stage .pointer:nth-child(6) { left: 147px; top: 29px; }
+#visite .plan-container .stage .pointer:nth-child(1) { left: 139px; top: 250px; }
+#visite .plan-container .stage .pointer:nth-child(2) { left: 251px; top: 74px; }
+#visite .plan-container .stage .pointer:nth-child(3) { left: 304px; top: 72px; }
+#visite .plan-container .stage .pointer:nth-child(4) { left: 32px; top: 228px; }
+#visite .plan-container .stage .pointer:nth-child(5) { left: 39px; top: 21px; }
+#visite .plan-container .stage .pointer:nth-child(6) { left: 385px; top: 143px; }
 #visite .plan-container .stage.active-hover:nth-child(1) { -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg); -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg); -ms-transform: translateZ(0px) scale(1.1) rotateX(10deg); -o-transform: translateZ(0px) scale(1.1) rotateX(10deg); transform: translateZ(0px) scale(1.1) rotateX(10deg); }
 #visite .plan-container .stage.active-hover:nth-child(2) { -webkit-transform: translateZ(120px) scale(1.1) rotateX(10deg); -moz-transform: translateZ(120px) scale(1.1) rotateX(10deg); -ms-transform: translateZ(120px) scale(1.1) rotateX(10deg); -o-transform: translateZ(120px) scale(1.1) rotateX(10deg); transform: translateZ(120px) scale(1.1) rotateX(10deg); }
 #visite .plan-container .stage.active-hover:nth-child(3) { -webkit-transform: translateZ(240px) scale(1.1) rotateX(10deg); -moz-transform: translateZ(240px) scale(1.1) rotateX(10deg); -ms-transform: translateZ(240px) scale(1.1) rotateX(10deg); -o-transform: translateZ(240px) scale(1.1) rotateX(10deg); transform: translateZ(240px) scale(1.1) rotateX(10deg); }
