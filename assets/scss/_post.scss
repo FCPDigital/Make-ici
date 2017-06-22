@@ -1,3 +1,14 @@
 #post {
 
 }
+
+.post-type-archive-abonnements {
+  .archive-main {
+    padding-left: 70px;
+    .fa-custom, .ico {
+      @include transform(translateX(-70px));
+      position: absolute;
+      float: left;
+    }
+  }
+}
