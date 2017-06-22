@@ -33,7 +33,7 @@ des styles générique, aller dans la page _archive.scss
   .carousel-item {
     background-color: white;
     color: black;
-    padding-bottom: 60px;
+    padding-bottom: 70px;
     .title {
       margin-top: $small-pad;
       padding: 0  $small-pad;
@@ -47,14 +47,23 @@ des styles générique, aller dans la page _archive.scss
     .link-more {
       display: none;
     }
-    .btn {
+    .btn, .no-date {
       margin: 16px;
       width: calc(100% - 32px);
       position: absolute;
       bottom: 0;
+      padding:10px;
       &:hover {
         color: black;
         background-color: $color-3;
+      }
+    }
+    .no-date {
+      line-height: 1em;
+      font-size: 12px;
+      padding: 25px 0;
+      &:hover {
+        background-color: white;
       }
     }
   }

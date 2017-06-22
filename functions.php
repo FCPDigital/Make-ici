@@ -99,12 +99,62 @@ function custom_single_template($template) {
 add_filter( 'single_template', 'custom_single_template' );
 /** END Custom Post Type Template Selector **/
 
+
 //////////////////////////////////////////////////////
 //
 //						HELPERS
 //
 //////////////////////////////////////////////////////
 
+
+////////////////////////////////
+//				Woocommerce
+////////////////////////////////
+
+// Retourne la liste des catégories de woocommerce
+function get_woocommerce_categories(){
+  $taxonomy     = 'product_cat';
+  $orderby      = 'name';
+  $show_count   = 0;      // 1 for yes, 0 for no
+  $pad_counts   = 0;      // 1 for yes, 0 for no
+  $hierarchical = 1;      // 1 for yes, 0 for no
+  $title        = '';
+  $empty        = 0;
+  $args = array(
+  	'taxonomy'     => $taxonomy,
+  	'orderby'      => $orderby,
+  	'show_count'   => $show_count,
+  	'pad_counts'   => $pad_counts,
+  	'hierarchical' => $hierarchical,
+  	'title_li'     => $title,
+  	'hide_empty'   => $empty
+  );
+	return get_categories( $args );
+}
+
+// Retourne la photo de backgroup d'une categorie woocommerce
+function get_category_thumbnail($category){
+	$id = $category->term_id;
+	$thumbnail_id = get_woocommerce_term_meta( $id, 'thumbnail_id', true );
+	$image = wp_get_attachment_url( $thumbnail_id );
+	if($image){
+		return $image;
+	}
+}
+
+// Récupérer les produits d'une categorie
+function get_products_from_category($category){
+	$productArgs = array( 'post_type' => 'product', 'posts_per_page' => -1, 'product_cat' => $category->name, 'orderby' => 'post_date', 'order' => "DESC" );
+	$products = new WP_Query( $productArgs );
+	return $products ;
+}
+
+
+////////////////////////////////
+//				Générique
+////////////////////////////////
+
+// Renvoi les derniers produits sous la forme d'un carousel
 function get_last_posts(){
 	$limit = 5;
 	$activeControl = ($limit>3) ?  "active-control" : "";
@@ -139,6 +189,107 @@ function get_last_posts(){
 	</div>
 	<?php
 }
+
+// Retourne le SLUG d'un post
+function get_the_slug(){
+	return get_post_field( 'post_name', get_post() );
+}
+
+
+////////////////////////////////
+//				Dates
+////////////////////////////////
+
+// Formate une date de type 31122917 en 31/12/2017
+function get_format_date($string){
+	 return preg_replace("/(\d{2})(\d{2})(\d{4})/",  "$1/$2/$3", $string);
+}
+
+
+function manage_date_order_variable_product($options){
+	$optionsManage = [];
+	$c = date_create_from_format('dmY', date("dmY"))->getTimestamp();
+	foreach( $options as $option) {
+		if( $option ){
+			$date = date_create_from_format( "dmY" , $option ) -> getTimestamp();
+			if($date > $c){
+				array_push($optionsManage, $option);
+			}
+		}
+	}
+	return $optionsManage;
+}
+
+function get_variation_attribute($product){
+  $product_variable = new WC_Product_Variable( get_the_ID($product) );
+  $variations = $product_variable->get_available_variations();
+
+  $var_data = [];
+  foreach ($variations as $variation) {
+    if($variation['variation_id']){
+      $var_data[] = $variation['attributes'];
+    }
+  }
+
+  return $var_data;
+}
+
+function get_next_date($product, $attibute_name="attribute_pa_date"){
+  $data = get_variation_attribute($product);
+  $date = [];
+  for($i=0; $i<count($data); $i++){
+    foreach($data[$i] as $attrName => $var_name) {
+      if( $attrName == $attibute_name ) {
+        array_push($date, $var_name);
+      }
+    }
+  }
+  $currentDate = DateTime::createFromFormat('U', time());
+  $nextDate = false;
+  for($i=0; $i<count($date); $i++){
+    $date[$i] = DateTime::createFromFormat( "dmY" , $date[$i] );
+    if( $date[$i] > $currentDate ){
+      //Si une date à venir est définis et que celle examiné est plus récente OU que aucune date prochaine n'est définis
+      if(($nextDate&&$date[$i]<$nextDate)||($nextDate==false)){
+        $nextDate = $date[$i];
+      }
+    }
+  }
+  if( $nextDate ) {
+    return $nextDate;
+  } else {
+    return false;
+  }
+}
+
+
+function get_category_title($category){
+	if($category){
+		$name = $category->name;
+		if($name){
+			return $name;
+		}
+	}
+}
+
+
+function get_category_slug($category) {
+	if($category){
+		$slug = $category->slug;
+		if($slug){
+			return $slug;
+		}
+	}
+}
+
+
+
+//////////////////////////////////////////////////////
+//
+//						SHORTCODES
+//
+//////////////////////////////////////////////////////
+
 
 function shortcode_formbtn($atts){
 	$args = shortcode_atts( array(
@@ -274,6 +425,12 @@ function shortcode_ico($atts){
 add_shortcode( 'ico', 'shortcode_ico' );
 
 
+//////////////////////////////////////////////////////
+//
+//						LOGIN CUSTOM
+//
+//////////////////////////////////////////////////////
+
 function display_website_logo(){
 	$custom_logo_id = get_theme_mod( 'custom_logo' );
 	$image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
@@ -282,95 +439,7 @@ function display_website_logo(){
 	}
 }
 
-function get_the_slug(){
-	return get_post_field( 'post_name', get_post() );
-}
 
-function get_woocommerce_categories(){
-
-  $taxonomy     = 'product_cat';
-  $orderby      = 'name';
-  $show_count   = 0;      // 1 for yes, 0 for no
-  $pad_counts   = 0;      // 1 for yes, 0 for no
-  $hierarchical = 1;      // 1 for yes, 0 for no
-  $title        = '';
-  $empty        = 0;
-
-  $args = array(
-  	'taxonomy'     => $taxonomy,
-  	'orderby'      => $orderby,
-  	'show_count'   => $show_count,
-  	'pad_counts'   => $pad_counts,
-  	'hierarchical' => $hierarchical,
-  	'title_li'     => $title,
-  	'hide_empty'   => $empty
-  );
-
-	return get_categories( $args );
-}
-
-function get_category_thumbnail($category){
-	$id = $category->term_id;
-	$thumbnail_id = get_woocommerce_term_meta( $id, 'thumbnail_id', true );
-	$image = wp_get_attachment_url( $thumbnail_id );
-	if($image){
-		return $image;
-	}
-}
-
-function get_format_date($string){
-	 return preg_replace("/(\d{2})(\d{2})(\d{4})/",  "$1/$2/$3", $string);
-}
-
-function manage_date_order_variable_product($options){
-	$optionsManage = [];
-	$c = date_create_from_format('dmY', date("dmY"))->getTimestamp();
-
-	foreach( $options as $option) {
-		if( $option ){
-			$date = date_create_from_format( "dmY" , $option ) -> getTimestamp();
-			if($date > $c){
-				array_push($optionsManage, $option);
-			}
-		}
-	}
-
-	return $optionsManage;
-}
-
-function get_category_title($category){
-	if($category){
-		$name = $category->name;
-		if($name){
-			return $name;
-		}
-	}
-}
-
-function get_woocommerce_category_name($post){
-	// $cats = get_terms( array(
-	// 	'taxonomy' => 'product_cat',
-	// 	'hide_empty' => 0,
-	// 	'orderby' => 'ASC',
-	// 	'parent' =>0
-	// ));
-}
-
-function get_category_slug($category) {
-	if($category){
-		$slug = $category->slug;
-		if($slug){
-			return $slug;
-		}
-	}
-}
-
-function get_products_from_category($category){
-
-	$productArgs = array( 'post_type' => 'product', 'posts_per_page' => -1, 'product_cat' => $category->name, 'orderby' => 'post_date', 'order' => "DESC" );
-	$products = new WP_Query( $productArgs );
-	return $products ;
-}
 
 //////////////////////////////////////////////////////
 //
