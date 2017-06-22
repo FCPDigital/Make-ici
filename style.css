@@ -141,8 +141,10 @@ a { color: black; text-decoration: underline; }
   .collapse.in { display: block !important; } }
 .page-template-template-checkout .container, .woocommerce-cart .container { width: 1150px; }
 
-@media screen and (max-width: 1160px) { .container { width: 100%; } }
-@media screen and (max-width: 860px) { .container { width: 100%; } }
+@media screen and (max-width: 1160px) { .container { width: 100%; }
+  .page-template-template-checkout .container, .woocommerce-cart .container { width: 100%; } }
+@media screen and (max-width: 860px) { .container { width: 100%; }
+  .page-template-template-checkout .container, .woocommerce-cart .container { width: 100%; } }
 @font-face { font-family: "CenturyGothic Bold"; src: url("assets/fonts/CenturyGothic_Bold.ttf"); }
 @font-face { font-family: "CenturyGothic Regular"; src: url("assets/fonts/CenturyGothic_Regular.ttf"); }
 h1 { font-size: 2.5em; font-weight: bold; }
@@ -247,12 +249,15 @@ Style de la page formations, pour voir la plupart
 des styles générique, aller dans la page _archive.scss
 */
 #cart-btn { position: fixed; top: 80px; right: 40px; display: block; width: 50px; height: 40px; background-color: transparent; background-repeat: no-repeat; background-position: center; background-size: 70%; z-index: 2; color: transparent; background-image: url("assets/images/cart.png"); }
+#cart-btn[data-count]::after { content: attr(data-count); position: absolute; background-color: white; top: 0; left: 0; width: 20px; height: 20px; border-radius: 100%; border: 2px solid #ffed00; display: block; color: black; text-align: center; font-size: 10px; line-height: 16px; }
 
 #boutique h1 { margin-bottom: 32px; }
-#boutique .loop-archive .archive-body-item .archive-main { width: 100%; }
+#boutique .loop-archive .archive-body-item .archive-main { width: 100%; padding-right: 0; }
 #boutique .loop-archive .archive-head .archive-head-item { background-color: transparent; padding-bottom: 0px; }
 #boutique .loop-archive .archive-head .archive-head-item .title-container { padding: 20px 0; height: 60px; }
 #boutique .loop-archive .archive-head .archive-head-item .btn { position: static; width: 100%; margin-top: 10px; -webkit-transform: none; -moz-transform: none; -ms-transform: none; -o-transform: none; transform: none; }
+#boutique .carousel.active-control .carousel-control { width: 15%; }
+#boutique .carousel.active-control .carousel-body { width: 85%; }
 
 .carousel.product-carousel .carousel-item { background-color: white; color: black; padding-bottom: 70px; }
 .carousel.product-carousel .carousel-item .title { margin-top: 16px; padding: 0 16px; margin-bottom: 16px; font-weight: bold; }
@@ -329,6 +334,8 @@ body.woocommerce-checkout #customer_details h3::after { content: ""; position: a
 .woocommerce-cart .cart-collaterals .wc-proceed-to-checkout a.checkout-button { border: 3px solid black; border-radius: 0; font-weight: bold; font-size: 14px; padding: 17px 32px; letter-spacing: 1px; background-color: black; color: #ffed00; width: auto; display: inline-block; text-align: center; margin: auto; -webkit-transition: 0.4s; -moz-transition: 0.4s; -ms-transition: 0.4s; -o-transition: 0.4s; transition: 0.4s; }
 .woocommerce-cart .cart-collaterals .wc-proceed-to-checkout a.checkout-button:hover  { background-color: white; color: black; }
 
+@media screen and (max-width: 860px) { #boutique .carousel.active-control .carousel-control { width: 100%; }
+  .loop-archive .archive-body-item .archive-main .archive-main-head h2 { display: block; text-align: center; } }
 .homepage { color: white; }
 .homepage h2 { font-size: 2.5em; font-weight: bold; color: white; }
 .homepage > div, .homepage .container { position: relative; }
@@ -510,12 +517,12 @@ form select { margin-bottom: 20px; }
 #visite .plan-container .stage:nth-child(5) { -webkit-transform: translateZ(480px); -moz-transform: translateZ(480px); -ms-transform: translateZ(480px); -o-transform: translateZ(480px); transform: translateZ(480px); }
 #visite .plan-container .stage:nth-child(6) { -webkit-transform: translateZ(600px); -moz-transform: translateZ(600px); -ms-transform: translateZ(600px); -o-transform: translateZ(600px); transform: translateZ(600px); }
 #visite .plan-container .stage .pointer { position: absolute; background-color: white; border-radius: 100%; width: 20px; height: 20px; background-size: cover; background-position: 20px; background-repeat: no-repeat; cursor: pointer; -webkit-transition: 0.4s; -moz-transition: 0.4s; -ms-transition: 0.4s; -o-transition: 0.4s; transition: 0.4s; -webkit-transform: translateZ(0) rotate(180deg); -moz-transform: translateZ(0) rotate(180deg); -ms-transform: translateZ(0) rotate(180deg); -o-transform: translateZ(0) rotate(180deg); transform: translateZ(0) rotate(180deg); animation-iteration-count: infinite; animation-duration: 1s; }
-#visite .plan-container .stage .pointer:nth-child(1) { left: 139px; top: 250px; }
-#visite .plan-container .stage .pointer:nth-child(2) { left: 251px; top: 74px; }
-#visite .plan-container .stage .pointer:nth-child(3) { left: 304px; top: 72px; }
-#visite .plan-container .stage .pointer:nth-child(4) { left: 32px; top: 228px; }
-#visite .plan-container .stage .pointer:nth-child(5) { left: 39px; top: 21px; }
-#visite .plan-container .stage .pointer:nth-child(6) { left: 385px; top: 143px; }
+#visite .plan-container .stage .pointer:nth-child(1) { left: 231px; top: 129px; }
+#visite .plan-container .stage .pointer:nth-child(2) { left: 160px; top: 35px; }
+#visite .plan-container .stage .pointer:nth-child(3) { left: 314px; top: 67px; }
+#visite .plan-container .stage .pointer:nth-child(4) { left: 290px; top: 120px; }
+#visite .plan-container .stage .pointer:nth-child(5) { left: 58px; top: 171px; }
+#visite .plan-container .stage .pointer:nth-child(6) { left: 21px; top: 167px; }
 #visite .plan-container .stage.active-hover:nth-child(1) { -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg); -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg); -ms-transform: translateZ(0px) scale(1.1) rotateX(10deg); -o-transform: translateZ(0px) scale(1.1) rotateX(10deg); transform: translateZ(0px) scale(1.1) rotateX(10deg); }
 #visite .plan-container .stage.active-hover:nth-child(2) { -webkit-transform: translateZ(120px) scale(1.1) rotateX(10deg); -moz-transform: translateZ(120px) scale(1.1) rotateX(10deg); -ms-transform: translateZ(120px) scale(1.1) rotateX(10deg); -o-transform: translateZ(120px) scale(1.1) rotateX(10deg); transform: translateZ(120px) scale(1.1) rotateX(10deg); }
 #visite .plan-container .stage.active-hover:nth-child(3) { -webkit-transform: translateZ(240px) scale(1.1) rotateX(10deg); -moz-transform: translateZ(240px) scale(1.1) rotateX(10deg); -ms-transform: translateZ(240px) scale(1.1) rotateX(10deg); -o-transform: translateZ(240px) scale(1.1) rotateX(10deg); transform: translateZ(240px) scale(1.1) rotateX(10deg); }

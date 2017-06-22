@@ -16,6 +16,21 @@ des styles générique, aller dans la page _archive.scss
   z-index: 2;
   color: transparent;
   background-image: url("assets/images/cart.png");
+  &[data-count]::after {
+    content:attr(data-count);
+    position: absolute;
+    background-color: white;
+    top: 0; left:0;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    border: 2px solid $color-3;
+    display: block;
+    color: black;
+    text-align: center;
+    font-size: 10px;
+    line-height: 16px;
+  }
 }
 
 #boutique {
@@ -25,6 +40,7 @@ des styles générique, aller dans la page _archive.scss
   .loop-archive {
     .archive-body-item .archive-main {
       width: 100%;
+      padding-right: 0;
     }
     .archive-head .archive-head-item {
       background-color: transparent;
@@ -39,6 +55,16 @@ des styles générique, aller dans la page _archive.scss
         margin-top: 10px;
         @include transform(none);
 
+      }
+    }
+  }
+  .carousel {
+    &.active-control {
+      .carousel-control {
+        width: 15%;
+      }
+      .carousel-body {
+        width: 85%;
       }
     }
   }
@@ -407,5 +433,15 @@ body.woocommerce-checkout {
         }
       }
     }
+  }
+}
+
+@media screen and (max-width:$break-point-2){
+  #boutique .carousel.active-control .carousel-control {
+    width: 100%;
+  }
+  .loop-archive .archive-body-item .archive-main .archive-main-head h2 {
+    display: block;
+    text-align: center;
   }
 }
