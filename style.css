@@ -333,6 +333,7 @@ body.woocommerce-checkout #customer_details h3::after { content: ""; position: a
 .homepage .section-post.last-posts .see-all .btn { padding: 10px; }
 .homepage .section-post.equipements .center { max-width: 600px; margin: auto; text-align: center; }
 
+header a { text-decoration: none; }
 header .container-fluid { padding: 0 32px; }
 header .static { background-color: #ffed00; color: white; padding: 15px 0; font-size: 0.85em; letter-spacing: 1px; }
 header .static .actions a { text-transform: uppercase; color: white; margin: 0 15px; text-decoration: none; -webkit-transition: 0.4s; -moz-transition: 0.4s; -ms-transition: 0.4s; -o-transition: 0.4s; transition: 0.4s; }
@@ -497,12 +498,12 @@ form select { margin-bottom: 20px; }
 #visite .plan-container .stage:nth-child(5) { -webkit-transform: translateZ(480px); -moz-transform: translateZ(480px); -ms-transform: translateZ(480px); -o-transform: translateZ(480px); transform: translateZ(480px); }
 #visite .plan-container .stage:nth-child(6) { -webkit-transform: translateZ(600px); -moz-transform: translateZ(600px); -ms-transform: translateZ(600px); -o-transform: translateZ(600px); transform: translateZ(600px); }
 #visite .plan-container .stage .pointer { position: absolute; background-color: white; border-radius: 100%; width: 20px; height: 20px; background-size: cover; background-position: 20px; background-repeat: no-repeat; cursor: pointer; -webkit-transition: 0.4s; -moz-transition: 0.4s; -ms-transition: 0.4s; -o-transition: 0.4s; transition: 0.4s; -webkit-transform: translateZ(0) rotate(180deg); -moz-transform: translateZ(0) rotate(180deg); -ms-transform: translateZ(0) rotate(180deg); -o-transform: translateZ(0) rotate(180deg); transform: translateZ(0) rotate(180deg); animation-iteration-count: infinite; animation-duration: 1s; }
-#visite .plan-container .stage .pointer:nth-child(1) { left: 345px; top: 78px; }
-#visite .plan-container .stage .pointer:nth-child(2) { left: 391px; top: 50px; }
-#visite .plan-container .stage .pointer:nth-child(3) { left: 7px; top: 101px; }
-#visite .plan-container .stage .pointer:nth-child(4) { left: 339px; top: 139px; }
-#visite .plan-container .stage .pointer:nth-child(5) { left: 347px; top: 135px; }
-#visite .plan-container .stage .pointer:nth-child(6) { left: 150px; top: 168px; }
+#visite .plan-container .stage .pointer:nth-child(1) { left: 240px; top: 96px; }
+#visite .plan-container .stage .pointer:nth-child(2) { left: 259px; top: 51px; }
+#visite .plan-container .stage .pointer:nth-child(3) { left: 19px; top: 104px; }
+#visite .plan-container .stage .pointer:nth-child(4) { left: 368px; top: 113px; }
+#visite .plan-container .stage .pointer:nth-child(5) { left: 400px; top: 215px; }
+#visite .plan-container .stage .pointer:nth-child(6) { left: 312px; top: 241px; }
 #visite .plan-container .stage.active-hover:nth-child(1) { -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg); -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg); -ms-transform: translateZ(0px) scale(1.1) rotateX(10deg); -o-transform: translateZ(0px) scale(1.1) rotateX(10deg); transform: translateZ(0px) scale(1.1) rotateX(10deg); }
 #visite .plan-container .stage.active-hover:nth-child(2) { -webkit-transform: translateZ(120px) scale(1.1) rotateX(10deg); -moz-transform: translateZ(120px) scale(1.1) rotateX(10deg); -ms-transform: translateZ(120px) scale(1.1) rotateX(10deg); -o-transform: translateZ(120px) scale(1.1) rotateX(10deg); transform: translateZ(120px) scale(1.1) rotateX(10deg); }
 #visite .plan-container .stage.active-hover:nth-child(3) { -webkit-transform: translateZ(240px) scale(1.1) rotateX(10deg); -moz-transform: translateZ(240px) scale(1.1) rotateX(10deg); -ms-transform: translateZ(240px) scale(1.1) rotateX(10deg); -o-transform: translateZ(240px) scale(1.1) rotateX(10deg); transform: translateZ(240px) scale(1.1) rotateX(10deg); }
