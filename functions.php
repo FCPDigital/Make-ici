@@ -156,14 +156,35 @@ function get_products_from_category($category){
 
 // Renvoi les derniers produits sous la forme d'un carousel
 function get_last_posts(){
-	$limit = 5;
+
+  $meta_query = array();
+  $args = array();
+
+  $meta_query[] = array(
+      'key' => '_wp_page_template',
+      'value' => "default",
+      'compare' => 'LIKE'
+  );
+  // The Query
+  $args['post_type'] = "product";
+  $args['meta_query'] = $meta_query;
+
+  $limit = 5;
 	$activeControl = ($limit>3) ?  "active-control" : "";
-	$products = get_posts(array(
-		'post_type' => 'product',
-		'orderby' => 'post_date',
-		'order' => "DESC",
-		'limit' => $limit,
-	));
+
+  $products = new WP_Query($args);
+  $products = sort_by_date($products);
+
+  // $products = $products->posts;
+  // $products = get_posts(array(
+  //   'post_type' => 'product',
+  //   'orderby' => 'post_date',
+  //   'order' => "DESC",
+  //   'limit' => $limit,
+  // ));
+
+
+
 	?>
 	<div class="archive-main-body">
 		<div class="product-carousel carousel <?php echo $activeControl; ?>">
@@ -277,13 +298,7 @@ function sort_by_date($products){
 
     for($i=0; $i<count($products_sort); $i++) {
       //Si une date existe sur le produit parcouru
-
-      // echo "<br>-----DEBUG-----<br>";
-      // var_dump($products_sort[$i]);
-      // echo "<br>-----DEBUG-----<br>";
-
       if($products_sort[$i]["date"]){
-
         //Si la date est inferieur à celle du produit on ajoute avant
         if($nextDate && $nextDate < $products_sort[$i]["date"] ) {
           // echo "Date courante est inférieur à celle du produit :".$products_sort[$i]["el"];
@@ -293,19 +308,15 @@ function sort_by_date($products){
             array_splice( $tmp_products_sort, $i, 0, [$tmp]);
           }
           break;
-
         //Si c'est le dernier produit on ajoute après
         } elseif((count($products_sort)-1==$i)||($nextDate==false)){
           // echo "Dernier produit donc on rajoute après ".$products_sort[$i]["el"];
           array_push($tmp_products_sort, $tmp);
-
           break;
         }
-
       //Sinon
       } else {
         //Si la date du produit est définis,
-        // echo "La date du produit ".$products_sort[$i]["el"]." n'est pas définis, on rajoute donc avant";
         if( $i==0 ){
           array_unshift( $tmp_products_sort, $tmp);
         } else {
@@ -322,14 +333,11 @@ function sort_by_date($products){
         "date" => get_next_date($post)
       ]);
     }
-
-
   endwhile;
 
   $products_humanize = [];
   for($i=0; $i<count($products_sort); $i++){
     array_push($products_humanize, $products_sort[$i]["el"]);
-    // echo $products_sort[$i]["date"]->format("d/m/Y")."<br>";
   }
   return $products_humanize;
 }
