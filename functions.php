@@ -162,7 +162,7 @@ function get_last_posts(){
 
   $meta_query[] = array(
       'key' => '_wp_page_template',
-      'value' => "default",
+      'value' => "",
       'compare' => 'LIKE'
   );
   // The Query
@@ -174,16 +174,6 @@ function get_last_posts(){
 
   $products = new WP_Query($args);
   $products = sort_by_date($products);
-
-  // $products = $products->posts;
-  // $products = get_posts(array(
-  //   'post_type' => 'product',
-  //   'orderby' => 'post_date',
-  //   'order' => "DESC",
-  //   'limit' => $limit,
-  // ));
-
-
 
 	?>
 	<div class="archive-main-body">
