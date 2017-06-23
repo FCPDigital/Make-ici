@@ -162,7 +162,7 @@ function get_last_posts(){
 
   $meta_query[] = array(
       'key' => '_wp_page_template',
-      'value' => "default",
+      'value' => "%default%",
       'compare' => 'LIKE'
   );
   // The Query
