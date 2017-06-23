@@ -162,7 +162,7 @@ function get_last_posts(){
 
   $meta_query[] = array(
       'key' => '_wp_page_template',
-      'value' => "%default%",
+      'value' => "default",
       'compare' => 'LIKE'
   );
   // The Query
@@ -172,7 +172,6 @@ function get_last_posts(){
   $products = new WP_Query($args);
   $products = sort_by_date($products);
   $limit = count($products);
-
   $activeControl = ($limit>3) ?  "active-control" : "";
 	?>
 	<div class="archive-main-body">
@@ -182,7 +181,6 @@ function get_last_posts(){
 					<?php
 					$count = 0;
 					foreach ( $products as $product ) : setup_postdata( $product );
-          // var_dump(get_post_meta($product->ID));
 					if($count < $limit){
 						include( locate_template("template-parts/woocommerce/content-last-products.php") );
 						$count++;
