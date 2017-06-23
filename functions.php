@@ -162,19 +162,18 @@ function get_last_posts(){
 
   $meta_query[] = array(
       'key' => '_wp_page_template',
-      'value' => "",
+      'value' => "default",
       'compare' => 'LIKE'
   );
   // The Query
   $args['post_type'] = "product";
   $args['meta_query'] = $meta_query;
 
-  $limit = 5;
-	$activeControl = ($limit>3) ?  "active-control" : "";
 
   $products = new WP_Query($args);
   $products = sort_by_date($products);
 
+  $activeControl = ($limit>3) ?  "active-control" : "";
 	?>
 	<div class="archive-main-body">
 		<div class="product-carousel carousel <?php echo $activeControl; ?>">
