@@ -171,6 +171,7 @@ function get_last_posts(){
 
   $products = new WP_Query($args);
   $products = sort_by_date($products);
+  $products = array_slice($products, 0, 5);
   $limit = count($products);
   $activeControl = ($limit>3) ?  "active-control" : "";
 	?>
