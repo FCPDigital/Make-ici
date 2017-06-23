@@ -434,6 +434,14 @@ footer .row .flex-item .widget_text a { color: black; text-decoration: underline
 .post-type-archive-abonnements .archive-main .fa-custom, .post-type-archive-abonnements .archive-main .ico { -webkit-transform: translateX(-50px); -moz-transform: translateX(-50px); -ms-transform: translateX(-50px); -o-transform: translateX(-50px); transform: translateX(-50px); position: absolute; float: left; max-width: 50px; text-align: center; }
 .post-type-archive-abonnements .archive-main .fa-custom img, .post-type-archive-abonnements .archive-main .ico img { max-width: 35px; max-height: 35px; }
 
+.staff-container { display: flex; flex-wrap: wrap; justify-content: center; }
+.staff-container .staff-item { width: 250px; max-width: 250px; min-width: 250px; background-color: white; color: black; flex: 1; text-align: center; position: relative; padding-bottom: 50px; margin: 30px; }
+.staff-container .staff-item img { width: 100%; }
+.staff-container .staff-item .staff-item-content { padding: 10px; }
+.staff-container .staff-item .staff-item-content h3 { color: black; font-size: 15px; font-weight: bold; margin-bottom: 16px; }
+.staff-container .staff-item .staff-item-content p { font-size: 12px; line-height: 1.2; margin-bottom: 16px; }
+.staff-container .staff-item .btn { font-size: 11px; bottom: 15px; position: absolute; left: 50%; -webkit-transform: translateX(-50%); -moz-transform: translateX(-50%); -ms-transform: translateX(-50%); -o-transform: translateX(-50%); transform: translateX(-50%); }
+
 .carousel .carousel-control { display: none; }
 .carousel .carousel-body { position: relative; overflow: hidden; width: 75%; flex-wrap: wrap; }
 .carousel .carousel-body .carousel-container { -webkit-transition: 0.4s; -moz-transition: 0.4s; -ms-transition: 0.4s; -o-transition: 0.4s; transition: 0.4s; display: flex; flex-wrap: wrap; }
@@ -517,12 +525,12 @@ form select { margin-bottom: 20px; }
 #visite .plan-container .stage:nth-child(5) { -webkit-transform: translateZ(480px); -moz-transform: translateZ(480px); -ms-transform: translateZ(480px); -o-transform: translateZ(480px); transform: translateZ(480px); }
 #visite .plan-container .stage:nth-child(6) { -webkit-transform: translateZ(600px); -moz-transform: translateZ(600px); -ms-transform: translateZ(600px); -o-transform: translateZ(600px); transform: translateZ(600px); }
 #visite .plan-container .stage .pointer { position: absolute; background-color: white; border-radius: 100%; width: 20px; height: 20px; background-size: cover; background-position: 20px; background-repeat: no-repeat; cursor: pointer; -webkit-transition: 0.4s; -moz-transition: 0.4s; -ms-transition: 0.4s; -o-transition: 0.4s; transition: 0.4s; -webkit-transform: translateZ(0) rotate(180deg); -moz-transform: translateZ(0) rotate(180deg); -ms-transform: translateZ(0) rotate(180deg); -o-transform: translateZ(0) rotate(180deg); transform: translateZ(0) rotate(180deg); animation-iteration-count: infinite; animation-duration: 1s; }
-#visite .plan-container .stage .pointer:nth-child(1) { left: 231px; top: 129px; }
-#visite .plan-container .stage .pointer:nth-child(2) { left: 160px; top: 35px; }
-#visite .plan-container .stage .pointer:nth-child(3) { left: 314px; top: 67px; }
-#visite .plan-container .stage .pointer:nth-child(4) { left: 290px; top: 120px; }
-#visite .plan-container .stage .pointer:nth-child(5) { left: 58px; top: 171px; }
-#visite .plan-container .stage .pointer:nth-child(6) { left: 21px; top: 167px; }
+#visite .plan-container .stage .pointer:nth-child(1) { left: 7px; top: 192px; }
+#visite .plan-container .stage .pointer:nth-child(2) { left: 14px; top: 172px; }
+#visite .plan-container .stage .pointer:nth-child(3) { left: 379px; top: 152px; }
+#visite .plan-container .stage .pointer:nth-child(4) { left: 285px; top: 123px; }
+#visite .plan-container .stage .pointer:nth-child(5) { left: 207px; top: 186px; }
+#visite .plan-container .stage .pointer:nth-child(6) { left: 183px; top: 180px; }
 #visite .plan-container .stage.active-hover:nth-child(1) { -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg); -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg); -ms-transform: translateZ(0px) scale(1.1) rotateX(10deg); -o-transform: translateZ(0px) scale(1.1) rotateX(10deg); transform: translateZ(0px) scale(1.1) rotateX(10deg); }
 #visite .plan-container .stage.active-hover:nth-child(2) { -webkit-transform: translateZ(120px) scale(1.1) rotateX(10deg); -moz-transform: translateZ(120px) scale(1.1) rotateX(10deg); -ms-transform: translateZ(120px) scale(1.1) rotateX(10deg); -o-transform: translateZ(120px) scale(1.1) rotateX(10deg); transform: translateZ(120px) scale(1.1) rotateX(10deg); }
 #visite .plan-container .stage.active-hover:nth-child(3) { -webkit-transform: translateZ(240px) scale(1.1) rotateX(10deg); -moz-transform: translateZ(240px) scale(1.1) rotateX(10deg); -ms-transform: translateZ(240px) scale(1.1) rotateX(10deg); -o-transform: translateZ(240px) scale(1.1) rotateX(10deg); transform: translateZ(240px) scale(1.1) rotateX(10deg); }

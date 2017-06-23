@@ -361,6 +361,39 @@ function get_category_slug($category) {
 //
 //////////////////////////////////////////////////////
 
+function shortcode_staff($atts){
+  $args = shortcode_atts( array(
+    'limit' => 5,
+    'order' => "ASC"
+  ), $atts );
+
+  $posts = new WP_Query(array(
+    'post_type'=> 'staff',
+    'limit' => (int) $args["limit"],
+    'order'=> $args["ASC"]
+  ));
+
+  $content="<div class='single-body staff-container'>";
+  while ( $posts->have_posts() ) : $posts->the_post();
+    if(get_post()->post_type == "staff"){
+      $content .= "<div class='staff-item' id='post-<?php the_ID(); ?>'>
+        <img src='".get_the_post_thumbnail_url()."' alt=''>
+        <div class='staff-item-content'>
+          <h3>".get_the_title()."</h3>
+          <p><?php the_content() ?></p>
+          <a href='#'  data-getarg='contact=".get_field('e-mail')."' data-wpxhr='contact_form' data-xhrarg='".get_the_ID()."' class='btn btn-colored action-abonnement'>Contactez le(a)</a>
+        </div>
+      </div>";
+    }
+  endwhile;
+  $content.="</div>";
+  wp_reset_query();
+  return $content;
+
+}
+
+add_shortcode( 'staff', 'shortcode_staff' );
+
 
 function shortcode_formbtn($atts){
 	$args = shortcode_atts( array(
@@ -532,7 +565,22 @@ function my_get_woo_cats() {
 }
 add_action('init', 'my_get_woo_cats');
 
+function create_post_type_staff() {
+  register_post_type( 'staff',
+    array(
+      'labels' => array(
+        'name' => __( 'Staff' ),
+        'singular_name' => __( 'Staff' )
+      ),
+      'public' => true,
+      'has_archive' => true,
+			'menu_icon' => 'dashicons-businessman',
+			'supports' => array( 'title', 'editor', 'custom-fields', 'thumbnail', 'excerpt' )
+    )
+  );
+}
 
+add_action( 'init', 'create_post_type_staff' );
 
 function create_post_type_abonnement() {
   register_post_type( 'abonnements',
