@@ -658,7 +658,7 @@ function abonnement_form() {
 	$content =  "<div class='title-container'><h2 class='title'>".get_the_title($post)."</h2>".$h3."</div>";
 	echo $content;
 	// echo do_shortcode("[wpforms id='".get_field('form_code', $post)."']");
-	echo do_shortcode("[contact-form-7 id='".get_field('form_code', $post)."' title='Abonnement']");
+	echo do_shortcode("[contact-form-7 id='".esc_attr( get_option('abonnement_form_id') )."' title='Abonnement']");
 
 	die();
 }
@@ -678,7 +678,7 @@ function contact_form() {
 	$content =  "<div class='title-container'><h2 class='title'>".get_the_title($post)."</h2>".$h3."</div>";
 	echo $content;
 	// echo do_shortcode("[wpforms id='".get_field('form_code', $post)."']");
-	echo do_shortcode("[contact-form-7 id='".get_field('id_form', $post)."' title='Contactez ".get_the_title($post)."']");
+	echo do_shortcode("[contact-form-7 id='".esc_attr( get_option('contact_form_id') )."' title='Contactez ".get_the_title($post)."']");
 	die();
 }
 
@@ -752,6 +752,65 @@ function themeprefix_add_to_cart_redirect() {
 	global $woocommerce;
 	$checkout_url = $woocommerce->cart->get_checkout_url();
 	return $checkout_url;
+}
+
+
+//////////////////////////////////////////////////////
+//
+//						ADMIN MENU
+//
+//////////////////////////////////////////////////////
+
+function register_my_setting() {
+	register_setting( 'formulaire', 'gift_card_id', "intval" );
+  register_setting( 'formulaire', 'abonnement_form_id', "intval" );
+  register_setting( 'formulaire', 'contact_form_id', "intval" );
+}
+add_action( 'admin_init', 'register_my_setting' );
+
+
+/** Step 2 (from text above). */
+add_action( 'admin_menu', 'my_theme_menu' );
+
+/** Step 1. */
+function my_theme_menu() {
+	add_options_page( 'Mes options de thèmes', 'MakeICI', 'manage_options', 'my-unique-identifier', 'my_theme_options' );
+}
+
+
+
+/** Step 3. */
+function my_theme_options() {
+	if ( !current_user_can( 'manage_options' ) )  {
+		wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
+	}
+	?>
+  <div class="wrap">
+    <h1>Réglage du thème MakeICI</h1>
+    <div>
+      <p>Pour consulter la documentation c'est par <a target="_blank" href="https://github.com/SolalDR/Make-ici/blob/master/README.md">ICI</a></p>
+    </div>
+    <form class="form" method="post" action="options.php">
+    <?php
+    settings_fields( 'formulaire' ) ;
+    do_settings_sections( 'formulaire' );
+    ?>
+    <div class="form-group">
+      <label>Identifiant du produit Carte Cadeau</label><br>
+      <input class="form-control" value="<?php echo esc_attr( get_option('gift_card_id') ); ?>" name="gift_card_id" type="text"/>
+    </div>
+    <div class="form-group">
+      <label>Identifiant du formulaire d'abonnement</label><br>
+      <input class="form-control" value="<?php echo esc_attr( get_option('abonnement_form_id') ); ?>" name="abonnement_form_id" type="text"/>
+    </div>
+    <div class="form-group">
+      <label>Identifiant du formulaire de contact spécifique</label><br>
+      <input class="form-control" value="<?php echo esc_attr( get_option('contact_form_id') ); ?>" name="contact_form_id" type="text"/>
+    </div>
+    <?php submit_button(); ?>
+    </form>
+  </div>
+  <?php
 }
 
 //////////////////////////////////////////////////////

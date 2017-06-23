@@ -51,6 +51,7 @@
         do_action( 'woocommerce_single_product_summary' );
 
         ?>
+        <a href="<?php echo get_permalink(esc_attr( get_option('gift_card_id'))); ?>" class="btn btn-colored gift-card-link">Achetez une carte cadeau</a>
       </div>
 
       <?php if($category){ ?>

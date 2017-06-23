@@ -278,6 +278,7 @@ des styles générique, aller dans la page _archive.scss
 #single-product .loop-archive .related_products .carousel-item { margin-top: 20px; }
 #single-product .loop-archive .single_variation_wrap { padding: 20px; padding-top: 0; }
 #single-product .loop-archive .single_add_to_cart_button { margin-top: 10px; background-color: #ffed00; opacity: 1; color: black; width: 100%; border-radius: 0; padding: 13px 10px; font-weight: bold; font-size: 1.1em; }
+#single-product .loop-archive .gift-card-link { margin: 0px 20px; padding: 10px; width: calc(100% - 40px); }
 
 .checkout-page { background-color: white; }
 .checkout-page .landing { color: black; padding-top: 64px; }
@@ -525,12 +526,12 @@ form select { margin-bottom: 20px; }
 #visite .plan-container .stage:nth-child(5) { -webkit-transform: translateZ(480px); -moz-transform: translateZ(480px); -ms-transform: translateZ(480px); -o-transform: translateZ(480px); transform: translateZ(480px); }
 #visite .plan-container .stage:nth-child(6) { -webkit-transform: translateZ(600px); -moz-transform: translateZ(600px); -ms-transform: translateZ(600px); -o-transform: translateZ(600px); transform: translateZ(600px); }
 #visite .plan-container .stage .pointer { position: absolute; background-color: white; border-radius: 100%; width: 20px; height: 20px; background-size: cover; background-position: 20px; background-repeat: no-repeat; cursor: pointer; -webkit-transition: 0.4s; -moz-transition: 0.4s; -ms-transition: 0.4s; -o-transition: 0.4s; transition: 0.4s; -webkit-transform: translateZ(0) rotate(180deg); -moz-transform: translateZ(0) rotate(180deg); -ms-transform: translateZ(0) rotate(180deg); -o-transform: translateZ(0) rotate(180deg); transform: translateZ(0) rotate(180deg); animation-iteration-count: infinite; animation-duration: 1s; }
-#visite .plan-container .stage .pointer:nth-child(1) { left: 7px; top: 192px; }
-#visite .plan-container .stage .pointer:nth-child(2) { left: 14px; top: 172px; }
-#visite .plan-container .stage .pointer:nth-child(3) { left: 379px; top: 152px; }
-#visite .plan-container .stage .pointer:nth-child(4) { left: 285px; top: 123px; }
-#visite .plan-container .stage .pointer:nth-child(5) { left: 207px; top: 186px; }
-#visite .plan-container .stage .pointer:nth-child(6) { left: 183px; top: 180px; }
+#visite .plan-container .stage .pointer:nth-child(1) { left: 195px; top: 122px; }
+#visite .plan-container .stage .pointer:nth-child(2) { left: 158px; top: 61px; }
+#visite .plan-container .stage .pointer:nth-child(3) { left: 17px; top: 60px; }
+#visite .plan-container .stage .pointer:nth-child(4) { left: 10px; top: 226px; }
+#visite .plan-container .stage .pointer:nth-child(5) { left: 25px; top: 80px; }
+#visite .plan-container .stage .pointer:nth-child(6) { left: 71px; top: 113px; }
 #visite .plan-container .stage.active-hover:nth-child(1) { -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg); -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg); -ms-transform: translateZ(0px) scale(1.1) rotateX(10deg); -o-transform: translateZ(0px) scale(1.1) rotateX(10deg); transform: translateZ(0px) scale(1.1) rotateX(10deg); }
 #visite .plan-container .stage.active-hover:nth-child(2) { -webkit-transform: translateZ(120px) scale(1.1) rotateX(10deg); -moz-transform: translateZ(120px) scale(1.1) rotateX(10deg); -ms-transform: translateZ(120px) scale(1.1) rotateX(10deg); -o-transform: translateZ(120px) scale(1.1) rotateX(10deg); transform: translateZ(120px) scale(1.1) rotateX(10deg); }
 #visite .plan-container .stage.active-hover:nth-child(3) { -webkit-transform: translateZ(240px) scale(1.1) rotateX(10deg); -moz-transform: translateZ(240px) scale(1.1) rotateX(10deg); -ms-transform: translateZ(240px) scale(1.1) rotateX(10deg); -o-transform: translateZ(240px) scale(1.1) rotateX(10deg); transform: translateZ(240px) scale(1.1) rotateX(10deg); }
