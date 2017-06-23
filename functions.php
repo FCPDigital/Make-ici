@@ -169,9 +169,9 @@ function get_last_posts(){
   $args['post_type'] = "product";
   $args['meta_query'] = $meta_query;
 
-
   $products = new WP_Query($args);
   $products = sort_by_date($products);
+  $limit = count($products);
 
   $activeControl = ($limit>3) ?  "active-control" : "";
 	?>
@@ -182,6 +182,7 @@ function get_last_posts(){
 					<?php
 					$count = 0;
 					foreach ( $products as $product ) : setup_postdata( $product );
+          // var_dump(get_post_meta($product->ID));
 					if($count < $limit){
 						include( locate_template("template-parts/woocommerce/content-last-products.php") );
 						$count++;
