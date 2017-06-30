@@ -16,7 +16,7 @@
         position: relative;
         flex: 1;
         .crop-img {
-          height: 160px;
+          height: 150px;
           overflow: hidden;
           img {
             width: 130%;
@@ -45,11 +45,13 @@
           }
           .crop-img img {
             margin-left:0;
+            max-width: none; // Woocommerce set max-width to 100%
           }
           .btn {
             margin: 0;
             margin-top: $small-pad;
             width: 100%;
+            bottom: 25px;
           }
         }
       }
