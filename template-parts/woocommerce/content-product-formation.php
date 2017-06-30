@@ -38,7 +38,17 @@ Contenu d'une page formation. Appelé dans :
 
         <div class="cost_max fa-container">
           <i class="fa fa-eur" aria-hidden="true"></i>
-          <p>Tarif abonnés :<br><?php echo $product->get_price() ?> € H/T</p>
+          <?php
+          $price = (int) $product->get_price();
+          $reduc = (float) esc_attr( get_option('reduction_promo'));
+          if($reduc){
+            $abonnePrice = $price*$reduc;
+          } else {
+            $abonnePrice = $price;
+          }
+          ?>
+          <p>Tarif abonnés :<br><?php echo $abonnePrice; ?> € H/T</p>
+
         </div>
 
         <div class="cost_sale fa-container">

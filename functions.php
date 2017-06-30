@@ -757,6 +757,7 @@ function register_my_setting() {
 	register_setting( 'formulaire', 'gift_card_id', "intval" );
   register_setting( 'formulaire', 'abonnement_form_id', "intval" );
   register_setting( 'formulaire', 'contact_form_id', "intval" );
+  register_setting( 'formulaire', 'reduction_promo', "float" );
 }
 add_action( 'admin_init', 'register_my_setting' );
 
@@ -794,6 +795,11 @@ function my_theme_options() {
     <div class="form-group">
       <label>Identifiant du formulaire d'abonnement</label><br>
       <input class="form-control" value="<?php echo esc_attr( get_option('abonnement_form_id') ); ?>" name="abonnement_form_id" type="text"/>
+    </div>
+    <div class="form-group">
+      <label>Réduction abonné (mettre un nombre entre 0 et 1)</label><br>
+      <i class="mention">100€ avec 0.8 = 100x0.8 => 80€</i>
+      <input class="form-control" value="<?php echo esc_attr( get_option('reduction_promo') ); ?>" name="reduction_promo" type="text"/>
     </div>
     <div class="form-group">
       <label>Identifiant du formulaire de contact spécifique</label><br>
