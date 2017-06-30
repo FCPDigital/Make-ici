@@ -1,3 +1,14 @@
+<?php /*
+
+Correspond à un des carré situé en entête de page.
+Ce template est appelé pour les fichiers :
+- archive.php
+- archive-abonnement.php
+- archive-entreprises.php
+
+On retrouve un comportement analogue dans woocommerce/template-product.php
+*/ ?>
+
 <div class="archive-head-item carousel-item">
   <div class="title-container">
     <p class="title">
@@ -8,7 +19,6 @@
       <?php echo get_field("subtitle"); ?>
     </p>
   </div>
-
 
   <?php if(has_post_thumbnail()) : ?>
     <div class="crop-img">
@@ -22,5 +32,6 @@
     </p>
   <?php endif;  ?>
 
+  <?php //Le href correspond à l'id des section utiliser pour la timeline, data-scroll spécifie que la transition sera en scroll  ?>
   <a href="#item-<?php echo get_the_slug(); ?>" data-scroll data-target="#item-<?php echo get_the_slug(); ?>" class="btn btn-light">En savoir plus</a>
 </div>

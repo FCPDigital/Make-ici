@@ -1,3 +1,10 @@
+<?php
+/*
+Contenu d'une page formation. Appelé dans :
+- product-default.php
+*/
+?>
+
 <section id="item-<?php echo $slug; ?>" class=" perspective-corner  archive-body-item awesome-panel-item container-fluid page-section" style="background-image:url('<?php echo get_the_post_thumbnail_url(); ?>')">
 
     <div class="container">
@@ -47,14 +54,16 @@
           </div>
         <?php } ?>
         <?php
-
+        //appelle de la fonction de woocommerce gérant l'affichage du panier et des variations
         do_action( 'woocommerce_single_product_summary' );
 
-        ?>
+        // Affiche un lien vers la page produit des cartes cadeaux ?>
         <a href="<?php echo get_permalink(esc_attr( get_option('gift_card_id'))); ?>" class="btn btn-colored gift-card-link">Achetez une carte cadeau</a>
       </div>
 
-      <?php if($category){ ?>
+
+      <?php // Si le produit à une categorie, on affiche un carousel des autres produits de la categorie.
+      if($category){ ?>
         <div class="related_products">
           <p class="bold">Autres formations  <?php echo $category; ?></p>
           <?php do_shortcode("[carousel category='".$category."' except='".$product->ID."' style='compact' ]") ?>

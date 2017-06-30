@@ -14,11 +14,7 @@ get_header(); ?>
 			<div class="single-body">
 				<?php the_content(); ?>
 			</div>
-
-			<?php endwhile; // End of the loop.
-			?>
-
-
+			<?php endwhile; // End of the loop. ?>
     </div>
   </div>
 </main>

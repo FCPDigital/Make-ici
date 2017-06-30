@@ -1,7 +1,10 @@
 /*
 Style de la page formations, pour voir la plupart
 des styles générique, aller dans la page _archive.scss
+Ces styles sont davantage propre aux fonctionalité de Woocommerce natif
 */
+
+// Panier en haut à gauche
 #cart-btn {
   position: fixed;
   top: 80px;
@@ -16,6 +19,7 @@ des styles générique, aller dans la page _archive.scss
   z-index: 2;
   color: transparent;
   background-image: url("assets/images/cart.png");
+  // Compteur du panier
   &[data-count]::after {
     content:attr(data-count);
     position: absolute;
@@ -33,11 +37,12 @@ des styles générique, aller dans la page _archive.scss
   }
 }
 
-
+// Page formation = #boutique
 #boutique {
   h1 {
     margin-bottom: $medium-pad;
   }
+  // On surchage les styles de archive.scss
   .loop-archive {
     .archive-body-item .archive-main {
       width: 100%;
@@ -111,6 +116,7 @@ des styles générique, aller dans la page _archive.scss
   }
 }
 
+// Page d'un produit simple
 #single-product {
   .loop-archive {
     .fa-container {
@@ -181,6 +187,11 @@ des styles générique, aller dans la page _archive.scss
   }
 
 }
+
+///////////////////////
+// Checkout et Cart  //
+///////////////////////
+
 #add_payment_method #payment, .woocommerce-cart #payment, .woocommerce-checkout #payment  {
   border-top: 1px solid #DDD;
   background-color: white;
@@ -191,6 +202,7 @@ des styles générique, aller dans la page _archive.scss
   border-bottom: 0;
 }
 
+// Style générique des fonctionnalités de payment pour le checkout et le panier
 #payment{
   background-color: #EEE;
   border-radius: 0;
@@ -214,13 +226,13 @@ des styles générique, aller dans la page _archive.scss
     max-width: calc(100% - 30px);
   }
 }
+
 #order_review{
   float: right;
   width: 40%;
   padding: 10px;
   border:3px solid black;
   padding-top: 60px;
-
   table.shop_table{
     border:0;
     margin-top: 15px;
@@ -238,8 +250,9 @@ des styles générique, aller dans la page _archive.scss
       font-size: 14px;
     }
   }
-
 }
+
+// Page de checkout
 body.woocommerce-checkout {
   label.checkbox {
     span {
@@ -333,6 +346,7 @@ body.woocommerce-checkout {
   }
 }
 
+// Page du panier
 .woocommerce-cart {
   h1 {
     display: none;
@@ -442,6 +456,7 @@ body.woocommerce-checkout {
   }
 }
 
+// On élargie le wrapper
 @media screen and (max-width:$break-point-2){
   #boutique .carousel.active-control .carousel-control {
     width: 100%;

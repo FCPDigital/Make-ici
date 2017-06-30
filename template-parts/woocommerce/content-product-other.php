@@ -1,3 +1,10 @@
+<?php
+/*
+Contenu d'un produit simple : ex carte cadeau ou abonnement à la carte.
+Appelé dans :
+- product-other.php
+*/
+?>
 <section id="item-<?php echo $slug; ?>" class=" perspective-corner  archive-body-item awesome-panel-item container-fluid page-section" style="background-image:url('<?php echo get_the_post_thumbnail_url(); ?>')">
 
     <div class="container">
@@ -26,9 +33,8 @@
         </div>
 
         <?php
-
+        //appelle de la fonction de woocommerce gérant l'affichage du panier et des variations
         do_action( 'woocommerce_single_product_summary' );
-
         ?>
       </div>
 

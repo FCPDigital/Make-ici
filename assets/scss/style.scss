@@ -6,9 +6,7 @@ Description: This themes is made for the multisite makeici.org.
 Version: 1.0
 Text Domain: makeici
 */
-.fa-container {
-  height: 55px !important;
-}
+
 
 @import "core/variable";
 @import "core/mixin";
@@ -22,8 +20,6 @@ Text Domain: makeici
 @import "home";
 @import "header";
 @import "footer";
-@import "comment";
-@import "page";
 @import "post";
 @import "carousel";
 @import "core/form";

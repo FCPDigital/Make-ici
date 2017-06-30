@@ -1,3 +1,18 @@
+/*
+Les mixins sont des macro codé en scss permettant d'écrire moins de code.
+Exemple pour crée une transition crossbrowser de .4s :
+
+@include transition(.4s);
+
+Ce qui en code créera :
+
+-webkit-transition : .4s;
+-moz-transition : .4s;
+-ms-transition : .4s;
+-o-transition : .4s;
+transition : .4s;
+*/
+
 @mixin transition($content){
   -webkit-transition : $content;
   -moz-transition : $content;

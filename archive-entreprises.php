@@ -1,4 +1,8 @@
-<?php get_header(); ?>
+<?php
+/*
+Archive du custom-post entreprise.
+*/
+get_header(); ?>
 
 <main id="entreprise-archive" class="site-main" role="main">
   <div class="landing">

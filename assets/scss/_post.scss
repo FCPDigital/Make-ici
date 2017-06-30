@@ -1,6 +1,59 @@
-#post {
+/*
+Contient l'ensemble des style particulier propre aux posts et au pages. 
+*/
 
+#page {
+  h1 {
+    margin-bottom: $medium-pad;
+  }
 }
+
+// Format de texte d'une page simple
+.single-body {
+  p {
+    margin-bottom: $small-pad;
+  }
+  h2{
+    text-align: center;
+    color: $color-3;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    clear: both;
+  }
+  h3, h2 {
+    padding:$medium-pad 0 $small-pad 0;
+  }
+}
+
+// page ecosystem
+.ecosystem {
+  .su-custom-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+    margin-top: 1.5em;
+    .su-custom-gallery-slide {
+      min-width: 150px;
+      min-height: 120px;
+      a {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        img {
+          border:0;
+          background-color: transparent;
+          &:hover{
+            background-color: transparent;
+          }
+        }
+      }
+    }
+  }
+}
+
 
 .post-type-archive-abonnements {
   .archive-main {

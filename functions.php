@@ -430,9 +430,8 @@ function shortcode_carousel($atts){
 	$args = shortcode_atts( array(
 		'category' => null,
 		'except' => null,
-		'style' => 'detail',
-		'baz' => 'default baz',
-	), $atts );
+		'style' => 'detail'
+  ), $atts );
 
 	$except  = ( (int) $args["except"]) ? (int) $args["except"] : null;
 	$category = $args["category"] ? $args["category"] : null;
@@ -527,41 +526,14 @@ function shortcode_ico($atts){
 add_shortcode( 'ico', 'shortcode_ico' );
 
 
-//////////////////////////////////////////////////////
-//
-//						LOGIN CUSTOM
-//
-//////////////////////////////////////////////////////
-
-function display_website_logo(){
-	$custom_logo_id = get_theme_mod( 'custom_logo' );
-	$image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-	if($image){
-		echo "<img src='$image[0]' alt='".get_bloginfo("name")."'/>";
-	}
-}
-
-
 
 //////////////////////////////////////////////////////
 //
-//						THEMES FUNCTIONNALITY
+//						CUSTOM POST
 //
 //////////////////////////////////////////////////////
 
-//Remove span wrapper in input form wp_contact_form_7
-add_filter('wpcf7_form_elements', function($content) {
-    $content = preg_replace('/<(span).*?class="\s*(?:.*\s)?wpcf7-form-control-wrap(?:\s[^"]+)?\s*"[^\>]*>(.*)<\/\1>/i', '\2', $content);
-    return $content;
-});
-
-
-function my_get_woo_cats() {
-    $cats = get_terms( array( 'taxonomy' => 'product_cat','hide_empty' => 0, 'orderby' => 'ASC',  'parent' =>0) );
-    //print_r($cats);
-}
-add_action('init', 'my_get_woo_cats');
-
+// POST TYPE STAFF
 function create_post_type_staff() {
   register_post_type( 'staff',
     array(
@@ -577,8 +549,7 @@ function create_post_type_staff() {
   );
 }
 
-add_action( 'init', 'create_post_type_staff' );
-
+// POST TYPE ABONNEMENTS
 function create_post_type_abonnement() {
   register_post_type( 'abonnements',
     array(
@@ -594,8 +565,7 @@ function create_post_type_abonnement() {
   );
 }
 
-add_action( 'init', 'create_post_type_abonnement' );
-
+// POST TYPE ENTREPRISES
 function create_post_type_entreprise() {
   register_post_type( 'entreprises',
     array(
@@ -610,25 +580,17 @@ function create_post_type_entreprise() {
     )
   );
 }
+
+add_action( 'init', 'create_post_type_abonnement' );
+add_action( 'init', 'create_post_type_staff' );
 add_action( 'init', 'create_post_type_entreprise' );
 
-function make_ici_scripts() {
-	wp_register_script('smoothScroll', get_template_directory_uri() . '/assets/js/smoothscroll.js', array('jquery'),'1.1', true);
-	wp_register_script('main', get_template_directory_uri() . '/assets/js/main.js', array('jquery'),'1.1', true);
 
-	wp_enqueue_script('smoothScroll');
-	wp_enqueue_script('main');
-
-	wp_localize_script('main', 'ajaxurl', admin_url( 'admin-ajax.php' ) );
-}
-
-add_action( 'wp_enqueue_scripts', 'make_ici_scripts' );
-
-
-function get_excerpt_truncate($post, $value){
-	return wp_trim_words( get_the_excerpt($post), $value, "...");
-}
-
+//////////////////////////////////////////////////////
+//
+//						woocommerce
+//
+//////////////////////////////////////////////////////
 
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10);
@@ -644,8 +606,17 @@ function wc_remove_all_quantity_fields( $return, $product ) {
 add_filter( 'woocommerce_is_sold_individually', 'wc_remove_all_quantity_fields', 10, 2 );// * @hooked woocommerce_template_single_rating - 10
 
 
-add_action( 'wp_ajax_abonnement_form', 'abonnement_form' );
-add_action( 'wp_ajax_nopriv_abonnement_form', 'abonnement_form' );
+function my_get_woo_cats() {
+    $cats = get_terms( array( 'taxonomy' => 'product_cat','hide_empty' => 0, 'orderby' => 'ASC',  'parent' =>0) );
+}
+add_action('init', 'my_get_woo_cats');
+
+
+//////////////////////////////////////////////////////
+//
+//						AJAX
+//
+//////////////////////////////////////////////////////
 
 function abonnement_form() {
 	$param = (int) $_POST['param'];
@@ -663,10 +634,6 @@ function abonnement_form() {
 	die();
 }
 
-
-add_action( 'wp_ajax_contact_form', 'contact_form' );
-add_action( 'wp_ajax_nopriv_contact_form', 'contact_form' );
-
 function contact_form() {
 	$param = (int) $_POST['param'];
 	$post = get_post($param);
@@ -681,10 +648,6 @@ function contact_form() {
 	echo do_shortcode("[contact-form-7 id='".esc_attr( get_option('contact_form_id') )."' title='Contactez ".get_the_title($post)."']");
 	die();
 }
-
-add_action( 'wp_ajax_classic_form', 'classic_form' );
-add_action( 'wp_ajax_nopriv_classic_form', 'classic_form' );
-
 
 function classic_form(){
 	$param = $_POST['param'];
@@ -703,16 +666,45 @@ function classic_form(){
 }
 
 
-function my_login_logo_url() {
-    return home_url();
-}
-add_filter( 'login_headerurl', 'my_login_logo_url' );
+add_action( 'wp_ajax_abonnement_form', 'abonnement_form' );
+add_action( 'wp_ajax_nopriv_abonnement_form', 'abonnement_form' );
+add_action( 'wp_ajax_contact_form', 'contact_form' );
+add_action( 'wp_ajax_nopriv_contact_form', 'contact_form' );
+add_action( 'wp_ajax_classic_form', 'classic_form' );
+add_action( 'wp_ajax_nopriv_classic_form', 'classic_form' );
 
-function my_login_logo() {
-	wp_enqueue_style( 'custom-login', get_template_directory_uri() . '/assets/css/login.css' );
-}
-add_action( 'login_enqueue_scripts', 'my_login_logo' );
+//////////////////////////////////////////////////////
+//
+//						THEMES FUNCTIONNALITY
+//
+//////////////////////////////////////////////////////
 
+//Remove span wrapper in input form wp_contact_form_7
+add_filter('wpcf7_form_elements', function($content) {
+    $content = preg_replace('/<(span).*?class="\s*(?:.*\s)?wpcf7-form-control-wrap(?:\s[^"]+)?\s*"[^\>]*>(.*)<\/\1>/i', '\2', $content);
+    return $content;
+});
+
+
+
+//INITIALISATION DES SCRIPTS
+function make_ici_scripts() {
+	wp_register_script('smoothScroll', get_template_directory_uri() . '/assets/js/smoothscroll.js', array('jquery'),'1.1', true);
+	wp_register_script('main', get_template_directory_uri() . '/assets/js/main.js', array('jquery'),'1.1', true);
+
+	wp_enqueue_script('smoothScroll');
+	wp_enqueue_script('main');
+
+	wp_localize_script('main', 'ajaxurl', admin_url( 'admin-ajax.php' ) );
+}
+
+add_action( 'wp_enqueue_scripts', 'make_ici_scripts' );
+
+
+// Récupére les premier mot de the_content
+function get_excerpt_truncate($post, $value){
+	return wp_trim_words( get_the_excerpt($post), $value, "...");
+}
 
 function init_sidebar(){
 	register_sidebar( array(
@@ -813,6 +805,33 @@ function my_theme_options() {
   <?php
 }
 
+
+//////////////////////////////////////////////////////
+//
+//						LOGIN CUSTOM
+//
+//////////////////////////////////////////////////////
+
+function display_website_logo(){
+	$custom_logo_id = get_theme_mod( 'custom_logo' );
+	$image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+	if($image){
+		echo "<img src='$image[0]' alt='".get_bloginfo("name")."'/>";
+	}
+}
+
+function my_login_logo_url() {
+  return home_url();
+}
+
+function my_login_logo() {
+	wp_enqueue_style( 'custom-login', get_template_directory_uri() . '/assets/css/login.css' );
+}
+
+add_filter( 'login_headerurl', 'my_login_logo_url' );
+add_action( 'login_enqueue_scripts', 'my_login_logo' );
+
+
 //////////////////////////////////////////////////////
 //
 //						twentyseventeen
@@ -820,62 +839,32 @@ function my_theme_options() {
 //////////////////////////////////////////////////////
 
 function makeici_setup() {
-
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'post-thumbnails' );
 	add_image_size( 'twentyseventeen-featured-image', 2000, 1200, true );
 	add_image_size( 'twentyseventeen-thumbnail-avatar', 100, 100, true );
-
-
-	// Set the default content width.
 	$GLOBALS['content_width'] = 525;
-
-	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
 		'top'    => __( 'Top Menu', 'twentyseventeen' ),
 		'social' => __( 'Social Links Menu', 'twentyseventeen' ),
 	) );
-
 	add_theme_support( 'html5', array( 'comment-form', 'comment-list', 'gallery', 'caption') );
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link', 'gallery', 'audio' ) );
 	add_theme_support( 'custom-logo', array( 'width' => 250, 'height' => 250, 'flex-width'  => true) );
 	add_theme_support( 'customize-selective-refresh-widgets' );
-
 }
 add_action( 'after_setup_theme', 'makeici_setup' );
 
-
- //Adds a `js` class to the root `<html>` element when JavaScript is detected.
 function javascript_detection() {
 	echo "<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>\n";
 }
 add_action( 'wp_head', 'javascript_detection', 0 );
 
-
-
-// Add a pingback url auto-discovery header for singularly identifiable articles.
-function twentyseventeen_pingback_header() {
-	if ( is_singular() && pings_open() ) {
-		printf( '<link rel="pingback" href="%s">' . "\n", get_bloginfo( 'pingback_url' ) );
-	}
-}
-// add_action( 'wp_head', 'twentyseventeen_pingback_header' );
-
-
-
-// Enqueue scripts and styles.
 function cross_browser_scripts() {
-
-	// Theme stylesheet.
 	wp_enqueue_style( 'twentyseventeen-style', get_stylesheet_uri() );
-
-
-	// Load the html5 shiv.
 	wp_enqueue_script( 'html5', get_theme_file_uri( '/assets/js/html5.js' ), array(), '3.7.3' );
 	wp_script_add_data( 'html5', 'conditional', 'lt IE 9' );
-
-
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}

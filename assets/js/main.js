@@ -1,4 +1,5 @@
 
+// Prototype permettant à un élément de se supprimer du DOM lui même
 Node.prototype.remove = function(){
   var parent = this.parentNode;
   if(parent){
@@ -6,6 +7,17 @@ Node.prototype.remove = function(){
   }
 }
 
+// Méthode permettant de définir les préfix webkit-moz-o-ms automatiquement pour un couple clé valeur
+function setPrefix(key,value){
+  var pre = ["moz", "ms", "o", "webkit"];
+  var result = "";
+  for(i=0; i<pre.length; i++){
+    result+="-"+pre[i]+"-"+key+":"+value+";";
+  }
+  return result;
+}
+
+// Objet de notification
 function Notification(message, config){
   if( message ){
     var self = this;
@@ -48,6 +60,7 @@ function Notification(message, config){
 //
 ////////////////////////////////////////////////////////////////////////////////
 
+//Renvoi un objet XHR pour des requête Ajax en crossbrowser
 function getXhrObject(){
   // ### Construction de l’objet XMLHttpRequest selon le type de navigateur
   if(window.XMLHttpRequest){
@@ -61,6 +74,7 @@ function getXhrObject(){
   }
 }
 
+// Objet Request permettant de gérer les requêtes ajax
 function Request(args){
   if(args.url){
     this.target = args.target;
@@ -91,6 +105,7 @@ function Request(args){
   this.xhr = getXhrObject();
 }
 
+// Prototype ouvrantune nouvelle requête et initialisant les callback de ces dernières
 Request.prototype.open = function(){
   var self = this;
   this.xhr.open(this.method, this.url, true);
@@ -112,6 +127,7 @@ Request.prototype.open = function(){
   return this;
 }
 
+// Prototype servant à envoyer la requête
 Request.prototype.send = function(){
   if(!this.opened){
     console.warn("Objet XHR ouvert automatiquement");
@@ -119,17 +135,16 @@ Request.prototype.send = function(){
   }
 
   //Si données en string ou en json
-  // if(this.data){
-    var data = "";
-    if(this.data && this.json){
-      console.log(this.data);
-      data = "json="+JSON.stringify(this.data);
-    } else {
-      console.log(typeof this.data);
-      if(this.data && typeof this.data === "string"){
-        data = this.data;
-      }
+  var data = "";
+  if(this.data && this.json){
+    console.log(this.data);
+    data = "json="+JSON.stringify(this.data);
+  } else {
+    console.log(typeof this.data);
+    if(this.data && typeof this.data === "string"){
+      data = this.data;
     }
+  }
 
   this.xhr.send(data);
   return this;
@@ -162,15 +177,8 @@ Node.prototype.getPosition = function(isCenter){
   };
 }
 
-function setPrefix(key,value){
-  var pre = ["moz", "ms", "o", "webkit"];
-  var result = "";
-  for(i=0; i<pre.length; i++){
-    result+="-"+pre[i]+"-"+key+":"+value+";";
-  }
-  return result;
-}
 
+// Surcharge les getter et setter de window.scrollTop pour le crossbrowser
 Object.defineProperties(window, {
   scrollTop: {
     get: function() {
@@ -184,6 +192,7 @@ Object.defineProperties(window, {
   }
 });
 
+// Permet de réaliser un callback sur la transition d'un élément
 function whichTransitionEvent(){
     var t;
     var el = document.createElement('fakeelement');
@@ -203,49 +212,17 @@ function whichTransitionEvent(){
 var transitionEvent = whichTransitionEvent();
 
 
-
-
-function setPrefix(key,value){
-  var pre = ["moz", "ms", "o", "webkit"];
-  var result = "";
-  for(i=0; i<pre.length; i++){
-    result+="-"+pre[i]+"-"+key+":"+value+";";
-  }
-  return result;
-}
-
-
-////////////////////////////////////////////////////////////////////////////////
-//
-//                SNAP POINT
-//
-////////////////////////////////////////////////////////////////////////////////
-
-
-var isScrollSnapSupported = 'scrollSnapType' in document.documentElement.style ||
-        'webkitScrollSnapType' in document.documentElement.style;
-
-if (!isScrollSnapSupported) {
-  var elem = document.createElement('p'),
-      txt  = document.createTextNode('Your browser does not support CSS Scroll Snap Points :( '),
-      local = document.body;
-
-  // elem.appendChild(txt);
-  // elem.classList.add('warning');
-  // local.insertBefore(elem, local.firstChild);
-}
-
-
-
 ////////////////////////////////////////////////////////////////////////////////
 //
 //                Awesome Panel
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-
+// Permet de gérer la navigation de panneau en panneau
 AwesomePanel = {
   timelineBlocked:false, //Block timeline position
+
+  // A la fin d'une transition
   callbackTransitionEnd:function(){
     var self = AwesomePanel;
     var anchor = this.animParams.anchor;
@@ -266,6 +243,8 @@ AwesomePanel = {
       offset: 40
     });
   },
+
+  // Change de panneau selon le selecteur "anchor"
   moveTo:function(anchor, anim){
     if(this.isMoving != true){
       anim = (anim) ? anim: "scale-min";
@@ -286,6 +265,7 @@ AwesomePanel = {
     }
   },
 
+  //Change la position du curseur actif
   updateTimelineActive:function(){
     var c = document.querySelector(".timeline-item.active");
     var n = document.querySelector(".timeline-item[data-target='"+this.currentAnchor+"']")
@@ -294,6 +274,7 @@ AwesomePanel = {
     if(n) this.activeBtn.setAttribute("style", setPrefix("transform", "translateY("+n.offsetTop+"px)"));
   },
 
+  //Attend un peu et replace l'item actif de la timeline (callback window.onresize)
   resizeEvent:function(){
     setTimeout(function(){
       var c = document.querySelector(".timeline-item.active");
@@ -301,7 +282,7 @@ AwesomePanel = {
     }, 300)
   },
 
-
+  //Cache la timeline
   hideTimeline:function(){
     if( this.timeline && !this.timeline.className.match("no-hide" && !this.timelineBlocked) ){
       this.timeline.classList.add("hide-state");
@@ -309,6 +290,7 @@ AwesomePanel = {
     }
   },
 
+  //Affiche la timeline
   displayTimeline:function(){
     if( this.timeline &&  !this.timelineBlocked ){
       this.timeline.classList.remove("hide-state");
@@ -316,6 +298,7 @@ AwesomePanel = {
     }
   },
 
+  //Met à jour le panneau actif sur la timeline (en cas de scroll naturel)
   updateCurrentAnchor:function(anchor, isSnaping){
     if(anchor != this.currentAnchor || isSnaping){
       this.currentAnchor = anchor;
@@ -325,6 +308,7 @@ AwesomePanel = {
     }
   },
 
+  //Au clique sur un item, on récupère sa cible et on lance le déplacement vers la cible
   initItemsEvents:function(el){
     var self = this;
     el.addEventListener("click", function(e){
@@ -336,6 +320,7 @@ AwesomePanel = {
     }, false)
   },
 
+  //Calcul
   calcSnap:function(){
     var nearest = this.getNearest(window.scrollTop);
     if(nearest.absDiff > nearest.el.offsetHeight/4) {
@@ -360,11 +345,14 @@ AwesomePanel = {
     };
   },
 
+  // Evenemnt de scroll
   scrollEvent:function(){
     var self = AwesomePanel;
     var scrollTop = window.scrollTop;
 
+    //Si le système de timeline est fonctionnel
     if( self.config.enableTimeline ){
+      //On gère son apparition en fonction de la valeur du scroll
       if(scrollTop < (self.panels[0].getPosition().y/1.5)){
         self.hideTimeline();
       } else if(scrollTop > (self.panels[0].getPosition().y/1.5)){
@@ -372,9 +360,11 @@ AwesomePanel = {
       }
     }
 
+    //On récupère le panneau le plus proche de la ligne de flottaison
     var nearest = self.getNearest(scrollTop);
     self.updateCurrentAnchor("#"+nearest.el.getAttribute("id"), false)
 
+    //ça ça marche pas
     if( !self.isMoving && self.snapping ){
       setTimeout(function(){
         var isScrolling = (scrollTop === window.scrollTop) ? false : true ;
@@ -386,6 +376,7 @@ AwesomePanel = {
     }
   },
 
+  //Initialisation de l'objet
   init:function(args){
     this.config = {};
     this.panelParent = document.querySelector(".loop-archive");
@@ -414,16 +405,11 @@ AwesomePanel = {
   }
 }
 
-
-
-
 ////////////////////////////////////////////////////////////////////////////////
 //
 //               Perspective Corner
 //
 ////////////////////////////////////////////////////////////////////////////////
-
-
 
 perspectivecorner = {
   intensity: 1, //Deg
@@ -526,6 +512,7 @@ Popin = {
 //
 ////////////////////////////////////////////////////////////////////////////////
 
+//Ensemble des callback
 Callback = {
   success: function(){
     Popin.close();
@@ -565,7 +552,7 @@ Callback = {
 }
 
 
-
+//Gère les envoie de XHR
 XhrManage = {
   request : [],
   initEvent:function(el){
@@ -611,15 +598,11 @@ XhrManage = {
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-
+//Carousel des formations
 function MakeCarousel(el){
   this.carousel = el;
   this.currentItem= 0;
   this.nbItemRow = 3;
-
-  // for(i=0; i<this.items.length; i++){
-  //   // this.items[i].setAttribute("style", "width: calc("+100/this.items.length+"% - 15px)");
-  // }
 
   if(this.carousel && this.carousel.className.match("active-control")){
 
@@ -723,122 +706,6 @@ function scrollToTop(){
 }
 
 
-
-////////////////////////////////////////////////////////////////////////////////
-//
-//               Visite Guidée
-//
-////////////////////////////////////////////////////////////////////////////////
-
-
-Visite = {
-  currentActive: null,
-  currentHover: null,
-  setConfig:function(args){
-    this.config = {};
-    this.config.plan = {};
-    if(args.plan){
-      this.config.plan.hoverClass = (args.plan.hoverClass) ? args.plan.hoverClass : null;
-      this.config.plan.notHoverClass = (args.plan.notHoverClass) ? args.plan.notHoverClass : null;
-      this.config.plan.clickClass = (args.plan.clickClass) ? args.plan.clickClass : "active-stage";
-      this.config.plan.inactiveClass = (args.plan.inactiveClass) ? args.plan.inactiveClass : "inactive-stage";
-    }
-  },
-
-  //////// EVENTS
-  initHoverPlan:function(el){
-    var self = this;
-    el.addEventListener("mouseenter", function(e){
-      for(i=0; i<self.stage.length; i++){
-        self.stage[i].classList.remove(self.config.plan.hoverClass);
-        if(self.config.plan.notHoverClass) {
-          self.stage[i].classList.add(self.config.plan.notHoverClass);
-        }
-      }
-      if(self.config.plan.notHoverClass) {
-        this.classList.remove(self.config.plan.notHoverClass);
-      }
-      this.classList.add(self.config.plan.hoverClass);
-      self.currentHover = this;
-      e.stopPropagation();
-    }, false)
-
-    el.addEventListener("mouseout", function(){
-      this.classList.remove(self.config.plan.hoverClass);
-      for(i=0; i<self.stage.length; i++){
-        if(self.config.plan.notHoverClass) {
-          self.stage[i].classList.remove(self.config.plan.notHoverClass);
-        }
-      }
-      self.currentHover = null;
-    })
-  },
-
-  initClickClass:function(el){
-    var self = this;
-    el.addEventListener("click", function(){
-      for(i=0; i<self.stage.length; i++){
-        self.stage[i].classList.remove(self.config.plan.clickClass);
-      }
-      if(self.currentActive) {
-        self.currentActive = null;
-        this.classList.remove(self.config.plan.clickClass);
-        self.plan.classList.remove("has-active-stage")
-      } else {
-        this.classList.add(self.config.plan.clickClass);
-        self.plan.classList.add("has-active-stage")
-        self.currentActive = this;
-      }
-    })
-  },
-
-  setActiveStage:function(el){
-
-  },
-
-  genPathPointer:function(){
-
-  },
-
-  initPointerHover:function(el){
-    el.addEventListener("mouseenter", function(){
-      var left = this.offsetTop;
-      var top = this.offsetLeft;
-      this.genPathPointer();
-    })
-    el.addEventListener("click", function(e){
-      if(this.className.match("pointer-active")) {
-        this.classList.remove("pointer-active")
-      } else {
-        this.classList.add("pointer-active")
-      }
-      e.stopPropagation();
-    })
-  },
-
-  initEvents:function(){
-    for(i=0; i<this.stage.length; i++){
-      console.log(this.stage[i]);
-      if(this.config.plan.hoverClass) this.initHoverPlan(this.stage[i]);
-      if(this.config.plan.hoverClass) this.initClickClass(this.stage[i]);
-    }
-    for(i=0; i<this.pointer.length; i++){
-      this.initPointerHover(this.pointer[i]);
-    }
-  },
-  init:function(args){
-    this.plan = document.querySelector(".plan-container");
-    if(this.plan){
-      this.path = document.getElementById("path");
-      this.stage = this.plan.querySelectorAll(".stage");
-      this.pointer = this.plan.querySelectorAll(".stage .pointer");
-      this.setConfig(args);
-      this.initEvents();
-    }
-  }
-}
-
-
 ////////////////////////////////////////////////////////////////////////////////
 //
 //                Header Manage
@@ -881,16 +748,7 @@ window.addEventListener("load", function(){
   scrollToTop();
   manageProductCarousel();
   var carousel = new MakeCarousel(document.querySelector("#main-carousel"));
-  // perspectivecorner.init();
   XhrManage.init();
-
-  Visite.init({
-    plan: {
-      hoverClass: "active-hover",
-      notHoverClass: "inactive-hover"
-    }
-  });
-
   HeaderScroll.init();
 
 

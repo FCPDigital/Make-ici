@@ -12,8 +12,6 @@
 
 			<?php endwhile; // End of the loop.
 			?>
-
-
     </div>
   </div>
 </main>

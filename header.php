@@ -7,7 +7,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<?php wp_head(); ?>
 		<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
 	</head>
 
 	<body <?php body_class(); ?>>
@@ -28,20 +27,22 @@
 							'depth' => 2,
 							'container' => false,
 							'menu_class' => 'nav  navbar-nav',
-							//Process nav menu using our custom nav walker
 							'walker' => new wp_bootstrap_navwalker())
 						);
 						?>
 					</div>
 				</div>
 			</nav>
-			<!--<a href="#" id="newDevis" class="btn btn-light">Demande de devis</a>-->
 	</header>
 	<div id="popin" class="hide">
 		<span class="close-popin">X</span>
 		<div class="content-popin"></div>
 	</div>
-	<?php global $woocommerce; ?>
+
+
+	<?php
+	//Bouton du panier
+	global $woocommerce; ?>
 	<?php if($woocommerce->cart->cart_contents_count>0){
 		$dataCount='data-count="'.$woocommerce->cart->cart_contents_count.'"';
 	} else {
