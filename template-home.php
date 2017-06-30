@@ -5,7 +5,7 @@
 
 get_header();
 while ( have_posts() ) : the_post();
-$postCur = get_post();
+$postCur = get_post(); // On stocke le post courant pour éviter le bug de la boucle get_last_posts() qui écrase le post_data principale.
 
 ?>
 
