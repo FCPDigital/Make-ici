@@ -169,11 +169,16 @@ h1 {
       line-height: 1em;
       padding: 12px 0;
       height: 75px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
       .title {
         font-size: 1.1em;
         font-weight: bold;
         line-height: 1em;
-        margin-bottom: 8px;
+        margin: 0;
         letter-spacing: 1px;
       }
       .subtitle {
@@ -224,7 +229,7 @@ h1 {
       background-color: transparent;
       padding-bottom:0;
       .title-container {
-        padding: 22px 0;
+        padding: 5px 0;
         height: 60px;
         .title {
           font-size: 14px;

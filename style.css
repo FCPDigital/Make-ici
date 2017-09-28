@@ -709,12 +709,15 @@ h1 {
     color: black;
     line-height: 1em;
     padding: 12px 0;
-    height: 75px; }
+    height: 75px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; }
     .archive-head .archive-head-item .title-container .title {
       font-size: 1.1em;
       font-weight: bold;
       line-height: 1em;
-      margin-bottom: 8px;
+      margin: 0;
       letter-spacing: 1px; }
     .archive-head .archive-head-item .title-container .subtitle {
       font-size: 11px;
@@ -754,7 +757,7 @@ h1 {
     background-color: transparent;
     padding-bottom: 0; }
     .archive-head.classic-list .archive-head-item .title-container {
-      padding: 22px 0;
+      padding: 5px 0;
       height: 60px; }
       .archive-head.classic-list .archive-head-item .title-container .title {
         font-size: 14px; }
@@ -1399,7 +1402,15 @@ body.woocommerce-checkout #customer_details h3::after {
     min-height: 600px;
     height: 100vh;
     text-align: center;
-    position: relative; }
+    position: relative;
+    padding-top: 50px; }
+    .homepage .landing .container {
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      -o-transform: translateY(-50%);
+      transform: translateY(-50%);
+      top: 40%; }
     .homepage .landing #scroll {
       color: #ffed00;
       position: absolute;
@@ -1601,7 +1612,15 @@ header .navbar-nav .menu-item.dropdown {
   height: 45px;
   margin: 12px 10px;
   background-color: #ffed00;
-  font-weight: bold; }
+  font-weight: bold;
+  border: 2px solid #ffed00;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s; }
+  header .navbar-nav .menu-item.dropdown:hover {
+    background-color: transparent; }
   header .navbar-nav .menu-item.dropdown a {
     padding: 0;
     color: black;
@@ -1609,6 +1628,9 @@ header .navbar-nav .menu-item.dropdown {
     background-color: #ffed00 !important; }
     header .navbar-nav .menu-item.dropdown a::before, header .navbar-nav .menu-item.dropdown a::after {
       display: none !important; }
+    header .navbar-nav .menu-item.dropdown a:hover {
+      background-color: transparent !important;
+      color: #ffed00 !important; }
   header .navbar-nav .menu-item.dropdown .dropdown-menu {
     margin-top: 10px;
     border: 0;
@@ -1650,6 +1672,17 @@ header.transparent .navbar {
       color: black; }
   header.transparent .navbar .navbar-nav .menu-item.btn-light a {
     color: black !important; }
+  header.transparent .navbar .navbar-nav .menu-item.active a {
+    color: #ffed00;
+    font-weight: bold; }
+    header.transparent .navbar .navbar-nav .menu-item.active a::before {
+      color: white;
+      font-weight: normal; }
+    header.transparent .navbar .navbar-nav .menu-item.active a::after {
+      background-color: #ffed00; }
+  header.transparent .navbar .navbar-nav .menu-item.dropdown a:hover {
+    background-color: transparent !important;
+    color: #ffed00 !important; }
 
 @media screen and (max-width: 585px) {
   header .static {
@@ -2224,23 +2257,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 54px;
-          top: 227px; }
+          left: 116px;
+          top: 142px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 103px;
-          top: 126px; }
+          left: 14px;
+          top: 186px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 99px;
-          top: 83px; }
+          left: 347px;
+          top: 225px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 387px;
-          top: 216px; }
+          left: 106px;
+          top: 107px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 368px;
-          top: 41px; }
+          left: 311px;
+          top: 175px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 244px;
-          top: 243px; }
+          left: 306px;
+          top: 167px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);

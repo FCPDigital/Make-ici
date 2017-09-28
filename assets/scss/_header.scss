@@ -178,6 +178,11 @@ header {
         margin: 12px 10px;
         background-color: $color-3;
         font-weight: bold;
+        border: 2px solid $color-3;
+        @include transition(.4s);
+        &:hover {
+          background-color: transparent;
+        }
         a {
           padding: 0;
           color:black;
@@ -185,6 +190,10 @@ header {
           background-color: $color-3 !important;
           &::before, &::after {
             display: none !important;
+          }
+          &:hover {
+            background-color: transparent !important;
+            color: $color-3 !important;
           }
         }
         .dropdown-menu {
@@ -241,6 +250,25 @@ header {
      &.btn-light a {
        color: black !important;
      }
+      &.active {
+        a {
+          color: $color-3;
+          font-weight: bold;
+          &::before {
+            color: white;
+            font-weight: normal;
+          }
+          &::after {
+            background-color: $color-3;
+          }
+        }
+      }
+      &.dropdown {
+          a:hover {
+            background-color: transparent !important;
+            color: $color-3 !important;
+          }
+      }
     }
   }
 }
