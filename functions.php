@@ -574,21 +574,6 @@ function create_post_type_equipements() {
 	);
 }
 
-// POST TYPE REST ICI
-function create_post_type_rest() {
-	register_post_type( 'rest',
-		array(
-			'labels' => array(
-				'name' => __( 'Rest' ),
-				'singular_name' => __( 'Rest' )
-			),
-			'public' => true,
-			'has_archive' => true,		
-			'menu_icon' => 'dashicons-carrot',
-			'supports' => array( 'title', 'editor', 'custom-fields', 'thumbnail', 'excerpt' )
-		)
-	);
-}
 
 // POST TYPE ABONNEMENTS
 function create_post_type_abonnement() {
@@ -622,10 +607,27 @@ function create_post_type_entreprise() {
 	);
 }
 
+// POST TYPE ENTREPRISES
+function create_post_type_events() {
+	register_post_type( 'events',
+		array(
+			'labels' => array(
+				'name' => __( 'Evènements' ),
+				'singular_name' => __( 'Evènements' )
+			),
+			'public' => true,
+			'has_archive' => true,
+			'menu_icon' => 'dashicons-businessman',
+			'supports' => array( 'title', 'editor', 'custom-fields', 'thumbnail', 'excerpt' )
+		)
+	);
+}
+
 add_action( 'init', 'create_post_type_abonnement' );
 add_action( 'init', 'create_post_type_staff' );
 add_action( 'init', 'create_post_type_entreprise' );
 add_action( 'init', 'create_post_type_equipements' );
+add_action( 'init', 'create_post_type_events' );
 
 
 //////////////////////////////////////////////////////
