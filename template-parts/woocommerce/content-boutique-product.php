@@ -34,24 +34,30 @@ if( isset($style) && $style=="compact" ){
 
 
 	<div class="carousel-item">
+		<div class="title-container">
+			<p class="title"><?php echo get_the_title($product); ?></p>
+		</div>
+
 		<?php if(has_post_thumbnail($product)) : ?>
 			<div class="crop-img">
 				<img src="<?php echo get_the_post_thumbnail_url($product); ?>" alt="">
 			</div>
 		<?php endif; ?>
-		<p class="title"><?php echo get_the_title($product); ?></p>
+
 		<p class="excerpt">
 			<?php echo get_excerpt_truncate($product, 20); ?>
-			<br><a href="<?php echo get_permalink($product) ?>">En savoir plus</a>
 		</p>
+
+		
 
 		<?php $nextDate = get_next_date($product);
 		if($nextDate){
-			echo "<a href=\"".get_permalink($product)."\" data-by-xhr class=\"btn btn-colored\">Prochaine session le <br>".$nextDate->format("d/m/Y")."</a>";
+			echo "<p class='more-info'><a href=\"".get_permalink($product)."\">En savoir plus</a></P><br><a href=\"".get_permalink($product)."\" data-by-xhr class=\"btn btn-colored\">Inscription<br>Prochaine session le <br>".$nextDate->format("d/m/Y")."</a>";
 		} else {
-			echo "<p class='no-date'>Pas de session à venir.</p>";
+			echo"<p class='no-dates'>Pas de session à venir.</p><br>";
+			echo "<p><a href=\"".get_permalink($product)."\" data-by-xhr class=\"btn btn-light\">En savoir plus</a></p>";
 		} ?>
 	</div>
 
-
+	
 <?php } ?>
