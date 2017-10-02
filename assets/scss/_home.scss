@@ -17,6 +17,11 @@
     .container {
       @include transform(translateY(-50%));
       top: 40%;
+      .landing-legend {
+        h2 {
+          font-size: 18px;
+        }
+      }
     }
     #scroll {
       color: $color-3;

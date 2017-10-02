@@ -1411,6 +1411,8 @@ body.woocommerce-checkout #customer_details h3::after {
       -o-transform: translateY(-50%);
       transform: translateY(-50%);
       top: 40%; }
+      .homepage .landing .container .landing-legend h2 {
+        font-size: 18px; }
     .homepage .landing #scroll {
       color: #ffed00;
       position: absolute;
@@ -2257,23 +2259,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 116px;
-          top: 142px; }
+          left: 382px;
+          top: 210px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 14px;
-          top: 186px; }
+          left: 6px;
+          top: 174px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 347px;
-          top: 225px; }
+          left: 111px;
+          top: 193px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 106px;
-          top: 107px; }
+          left: 307px;
+          top: 218px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 311px;
-          top: 175px; }
+          left: 195px;
+          top: 214px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 306px;
-          top: 167px; }
+          left: 283px;
+          top: 76px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);
