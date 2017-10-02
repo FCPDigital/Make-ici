@@ -10,8 +10,8 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @see     https://docs.woocommerce.com/document/template-structure/
- * @author  WooThemes
+ * @see		 https://docs.woocommerce.com/document/template-structure/
+ * @author	WooThemes
  * @package WooCommerce/Templates
  * @version 3.0.3
  */
@@ -43,7 +43,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 			<?php
 			foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
-				$_product   = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
+				$_product	 = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
 				$product_id = apply_filters( 'woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key );
 
 				if ( $_product && $_product->exists() && $cart_item['quantity'] > 0 && apply_filters( 'woocommerce_cart_item_visible', true, $cart_item, $cart_item_key ) ) {
@@ -105,10 +105,10 @@ do_action( 'woocommerce_before_cart' ); ?>
 									$product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key );
 								} else {
 									$product_quantity = woocommerce_quantity_input( array(
-										'input_name'  => "cart[{$cart_item_key}][qty]",
+										'input_name'	=> "cart[{$cart_item_key}][qty]",
 										'input_value' => $cart_item['quantity'],
-										'max_value'   => $_product->backorders_allowed() ? '' : $_product->get_stock_quantity(),
-										'min_value'   => '0',
+										'max_value'	 => $_product->backorders_allowed() ? '' : $_product->get_stock_quantity(),
+										'min_value'	 => '0',
 									), $_product, false );
 								}
 

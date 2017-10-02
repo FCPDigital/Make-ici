@@ -1,75 +1,75 @@
 .homepage {
-  color: white;
-  h2 {
-    font-size: 2.5em;
-    font-weight: bold;
-    color: white;
-  }
-  & > div, .container {
-    position: relative;
-  }
-  .landing {
-    min-height: 600px;
-    height: 100vh;
-    text-align: center;
-    position: relative;
-    padding-top: 50px;
-    .container {
-      @include transform(translateY(-50%));
-      top: 40%;
-      .landing-legend {
-        h2 {
-          font-size: 18px;
-        }
-      }
-    }
-    #scroll {
-      color: $color-3;
-      position: absolute;
-      text-decoration: none;
-      bottom: 100px;
-      display: inline-block;
-      padding-bottom: 10px;
-      left: 50%;
-      @include transform(translateX(-50%));
-      &::after {
-        content:"";
-        display: block;
-        position: absolute;
-        width: 30px;
-        height: 30px;
-        left: calc(50% - 15px);
-        bottom: -30px;
-        background-image: url("assets/images/arrow.png");
-        background-position: center;
-        background-size: contain;
-        background-repeat: no-repeat;
-        @include transform(rotate(90deg));
-      }
-    }
-  }
+	color: white;
+	h2 {
+		font-size: 2.5em;
+		font-weight: bold;
+		color: white;
+	}
+	& > div, .container {
+		position: relative;
+	}
+	.landing {
+		min-height: 600px;
+		height: 100vh;
+		text-align: center;
+		position: relative;
+		padding-top: 50px;
+		.container {
+			@include transform(translateY(-50%));
+			top: 40%;
+			.landing-legend {
+				h2 {
+					font-size: 18px;
+				}
+			}
+		}
+		#scroll {
+			color: $color-3;
+			position: absolute;
+			text-decoration: none;
+			bottom: 100px;
+			display: inline-block;
+			padding-bottom: 10px;
+			left: 50%;
+			@include transform(translateX(-50%));
+			&::after {
+				content:"";
+				display: block;
+				position: absolute;
+				width: 30px;
+				height: 30px;
+				left: calc(50% - 15px);
+				bottom: -30px;
+				background-image: url("assets/images/arrow.png");
+				background-position: center;
+				background-size: contain;
+				background-repeat: no-repeat;
+				@include transform(rotate(90deg));
+			}
+		}
+	}
 
-  .section-post {
-    padding: 75px 0;
-    &.last-posts {
-      .carousel-body {
-        float: left;
-      }
-      .see-all {
-        width: 25%;
-        float: left;
-        text-align: right;
-        padding-top: 200px;
-        .btn {
-          padding: 10px;
-        }
-      }
-    }
-    &.equipements {
-      .center {
-        max-width: 600px;
-        margin:auto; text-align: center;
-      }
-    }
-  }
+	.section-post {
+		padding: 75px 0;
+		&.last-posts {
+			.carousel-body {
+				float: left;
+			}
+			.see-all {
+				width: 25%;
+				float: left;
+				text-align: right;
+				padding-top: 200px;
+				.btn {
+					padding: 10px;
+				}
+			}
+		}
+		&.equipements {
+			.center {
+				max-width: 600px;
+				margin:auto; text-align: center;
+			}
+		}
+	}
 }

@@ -26,7 +26,7 @@
 							'menu' => 'Header',
 							'depth' => 2,
 							'container' => false,
-							'menu_class' => 'nav  navbar-nav',
+							'menu_class' => 'nav	navbar-nav',
 							'walker' => new wp_bootstrap_navwalker())
 						);
 						?>

@@ -8,7 +8,7 @@
 /*
  * Class Name: WP_Bootstrap_Navwalker
  * Plugin Name: WP Bootstrap Navwalker
- * Plugin URI:  https://github.com/wp-bootstrap/wp-bootstrap-navwalker
+ * Plugin URI:	https://github.com/wp-bootstrap/wp-bootstrap-navwalker
  * Description: A custom WordPress nav walker class to implement the Bootstrap 3 navigation style in a custom theme using the WordPress built in menu manager.
  * Author: Edward McIntyre - @twittem, WP Bootstrap
  * Version: 2.0.5
@@ -36,7 +36,7 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 		 *
 		 * @access public
 		 * @param mixed $output Passed by reference. Used to append additional content.
-		 * @param int   $depth (default: 0) Depth of page. Used for padding.
+		 * @param int	 $depth (default: 0) Depth of page. Used for padding.
 		 * @param array $args (default: array()) Arguments.
 		 * @return void
 		 */
@@ -54,9 +54,9 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 		 * @access public
 		 * @param mixed $output Passed by reference. Used to append additional content.
 		 * @param mixed $item Menu item data object.
-		 * @param int   $depth (default: 0) Depth of menu item. Used for padding.
+		 * @param int	 $depth (default: 0) Depth of menu item. Used for padding.
 		 * @param array $args (default: array()) Arguments.
-		 * @param int   $id (default: 0) Menu item ID.
+		 * @param int	 $id (default: 0) Menu item ID.
 		 * @return void
 		 */
 		public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
@@ -94,16 +94,16 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 				$atts = array();
 
 				if ( empty( $item->attr_title ) ) {
-		  			$atts['title']  = ! empty( $item->title )   ? strip_tags( $item->title ) : '';
+						$atts['title']	= ! empty( $item->title )	 ? strip_tags( $item->title ) : '';
 				} else {
-		  			$atts['title'] = $item->attr_title;
+						$atts['title'] = $item->attr_title;
 				}
 
 				$atts['target'] = ! empty( $item->target )	? $item->target	: '';
-				$atts['rel']    = ! empty( $item->xfn )		? $item->xfn	: '';
+				$atts['rel']		= ! empty( $item->xfn )		? $item->xfn	: '';
 				// If item has_children add atts to a.
 				if ( $args->has_children && 0 === $depth ) {
-					$atts['href']   		= '#';
+					$atts['href']	 		= '#';
 					$atts['data-toggle']	= 'dropdown';
 					$atts['class']			= 'dropdown-toggle';
 					$atts['aria-haspopup']	= 'true';

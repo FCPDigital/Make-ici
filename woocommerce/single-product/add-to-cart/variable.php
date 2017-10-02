@@ -11,7 +11,7 @@
  * the readme will list any important changes.
  *
  * @see 	https://docs.woocommerce.com/document/template-structure/
- * @author  WooThemes
+ * @author	WooThemes
  * @package WooCommerce/Templates
  * @version 3.0.0
  */
@@ -28,8 +28,8 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 		<p class="stock out-of-stock"><?php _e( 'This product is currently out of stock and unavailable.', 'woocommerce' ); ?></p>
 	<?php else : ?>
 
-    <div class="variations">
-      <?php foreach ( $attributes as $attribute_name => $options ) : ?>
+		<div class="variations">
+			<?php foreach ( $attributes as $attribute_name => $options ) : ?>
 
 				<?php
 
@@ -69,12 +69,12 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 					</div>
 				</div>
 				<?php } ?>
-      <?php endforeach;?>
-    </div>
+			<?php endforeach;?>
+		</div>
 
 		<?php do_action( 'woocommerce_before_add_to_cart_button' ); ?>
 
-		<?php if(count($options) > 0){  ?>
+		<?php if(count($options) > 0){	?>
 		<div class="single_variation_wrap">
 			<?php
 				/**

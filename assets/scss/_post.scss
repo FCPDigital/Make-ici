@@ -3,113 +3,113 @@ Contient l'ensemble des style particulier propre aux posts et au pages.
 */
 
 #page {
-  h1 {
-    margin-bottom: $medium-pad;
-  }
+	h1 {
+		margin-bottom: $medium-pad;
+	}
 }
 
 // Format de texte d'une page simple
 .single-body {
-  p {
-    margin-bottom: $small-pad;
-  }
-  h2{
-    text-align: center;
-    color: $color-3;
-    font-size: 1.5em;
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 2px;
-    clear: both;
-  }
-  h3, h2 {
-    padding:$medium-pad 0 $small-pad 0;
-  }
+	p {
+		margin-bottom: $small-pad;
+	}
+	h2{
+		text-align: center;
+		color: $color-3;
+		font-size: 1.5em;
+		text-transform: uppercase;
+		font-weight: bold;
+		letter-spacing: 2px;
+		clear: both;
+	}
+	h3, h2 {
+		padding:$medium-pad 0 $small-pad 0;
+	}
 }
 
 // page ecosystem
 .ecosystem {
-  .su-custom-gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-content: center;
-    margin-top: 1.5em;
-    .su-custom-gallery-slide {
-      min-width: 150px;
-      min-height: 120px;
-      a {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        img {
-          border:0;
-          background-color: transparent;
-          &:hover{
-            background-color: transparent;
-          }
-        }
-      }
-    }
-  }
+	.su-custom-gallery {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		align-content: center;
+		margin-top: 1.5em;
+		.su-custom-gallery-slide {
+			min-width: 150px;
+			min-height: 120px;
+			a {
+				display: flex;
+				justify-content: center;
+				flex-direction: column;
+				img {
+					border:0;
+					background-color: transparent;
+					&:hover{
+						background-color: transparent;
+					}
+				}
+			}
+		}
+	}
 }
 
 
 .post-type-archive-abonnements {
-  .archive-main {
-    padding-left: 70px;
-    .fa-custom, .ico {
-      @include transform(translateX(-50px));
-      position: absolute;
-      float: left;
-      max-width: 50px;
-      text-align: center;
-      img {
-        max-width: 35px;
-        max-height: 35px;
-      }
-    }
-  }
+	.archive-main {
+		padding-left: 70px;
+		.fa-custom, .ico {
+			@include transform(translateX(-50px));
+			position: absolute;
+			float: left;
+			max-width: 50px;
+			text-align: center;
+			img {
+				max-width: 35px;
+				max-height: 35px;
+			}
+		}
+	}
 }
 
 .staff-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  .staff-item {
-    width: 250px;
-    max-width: 250px;
-    min-width: 250px;
-    background-color: white;
-    color: black;
-    flex: 1;
-    text-align: center;
-    position: relative;
-    padding-bottom: 50px;
-    margin: 30px;
-    img {
-      width: 100%;
-    }
-    .staff-item-content {
-      padding: 10px;
-      h3 {
-        color: black;
-        font-size: 15px;
-        font-weight: bold;
-        margin-bottom: 16px;
-      }
-      p {
-        font-size: 12px;
-        line-height: 1.2;
-        margin-bottom: 16px;
-      }
-    }
-    .btn {
-      font-size: 11px;
-      bottom: 15px;
-      position: absolute;
-      left: 50%;
-      @include transform(translateX(-50%));
-    }
-  }
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	.staff-item {
+		width: 250px;
+		max-width: 250px;
+		min-width: 250px;
+		background-color: white;
+		color: black;
+		flex: 1;
+		text-align: center;
+		position: relative;
+		padding-bottom: 50px;
+		margin: 30px;
+		img {
+			width: 100%;
+		}
+		.staff-item-content {
+			padding: 10px;
+			h3 {
+				color: black;
+				font-size: 15px;
+				font-weight: bold;
+				margin-bottom: 16px;
+			}
+			p {
+				font-size: 12px;
+				line-height: 1.2;
+				margin-bottom: 16px;
+			}
+		}
+		.btn {
+			font-size: 11px;
+			bottom: 15px;
+			position: absolute;
+			left: 50%;
+			@include transform(translateX(-50%));
+		}
+	}
 }

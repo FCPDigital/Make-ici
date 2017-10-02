@@ -1,104 +1,104 @@
 #visite {
-  perspective: 1000px;
+	perspective: 1000px;
 
-  .plan-container {
-    position: relative;
-    height: 100vh;
-    transform: rotateX(100deg) rotateZ(60deg);
-    @include transition(1s);
-    transform-style: preserve-3d;
-    .stage {
-      position: absolute;
-      opacity: 5;
-      width: 400px;
-      height: 250px;
-      left: calc(50% - 200px);
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-position: center;
-      @include transition(.5s);
-      top: 200px;
-      &:hover {
-        opacity: 1;
-        .pointer {
-          @include transform(translateZ(10px) rotate(180deg));
-        }
-      }
-      @for $i from 1 through 6 {
-        &:nth-child(#{$i}) {
-          @include transform(translateZ(#{($i - 1)*120}px));
-        }
-      }
-      .pointer {
-        position: absolute;
-        background-color: white;
-        border-radius: 100%;
-        width: 20px;
-        height: 20px;
-        background-size: cover;
-        background-position: 20px;
-        background-repeat: no-repeat;
-        cursor: pointer;
-        @include transition(.4s);
-        @include transform(translateZ(0) rotate(180deg));
-        // animation-name: scale;
-        animation-iteration-count: infinite;
-        animation-duration: 1s;
-        @for $i from 1 through 6 {
-          &:nth-child(#{$i}) {
-            left: random(400px)+px;
-            top: random(250px)+px;
-          }
-        }
-      }
-    }
-
-
-    @for $i from 1 through 6 {
-      .stage.active-hover:nth-child(#{$i}) {
-        @include transform(translateZ(#{($i - 1)*120}px) scale(1.1) rotateX(10deg));
-      }
-    }
-
-    @for $i from 1 through 6 {
-      .stage.inactive-hover:nth-child(#{$i}) {
-        @include transform(translateZ(#{($i - 1)*120}px) scale(.8) rotateX(0deg));
-      }
-    }
+	.plan-container {
+		position: relative;
+		height: 100vh;
+		transform: rotateX(100deg) rotateZ(60deg);
+		@include transition(1s);
+		transform-style: preserve-3d;
+		.stage {
+			position: absolute;
+			opacity: 5;
+			width: 400px;
+			height: 250px;
+			left: calc(50% - 200px);
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: center;
+			@include transition(.5s);
+			top: 200px;
+			&:hover {
+				opacity: 1;
+				.pointer {
+					@include transform(translateZ(10px) rotate(180deg));
+				}
+			}
+			@for $i from 1 through 6 {
+				&:nth-child(#{$i}) {
+					@include transform(translateZ(#{($i - 1)*120}px));
+				}
+			}
+			.pointer {
+				position: absolute;
+				background-color: white;
+				border-radius: 100%;
+				width: 20px;
+				height: 20px;
+				background-size: cover;
+				background-position: 20px;
+				background-repeat: no-repeat;
+				cursor: pointer;
+				@include transition(.4s);
+				@include transform(translateZ(0) rotate(180deg));
+				// animation-name: scale;
+				animation-iteration-count: infinite;
+				animation-duration: 1s;
+				@for $i from 1 through 6 {
+					&:nth-child(#{$i}) {
+						left: random(400px)+px;
+						top: random(250px)+px;
+					}
+				}
+			}
+		}
 
 
-    &.has-active-stage {
-      @include transform(rotateX(100deg) rotateZ(0deg));
-      .stage, .stage.inactive-hover {
-        @include transform(translateZ(-300px) rotateX(0deg));
-        &.active-stage {
-          @include transform(translateZ(100px) rotateX(90deg));
+		@for $i from 1 through 6 {
+			.stage.active-hover:nth-child(#{$i}) {
+				@include transform(translateZ(#{($i - 1)*120}px) scale(1.1) rotateX(10deg));
+			}
+		}
 
-          .pointer:hover {
-            @include transform(translateZ(12px) scale(3) rotate(180deg));
-            background-position: 0;
-          }
-          .pointer.pointer-active {
-            @include transform(translateZ(12px) scale(50) rotate(180deg));
-            background-position: 20px;
-          }
-        }
-        &:not(.active-stage){
-          opacity: 0;
-        }
-      }
-    }
-  }
+		@for $i from 1 through 6 {
+			.stage.inactive-hover:nth-child(#{$i}) {
+				@include transform(translateZ(#{($i - 1)*120}px) scale(.8) rotateX(0deg));
+			}
+		}
+
+
+		&.has-active-stage {
+			@include transform(rotateX(100deg) rotateZ(0deg));
+			.stage, .stage.inactive-hover {
+				@include transform(translateZ(-300px) rotateX(0deg));
+				&.active-stage {
+					@include transform(translateZ(100px) rotateX(90deg));
+
+					.pointer:hover {
+						@include transform(translateZ(12px) scale(3) rotate(180deg));
+						background-position: 0;
+					}
+					.pointer.pointer-active {
+						@include transform(translateZ(12px) scale(50) rotate(180deg));
+						background-position: 20px;
+					}
+				}
+				&:not(.active-stage){
+					opacity: 0;
+				}
+			}
+		}
+	}
 }
 
 @keyframes scale {
-  0%{
-    @include transform(scale(1));
-  }
-  50%{
-    @include transform(scale(1.5));
-  }
-  100%{
-    @include transform(scale(1));
-  }
+	0%{
+		@include transform(scale(1));
+	}
+	50%{
+		@include transform(scale(1.5));
+	}
+	100%{
+		@include transform(scale(1));
+	}
 }

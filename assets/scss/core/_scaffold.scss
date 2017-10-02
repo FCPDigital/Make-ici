@@ -7,13 +7,13 @@ Style générique à l'ensemble du thème:
 */
 
 body {
-  font-family: $main-font;
-  background: black;
-  letter-spacing: 1px;
+	font-family: $main-font;
+	background: black;
+	letter-spacing: 1px;
 }
 
 .fa-container {
-  height: 55px !important;
+	height: 55px !important;
 }
 
 .margin-top-big { margin-top: $big-pad !important; }
@@ -34,391 +34,391 @@ body {
 .clr {clear: both;}
 .nopad { padding:0; }
 
-.flex {  display: flex; }
+.flex {	display: flex; }
 
 .container {
-  width: $wrapper;
-  position: relative;
+	width: $wrapper;
+	position: relative;
 }
 
 .fa-custom, .ico {
-  float: left;
-  margin-right: 10px;
+	float: left;
+	margin-right: 10px;
 }
 
 
 .overlay {
-  background-color: rgba(0,0,0,.8);
+	background-color: rgba(0,0,0,.8);
 }
 .left-border {
-  position: relative;
-  &::before {
-    content:"";
-    position: absolute;
-    display: block;
-    left: -50px;
-    width: 15px;
-    height: 60%;
-    background-color: $color-3;
-  }
+	position: relative;
+	&::before {
+		content:"";
+		position: absolute;
+		display: block;
+		left: -50px;
+		width: 15px;
+		height: 60%;
+		background-color: $color-3;
+	}
 }
 
 .left-full-border {
-  position: relative;
-  &::before {
-    content:"";
-    position: absolute;
-    display: block;
-    left: -50px;
-    width: 17px;
-    height: 100%;
-    background-color: $color-3;
-  }
+	position: relative;
+	&::before {
+		content:"";
+		position: absolute;
+		display: block;
+		left: -50px;
+		width: 17px;
+		height: 100%;
+		background-color: $color-3;
+	}
 }
 
 
 span.framed {
-  padding: 10px 20px;
-  font-size: 1.5em;
-  color: $color-3;
-  border: 1px solid $color-3;
-  font-weight: bold;
-  letter-spacing: 2Px;
-  margin: 50px 0 30px 0;
-  display: inline-block;
+	padding: 10px 20px;
+	font-size: 1.5em;
+	color: $color-3;
+	border: 1px solid $color-3;
+	font-weight: bold;
+	letter-spacing: 2Px;
+	margin: 50px 0 30px 0;
+	display: inline-block;
 }
 
 p {
-  line-height: 2;
-  font-size: 14px;
+	line-height: 2;
+	font-size: 14px;
 }
 
 pre {
-  background-color: white;
-  line-height: 1;
-  overflow: visible;
+	background-color: white;
+	line-height: 1;
+	overflow: visible;
 }
 h2{
-  font-size: 2.5em;
-  font-weight: bold;
+	font-size: 2.5em;
+	font-weight: bold;
 }
 a {
-  color: black;
-  text-decoration: underline;
+	color: black;
+	text-decoration: underline;
 }
 
 .ico {
-  width: 32px; height: 32px;
-  font-size: 30px;
-  color: $color-3;
+	width: 32px; height: 32px;
+	font-size: 30px;
+	color: $color-3;
 }
 
 
 ////////////////////////////////////////////////////////////////////////////////
 //
-//                Scroll btn
+//								Scroll btn
 //
 ////////////////////////////////////////////////////////////////////////////////
 
 
 .scroll-manage {
-  width: $medium-pad;
-  height: $medium-pad;
-  background-image: url("assets/images/scroll.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  position: fixed;
-  bottom: $medium-pad;
-  left: 50%;
-  z-index: 999;
-  @include transform(translateX(-50%) translateY(0));
-  @include transition(.4s);
-  &.hide {
-    display: block;
-    @include transform(translateX(-50%) translateY(100px));
-  }
+	width: $medium-pad;
+	height: $medium-pad;
+	background-image: url("assets/images/scroll.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	position: fixed;
+	bottom: $medium-pad;
+	left: 50%;
+	z-index: 999;
+	@include transform(translateX(-50%) translateY(0));
+	@include transition(.4s);
+	&.hide {
+		display: block;
+		@include transform(translateX(-50%) translateY(100px));
+	}
 }
 
 .scroll-to-top {
-  width: $medium-pad;
-  height: $medium-pad;
-  background-color: $color-3;
-  background-image: url("assets/images/arrow-top.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 50%;
-  position: fixed;
-  bottom: $small-pad;
-  right: $small-pad;
-  z-index: 999;
-  @include transition(.4s);
-  @include transform(translateX(0));
-  &.hide {
-    display: block !important;
-    @include transform(translateX(100px));
-  }
+	width: $medium-pad;
+	height: $medium-pad;
+	background-color: $color-3;
+	background-image: url("assets/images/arrow-top.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 50%;
+	position: fixed;
+	bottom: $small-pad;
+	right: $small-pad;
+	z-index: 999;
+	@include transition(.4s);
+	@include transform(translateX(0));
+	&.hide {
+		display: block !important;
+		@include transform(translateX(100px));
+	}
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 //
-//                Notice
+//								Notice
 //
 ////////////////////////////////////////////////////////////////////////////////
 #notification {
-  position: fixed;
-  top: calc(50% - 25px);
-  margin: auto;
-  background-color: white;
-  padding: 20px 40px;
-  color: black;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  #notif-close-btn {
-    padding: 8px 20px;
-    margin-top: 15px;
-  }
+	position: fixed;
+	top: calc(50% - 25px);
+	margin: auto;
+	background-color: white;
+	padding: 20px 40px;
+	color: black;
+	left: 50%;
+	transform: translateX(-50%);
+	text-align: center;
+	#notif-close-btn {
+		padding: 8px 20px;
+		margin-top: 15px;
+	}
 }
 
 #notice {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 600px;
-  text-align: center;
-  background-color: #15aa41;
-  padding: 40px;
-  color: white;
-  transform: translateY(-50%) translateX(-50%);
-  z-index: 1001;
-  padding-bottom: 70px;
-  outline: 1000px solid rgba(255,255,255,.8);
-  strong {
-    font-size: 1.3em;
-    font-weight: 500;
-  }
-  em {
-    margin-bottom: 0px;
-    display: block;
-    font-weight: bold;
-  }
-  .action {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    border: 2px solid #15aa41;
-    background-color: white;
-    #closeNotice{
-      color: #15aa41;
-      text-transform: uppercase;
-      font-weight: bold;
-      display: block;
-      padding: 15px;
-    }
-  }
-  &[data-type="success"]{
-    background-color: #15aa41;
-  }
-  &[data-type="success"]{
-    background-color: rgb(255, 42, 42);
-  }
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 600px;
+	text-align: center;
+	background-color: #15aa41;
+	padding: 40px;
+	color: white;
+	transform: translateY(-50%) translateX(-50%);
+	z-index: 1001;
+	padding-bottom: 70px;
+	outline: 1000px solid rgba(255,255,255,.8);
+	strong {
+		font-size: 1.3em;
+		font-weight: 500;
+	}
+	em {
+		margin-bottom: 0px;
+		display: block;
+		font-weight: bold;
+	}
+	.action {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		border: 2px solid #15aa41;
+		background-color: white;
+		#closeNotice{
+			color: #15aa41;
+			text-transform: uppercase;
+			font-weight: bold;
+			display: block;
+			padding: 15px;
+		}
+	}
+	&[data-type="success"]{
+		background-color: #15aa41;
+	}
+	&[data-type="success"]{
+		background-color: rgb(255, 42, 42);
+	}
 }
 
 @media screen and(max-width: 600px) {
-  #notice {
-    width: 100%;
-    padding: 20px;
-  }
+	#notice {
+		width: 100%;
+		padding: 20px;
+	}
 }
 
 @media screen and(max-height: 600px) {
-  #notice {
-    height: auto;
-    top: 0;
-    transform: translateY(0);
-  }
+	#notice {
+		height: auto;
+		top: 0;
+		transform: translateY(0);
+	}
 }
 
 ////////////////////////////////////////////////////////////////////////////////
 //
-//                boutons
+//								boutons
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-.btn,  .single_add_to_cart_button {
-  display: inline-block;
-  text-decoration: none;
-  padding: 10px 20px;
-  background-color: $color-1;
-  border: 2px solid $color-1;
-  color: black;
-  font-weight: bold;
-  font-size: .9em;
-  cursor: pointer;
-  position: relative;
-  border-radius: 0;
-  @include transition(.4s);
-  &.btn-block {
-    width: auto;
-    display: block;
-  }
+.btn,	.single_add_to_cart_button {
+	display: inline-block;
+	text-decoration: none;
+	padding: 10px 20px;
+	background-color: $color-1;
+	border: 2px solid $color-1;
+	color: black;
+	font-weight: bold;
+	font-size: .9em;
+	cursor: pointer;
+	position: relative;
+	border-radius: 0;
+	@include transition(.4s);
+	&.btn-block {
+		width: auto;
+		display: block;
+	}
 
-  &.btn-colored {
-    background-color: $color-3;
-    border: 2px solid $color-3;
-    color: $color-2;
-    &:hover {
-      background-color: $color-2;
-      color: $color-3;
-    }
-  }
-  &:hover {
-    background-color: transparent;
-    color: $color-1;
-  }
-  &.btn-dark {
-    background-color: black;
-    color: $color-1;
-    border-color: black;
-    padding: 10px 20px;
-    border: 1px solid #fdec01;
-    &:hover {
-      background-color: $color-1;
-      color: black;
-      border-color: $color-1;
-    }
-  }
-  &.btn-light {
-    border: 3px solid $color-3;
-    border-radius: 0;
-    font-weight: bold;
-    font-size: 12px;
-    padding: 10px 20px;
-    letter-spacing: 1px;
-  }
+	&.btn-colored {
+		background-color: $color-3;
+		border: 2px solid $color-3;
+		color: $color-2;
+		&:hover {
+			background-color: $color-2;
+			color: $color-3;
+		}
+	}
+	&:hover {
+		background-color: transparent;
+		color: $color-1;
+	}
+	&.btn-dark {
+		background-color: black;
+		color: $color-1;
+		border-color: black;
+		padding: 10px 20px;
+		border: 1px solid #fdec01;
+		&:hover {
+			background-color: $color-1;
+			color: black;
+			border-color: $color-1;
+		}
+	}
+	&.btn-light {
+		border: 3px solid $color-3;
+		border-radius: 0;
+		font-weight: bold;
+		font-size: 12px;
+		padding: 10px 20px;
+		letter-spacing: 1px;
+	}
 
-  &[data-wpxhr].loading {
-    color: transparent;
-    &::after {
-      content: "";
-      border-top: 2px solid black;
-      border-right: 2px solid black;
-      width: 20px;
-      height: 20px;
-      border-radius: 10px;
-      background-color: transparent;
-      display: block;
-      position: absolute;
-      top: 8px;
-      left: calc(50% - 10px);
-      animation-name: "rotate";
-      animation-duration: 1s;
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
-    }
-  }
+	&[data-wpxhr].loading {
+		color: transparent;
+		&::after {
+			content: "";
+			border-top: 2px solid black;
+			border-right: 2px solid black;
+			width: 20px;
+			height: 20px;
+			border-radius: 10px;
+			background-color: transparent;
+			display: block;
+			position: absolute;
+			top: 8px;
+			left: calc(50% - 10px);
+			animation-name: "rotate";
+			animation-duration: 1s;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite;
+		}
+	}
 
 }
 
 .btn-svg {
-  color: #fdec01;
-  cursor: pointer;
-  display: block;
-  line-height: 45px;
-  margin: 0 auto 2em;
-  max-width: 300px;
-  position: relative;
-  text-decoration: none;
-  vertical-align: middle;
-  width: 100%;
-  text-align: center;
-  background: darken(black, 1.5%);
-  font-weight: 100;
-  transition:.4s;
-  letter-spacing: 0;
-  font-weight: bold;
-  svg {
-    height: 45px;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-  }
+	color: #fdec01;
+	cursor: pointer;
+	display: block;
+	line-height: 45px;
+	margin: 0 auto 2em;
+	max-width: 300px;
+	position: relative;
+	text-decoration: none;
+	vertical-align: middle;
+	width: 100%;
+	text-align: center;
+	background: darken(black, 1.5%);
+	font-weight: 100;
+	transition:.4s;
+	letter-spacing: 0;
+	font-weight: bold;
+	svg {
+		height: 45px;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
 
-  rect {
-    fill: none;
-    stroke: #fdec01;
-    stroke-width: 2;
-    stroke-dasharray: 690, 0;
-  }
-  &:hover {
-    background: rgba(#fdec01, 0);
-    letter-spacing: 1px;
+	rect {
+		fill: none;
+		stroke: #fdec01;
+		stroke-width: 2;
+		stroke-dasharray: 690, 0;
+	}
+	&:hover {
+		background: rgba(#fdec01, 0);
+		letter-spacing: 1px;
 
-    rect {
-    stroke-width: 5;
-    stroke-dasharray: 35, 496;
-    stroke-dashoffset: 48;
-    transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
-    }
-  }
+		rect {
+		stroke-width: 5;
+		stroke-dasharray: 35, 496;
+		stroke-dashoffset: 48;
+		transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+		}
+	}
 }
 .btn-flip {
-  transform-style: preserve-3d;
-  position: relative;
-  transition: .3s ease;
-  padding: 0 25px;
-  color: black;
-  background-color: transparent;
-  text-decoration: none;
-  height: $height-btn;
-  display: inline-block;
-  width: $width-btn;
-  font-size: .9em;
-  @include transform(translateZ($height-btn) translateY(-50%) rotateX(-0deg) scale(1));
-  &:hover {
-    @include transform(translateZ(0) translateY(-50%) rotateX(-90deg) scale(1.04));
-  }
-  &> * {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: block;
-    padding: 15px 0px;
-    max-height: 46px;
-    text-align: center;
-    border: 1px solid #FDEC01;
-    box-sizing: border-box;
-    font-weight: bold;
-    &:last-child {
-      background-color: black;
-      color:#FDEC01;
-      @include transform(translateY(-$height-btn/2-4px) rotateX(90deg) translateZ(0));
-      box-sizing: border-box;
-    }
-    &:first-child {
-      background-color: #FDEC01;
-      @include transform(translateZ($height-btn/2-4px) rotateX(0));
-    }
-  }
+	transform-style: preserve-3d;
+	position: relative;
+	transition: .3s ease;
+	padding: 0 25px;
+	color: black;
+	background-color: transparent;
+	text-decoration: none;
+	height: $height-btn;
+	display: inline-block;
+	width: $width-btn;
+	font-size: .9em;
+	@include transform(translateZ($height-btn) translateY(-50%) rotateX(-0deg) scale(1));
+	&:hover {
+		@include transform(translateZ(0) translateY(-50%) rotateX(-90deg) scale(1.04));
+	}
+	&> * {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		display: block;
+		padding: 15px 0px;
+		max-height: 46px;
+		text-align: center;
+		border: 1px solid #FDEC01;
+		box-sizing: border-box;
+		font-weight: bold;
+		&:last-child {
+			background-color: black;
+			color:#FDEC01;
+			@include transform(translateY(-$height-btn/2-4px) rotateX(90deg) translateZ(0));
+			box-sizing: border-box;
+		}
+		&:first-child {
+			background-color: #FDEC01;
+			@include transform(translateZ($height-btn/2-4px) rotateX(0));
+		}
+	}
 }
 @keyframes rotate {
-  0%{
-    @include transform(rotate(0deg));
-  }
-  100%{
-    @include transform(rotate(360deg));
-  }
+	0%{
+		@include transform(rotate(0deg));
+	}
+	100%{
+		@include transform(rotate(360deg));
+	}
 }
 
 
 
 ////////////////////////////////////////////////////////////////////////////////
 //
-//                OVERRIDE BOOTSTRAP
+//								OVERRIDE BOOTSTRAP
 //
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -426,71 +426,71 @@ a {
 
 
 @media (max-width: 1230px) {
-     #content-page {
-      padding: $big-pad $small-pad;
-    }
-    .navbar-header {
-        float: none;
-    }
-    .navbar-left,.navbar-right {
-        float: none !important;
-    }
-    .navbar-toggle {
-        display: block;
-    }
-    .navbar-collapse {
-        border-top: 1px solid transparent;
-        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
-    }
-    .navbar-fixed-top {
-        top: 0;
-        border-width: 0 0 1px;
-    }
-    .navbar-collapse.collapse {
-        display: none!important;
-    }
-    .navbar-nav {
-        float: none!important;
-        margin-top: 7.5px;
-    }
-    .navbar-nav>li {
-        float: none;
-    }
-    .navbar-nav>li>a {
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-    .collapse.in{
-        display:block !important;
-    }
+		 #content-page {
+			padding: $big-pad $small-pad;
+		}
+		.navbar-header {
+				float: none;
+		}
+		.navbar-left,.navbar-right {
+				float: none !important;
+		}
+		.navbar-toggle {
+				display: block;
+		}
+		.navbar-collapse {
+				border-top: 1px solid transparent;
+				box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+		}
+		.navbar-fixed-top {
+				top: 0;
+				border-width: 0 0 1px;
+		}
+		.navbar-collapse.collapse {
+				display: none!important;
+		}
+		.navbar-nav {
+				float: none!important;
+				margin-top: 7.5px;
+		}
+		.navbar-nav>li {
+				float: none;
+		}
+		.navbar-nav>li>a {
+				padding-top: 10px;
+				padding-bottom: 10px;
+		}
+		.collapse.in{
+				display:block !important;
+		}
 }
 
 
 .page-template-template-checkout, .woocommerce-cart {
-  .container {
-    width: 1150px;
-  }
+	.container {
+		width: 1150px;
+	}
 }
 
 @media screen and (max-width: $break-point-1){
-  .container {
-    width: 100%;
-  }
-  .page-template-template-checkout, .woocommerce-cart {
-    .container {
-      width: 100%;
-    }
-  }
+	.container {
+		width: 100%;
+	}
+	.page-template-template-checkout, .woocommerce-cart {
+		.container {
+			width: 100%;
+		}
+	}
 }
 
 
 @media screen and (max-width: $break-point-2){
-  .container {
-    width: 100%;
-  }
-  .page-template-template-checkout, .woocommerce-cart {
-    .container {
-      width: 100%;
-    }
-  }
+	.container {
+		width: 100%;
+	}
+	.page-template-template-checkout, .woocommerce-cart {
+		.container {
+			width: 100%;
+		}
+	}
 }

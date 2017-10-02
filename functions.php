@@ -14,87 +14,87 @@ require_once('helpers/wp_bootstrap_navwalker.php');
 
 /** Custom Post Type Template Selector **/
 function cpt_add_meta_boxes() {
-    $post_types = get_post_types();
-    foreach( $post_types as $ptype ) {
-        if ( $ptype !== 'page') {
-            add_meta_box( 'cpt-selector', 'Attributes', 'cpt_meta_box', $ptype, 'side', 'core' );
-        }
-    }
+		$post_types = get_post_types();
+		foreach( $post_types as $ptype ) {
+				if ( $ptype !== 'page') {
+						add_meta_box( 'cpt-selector', 'Attributes', 'cpt_meta_box', $ptype, 'side', 'core' );
+				}
+		}
 }
 add_action( 'add_meta_boxes', 'cpt_add_meta_boxes' );
 
 function cpt_remove_meta_boxes() {
-    $post_types = get_post_types();
-    foreach( $post_types as $ptype ) {
-        if ( $ptype !== 'page') {
-            remove_meta_box( 'pageparentdiv', $ptype, 'normal' );
-        }
-    }
+		$post_types = get_post_types();
+		foreach( $post_types as $ptype ) {
+				if ( $ptype !== 'page') {
+						remove_meta_box( 'pageparentdiv', $ptype, 'normal' );
+				}
+		}
 }
 add_action( 'admin_menu' , 'cpt_remove_meta_boxes' );
 
 function cpt_meta_box( $post ) {
-    $post_meta = get_post_meta( $post->ID );
-    $templates = wp_get_theme()->get_page_templates();
+		$post_meta = get_post_meta( $post->ID );
+		$templates = wp_get_theme()->get_page_templates();
 
-    $post_type_object = get_post_type_object($post->post_type);
-    if ( $post_type_object->hierarchical ) {
-        $dropdown_args = array(
-            'post_type'        => $post->post_type,
-            'exclude_tree'     => $post->ID,
-            'selected'         => $post->post_parent,
-            'name'             => 'parent_id',
-            'show_option_none' => __('(no parent)'),
-            'sort_column'      => 'menu_order, post_title',
-            'echo'             => 0,
-        );
+		$post_type_object = get_post_type_object($post->post_type);
+		if ( $post_type_object->hierarchical ) {
+				$dropdown_args = array(
+						'post_type'				=> $post->post_type,
+						'exclude_tree'		 => $post->ID,
+						'selected'				 => $post->post_parent,
+						'name'						 => 'parent_id',
+						'show_option_none' => __('(no parent)'),
+						'sort_column'			=> 'menu_order, post_title',
+						'echo'						 => 0,
+				);
 
-        $dropdown_args = apply_filters( 'page_attributes_dropdown_pages_args', $dropdown_args, $post );
-        $pages = wp_dropdown_pages( $dropdown_args );
+				$dropdown_args = apply_filters( 'page_attributes_dropdown_pages_args', $dropdown_args, $post );
+				$pages = wp_dropdown_pages( $dropdown_args );
 
-        if ( $pages ) {
-            echo "<p><strong>Parent</strong></p>";
-            echo "<label class=\"screen-reader-text\" for=\"parent_id\">Parent</label>";
-            echo $pages;
-        }
-    }
+				if ( $pages ) {
+						echo "<p><strong>Parent</strong></p>";
+						echo "<label class=\"screen-reader-text\" for=\"parent_id\">Parent</label>";
+						echo $pages;
+				}
+		}
 
-    // Template Selector
-    echo "<p><strong>Template</strong></p>";
-    echo "<select id=\"cpt-selector\" name=\"_wp_page_template\"><option value=\"default\">Default Template</option>";
-    foreach ( $templates as $template_filename => $template_name ) {
-        if ( $post->post_type == strstr( $template_filename, '-', true) ) {
-            if ( isset($post_meta['_wp_page_template'][0]) && ($post_meta['_wp_page_template'][0] == $template_filename) ) {
-                echo "<option value=\"$template_filename\" selected=\"selected\">$template_name</option>";
-            } else {
-                echo "<option value=\"$template_filename\">$template_name</option>";
-            }
-        }
-    }
-    echo "</select>";
+		// Template Selector
+		echo "<p><strong>Template</strong></p>";
+		echo "<select id=\"cpt-selector\" name=\"_wp_page_template\"><option value=\"default\">Default Template</option>";
+		foreach ( $templates as $template_filename => $template_name ) {
+				if ( $post->post_type == strstr( $template_filename, '-', true) ) {
+						if ( isset($post_meta['_wp_page_template'][0]) && ($post_meta['_wp_page_template'][0] == $template_filename) ) {
+								echo "<option value=\"$template_filename\" selected=\"selected\">$template_name</option>";
+						} else {
+								echo "<option value=\"$template_filename\">$template_name</option>";
+						}
+				}
+		}
+		echo "</select>";
 
-    // Page order
-    echo "<p><strong>Order</strong></p>";
-    echo "<p><label class=\"screen-reader-text\" for=\"menu_order\">Order</label><input name=\"menu_order\" type=\"text\" size=\"4\" id=\"menu_order\" value=\"". esc_attr($post->menu_order) . "\" /></p>";
+		// Page order
+		echo "<p><strong>Order</strong></p>";
+		echo "<p><label class=\"screen-reader-text\" for=\"menu_order\">Order</label><input name=\"menu_order\" type=\"text\" size=\"4\" id=\"menu_order\" value=\"". esc_attr($post->menu_order) . "\" /></p>";
 }
 
 function save_cpt_template_meta_data( $post_id ) {
 
-    if ( isset( $_REQUEST['_wp_page_template'] ) ) {
-        update_post_meta( $post_id, '_wp_page_template', $_REQUEST['_wp_page_template'] );
-    }
+		if ( isset( $_REQUEST['_wp_page_template'] ) ) {
+				update_post_meta( $post_id, '_wp_page_template', $_REQUEST['_wp_page_template'] );
+		}
 }
 add_action( 'save_post' , 'save_cpt_template_meta_data' );
 
 function custom_single_template($template) {
-    global $post;
+		global $post;
 
-    $post_meta = ( $post ) ? get_post_meta( $post->ID ) : null;
-    if ( isset($post_meta['_wp_page_template'][0]) && ( $post_meta['_wp_page_template'][0] != 'default' ) ) {
-        $template = get_template_directory() . '/' . $post_meta['_wp_page_template'][0];
-    }
+		$post_meta = ( $post ) ? get_post_meta( $post->ID ) : null;
+		if ( isset($post_meta['_wp_page_template'][0]) && ( $post_meta['_wp_page_template'][0] != 'default' ) ) {
+				$template = get_template_directory() . '/' . $post_meta['_wp_page_template'][0];
+		}
 
-    return $template;
+		return $template;
 }
 add_filter( 'single_template', 'custom_single_template' );
 /** END Custom Post Type Template Selector **/
@@ -113,22 +113,22 @@ add_filter( 'single_template', 'custom_single_template' );
 
 // Retourne la liste des catégories de woocommerce
 function get_woocommerce_categories(){
-  $taxonomy     = 'product_cat';
-  $orderby      = 'name';
-  $show_count   = 0;      // 1 for yes, 0 for no
-  $pad_counts   = 0;      // 1 for yes, 0 for no
-  $hierarchical = 1;      // 1 for yes, 0 for no
-  $title        = '';
-  $empty        = 0;
-  $args = array(
-  	'taxonomy'     => $taxonomy,
-  	'orderby'      => $orderby,
-  	'show_count'   => $show_count,
-  	'pad_counts'   => $pad_counts,
-  	'hierarchical' => $hierarchical,
-  	'title_li'     => $title,
-  	'hide_empty'   => $empty
-  );
+	$taxonomy		 = 'product_cat';
+	$orderby			= 'name';
+	$show_count	 = 0;			// 1 for yes, 0 for no
+	$pad_counts	 = 0;			// 1 for yes, 0 for no
+	$hierarchical = 1;			// 1 for yes, 0 for no
+	$title				= '';
+	$empty				= 0;
+	$args = array(
+		'taxonomy'		 => $taxonomy,
+		'orderby'			=> $orderby,
+		'show_count'	 => $show_count,
+		'pad_counts'	 => $pad_counts,
+		'hierarchical' => $hierarchical,
+		'title_li'		 => $title,
+		'hide_empty'	 => $empty
+	);
 	return get_categories( $args );
 }
 
@@ -157,23 +157,23 @@ function get_products_from_category($category){
 // Renvoi les derniers produits sous la forme d'un carousel
 function get_last_posts(){
 
-  $meta_query = array();
-  $args = array();
+	$meta_query = array();
+	$args = array();
 
-  $meta_query[] = array(
-      'key' => '_wp_page_template',
-      'value' => "default",
-      'compare' => 'LIKE'
-  );
-  // The Query
-  $args['post_type'] = "product";
-  $args['meta_query'] = $meta_query;
+	$meta_query[] = array(
+			'key' => '_wp_page_template',
+			'value' => "default",
+			'compare' => 'LIKE'
+	);
+	// The Query
+	$args['post_type'] = "product";
+	$args['meta_query'] = $meta_query;
 
-  $products = new WP_Query($args);
-  $products = sort_by_date($products);
-  $products = array_slice($products, 0, 5);
-  $limit = count($products);
-  $activeControl = ($limit>3) ?  "active-control" : "";
+	$products = new WP_Query($args);
+	$products = sort_by_date($products);
+	$products = array_slice($products, 0, 5);
+	$limit = count($products);
+	$activeControl = ($limit>3) ?	"active-control" : "";
 	?>
 	<div class="archive-main-body">
 		<div class="product-carousel carousel <?php echo $activeControl; ?>">
@@ -212,7 +212,7 @@ function get_the_slug(){
 
 // Formate une date de type 31122917 en 31/12/2017
 function get_format_date($string){
-	 return preg_replace("/(\d{2})(\d{2})(\d{4})/",  "$1/$2/$3", $string);
+	 return preg_replace("/(\d{2})(\d{2})(\d{4})/",	"$1/$2/$3", $string);
 }
 
 
@@ -231,104 +231,104 @@ function manage_date_order_variable_product($options){
 }
 
 function get_variation_attribute($product){
-  $product_variable = new WC_Product_Variable( $product->ID );
-  $variations = $product_variable->get_available_variations();
+	$product_variable = new WC_Product_Variable( $product->ID );
+	$variations = $product_variable->get_available_variations();
 
-  $var_data = [];
-  foreach ($variations as $variation) {
-    if($variation['variation_id']){
-      $var_data[] = $variation['attributes'];
-    }
-  }
+	$var_data = [];
+	foreach ($variations as $variation) {
+		if($variation['variation_id']){
+			$var_data[] = $variation['attributes'];
+		}
+	}
 
-  return $var_data;
+	return $var_data;
 }
 
 function get_next_date($product, $attibute_name="attribute_pa_date"){
-  $data = get_variation_attribute($product);
-  $date = [];
-  for($i=0; $i<count($data); $i++){
-    foreach($data[$i] as $attrName => $var_name) {
-      if( $attrName == $attibute_name ) {
-        array_push($date, $var_name);
-      }
-    }
-  }
-  $currentDate = DateTime::createFromFormat('U', time());
-  $nextDate = false;
-  for($i=0; $i<count($date); $i++){
-    $date[$i] = DateTime::createFromFormat( "dmY" , $date[$i] );
-    if( $date[$i] > $currentDate ){
-      //Si une date à venir est définis et que celle examiné est plus récente OU que aucune date prochaine n'est définis
-      if(($nextDate&&$date[$i]<$nextDate)||($nextDate==false)){
-        $nextDate = $date[$i];
-      }
-    }
-  }
-  if( $nextDate ) {
-    return $nextDate;
-  } else {
-    return false;
-  }
+	$data = get_variation_attribute($product);
+	$date = [];
+	for($i=0; $i<count($data); $i++){
+		foreach($data[$i] as $attrName => $var_name) {
+			if( $attrName == $attibute_name ) {
+				array_push($date, $var_name);
+			}
+		}
+	}
+	$currentDate = DateTime::createFromFormat('U', time());
+	$nextDate = false;
+	for($i=0; $i<count($date); $i++){
+		$date[$i] = DateTime::createFromFormat( "dmY" , $date[$i] );
+		if( $date[$i] > $currentDate ){
+			//Si une date à venir est définis et que celle examiné est plus récente OU que aucune date prochaine n'est définis
+			if(($nextDate&&$date[$i]<$nextDate)||($nextDate==false)){
+				$nextDate = $date[$i];
+			}
+		}
+	}
+	if( $nextDate ) {
+		return $nextDate;
+	} else {
+		return false;
+	}
 }
 
 function sort_by_date($products){
-  $products_sort = [];
-  $count = 0;
-  while ( $products->have_posts() ) :  $products->the_post();
-    $post = get_post();
-    $nextDate = get_next_date($post);
-    $count++;
-    $tmp_products_sort = $products_sort;
-    $tmp = [
-      "el" => $post,
-      "date" => $nextDate
-    ];
+	$products_sort = [];
+	$count = 0;
+	while ( $products->have_posts() ) :	$products->the_post();
+		$post = get_post();
+		$nextDate = get_next_date($post);
+		$count++;
+		$tmp_products_sort = $products_sort;
+		$tmp = [
+			"el" => $post,
+			"date" => $nextDate
+		];
 
-    for($i=0; $i<count($products_sort); $i++) {
-      //Si une date existe sur le produit parcouru
-      if($products_sort[$i]["date"]){
-        //Si la date est inferieur à celle du produit on ajoute avant
-        if($nextDate && $nextDate < $products_sort[$i]["date"] ) {
-          // echo "Date courante est inférieur à celle du produit :".$products_sort[$i]["el"];
-          if($i==0){
-            array_unshift($tmp_products_sort, $tmp);
-          } else {
-            array_splice( $tmp_products_sort, $i, 0, [$tmp]);
-          }
-          break;
-        //Si c'est le dernier produit on ajoute après
-        } elseif((count($products_sort)-1==$i)||($nextDate==false)){
-          // echo "Dernier produit donc on rajoute après ".$products_sort[$i]["el"];
-          array_push($tmp_products_sort, $tmp);
-          break;
-        }
-      //Sinon
-      } else {
-        //Si la date du produit est définis,
-        if( $i==0 ){
-          array_unshift( $tmp_products_sort, $tmp);
-        } else {
-          array_splice( $tmp_products_sort, $i, 0, [$tmp]);
-        }
-        break;
-      }
-    }
-    $products_sort = $tmp_products_sort;
-    //Au début on ajoute le premier post
-    if(count($products_sort) == 0){
-      array_push($products_sort, [
-        "el" => $post,
-        "date" => get_next_date($post)
-      ]);
-    }
-  endwhile;
+		for($i=0; $i<count($products_sort); $i++) {
+			//Si une date existe sur le produit parcouru
+			if($products_sort[$i]["date"]){
+				//Si la date est inferieur à celle du produit on ajoute avant
+				if($nextDate && $nextDate < $products_sort[$i]["date"] ) {
+					// echo "Date courante est inférieur à celle du produit :".$products_sort[$i]["el"];
+					if($i==0){
+						array_unshift($tmp_products_sort, $tmp);
+					} else {
+						array_splice( $tmp_products_sort, $i, 0, [$tmp]);
+					}
+					break;
+				//Si c'est le dernier produit on ajoute après
+				} elseif((count($products_sort)-1==$i)||($nextDate==false)){
+					// echo "Dernier produit donc on rajoute après ".$products_sort[$i]["el"];
+					array_push($tmp_products_sort, $tmp);
+					break;
+				}
+			//Sinon
+			} else {
+				//Si la date du produit est définis,
+				if( $i==0 ){
+					array_unshift( $tmp_products_sort, $tmp);
+				} else {
+					array_splice( $tmp_products_sort, $i, 0, [$tmp]);
+				}
+				break;
+			}
+		}
+		$products_sort = $tmp_products_sort;
+		//Au début on ajoute le premier post
+		if(count($products_sort) == 0){
+			array_push($products_sort, [
+				"el" => $post,
+				"date" => get_next_date($post)
+			]);
+		}
+	endwhile;
 
-  $products_humanize = [];
-  for($i=0; $i<count($products_sort); $i++){
-    array_push($products_humanize, $products_sort[$i]["el"]);
-  }
-  return $products_humanize;
+	$products_humanize = [];
+	for($i=0; $i<count($products_sort); $i++){
+		array_push($products_humanize, $products_sort[$i]["el"]);
+	}
+	return $products_humanize;
 }
 
 function get_category_title($category){
@@ -359,33 +359,33 @@ function get_category_slug($category) {
 //////////////////////////////////////////////////////
 
 function shortcode_staff($atts){
-  $args = shortcode_atts( array(
-    'limit' => 5,
-    'order' => "ASC"
-  ), $atts );
+	$args = shortcode_atts( array(
+		'limit' => 5,
+		'order' => "ASC"
+	), $atts );
 
-  $posts = new WP_Query(array(
-    'post_type'=> 'staff',
-    'limit' => (int) $args["limit"],
-    'order'=> $args["ASC"]
-  ));
+	$posts = new WP_Query(array(
+		'post_type'=> 'staff',
+		'limit' => (int) $args["limit"],
+		'order'=> $args["ASC"]
+	));
 
-  $content="<div class='single-body staff-container'>";
-  while ( $posts->have_posts() ) : $posts->the_post();
-    if(get_post()->post_type == "staff"){
-      $content .= "<div class='staff-item' id='post-<?php the_ID(); ?>'>
-        <img src='".get_the_post_thumbnail_url()."' alt=''>
-        <div class='staff-item-content'>
-          <h3>".get_the_title()."</h3>
-          <p><?php the_content() ?></p>
-          <a href='#'  data-getarg='contact=".get_field('e-mail')."' data-wpxhr='contact_form' data-xhrarg='".get_the_ID()."' class='btn btn-colored action-abonnement'>Contactez le(a)</a>
-        </div>
-      </div>";
-    }
-  endwhile;
-  $content.="</div>";
-  wp_reset_query();
-  return $content;
+	$content="<div class='single-body staff-container'>";
+	while ( $posts->have_posts() ) : $posts->the_post();
+		if(get_post()->post_type == "staff"){
+			$content .= "<div class='staff-item' id='post-<?php the_ID(); ?>'>
+				<img src='".get_the_post_thumbnail_url()."' alt=''>
+				<div class='staff-item-content'>
+					<h3>".get_the_title()."</h3>
+					<p><?php the_content() ?></p>
+					<a href='#'	data-getarg='contact=".get_field('e-mail')."' data-wpxhr='contact_form' data-xhrarg='".get_the_ID()."' class='btn btn-colored action-abonnement'>Contactez le(a)</a>
+				</div>
+			</div>";
+		}
+	endwhile;
+	$content.="</div>";
+	wp_reset_query();
+	return $content;
 
 }
 
@@ -431,18 +431,18 @@ function shortcode_carousel($atts){
 		'category' => null,
 		'except' => null,
 		'style' => 'detail'
-  ), $atts );
+	), $atts );
 
-	$except  = ( (int) $args["except"]) ? (int) $args["except"] : null;
+	$except	= ( (int) $args["except"]) ? (int) $args["except"] : null;
 	$category = $args["category"] ? $args["category"] : null;
-	$style =  $args["style"] ? $args["style"] : null;
+	$style =	$args["style"] ? $args["style"] : null;
 
 	if($category){
 		$products = get_products_from_category($category);
 
 		$count=0;
 		//Parcours les posts
-		while ( $products->have_posts() ) :  $products->the_post();
+		while ( $products->have_posts() ) :	$products->the_post();
 			//Si l'ID est différent de l'exception
 			if ( get_the_ID($products->get_post()) != $except) {
 				$cCat = get_the_terms( $products->get_post()->id, 'product_cat' )[0]->name;
@@ -464,13 +464,13 @@ function shortcode_carousel($atts){
 				<div class="carousel-body">
 					<div class="archive-head carousel-container">
 						<?php $count = 0; ?>
-						<?php while ( $products->have_posts() ) :  $products->the_post();
+						<?php while ( $products->have_posts() ) :	$products->the_post();
 							if ( get_the_ID($products->get_post()) != $except) {
 								$cCat = get_the_terms( $products->get_post()->id, 'product_cat' )[0]->name;
 								if( $cCat == $category ){
-                  $product = $products->get_post();
-  								include( locate_template("template-parts/woocommerce/content-boutique-product.php") );
-  								$count++;
+									$product = $products->get_post();
+									include( locate_template("template-parts/woocommerce/content-boutique-product.php") );
+									$count++;
 								}
 							}
 						endwhile; ?>
@@ -535,50 +535,50 @@ add_shortcode( 'ico', 'shortcode_ico' );
 
 // POST TYPE STAFF
 function create_post_type_staff() {
-  register_post_type( 'staff',
-    array(
-      'labels' => array(
-        'name' => __( 'Staff' ),
-        'singular_name' => __( 'Staff' )
-      ),
-      'public' => true,
-      'has_archive' => true,
+	register_post_type( 'staff',
+		array(
+			'labels' => array(
+				'name' => __( 'Staff' ),
+				'singular_name' => __( 'Staff' )
+			),
+			'public' => true,
+			'has_archive' => true,
 			'menu_icon' => 'dashicons-businessman',
 			'supports' => array( 'title', 'editor', 'custom-fields', 'thumbnail', 'excerpt' )
-    )
-  );
+		)
+	);
 }
 
 // POST TYPE ABONNEMENTS
 function create_post_type_abonnement() {
-  register_post_type( 'abonnements',
-    array(
-      'labels' => array(
-        'name' => __( 'Abonnement' ),
-        'singular_name' => __( 'Abonnement' )
-      ),
-      'public' => true,
-      'has_archive' => true,
+	register_post_type( 'abonnements',
+		array(
+			'labels' => array(
+				'name' => __( 'Abonnement' ),
+				'singular_name' => __( 'Abonnement' )
+			),
+			'public' => true,
+			'has_archive' => true,
 			'menu_icon' => 'dashicons-backup',
 			'supports' => array( 'title', 'editor', 'custom-fields', 'thumbnail', 'excerpt' )
-    )
-  );
+		)
+	);
 }
 
 // POST TYPE ENTREPRISES
 function create_post_type_entreprise() {
-  register_post_type( 'entreprises',
-    array(
-      'labels' => array(
-        'name' => __( 'Entreprise' ),
-        'singular_name' => __( 'Entreprise' )
-      ),
-      'public' => true,
-      'has_archive' => true,
+	register_post_type( 'entreprises',
+		array(
+			'labels' => array(
+				'name' => __( 'Entreprise' ),
+				'singular_name' => __( 'Entreprise' )
+			),
+			'public' => true,
+			'has_archive' => true,
 			'menu_icon' => 'dashicons-businessman',
 			'supports' => array( 'title', 'editor', 'custom-fields', 'thumbnail', 'excerpt' )
-    )
-  );
+		)
+	);
 }
 
 add_action( 'init', 'create_post_type_abonnement' );
@@ -601,13 +601,13 @@ remove_action('woocommerce_single_product_summary', 'woocommerce_template_single
 
 
 function wc_remove_all_quantity_fields( $return, $product ) {
-    return true;
+		return true;
 }
 add_filter( 'woocommerce_is_sold_individually', 'wc_remove_all_quantity_fields', 10, 2 );// * @hooked woocommerce_template_single_rating - 10
 
 
 function my_get_woo_cats() {
-    $cats = get_terms( array( 'taxonomy' => 'product_cat','hide_empty' => 0, 'orderby' => 'ASC',  'parent' =>0) );
+		$cats = get_terms( array( 'taxonomy' => 'product_cat','hide_empty' => 0, 'orderby' => 'ASC',	'parent' =>0) );
 }
 add_action('init', 'my_get_woo_cats');
 
@@ -626,7 +626,7 @@ function abonnement_form() {
 	} else {
 		$h3 = "";
 	}
-	$content =  "<div class='title-container'><h2 class='title'>".get_the_title($post)."</h2>".$h3."</div>";
+	$content =	"<div class='title-container'><h2 class='title'>".get_the_title($post)."</h2>".$h3."</div>";
 	echo $content;
 	// echo do_shortcode("[wpforms id='".get_field('form_code', $post)."']");
 	echo do_shortcode("[contact-form-7 id='".esc_attr( get_option('abonnement_form_id') )."' title='Abonnement']");
@@ -642,7 +642,7 @@ function contact_form() {
 	} else {
 		$h3 = "";
 	}
-	$content =  "<div class='title-container'><h2 class='title'>".get_the_title($post)."</h2>".$h3."</div>";
+	$content =	"<div class='title-container'><h2 class='title'>".get_the_title($post)."</h2>".$h3."</div>";
 	echo $content;
 	// echo do_shortcode("[wpforms id='".get_field('form_code', $post)."']");
 	echo do_shortcode("[contact-form-7 id='".esc_attr( get_option('contact_form_id') )."' title='Contactez ".get_the_title($post)."']");
@@ -659,7 +659,7 @@ function classic_form(){
 		$value = null;
 	}
 
-	$content =  "<div class='title-container'><h2 class='title'>".$value."</h2></div>";
+	$content =	"<div class='title-container'><h2 class='title'>".$value."</h2></div>";
 	echo $content;
 	echo do_shortcode("[contact-form-7 id='".$id."' title='Contactez']");
 	die();
@@ -681,8 +681,8 @@ add_action( 'wp_ajax_nopriv_classic_form', 'classic_form' );
 
 //Remove span wrapper in input form wp_contact_form_7
 add_filter('wpcf7_form_elements', function($content) {
-    $content = preg_replace('/<(span).*?class="\s*(?:.*\s)?wpcf7-form-control-wrap(?:\s[^"]+)?\s*"[^\>]*>(.*)<\/\1>/i', '\2', $content);
-    return $content;
+		$content = preg_replace('/<(span).*?class="\s*(?:.*\s)?wpcf7-form-control-wrap(?:\s[^"]+)?\s*"[^\>]*>(.*)<\/\1>/i', '\2', $content);
+		return $content;
 });
 
 
@@ -708,31 +708,31 @@ function get_excerpt_truncate($post, $value){
 
 function init_sidebar(){
 	register_sidebar( array(
-		 'name'          => __( 'Footer 1', 'makeici' ),
-		 'id'            => 'sidebar-1',
-		 'description'   => __( 'Appears in the footer section of the site.', 'makeici' ),
+		 'name'					=> __( 'Footer 1', 'makeici' ),
+		 'id'						=> 'sidebar-1',
+		 'description'	 => __( 'Appears in the footer section of the site.', 'makeici' ),
 		 'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		 'after_widget'  => '</aside>',
-		 'before_title'  => '<h3 class="widget-title">',
-		 'after_title'   => '</h3>',
+		 'after_widget'	=> '</aside>',
+		 'before_title'	=> '<h3 class="widget-title">',
+		 'after_title'	 => '</h3>',
  ));
  register_sidebar( array(
-		 'name'          => __( 'Footer 2', 'makeici' ),
-		 'id'            => 'sidebar-2',
-		 'description'   => __( 'Appears in the footer section of the site.', 'makeici' ),
+		 'name'					=> __( 'Footer 2', 'makeici' ),
+		 'id'						=> 'sidebar-2',
+		 'description'	 => __( 'Appears in the footer section of the site.', 'makeici' ),
 		 'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		 'after_widget'  => '</aside>',
-		 'before_title'  => '<h3 class="widget-title">',
-		 'after_title'   => '</h3>',
+		 'after_widget'	=> '</aside>',
+		 'before_title'	=> '<h3 class="widget-title">',
+		 'after_title'	 => '</h3>',
  ));
  register_sidebar( array(
-		'name'          => __( 'Footer 3', 'makeici' ),
-		'id'            => 'sidebar-3',
-		'description'   => __( 'Appears in the footer section of the site.', 'makeici' ),
+		'name'					=> __( 'Footer 3', 'makeici' ),
+		'id'						=> 'sidebar-3',
+		'description'	 => __( 'Appears in the footer section of the site.', 'makeici' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
+		'after_widget'	=> '</aside>',
+		'before_title'	=> '<h3 class="widget-title">',
+		'after_title'	 => '</h3>',
  ));
 }
 
@@ -755,9 +755,9 @@ function themeprefix_add_to_cart_redirect() {
 
 function register_my_setting() {
 	register_setting( 'formulaire', 'gift_card_id', "intval" );
-  register_setting( 'formulaire', 'abonnement_form_id', "intval" );
-  register_setting( 'formulaire', 'contact_form_id', "intval" );
-  register_setting( 'formulaire', 'reduction_promo', "float" );
+	register_setting( 'formulaire', 'abonnement_form_id', "intval" );
+	register_setting( 'formulaire', 'contact_form_id', "intval" );
+	register_setting( 'formulaire', 'reduction_promo', "float" );
 }
 add_action( 'admin_init', 'register_my_setting' );
 
@@ -774,41 +774,41 @@ function my_theme_menu() {
 
 /** Step 3. */
 function my_theme_options() {
-	if ( !current_user_can( 'manage_options' ) )  {
+	if ( !current_user_can( 'manage_options' ) )	{
 		wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
 	}
 	?>
-  <div class="wrap">
-    <h1>Réglage du thème MakeICI</h1>
-    <div>
-      <p>Pour consulter la documentation c'est par <a target="_blank" href="https://github.com/SolalDR/Make-ici/blob/master/README.md">ICI</a></p>
-    </div>
-    <form class="form" method="post" action="options.php">
-    <?php
-    settings_fields( 'formulaire' ) ;
-    do_settings_sections( 'formulaire' );
-    ?>
-    <div class="form-group">
-      <label>Identifiant du produit Carte Cadeau</label><br>
-      <input class="form-control" value="<?php echo esc_attr( get_option('gift_card_id') ); ?>" name="gift_card_id" type="text"/>
-    </div>
-    <div class="form-group">
-      <label>Identifiant du formulaire d'abonnement</label><br>
-      <input class="form-control" value="<?php echo esc_attr( get_option('abonnement_form_id') ); ?>" name="abonnement_form_id" type="text"/>
-    </div>
-    <div class="form-group">
-      <label>Réduction abonné (mettre un nombre entre 0 et 1)</label><br>
-      <i class="mention">100€ avec 0.8 = 100x0.8 => 80€</i>
-      <input class="form-control" value="<?php echo esc_attr( get_option('reduction_promo') ); ?>" name="reduction_promo" type="text"/>
-    </div>
-    <div class="form-group">
-      <label>Identifiant du formulaire de contact spécifique</label><br>
-      <input class="form-control" value="<?php echo esc_attr( get_option('contact_form_id') ); ?>" name="contact_form_id" type="text"/>
-    </div>
-    <?php submit_button(); ?>
-    </form>
-  </div>
-  <?php
+	<div class="wrap">
+		<h1>Réglage du thème MakeICI</h1>
+		<div>
+			<p>Pour consulter la documentation c'est par <a target="_blank" href="https://github.com/SolalDR/Make-ici/blob/master/README.md">ICI</a></p>
+		</div>
+		<form class="form" method="post" action="options.php">
+		<?php
+		settings_fields( 'formulaire' ) ;
+		do_settings_sections( 'formulaire' );
+		?>
+		<div class="form-group">
+			<label>Identifiant du produit Carte Cadeau</label><br>
+			<input class="form-control" value="<?php echo esc_attr( get_option('gift_card_id') ); ?>" name="gift_card_id" type="text"/>
+		</div>
+		<div class="form-group">
+			<label>Identifiant du formulaire d'abonnement</label><br>
+			<input class="form-control" value="<?php echo esc_attr( get_option('abonnement_form_id') ); ?>" name="abonnement_form_id" type="text"/>
+		</div>
+		<div class="form-group">
+			<label>Réduction abonné (mettre un nombre entre 0 et 1)</label><br>
+			<i class="mention">100€ avec 0.8 = 100x0.8 => 80€</i>
+			<input class="form-control" value="<?php echo esc_attr( get_option('reduction_promo') ); ?>" name="reduction_promo" type="text"/>
+		</div>
+		<div class="form-group">
+			<label>Identifiant du formulaire de contact spécifique</label><br>
+			<input class="form-control" value="<?php echo esc_attr( get_option('contact_form_id') ); ?>" name="contact_form_id" type="text"/>
+		</div>
+		<?php submit_button(); ?>
+		</form>
+	</div>
+	<?php
 }
 
 
@@ -827,7 +827,7 @@ function display_website_logo(){
 }
 
 function my_login_logo_url() {
-  return home_url();
+	return home_url();
 }
 
 function my_login_logo() {
@@ -852,12 +852,12 @@ function makeici_setup() {
 	add_image_size( 'twentyseventeen-thumbnail-avatar', 100, 100, true );
 	$GLOBALS['content_width'] = 525;
 	register_nav_menus( array(
-		'top'    => __( 'Top Menu', 'twentyseventeen' ),
+		'top'		=> __( 'Top Menu', 'twentyseventeen' ),
 		'social' => __( 'Social Links Menu', 'twentyseventeen' ),
 	) );
 	add_theme_support( 'html5', array( 'comment-form', 'comment-list', 'gallery', 'caption') );
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link', 'gallery', 'audio' ) );
-	add_theme_support( 'custom-logo', array( 'width' => 250, 'height' => 250, 'flex-width'  => true) );
+	add_theme_support( 'custom-logo', array( 'width' => 250, 'height' => 250, 'flex-width'	=> true) );
 	add_theme_support( 'customize-selective-refresh-widgets' );
 }
 add_action( 'after_setup_theme', 'makeici_setup' );

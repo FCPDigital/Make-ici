@@ -39,9 +39,9 @@
 	/**
 	 * Merge two or more objects. Returns a new object.
 	 * @private
-	 * @param {Boolean}  deep     If true, do a deep (or recursive) merge [optional]
-	 * @param {Object}   objects  The objects to merge together
-	 * @returns {Object}          Merged values of defaults and options
+	 * @param {Boolean}	deep		 If true, do a deep (or recursive) merge [optional]
+	 * @param {Object}	 objects	The objects to merge together
+	 * @returns {Object}					Merged values of defaults and options
 	 */
 	var extend = function () {
 
@@ -84,8 +84,8 @@
 	/**
 	 * Get the height of an element.
 	 * @private
-	 * @param  {Node} elem The element to get the height of
-	 * @return {Number}    The element's height in pixels
+	 * @param	{Node} elem The element to get the height of
+	 * @return {Number}		The element's height in pixels
 	 */
 	var getHeight = function ( elem ) {
 		return Math.max( elem.scrollHeight, elem.offsetHeight, elem.clientHeight );
@@ -94,9 +94,9 @@
 	/**
 	 * Get the closest matching element up the DOM tree.
 	 * @private
-	 * @param  {Element} elem     Starting element
-	 * @param  {String}  selector Selector to match against (class, ID, data attribute, or tag)
-	 * @return {Boolean|Element}  Returns null if not match found
+	 * @param	{Element} elem		 Starting element
+	 * @param	{String}	selector Selector to match against (class, ID, data attribute, or tag)
+	 * @return {Boolean|Element}	Returns null if not match found
 	 */
 	var getClosest = function ( elem, selector ) {
 
@@ -335,7 +335,7 @@
 		// Selectors and variables
 		var anchorElem = anchor === '#' ? root.document.documentElement : root.document.querySelector(anchor);
 		var startLocation = root.pageYOffset; // Current location on the page
-		if ( !fixedHeader ) { fixedHeader = root.document.querySelector( settings.selectorHeader ); }  // Get the fixed header if not already set
+		if ( !fixedHeader ) { fixedHeader = root.document.querySelector( settings.selectorHeader ); }	// Get the fixed header if not already set
 		if ( !headerHeight ) { headerHeight = getHeaderHeight( fixedHeader ); } // Get the height of a fixed header if one exists and not already set
 		var endLocation = getEndLocation( anchorElem, headerHeight, parseInt(settings.offset, 10) ); // Scroll to location
 		var animationInterval; // interval timer
@@ -412,8 +412,8 @@
 	/**
 	 * On window scroll and resize, only run events at a rate of 15fps for better performance
 	 * @private
-	 * @param  {Function} eventTimeout Timeout function
-	 * @param  {Object} settings
+	 * @param	{Function} eventTimeout Timeout function
+	 * @param	{Object} settings
 	 */
 	var eventThrottler = function (event) {
 		if ( !eventTimeout ) {

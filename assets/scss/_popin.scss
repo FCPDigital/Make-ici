@@ -1,79 +1,79 @@
 #popin {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  min-height: 600px;
-  height: 100vh;
-  background-color: rgba(0,0,0,.8);
-  z-index: 1000;
-  @include transition(.4s);
-  @include transform(translateX(0));
-  overflow: scroll;
-  display: block !important;
-  &.hide {
-    display: block !important;
-    @include transform(translateX(100%));
-  }
-  .close-popin {
-    position: fixed;
-    top: 100px;
-    right: 50px;
-    width: 30px;
-    height: 30px;
-    display: block;
-    cursor: pointer;
-    text-align: center;
-    color: $color-3;
-    font-size: 20px;
-    font-weight: bold;
-    padding-top: 5px;
-  }
-  .content-popin {
-    width: 800px;
-    margin: auto;
-    margin-top: 100px;
-    height: 550px;
-  }
-  .title-container {
-    margin-bottom: $medium-pad;
-    color: white;
-    h2 {
-      font-size: 2.5em;
-      font-weight: bold;
-      display: inline-block;
-    }
-    h3 {
-      display: inline-block;
-      margin-left: 50px;
-    }
-  }
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	min-height: 600px;
+	height: 100vh;
+	background-color: rgba(0,0,0,.8);
+	z-index: 1000;
+	@include transition(.4s);
+	@include transform(translateX(0));
+	overflow: scroll;
+	display: block !important;
+	&.hide {
+		display: block !important;
+		@include transform(translateX(100%));
+	}
+	.close-popin {
+		position: fixed;
+		top: 100px;
+		right: 50px;
+		width: 30px;
+		height: 30px;
+		display: block;
+		cursor: pointer;
+		text-align: center;
+		color: $color-3;
+		font-size: 20px;
+		font-weight: bold;
+		padding-top: 5px;
+	}
+	.content-popin {
+		width: 800px;
+		margin: auto;
+		margin-top: 100px;
+		height: 550px;
+	}
+	.title-container {
+		margin-bottom: $medium-pad;
+		color: white;
+		h2 {
+			font-size: 2.5em;
+			font-weight: bold;
+			display: inline-block;
+		}
+		h3 {
+			display: inline-block;
+			margin-left: 50px;
+		}
+	}
 }
 
 
 @media screen and (max-width: $break-point-1){
-  #popin .content-popin {
-    width: 800px;
-    margin: auto;
-    margin-top: 100px;
-  }
+	#popin .content-popin {
+		width: 800px;
+		margin: auto;
+		margin-top: 100px;
+	}
 }
 
 @media screen and (max-width: $break-point-2){
-  #popin .content-popin {
-    width: 90%;
-    margin: auto;
-    margin-top: 100px;
-  }
+	#popin .content-popin {
+		width: 90%;
+		margin: auto;
+		margin-top: 100px;
+	}
 }
 
 @media screen and (min-height: 780px){
-  #popin {
-    display: flex !important;
-    flex-direction: column;
-    justify-content: center;
-    .content-popin {
-      margin-top: auto;
-    }
-  }
+	#popin {
+		display: flex !important;
+		flex-direction: column;
+		justify-content: center;
+		.content-popin {
+			margin-top: auto;
+		}
+	}
 }

@@ -1,298 +1,298 @@
 header {
-   a {
-     text-decoration: none;
-   }
-  .container-fluid {
-    padding: 0 32px;
-  }
+	 a {
+		 text-decoration: none;
+	 }
+	.container-fluid {
+		padding: 0 32px;
+	}
 
-  .static {
-    background-color: $color-3;
-    color: white;
-    padding: 15px 0;
-    font-size: 0.85em;
-    letter-spacing: 1px;
-    .actions {
-      a {
-        text-transform: uppercase;
-        color: white;
-        margin: 0 15px;
-        text-decoration: none;
-        @include transition(.4s);
-        &:hover {
-          color: #EEE;
-        }
-        i {
-          margin-right: 10px;
-        }
-      }
-    }
-  }
+	.static {
+		background-color: $color-3;
+		color: white;
+		padding: 15px 0;
+		font-size: 0.85em;
+		letter-spacing: 1px;
+		.actions {
+			a {
+				text-transform: uppercase;
+				color: white;
+				margin: 0 15px;
+				text-decoration: none;
+				@include transition(.4s);
+				&:hover {
+					color: #EEE;
+				}
+				i {
+					margin-right: 10px;
+				}
+			}
+		}
+	}
 
-  .navbar-toggle {
-    font-size: 1.5em !important;
-    color: $color-3;
-  }
+	.navbar-toggle {
+		font-size: 1.5em !important;
+		color: $color-3;
+	}
 
-  .navbar {
-    margin-bottom: 0px;
-    border-radius: 0;
-    width: 100%;
-    background-color: $color-4;
-    z-index: 1001;
-    @include transition(.4s);
-    &.normal {
-      position: relative;
-      top: 0;
-    }
-    &.fixe {
-      position: fixed;
-      top: 0;
-      animation-name: arriveNav;
-      animation-duration: .5s;
-      animation-iteration-count: 1;
-    }
-  }
+	.navbar {
+		margin-bottom: 0px;
+		border-radius: 0;
+		width: 100%;
+		background-color: $color-4;
+		z-index: 1001;
+		@include transition(.4s);
+		&.normal {
+			position: relative;
+			top: 0;
+		}
+		&.fixe {
+			position: fixed;
+			top: 0;
+			animation-name: arriveNav;
+			animation-duration: .5s;
+			animation-iteration-count: 1;
+		}
+	}
 
-  .navbar-brand {
-    height: 70px;
-    padding: 10px 15px;
-    & > img {
-      display: block;
-      height: 60px;
-      margin-top: -5px;
-    }
-  }
-  .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
-    background-color: transparent;
-  }
-  .navbar-collapse {
-    .navbar-nav {
-      float: right;
-      margin: 0;
-      justify-content: space-around;
-      .menu-item {
-        padding: 0;
-      }
-    }
-    &.collapse.in {
-      .navbar-nav {
-        float: none;
-        margin: 0;
-        display: block;
-        justify-content:center;
-        &> li > a {
-          text-align: center;
-          &::before {
-            content:"";
-          }
-        }
-      }
-    }
-  }
+	.navbar-brand {
+		height: 70px;
+		padding: 10px 15px;
+		& > img {
+			display: block;
+			height: 60px;
+			margin-top: -5px;
+		}
+	}
+	.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
+		background-color: transparent;
+	}
+	.navbar-collapse {
+		.navbar-nav {
+			float: right;
+			margin: 0;
+			justify-content: space-around;
+			.menu-item {
+				padding: 0;
+			}
+		}
+		&.collapse.in {
+			.navbar-nav {
+				float: none;
+				margin: 0;
+				display: block;
+				justify-content:center;
+				&> li > a {
+					text-align: center;
+					&::before {
+						content:"";
+					}
+				}
+			}
+		}
+	}
 
-  .navbar-nav  {
+	.navbar-nav	{
 
-    // ITEM DU HEADER
-    .menu-item {
-      & > a {
-        padding: 25px 10px;
-        color: #555;
-        text-transform: none;
-        letter-spacing: 1px;
-        font-size: 12px;
-        position: relative;
-        @include transition(.4s);
-        .fa.fa-home {
-          margin-top: 3px;
-          font-size: 1.2em;
-        }
-        &::after {
-          content: "";
-          display: block;
-          width:0;
-          height: 1px;
-          position: absolute;
-          background-color:  $color-2;
-          left: 12px;
-          bottom: 22px;
-          width: calc(100% - 25px);
-          @include transition(.4s);
-          @include transform(scaleX(0));
-        }
-        &::before {
-          content: "|";
-          position: absolute;
-          left: -7px;
-          font-weight: bold;
-        }
-        &:hover {
-          color: black !important;
+		// ITEM DU HEADER
+		.menu-item {
+			& > a {
+				padding: 25px 10px;
+				color: #555;
+				text-transform: none;
+				letter-spacing: 1px;
+				font-size: 12px;
+				position: relative;
+				@include transition(.4s);
+				.fa.fa-home {
+					margin-top: 3px;
+					font-size: 1.2em;
+				}
+				&::after {
+					content: "";
+					display: block;
+					width:0;
+					height: 1px;
+					position: absolute;
+					background-color:	$color-2;
+					left: 12px;
+					bottom: 22px;
+					width: calc(100% - 25px);
+					@include transition(.4s);
+					@include transform(scaleX(0));
+				}
+				&::before {
+					content: "|";
+					position: absolute;
+					left: -7px;
+					font-weight: bold;
+				}
+				&:hover {
+					color: black !important;
 
-          &::after {
-            @include transform(scaleX(1));
-          }
-          &::before {
-            color: #777;
-          }
-        }
-      }
-      &.current-menu-item a::after {
-        @include transform(scaleX(1));
-      }
-      &:first-child a {
-        padding-left: 0 !important;
-      }
-      &:last-child a {
-        padding-right: 0 !important;
-      }
-      &:first-child a::before {
-        content:"";
-      }
-      &.menu-item-home a {
-        margin-right: 10px;
-        padding-right: 0;
-      }
-      &.btn.btn-light {
-        padding: 10px 20px;
-        height: 45px;
-        margin-top: 12px;
-        &:hover {
-          background-color: $color-3;
-          a {
-            color: black;
-          }
-        }
-        a {
-          font-size: 13px;
-          padding: 0;
-          font-weight: bold;
-          color: black;
-          &::before, &::after {
-            display: none !important;
-          }
-        }
-      }
-      &.dropdown {
-        height: 45px;
-        margin: 12px 10px;
-        background-color: $color-3;
-        font-weight: bold;
-        border: 2px solid $color-3;
-        @include transition(.4s);
-        &:hover {
-          background-color: transparent;
-        }
-        a {
-          padding: 0;
-          color:black;
-          padding: 12px 10px;
-          background-color: $color-3 !important;
-          &::before, &::after {
-            display: none !important;
-          }
-          &:hover {
-            background-color: transparent !important;
-            color: $color-3 !important;
-          }
-        }
-        .dropdown-menu {
-          margin-top: 10px;
-          border: 0;
-          padding: 0;
-          li {
-            text-align: center;
-            &.active {
-              background-color: $color-3;
-            }
-            a {
-              background-color: transparent !important;
-              padding: 10px 10%;
-              color: $color-2;
-              @include transition(.4s);
-              &:hover {
-                color: black;
-                background-color: $color-3;
-                color: white;
-              }
-            }
-          }
-          .active {
-            a, a:focus, a:hover {
-              background-color: #DDD;
-              color: #444;
-            }
-          }
-        }
-      }
-    }
-  }
-  &.transparent .navbar {
-    background-color: transparent;
-    color: white;
-    &.navbar-default {
-      border-color: transparent;
-    }
-    .navbar-nav .menu-item {
-      & > a {
-       color: white;
-       &:hover {
-         color: white !important;
-         &::before {
-           border-color: white;
-         }
-       }
-       &::after { background-color: white; }
-       &.dropdown-toggle {
-         color: black;
-       }
-     }
-     &.btn-light a {
-       color: black !important;
-     }
-      &.active {
-        a {
-          color: $color-3;
-          font-weight: bold;
-          &::before {
-            color: white;
-            font-weight: normal;
-          }
-          &::after {
-            background-color: $color-3;
-          }
-        }
-      }
-      &.dropdown {
-          a:hover {
-            background-color: transparent !important;
-            color: $color-3 !important;
-          }
-      }
-    }
-  }
+					&::after {
+						@include transform(scaleX(1));
+					}
+					&::before {
+						color: #777;
+					}
+				}
+			}
+			&.current-menu-item a::after {
+				@include transform(scaleX(1));
+			}
+			&:first-child a {
+				padding-left: 0 !important;
+			}
+			&:last-child a {
+				padding-right: 0 !important;
+			}
+			&:first-child a::before {
+				content:"";
+			}
+			&.menu-item-home a {
+				margin-right: 10px;
+				padding-right: 0;
+			}
+			&.btn.btn-light {
+				padding: 10px 20px;
+				height: 45px;
+				margin-top: 12px;
+				&:hover {
+					background-color: $color-3;
+					a {
+						color: black;
+					}
+				}
+				a {
+					font-size: 13px;
+					padding: 0;
+					font-weight: bold;
+					color: black;
+					&::before, &::after {
+						display: none !important;
+					}
+				}
+			}
+			&.dropdown {
+				height: 45px;
+				margin: 12px 10px;
+				background-color: $color-3;
+				font-weight: bold;
+				border: 2px solid $color-3;
+				@include transition(.4s);
+				&:hover {
+					background-color: transparent;
+				}
+				a {
+					padding: 0;
+					color:black;
+					padding: 12px 10px;
+					background-color: $color-3 !important;
+					&::before, &::after {
+						display: none !important;
+					}
+					&:hover {
+						background-color: transparent !important;
+						color: $color-3 !important;
+					}
+				}
+				.dropdown-menu {
+					margin-top: 10px;
+					border: 0;
+					padding: 0;
+					li {
+						text-align: center;
+						&.active {
+							background-color: $color-3;
+						}
+						a {
+							background-color: transparent !important;
+							padding: 10px 10%;
+							color: $color-2;
+							@include transition(.4s);
+							&:hover {
+								color: black;
+								background-color: $color-3;
+								color: white;
+							}
+						}
+					}
+					.active {
+						a, a:focus, a:hover {
+							background-color: #DDD;
+							color: #444;
+						}
+					}
+				}
+			}
+		}
+	}
+	&.transparent .navbar {
+		background-color: transparent;
+		color: white;
+		&.navbar-default {
+			border-color: transparent;
+		}
+		.navbar-nav .menu-item {
+			& > a {
+			 color: white;
+			 &:hover {
+				 color: white !important;
+				 &::before {
+					 border-color: white;
+				 }
+			 }
+			 &::after { background-color: white; }
+			 &.dropdown-toggle {
+				 color: black;
+			 }
+		 }
+		 &.btn-light a {
+			 color: black !important;
+		 }
+			&.active {
+				a {
+					color: $color-3;
+					font-weight: bold;
+					&::before {
+						color: white;
+						font-weight: normal;
+					}
+					&::after {
+						background-color: $color-3;
+					}
+				}
+			}
+			&.dropdown {
+					a:hover {
+						background-color: transparent !important;
+						color: $color-3 !important;
+					}
+			}
+		}
+	}
 }
 
 
 @media screen and (max-width: 585px){
-  header .static {
-    display: none;
-  }
+	header .static {
+		display: none;
+	}
 }
 
 @media screen and (max-width: $break-point-1){
-  header .navbar-collapse {
-    .navbar-nav {
-      float: none;
-      margin: 0;
-      display: block;
-      justify-content:center;
-      &> li > a {
-        text-align: center;
-        &::before {
-          content:"";
-        }
-      }
-    }
-  }
+	header .navbar-collapse {
+		.navbar-nav {
+			float: none;
+			margin: 0;
+			display: block;
+			justify-content:center;
+			&> li > a {
+				text-align: center;
+				&::before {
+					content:"";
+				}
+			}
+		}
+	}
 }

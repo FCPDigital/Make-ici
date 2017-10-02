@@ -13,7 +13,7 @@
 					'menu' => 'social',
 					'depth' => 2,
 					'container' => false,
-					'menu_class' => 'nav  navbar-nav'
+					'menu_class' => 'nav	navbar-nav'
 				));
 				?>
 			</div>
@@ -29,7 +29,7 @@
 							<div id="mce-responses" class="clear">
 								<div class="response" id="mce-error-response" style="display:none"></div>
 								<div class="response" id="mce-success-response" style="display:none"></div>
-							</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+							</div>		<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
 						</div>
 					</form>
 				</div>
