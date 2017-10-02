@@ -121,6 +121,31 @@ body {
 .flex {
   display: flex; }
 
+.flex-big {
+  flex: 2; }
+
+.flex-small {
+  flex: 1; }
+
+.main-title {
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-bottom: 32px;
+  color: white;
+  position: relative; }
+  .main-title::before {
+    content: "";
+    position: absolute;
+    display: block;
+    left: -50px;
+    width: 17px;
+    height: 100%;
+    background-color: #ffed00; }
+  .main-title--no-border::before {
+    display: none; }
+  .main-title--dark {
+    color: black; }
+
 .container {
   width: 1000px;
   position: relative; }
@@ -533,6 +558,63 @@ a {
 @font-face {
   font-family: "CenturyGothic Regular";
   src: url("assets/fonts/CenturyGothic_Regular.ttf"); }
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -10px; }
+
+.item {
+  background-color: black;
+  margin: 10px; }
+  .item--big {
+    width: 100%; }
+  .item--small {
+    flex: 1; }
+  .item__banner {
+    background-color: #ffed00;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    padding: 10px 16px;
+    min-height: 50px; }
+  .item__title {
+    text-align: center;
+    font-weight: bold;
+    line-height: 1em;
+    font-size: 15px; }
+    .item__title--top-left {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      text-align: left; }
+  .item__corner {
+    position: absolute;
+    font-size: 11px;
+    font-weight: bold; }
+    .item__corner--bottom-right {
+      right: 10px;
+      bottom: 10px; }
+  .item__thumbnail {
+    width: 100%;
+    max-height: 200px;
+    height: 200px;
+    overflow: hidden;
+    position: relative; }
+    .item__thumbnail img {
+      width: 100%; }
+    .item__thumbnail img {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      transform: translateY(-50%); }
+  .item__content {
+    padding: 10px 20px;
+    color: white;
+    font-size: 11px; }
+
 /*
 Style des archive.php, inclue les abonnements, les entreprises, les formations.
 */
@@ -1886,6 +1968,10 @@ Contient l'ensemble des style particulier propre aux posts et au pages.
         .carousel .carousel-body .carousel-container .carousel-item .crop-img img {
           width: 130%;
           margin-left: -15px; }
+      .carousel .carousel-body .carousel-container .carousel-item .title-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; }
       .carousel .carousel-body .carousel-container .carousel-item.compact {
         background-color: transparent; }
         .carousel .carousel-body .carousel-container .carousel-item.compact .title-container {
@@ -1894,10 +1980,7 @@ Contient l'ensemble des style particulier propre aux posts et au pages.
           color: black;
           line-height: 1em;
           padding: 12px 0;
-          height: 70px;
-          display: flex;
-          flex-direction: column;
-          justify-content: center; }
+          height: 70px; }
           .carousel .carousel-body .carousel-container .carousel-item.compact .title-container .title {
             font-size: 15px;
             font-weight: bold;
@@ -2261,23 +2344,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 140px;
-          top: 156px; }
+          left: 177px;
+          top: 248px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 179px;
-          top: 47px; }
+          left: 159px;
+          top: 83px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 187px;
-          top: 86px; }
+          left: 237px;
+          top: 145px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 285px;
-          top: 42px; }
+          left: 21px;
+          top: 126px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 395px;
-          top: 198px; }
+          left: 378px;
+          top: 73px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 400px;
-          top: 197px; }
+          left: 237px;
+          top: 126px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);
@@ -2698,5 +2781,14 @@ woocommerce table.cart .product-name a {
   padding: 0 10px; }
 
 /*html, bod*/
+.actu-events {
+  padding: 100px 0; }
+  .actu-events .wrapper {
+    display: flex;
+    flex-wrap: wrap; }
+    .actu-events .wrapper .main-part {
+      margin-right: 16px; }
+    .actu-events .wrapper .second-part {
+      margin-left: 16px; }
 
 /*# sourceMappingURL=style.css.map */

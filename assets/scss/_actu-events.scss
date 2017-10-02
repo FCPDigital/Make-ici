@@ -1,0 +1,13 @@
+.actu-events {
+	padding: 100px 0;
+	.wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		.main-part {
+			margin-right: $small-pad;
+		}
+		.second-part {
+			margin-left: $small-pad;
+		}
+	}
+}

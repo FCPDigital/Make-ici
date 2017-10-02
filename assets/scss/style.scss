@@ -15,6 +15,7 @@ Text Domain: makeici
 @import "core/font";
 
 //@import "core/templatecore"; //Comment this line when you realy want to begin
+@import "blocks/item";
 @import "archive";
 @import "boutique";
 @import "home";
@@ -26,3 +27,4 @@ Text Domain: makeici
 @import "template/visite";
 @import "popin";
 @import "TODO";
+@import "actu-events"
