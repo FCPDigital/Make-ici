@@ -714,17 +714,19 @@ h1 {
     flex-direction: column;
     justify-content: center; }
     .archive-head .archive-head-item .title-container .title {
-      font-size: 1.1em;
+      font-size: 15px;
       font-weight: bold;
       line-height: 1em;
       margin: 0;
-      letter-spacing: 1px; }
+      letter-spacing: 1px;
+      text-transform: uppercase; }
     .archive-head .archive-head-item .title-container .subtitle {
       font-size: 11px;
       padding: 0px 5px;
       font-weight: bold;
       line-height: 1.2em;
-      font-style: italic; }
+      font-style: italic;
+      margin-top: 8px; }
   .archive-head .archive-head-item .crop-img {
     height: 120px;
     overflow: hidden; }
@@ -2259,23 +2261,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 330px;
-          top: 190px; }
+          left: 140px;
+          top: 156px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 389px;
-          top: 227px; }
+          left: 179px;
+          top: 47px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 207px;
-          top: 173px; }
+          left: 187px;
+          top: 86px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 136px;
-          top: 135px; }
+          left: 285px;
+          top: 42px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 376px;
-          top: 26px; }
+          left: 395px;
+          top: 198px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 74px;
-          top: 211px; }
+          left: 400px;
+          top: 197px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);
@@ -2634,14 +2636,6 @@ header .navbar-nav .menu-item.dropdown .dropdown-menu li a {
 
 .more-info a {
   color: #FFF; }
-
-.archive-head .archive-head-item .title-container .title {
-  font-size: 15px;
-  font-weight: bold;
-  line-height: 1em;
-  margin-bottom: 8px;
-  letter-spacing: 1px;
-  text-transform: uppercase; }
 
 .left-full-border.actu {
   margin-bottom: 60px; }

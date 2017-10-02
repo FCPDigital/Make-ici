@@ -169,17 +169,16 @@ h1 {
 			line-height: 1em;
 			padding: 12px 0;
 			height: 75px;
-
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
-
 			.title {
-				font-size: 1.1em;
+				font-size: 15px;
 				font-weight: bold;
 				line-height: 1em;
 				margin: 0;
 				letter-spacing: 1px;
+				text-transform: uppercase;
 			}
 			.subtitle {
 				font-size: 11px;
@@ -187,6 +186,7 @@ h1 {
 				font-weight: bold;
 				line-height: 1.2em;
 				font-style: italic;
+				margin-top: 8px;
 			}
 		}
 		.crop-img {
