@@ -623,6 +623,14 @@ function create_post_type_events() {
 	);
 }
 
+function myfeed_request($qv) {
+	if (isset($qv['feed']) && !isset($qv['post_type']))
+		$qv['post_type'] = array('post', 'events');
+	return $qv;
+}
+add_filter('request', 'myfeed_request');
+
+
 add_action( 'init', 'create_post_type_abonnement' );
 add_action( 'init', 'create_post_type_staff' );
 add_action( 'init', 'create_post_type_entreprise' );
