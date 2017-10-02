@@ -14,68 +14,68 @@ require_once('helpers/wp_bootstrap_navwalker.php');
 
 /** Custom Post Type Template Selector **/
 function cpt_add_meta_boxes() {
-		$post_types = get_post_types();
-		foreach( $post_types as $ptype ) {
-				if ( $ptype !== 'page') {
-						add_meta_box( 'cpt-selector', 'Attributes', 'cpt_meta_box', $ptype, 'side', 'core' );
-				}
+	$post_types = get_post_types();
+	foreach( $post_types as $ptype ) {
+		if ( $ptype !== 'page') {
+			add_meta_box( 'cpt-selector', 'Attributes', 'cpt_meta_box', $ptype, 'side', 'core' );
 		}
+	}
 }
 add_action( 'add_meta_boxes', 'cpt_add_meta_boxes' );
 
 function cpt_remove_meta_boxes() {
-		$post_types = get_post_types();
-		foreach( $post_types as $ptype ) {
-				if ( $ptype !== 'page') {
-						remove_meta_box( 'pageparentdiv', $ptype, 'normal' );
-				}
+	$post_types = get_post_types();
+	foreach( $post_types as $ptype ) {
+		if ( $ptype !== 'page') {
+			remove_meta_box( 'pageparentdiv', $ptype, 'normal' );
 		}
+	}
 }
 add_action( 'admin_menu' , 'cpt_remove_meta_boxes' );
 
 function cpt_meta_box( $post ) {
-		$post_meta = get_post_meta( $post->ID );
-		$templates = wp_get_theme()->get_page_templates();
+	$post_meta = get_post_meta( $post->ID );
+	$templates = wp_get_theme()->get_page_templates();
 
-		$post_type_object = get_post_type_object($post->post_type);
-		if ( $post_type_object->hierarchical ) {
-				$dropdown_args = array(
-						'post_type'				=> $post->post_type,
-						'exclude_tree'		 => $post->ID,
-						'selected'				 => $post->post_parent,
-						'name'						 => 'parent_id',
-						'show_option_none' => __('(no parent)'),
-						'sort_column'			=> 'menu_order, post_title',
-						'echo'						 => 0,
-				);
+	$post_type_object = get_post_type_object($post->post_type);
+	if ( $post_type_object->hierarchical ) {
+		$dropdown_args = array(
+			'post_type'			=> $post->post_type,
+			'exclude_tree'		=> $post->ID,
+			'selected'			=> $post->post_parent,
+			'name'				=> 'parent_id',
+			'show_option_none' 	=> __('(no parent)'),
+			'sort_column'		=> 'menu_order, post_title',
+			'echo'				=> 0
+		);
 
-				$dropdown_args = apply_filters( 'page_attributes_dropdown_pages_args', $dropdown_args, $post );
-				$pages = wp_dropdown_pages( $dropdown_args );
+		$dropdown_args = apply_filters( 'page_attributes_dropdown_pages_args', $dropdown_args, $post );
+		$pages = wp_dropdown_pages( $dropdown_args );
 
-				if ( $pages ) {
-						echo "<p><strong>Parent</strong></p>";
-						echo "<label class=\"screen-reader-text\" for=\"parent_id\">Parent</label>";
-						echo $pages;
-				}
+		if ( $pages ) {
+			echo "<p><strong>Parent</strong></p>";
+			echo "<label class=\"screen-reader-text\" for=\"parent_id\">Parent</label>";
+			echo $pages;
 		}
+	}
 
-		// Template Selector
-		echo "<p><strong>Template</strong></p>";
-		echo "<select id=\"cpt-selector\" name=\"_wp_page_template\"><option value=\"default\">Default Template</option>";
-		foreach ( $templates as $template_filename => $template_name ) {
-				if ( $post->post_type == strstr( $template_filename, '-', true) ) {
-						if ( isset($post_meta['_wp_page_template'][0]) && ($post_meta['_wp_page_template'][0] == $template_filename) ) {
-								echo "<option value=\"$template_filename\" selected=\"selected\">$template_name</option>";
-						} else {
-								echo "<option value=\"$template_filename\">$template_name</option>";
-						}
-				}
+	// Template Selector
+	echo "<p><strong>Template</strong></p>";
+	echo "<select id=\"cpt-selector\" name=\"_wp_page_template\"><option value=\"default\">Default Template</option>";
+	foreach ( $templates as $template_filename => $template_name ) {
+		if ( $post->post_type == strstr( $template_filename, '-', true) ) {
+			if ( isset($post_meta['_wp_page_template'][0]) && ($post_meta['_wp_page_template'][0] == $template_filename) ) {
+				echo "<option value=\"$template_filename\" selected=\"selected\">$template_name</option>";
+			} else {
+				echo "<option value=\"$template_filename\">$template_name</option>";
+			}
 		}
-		echo "</select>";
+	}
+	echo "</select>";
 
-		// Page order
-		echo "<p><strong>Order</strong></p>";
-		echo "<p><label class=\"screen-reader-text\" for=\"menu_order\">Order</label><input name=\"menu_order\" type=\"text\" size=\"4\" id=\"menu_order\" value=\"". esc_attr($post->menu_order) . "\" /></p>";
+	// Page order
+	echo "<p><strong>Order</strong></p>";
+	echo "<p><label class=\"screen-reader-text\" for=\"menu_order\">Order</label><input name=\"menu_order\" type=\"text\" size=\"4\" id=\"menu_order\" value=\"". esc_attr($post->menu_order) . "\" /></p>";
 }
 
 function save_cpt_template_meta_data( $post_id ) {
@@ -147,6 +147,15 @@ function get_products_from_category($category){
 	$productArgs = array( 'post_type' => 'product', 'posts_per_page' => -1, 'product_cat' => $category->name, 'orderby' => 'post_date', 'order' => "DESC" );
 	$products = new WP_Query( $productArgs );
 	return $products ;
+}
+
+add_filter( 'woocommerce_payment_complete_order_status', 'rfvc_update_order_status', 10, 2 );
+function rfvc_update_order_status( $order_status, $order_id ) {
+  $order = new WC_Order( $order_id );
+  if ( 'processing' == $order_status && ( 'on-hold' == $order->status || 'pending' == $order->status || 'failed' == $order->status ) ) {
+    return 'completed';
+  }
+  return $order_status;
 }
 
 
@@ -549,6 +558,38 @@ function create_post_type_staff() {
 	);
 }
 
+// POST TYPE EQUIPEMENTS
+function create_post_type_equipements() {
+	register_post_type( 'equipements',
+		array(
+			'labels' => array(
+				'name' => __( 'Equipements' ),
+				'singular_name' => __( 'Equipements' )
+			),
+			'public' => true,
+			'has_archive' => true,
+			'menu_icon' => 'dashicons-admin-tools',
+			'supports' => array( 'title', 'editor', 'custom-fields', 'thumbnail', 'excerpt' )
+		)
+	);
+}
+
+// POST TYPE REST ICI
+function create_post_type_rest() {
+	register_post_type( 'rest',
+		array(
+			'labels' => array(
+				'name' => __( 'Rest' ),
+				'singular_name' => __( 'Rest' )
+			),
+			'public' => true,
+			'has_archive' => true,		
+			'menu_icon' => 'dashicons-carrot',
+			'supports' => array( 'title', 'editor', 'custom-fields', 'thumbnail', 'excerpt' )
+		)
+	);
+}
+
 // POST TYPE ABONNEMENTS
 function create_post_type_abonnement() {
 	register_post_type( 'abonnements',
@@ -584,6 +625,7 @@ function create_post_type_entreprise() {
 add_action( 'init', 'create_post_type_abonnement' );
 add_action( 'init', 'create_post_type_staff' );
 add_action( 'init', 'create_post_type_entreprise' );
+add_action( 'init', 'create_post_type_equipements' );
 
 
 //////////////////////////////////////////////////////
