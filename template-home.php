@@ -36,7 +36,7 @@ $postCur = get_post(); // On stocke le post courant pour éviter le bug de la bo
 			 <?php echo get_field("equipement", $postCur); ?>
 			 <div class="single-body equipements-container">
 			 	<?php 
-				$equipements = get_posts( array('post_type' => 'equipements'));
+				$equipements = get_posts( array('post_type' => 'equipements', 'posts_per_page' => '12'));
 				foreach($equipements as $equipement){ setup_postdata( $equipement ); ?>
 					<div class="equipements-item" id="post-<?php echo get_the_ID($equipement); ?>">
 						<div class="equipements-item-content">
