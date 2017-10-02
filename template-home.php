@@ -35,6 +35,20 @@ $postCur = get_post(); // On stocke le post courant pour éviter le bug de la bo
 			<h2 class="left-full-border">Equipements et services</h2>
 			 <?php echo get_field("equipement", $postCur); ?>
 			 <div class="single-body equipements-container">
+			 	<?php 
+				$equipements = get_posts( array('post_type' => 'equipements'));
+				foreach($equipements as $equipement){ setup_postdata( $equipement ); ?>
+					<div class="equipements-item" id="post-<?php echo get_the_ID(); ?>">
+						<div class="equipements-item-content">
+							<div class="equipements-title-container">
+								<p class="equipements-title"><?php echo get_the_title(); ?></p>
+							</div>
+							<div class="equipements-content">
+								<?php the_content() ?>
+							</div>
+						</div>
+					</div>
+				<?php } ?>
 				<div class="equipements-item" id="post-413">
 					<div class="equipements-item-content">
 						<div class="equipements-title-container">

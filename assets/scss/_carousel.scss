@@ -23,6 +23,11 @@
 						margin-left: -15px;
 					}
 				}
+				.title-container {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+				}
 				&.compact {
 					background-color: transparent;
 					.title-container {
@@ -32,9 +37,6 @@
 						line-height: 1em;
 						padding: 12px 0;
 						height: 70px;
-						display: flex;
-						flex-direction: column;
-						justify-content: center;
 						.title {
 							font-size: 15px;
 							font-weight: bold;
