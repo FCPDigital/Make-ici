@@ -1,22 +1,45 @@
-$space : 10px;
+
+//Grid
+$space : 15px;
+$height: 300px;
+$thumbnail-limit: 150px;
+
+// Content
+$padding-top: 10px;
+$padding-side: 16px;
 $big-size: 15px;
 $small-size: 11px;
 
-$thumbnail-limit: 200px;
-
-.items {
-	display: flex;
+.items-col {
+	display: block;
 	flex-wrap: wrap;
-	margin: -10px;
+	margin: -1*$space;
 }
+
 .item {
 	background-color: black;
-	margin: 10px;
-	&--big {
-		width: 100%;
+	margin: $space;
+	min-height: $height;
+	float: left;
+	position: relative;
+	height: $height;
+	box-sizing: border-box;
+	overflow: hidden;
+	&--border {
+		border: 1px solid $color-3;
+	}
+	&--wide {
+		width: calc(100% - #{$space*2});
+		min-height: $height;
 	}
 	&--small {
-		flex: 1;
+		width: calc(50% - #{$space*2});
+	}
+	&--tall {
+		min-height: 2*$height;
+	}
+	&--no-limit {
+		height: auto;
 	}
 	&__banner {
 		background-color: $color-3;
@@ -25,8 +48,12 @@ $thumbnail-limit: 200px;
 		flex-direction: column;
 		justify-content: center; 
 		position: relative;
-		padding: 10px 16px;
+		padding: $padding-top $padding-side;
 		min-height: 50px;
+		&--dark {
+			background-color: $color-2;
+			color: $color-3;
+		}
 	}
 	&__title {
 		text-align: center;
@@ -35,12 +62,15 @@ $thumbnail-limit: 200px;
 		font-size: $big-size;
 		&--top-left {
 			position: absolute;
-			top: $space;
-			left: $space;
+			top: $padding-top;
+			left: $padding-side;
 			text-align: left;
 		}
 	}
-
+	&__action {
+		text-align: center;
+		margin: 20px 0;
+	}
 	&__subtitle {
 		
 	}
@@ -49,8 +79,8 @@ $thumbnail-limit: 200px;
 		font-size: $small-size;
 		font-weight: bold;
 		&--bottom-right {
-			right: $space;
-			bottom: $space;
+			right: $padding-side;
+			bottom: $padding-top;
 		}
 	}
 
@@ -74,8 +104,26 @@ $thumbnail-limit: 200px;
 		}
 	}
 	&__content {
-		padding: 10px 20px;
+		padding: $padding-top $padding-side;
 		color: white;
 		font-size: $small-size;
+		p {
+			color: white;
+			margin:0;
+			padding:0;
+			font-size: $small-size;
+		}
+		&--no-pad {
+			padding: $padding-top 0;
+		}
+	}
+}
+
+
+@media screen and (max-width: 800px) {
+	.item {
+		&--wide, &--small, &--tall {
+			width: calc(100% - #{$space});
+		}
 	}
 }

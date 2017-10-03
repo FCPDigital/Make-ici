@@ -11,3 +11,23 @@
 		}
 	}
 }
+
+.events {
+	&-item {
+		&__content {
+			padding: 10px 0 !important;
+			border-top: 1px solid grey;
+			margin: 0 16px !important;
+		}
+		&:first-child .item__content {
+			border-top: 0;
+		}
+		&__thumbnail {
+			img {
+
+			}
+		}
+	}
+}
+
+
