@@ -1586,87 +1586,64 @@ body.woocommerce-checkout #customer_details h3::after {
       margin: auto;
       text-align: center; }
 
-header {
-  /* 	.navbar-collapse {
-  	.navbar-nav {
-  		float: right;
-  		margin: 0;
-  		justify-content: space-around;
-  		.menu-item {
-  			padding: 0;
-  		}
-  	}
-  	&.collapse.in {
-  		.navbar-nav {
-  			float: none;
-  			margin: 0;
-  			display: block;
-  			justify-content:center;
-  			&> li > a {
-  				text-align: center;
-  				&::before {
-  					content:"";
-  				}
-  			}
-  		}
-  	}
-  } */ }
-  header a {
-    text-decoration: none; }
-  header .container-fluid {
-    padding: 0 32px; }
-  header .static {
-    background-color: #ffed00;
+header a {
+  text-decoration: none; }
+header .container-fluid {
+  padding: 0 32px; }
+header .static {
+  background-color: #ffed00;
+  color: white;
+  padding: 15px 0;
+  font-size: 0.85em;
+  letter-spacing: 1px; }
+  header .static .actions a {
+    text-transform: uppercase;
     color: white;
-    padding: 15px 0;
-    font-size: 0.85em;
-    letter-spacing: 1px; }
-    header .static .actions a {
-      text-transform: uppercase;
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      -webkit-transition: 0.4s;
-      -moz-transition: 0.4s;
-      -ms-transition: 0.4s;
-      -o-transition: 0.4s;
-      transition: 0.4s; }
-      header .static .actions a:hover {
-        color: #EEE; }
-      header .static .actions a i {
-        margin-right: 10px; }
-  header .navbar-toggle {
-    font-size: 1.5em !important;
-    color: #ffed00; }
-  header .navbar {
-    margin-bottom: 0px;
-    border-radius: 0;
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.95);
-    z-index: 1001;
+    margin: 0 15px;
+    text-decoration: none;
     -webkit-transition: 0.4s;
     -moz-transition: 0.4s;
     -ms-transition: 0.4s;
     -o-transition: 0.4s;
     transition: 0.4s; }
-    header .navbar.normal {
-      position: relative;
-      top: 0; }
-    header .navbar.fixe {
-      position: fixed;
-      top: 0;
-      animation-name: arriveNav;
-      animation-duration: .5s;
-      animation-iteration-count: 1; }
-  header .navbar-brand {
-    height: 70px;
-    padding: 10px 15px; }
-    header .navbar-brand > img {
-      display: block;
-      height: 60px;
-      margin-top: -5px; }
-  header .navbar-default .navbar-nav > .active > a, header .navbar-default .navbar-nav > .active > a:focus, header .navbar-default .navbar-nav > .active > a:hover {
-    background-color: transparent; }
+    header .static .actions a:hover {
+      color: #EEE; }
+    header .static .actions a i {
+      margin-right: 10px; }
+header .navbar-toggle {
+  font-size: 1.5em !important;
+  color: #ffed00; }
+header .navbar {
+  margin-bottom: 0px;
+  border-radius: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.95);
+  z-index: 1001;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s; }
+  header .navbar.normal {
+    position: relative;
+    top: 0; }
+  header .navbar.fixe {
+    position: fixed;
+    top: 0;
+    animation-name: arriveNav;
+    animation-duration: .5s;
+    animation-iteration-count: 1; }
+header .navbar-brand {
+  height: 70px;
+  padding: 10px 15px; }
+  header .navbar-brand > img {
+    display: block;
+    height: 60px;
+    margin-top: -5px; }
+header .navbar-default .navbar-nav > .active > a, header .navbar-default .navbar-nav > .active > a:focus, header .navbar-default .navbar-nav > .active > a:hover {
+  background-color: transparent; }
+header .navbar-nav {
+  float: right; }
   header .navbar-nav .menu-item > a {
     padding: 25px 10px;
     color: #555;
@@ -1794,39 +1771,39 @@ header {
       header .navbar-nav .menu-item.dropdown .dropdown-menu .active a, header .navbar-nav .menu-item.dropdown .dropdown-menu .active a:focus, header .navbar-nav .menu-item.dropdown .dropdown-menu .active a:hover {
         background-color: #DDD;
         color: #444; }
-  header.transparent .navbar {
-    background-color: transparent;
+header.transparent .navbar {
+  background-color: transparent;
+  color: white; }
+  header.transparent .navbar.navbar-default {
+    border-color: transparent; }
+  header.transparent .navbar .navbar-nav .menu-item > a {
     color: white; }
-    header.transparent .navbar.navbar-default {
-      border-color: transparent; }
-    header.transparent .navbar .navbar-nav .menu-item > a {
-      color: white; }
-      header.transparent .navbar .navbar-nav .menu-item > a:hover {
-        color: white !important; }
-        header.transparent .navbar .navbar-nav .menu-item > a:hover::before {
-          border-color: white; }
-      header.transparent .navbar .navbar-nav .menu-item > a::after {
-        background-color: white; }
-      header.transparent .navbar .navbar-nav .menu-item > a.dropdown-toggle {
-        color: black; }
-    header.transparent .navbar .navbar-nav .menu-item.btn-light a {
-      color: black !important; }
-    header.transparent .navbar .navbar-nav .menu-item.active a {
-      color: #ffed00;
-      font-weight: bold; }
-      header.transparent .navbar .navbar-nav .menu-item.active a::before {
-        color: white;
-        font-weight: normal; }
-      header.transparent .navbar .navbar-nav .menu-item.active a::after {
-        background-color: #ffed00; }
-    header.transparent .navbar .navbar-nav .menu-item.dropdown a:hover {
-      background-color: transparent !important;
-      color: #ffed00 !important; }
+    header.transparent .navbar .navbar-nav .menu-item > a:hover {
+      color: white !important; }
+      header.transparent .navbar .navbar-nav .menu-item > a:hover::before {
+        border-color: white; }
+    header.transparent .navbar .navbar-nav .menu-item > a::after {
+      background-color: white; }
+    header.transparent .navbar .navbar-nav .menu-item > a.dropdown-toggle {
+      color: black; }
+  header.transparent .navbar .navbar-nav .menu-item.btn-light a {
+    color: black !important; }
+  header.transparent .navbar .navbar-nav .menu-item.active a {
+    color: #ffed00;
+    font-weight: bold; }
+    header.transparent .navbar .navbar-nav .menu-item.active a::before {
+      color: white;
+      font-weight: normal; }
+    header.transparent .navbar .navbar-nav .menu-item.active a::after {
+      background-color: #ffed00; }
+  header.transparent .navbar .navbar-nav .menu-item.dropdown a:hover {
+    background-color: transparent !important;
+    color: #ffed00 !important; }
 
 @media screen and (max-width: 585px) {
   header .static {
     display: none; } }
-@media screen and (max-width: 1180px) {
+@media screen and (max-width: 1230px) {
   #main-header .navbar {
     background: transparent;
     border-bottom: 0; }
@@ -1861,7 +1838,7 @@ header {
         background-color: #ffed00; }
     #main-header .navbar .navbar-collapse.in {
       left: 0; } }
-@media screen and (min-width: 1180px) {
+@media screen and (min-width: 1210px) {
   #main-header .navbar .navbar-collapse, #main-header .navbar .navbar-collapse.in {
     left: -300px; } }
 .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
@@ -2428,23 +2405,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 103px;
-          top: 86px; }
+          left: 251px;
+          top: 35px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 305px;
-          top: 27px; }
+          left: 6px;
+          top: 144px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 83px;
-          top: 41px; }
+          left: 308px;
+          top: 35px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 336px;
-          top: 197px; }
+          left: 39px;
+          top: 212px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 383px;
-          top: 179px; }
+          left: 146px;
+          top: 231px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 205px;
-          top: 142px; }
+          left: 366px;
+          top: 86px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);

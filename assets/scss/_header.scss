@@ -66,33 +66,8 @@ header {
 	.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
 		background-color: transparent;
 	}
-/* 	.navbar-collapse {
-	.navbar-nav {
-		float: right;
-		margin: 0;
-		justify-content: space-around;
-		.menu-item {
-			padding: 0;
-		}
-	}
-	&.collapse.in {
-		.navbar-nav {
-			float: none;
-			margin: 0;
-			display: block;
-			justify-content:center;
-			&> li > a {
-				text-align: center;
-				&::before {
-					content:"";
-				}
-			}
-		}
-	}
-} */
-
 	.navbar-nav	{
-
+		float: right;
 		// ITEM DU HEADER
 		.menu-item {
 			& > a {
@@ -280,7 +255,7 @@ header {
 	}
 }
 
-@media screen and (max-width: 1180px) {
+@media screen and (max-width: 1230px) {
 	#main-header .navbar {
 		background: transparent;
 		border-bottom: 0;
@@ -320,7 +295,7 @@ header {
 	} 
 }
 
-@media screen and (min-width: 1180px) {
+@media screen and (min-width: 1210px) {
 	#main-header .navbar .navbar-collapse, #main-header .navbar .navbar-collapse.in {
 		left: -300px;
 	}
