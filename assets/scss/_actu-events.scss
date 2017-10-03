@@ -1,33 +1,52 @@
 .actu-events {
-	padding: 100px 0;
+	padding: $body-top 0;
 	.wrapper {
 		display: flex;
 		flex-wrap: wrap;
 		.main-part {
 			margin-right: $small-pad;
+			min-width: 400px;
 		}
 		.second-part {
 			margin-left: $small-pad;
+			min-width: 400px;
 		}
 	}
 }
 
 .events {
 	&-item {
+		a {
+			text-decoration: none;
+		}
 		&__content {
 			padding: 10px 0 !important;
 			border-top: 1px solid grey;
 			margin: 0 16px !important;
+			margin-top: 16px !important;
 		}
-		&:first-child .item__content {
+		&:first-child .events-item__content {
 			border-top: 0;
+			margin-top: -10px !important;
 		}
 		&__thumbnail {
 			img {
-
+				
 			}
 		}
 	}
 }
 
-
+@media screen and (max-width: $break-point-2) {
+	.actu-events .wrapper {
+		.main-part {
+			margin-right: 0;
+		}
+		.second-part {
+			margin-left: 0;
+		}
+	}
+	.twitter-part {
+		display: none;
+	} 
+}

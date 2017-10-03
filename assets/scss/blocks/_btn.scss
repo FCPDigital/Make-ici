@@ -12,16 +12,7 @@
 	border-radius: 0;
 	@include transition(.4s);
 
-	&--light {
-		font-weight: bold;
-		color: black;
-		background-color: $color-1;
-		border-color: $color-3;
-		&:hover {
-			background-color: $color-3;
-			color: black;
-		}
-	}
+
 
 	&.btn-block {
 		width: auto;
@@ -80,6 +71,17 @@
 			animation-duration: 1s;
 			animation-timing-function: linear;
 			animation-iteration-count: infinite;
+		}
+	}
+
+	&--light {
+		font-weight: bold;
+		color: black;
+		background-color: $color-1;
+		border-color: $color-3;
+		&:hover {
+			background-color: $color-3;
+			color: black;
 		}
 	}
 
