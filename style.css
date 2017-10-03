@@ -355,16 +355,9 @@ a {
   .navbar-toggle {
     display: block; }
 
-  .navbar-collapse {
-    border-top: 1px solid transparent;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1); }
-
   .navbar-fixed-top {
     top: 0;
     border-width: 0 0 1px; }
-
-  .navbar-collapse.collapse {
-    display: none !important; }
 
   .navbar-nav {
     float: none !important;
@@ -375,10 +368,7 @@ a {
 
   .navbar-nav > li > a {
     padding-top: 10px;
-    padding-bottom: 10px; }
-
-  .collapse.in {
-    display: block !important; } }
+    padding-bottom: 10px; } }
 .page-template-template-checkout .container, .woocommerce-cart .container {
   width: 1150px; }
 
@@ -1596,246 +1586,287 @@ body.woocommerce-checkout #customer_details h3::after {
       margin: auto;
       text-align: center; }
 
-header a {
-  text-decoration: none; }
-header .container-fluid {
-  padding: 0 32px; }
-header .static {
-  background-color: #ffed00;
-  color: white;
-  padding: 15px 0;
-  font-size: 0.85em;
-  letter-spacing: 1px; }
-  header .static .actions a {
-    text-transform: uppercase;
+header {
+  /* 	.navbar-collapse {
+  	.navbar-nav {
+  		float: right;
+  		margin: 0;
+  		justify-content: space-around;
+  		.menu-item {
+  			padding: 0;
+  		}
+  	}
+  	&.collapse.in {
+  		.navbar-nav {
+  			float: none;
+  			margin: 0;
+  			display: block;
+  			justify-content:center;
+  			&> li > a {
+  				text-align: center;
+  				&::before {
+  					content:"";
+  				}
+  			}
+  		}
+  	}
+  } */ }
+  header a {
+    text-decoration: none; }
+  header .container-fluid {
+    padding: 0 32px; }
+  header .static {
+    background-color: #ffed00;
     color: white;
-    margin: 0 15px;
-    text-decoration: none;
+    padding: 15px 0;
+    font-size: 0.85em;
+    letter-spacing: 1px; }
+    header .static .actions a {
+      text-transform: uppercase;
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      -webkit-transition: 0.4s;
+      -moz-transition: 0.4s;
+      -ms-transition: 0.4s;
+      -o-transition: 0.4s;
+      transition: 0.4s; }
+      header .static .actions a:hover {
+        color: #EEE; }
+      header .static .actions a i {
+        margin-right: 10px; }
+  header .navbar-toggle {
+    font-size: 1.5em !important;
+    color: #ffed00; }
+  header .navbar {
+    margin-bottom: 0px;
+    border-radius: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    z-index: 1001;
     -webkit-transition: 0.4s;
     -moz-transition: 0.4s;
     -ms-transition: 0.4s;
     -o-transition: 0.4s;
     transition: 0.4s; }
-    header .static .actions a:hover {
-      color: #EEE; }
-    header .static .actions a i {
-      margin-right: 10px; }
-header .navbar-toggle {
-  font-size: 1.5em !important;
-  color: #ffed00; }
-header .navbar {
-  margin-bottom: 0px;
-  border-radius: 0;
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0.95);
-  z-index: 1001;
-  -webkit-transition: 0.4s;
-  -moz-transition: 0.4s;
-  -ms-transition: 0.4s;
-  -o-transition: 0.4s;
-  transition: 0.4s; }
-  header .navbar.normal {
+    header .navbar.normal {
+      position: relative;
+      top: 0; }
+    header .navbar.fixe {
+      position: fixed;
+      top: 0;
+      animation-name: arriveNav;
+      animation-duration: .5s;
+      animation-iteration-count: 1; }
+  header .navbar-brand {
+    height: 70px;
+    padding: 10px 15px; }
+    header .navbar-brand > img {
+      display: block;
+      height: 60px;
+      margin-top: -5px; }
+  header .navbar-default .navbar-nav > .active > a, header .navbar-default .navbar-nav > .active > a:focus, header .navbar-default .navbar-nav > .active > a:hover {
+    background-color: transparent; }
+  header .navbar-nav .menu-item > a {
+    padding: 25px 10px;
+    color: #555;
+    text-transform: none;
+    letter-spacing: 1px;
+    font-size: 12px;
     position: relative;
-    top: 0; }
-  header .navbar.fixe {
-    position: fixed;
-    top: 0;
-    animation-name: arriveNav;
-    animation-duration: .5s;
-    animation-iteration-count: 1; }
-header .navbar-brand {
-  height: 70px;
-  padding: 10px 15px; }
-  header .navbar-brand > img {
-    display: block;
-    height: 60px;
-    margin-top: -5px; }
-header .navbar-default .navbar-nav > .active > a, header .navbar-default .navbar-nav > .active > a:focus, header .navbar-default .navbar-nav > .active > a:hover {
-  background-color: transparent; }
-header .navbar-collapse .navbar-nav {
-  float: right;
-  margin: 0;
-  justify-content: space-around; }
-  header .navbar-collapse .navbar-nav .menu-item {
-    padding: 0; }
-header .navbar-collapse.collapse.in .navbar-nav {
-  float: none;
-  margin: 0;
-  display: block;
-  justify-content: center; }
-  header .navbar-collapse.collapse.in .navbar-nav > li > a {
-    text-align: center; }
-    header .navbar-collapse.collapse.in .navbar-nav > li > a::before {
-      content: ""; }
-header .navbar-nav .menu-item > a {
-  padding: 25px 10px;
-  color: #555;
-  text-transform: none;
-  letter-spacing: 1px;
-  font-size: 12px;
-  position: relative;
-  -webkit-transition: 0.4s;
-  -moz-transition: 0.4s;
-  -ms-transition: 0.4s;
-  -o-transition: 0.4s;
-  transition: 0.4s; }
-  header .navbar-nav .menu-item > a .fa.fa-home {
-    margin-top: 3px;
-    font-size: 1.2em; }
-  header .navbar-nav .menu-item > a::after {
-    content: "";
-    display: block;
-    width: 0;
-    height: 1px;
-    position: absolute;
-    background-color: #000;
-    left: 12px;
-    bottom: 22px;
-    width: calc(100% - 25px);
     -webkit-transition: 0.4s;
     -moz-transition: 0.4s;
     -ms-transition: 0.4s;
     -o-transition: 0.4s;
-    transition: 0.4s;
-    -webkit-transform: scaleX(0);
-    -moz-transform: scaleX(0);
-    -ms-transform: scaleX(0);
-    -o-transform: scaleX(0);
-    transform: scaleX(0); }
-  header .navbar-nav .menu-item > a::before {
-    content: "|";
-    position: absolute;
-    left: -7px;
-    font-weight: bold; }
-  header .navbar-nav .menu-item > a:hover {
-    color: black !important; }
-    header .navbar-nav .menu-item > a:hover::after {
-      -webkit-transform: scaleX(1);
-      -moz-transform: scaleX(1);
-      -ms-transform: scaleX(1);
-      -o-transform: scaleX(1);
-      transform: scaleX(1); }
-    header .navbar-nav .menu-item > a:hover::before {
-      color: #777; }
-header .navbar-nav .menu-item.current-menu-item a::after {
-  -webkit-transform: scaleX(1);
-  -moz-transform: scaleX(1);
-  -ms-transform: scaleX(1);
-  -o-transform: scaleX(1);
-  transform: scaleX(1); }
-header .navbar-nav .menu-item:first-child a {
-  padding-left: 0 !important; }
-header .navbar-nav .menu-item:last-child a {
-  padding-right: 0 !important; }
-header .navbar-nav .menu-item:first-child a::before {
-  content: ""; }
-header .navbar-nav .menu-item.menu-item-home a {
-  margin-right: 10px;
-  padding-right: 0; }
-header .navbar-nav .menu-item.btn.btn-light {
-  padding: 10px 20px;
-  height: 45px;
-  margin-top: 12px; }
-  header .navbar-nav .menu-item.btn.btn-light:hover {
-    background-color: #ffed00; }
-    header .navbar-nav .menu-item.btn.btn-light:hover a {
+    transition: 0.4s; }
+    header .navbar-nav .menu-item > a .fa.fa-home {
+      margin-top: 3px;
+      font-size: 1.2em; }
+    header .navbar-nav .menu-item > a::after {
+      content: "";
+      display: block;
+      width: 0;
+      height: 1px;
+      position: absolute;
+      background-color: #000;
+      left: 12px;
+      bottom: 22px;
+      width: calc(100% - 25px);
+      -webkit-transition: 0.4s;
+      -moz-transition: 0.4s;
+      -ms-transition: 0.4s;
+      -o-transition: 0.4s;
+      transition: 0.4s;
+      -webkit-transform: scaleX(0);
+      -moz-transform: scaleX(0);
+      -ms-transform: scaleX(0);
+      -o-transform: scaleX(0);
+      transform: scaleX(0); }
+    header .navbar-nav .menu-item > a::before {
+      content: "|";
+      position: absolute;
+      left: -7px;
+      font-weight: bold; }
+    header .navbar-nav .menu-item > a:hover {
+      color: black !important; }
+      header .navbar-nav .menu-item > a:hover::after {
+        -webkit-transform: scaleX(1);
+        -moz-transform: scaleX(1);
+        -ms-transform: scaleX(1);
+        -o-transform: scaleX(1);
+        transform: scaleX(1); }
+      header .navbar-nav .menu-item > a:hover::before {
+        color: #777; }
+  header .navbar-nav .menu-item.current-menu-item a::after {
+    -webkit-transform: scaleX(1);
+    -moz-transform: scaleX(1);
+    -ms-transform: scaleX(1);
+    -o-transform: scaleX(1);
+    transform: scaleX(1); }
+  header .navbar-nav .menu-item:first-child a {
+    padding-left: 0 !important; }
+  header .navbar-nav .menu-item:last-child a {
+    padding-right: 0 !important; }
+  header .navbar-nav .menu-item:first-child a::before {
+    content: ""; }
+  header .navbar-nav .menu-item.menu-item-home a {
+    margin-right: 10px;
+    padding-right: 0; }
+  header .navbar-nav .menu-item.btn.btn-light {
+    padding: 10px 20px;
+    height: 45px;
+    margin-top: 12px; }
+    header .navbar-nav .menu-item.btn.btn-light:hover {
+      background-color: #ffed00; }
+      header .navbar-nav .menu-item.btn.btn-light:hover a {
+        color: black; }
+    header .navbar-nav .menu-item.btn.btn-light a {
+      font-size: 13px;
+      padding: 0;
+      font-weight: bold;
       color: black; }
-  header .navbar-nav .menu-item.btn.btn-light a {
-    font-size: 13px;
-    padding: 0;
+      header .navbar-nav .menu-item.btn.btn-light a::before, header .navbar-nav .menu-item.btn.btn-light a::after {
+        display: none !important; }
+  header .navbar-nav .menu-item.dropdown {
+    height: 45px;
+    margin: 12px 10px;
+    background-color: #ffed00;
     font-weight: bold;
-    color: black; }
-    header .navbar-nav .menu-item.btn.btn-light a::before, header .navbar-nav .menu-item.btn.btn-light a::after {
-      display: none !important; }
-header .navbar-nav .menu-item.dropdown {
-  height: 45px;
-  margin: 12px 10px;
-  background-color: #ffed00;
-  font-weight: bold;
-  border: 2px solid #ffed00;
-  -webkit-transition: 0.4s;
-  -moz-transition: 0.4s;
-  -ms-transition: 0.4s;
-  -o-transition: 0.4s;
-  transition: 0.4s; }
-  header .navbar-nav .menu-item.dropdown:hover {
-    background-color: transparent; }
-  header .navbar-nav .menu-item.dropdown a {
-    padding: 0;
-    color: black;
-    padding: 12px 10px;
-    background-color: #ffed00 !important; }
-    header .navbar-nav .menu-item.dropdown a::before, header .navbar-nav .menu-item.dropdown a::after {
-      display: none !important; }
-    header .navbar-nav .menu-item.dropdown a:hover {
+    border: 2px solid #ffed00;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s; }
+    header .navbar-nav .menu-item.dropdown:hover {
+      background-color: transparent; }
+    header .navbar-nav .menu-item.dropdown a {
+      padding: 0;
+      color: black;
+      padding: 12px 10px;
+      background-color: #ffed00 !important; }
+      header .navbar-nav .menu-item.dropdown a::before, header .navbar-nav .menu-item.dropdown a::after {
+        display: none !important; }
+      header .navbar-nav .menu-item.dropdown a:hover {
+        background-color: transparent !important;
+        color: #ffed00 !important; }
+    header .navbar-nav .menu-item.dropdown .dropdown-menu {
+      margin-top: 10px;
+      border: 0;
+      padding: 0; }
+      header .navbar-nav .menu-item.dropdown .dropdown-menu li {
+        text-align: center; }
+        header .navbar-nav .menu-item.dropdown .dropdown-menu li.active {
+          background-color: #ffed00; }
+        header .navbar-nav .menu-item.dropdown .dropdown-menu li a {
+          background-color: transparent !important;
+          padding: 10px 10%;
+          color: #000;
+          -webkit-transition: 0.4s;
+          -moz-transition: 0.4s;
+          -ms-transition: 0.4s;
+          -o-transition: 0.4s;
+          transition: 0.4s; }
+          header .navbar-nav .menu-item.dropdown .dropdown-menu li a:hover {
+            color: black;
+            background-color: #ffed00;
+            color: white; }
+      header .navbar-nav .menu-item.dropdown .dropdown-menu .active a, header .navbar-nav .menu-item.dropdown .dropdown-menu .active a:focus, header .navbar-nav .menu-item.dropdown .dropdown-menu .active a:hover {
+        background-color: #DDD;
+        color: #444; }
+  header.transparent .navbar {
+    background-color: transparent;
+    color: white; }
+    header.transparent .navbar.navbar-default {
+      border-color: transparent; }
+    header.transparent .navbar .navbar-nav .menu-item > a {
+      color: white; }
+      header.transparent .navbar .navbar-nav .menu-item > a:hover {
+        color: white !important; }
+        header.transparent .navbar .navbar-nav .menu-item > a:hover::before {
+          border-color: white; }
+      header.transparent .navbar .navbar-nav .menu-item > a::after {
+        background-color: white; }
+      header.transparent .navbar .navbar-nav .menu-item > a.dropdown-toggle {
+        color: black; }
+    header.transparent .navbar .navbar-nav .menu-item.btn-light a {
+      color: black !important; }
+    header.transparent .navbar .navbar-nav .menu-item.active a {
+      color: #ffed00;
+      font-weight: bold; }
+      header.transparent .navbar .navbar-nav .menu-item.active a::before {
+        color: white;
+        font-weight: normal; }
+      header.transparent .navbar .navbar-nav .menu-item.active a::after {
+        background-color: #ffed00; }
+    header.transparent .navbar .navbar-nav .menu-item.dropdown a:hover {
       background-color: transparent !important;
       color: #ffed00 !important; }
-  header .navbar-nav .menu-item.dropdown .dropdown-menu {
-    margin-top: 10px;
-    border: 0;
-    padding: 0; }
-    header .navbar-nav .menu-item.dropdown .dropdown-menu li {
-      text-align: center; }
-      header .navbar-nav .menu-item.dropdown .dropdown-menu li.active {
-        background-color: #ffed00; }
-      header .navbar-nav .menu-item.dropdown .dropdown-menu li a {
-        background-color: transparent !important;
-        padding: 10px 10%;
-        color: #000;
-        -webkit-transition: 0.4s;
-        -moz-transition: 0.4s;
-        -ms-transition: 0.4s;
-        -o-transition: 0.4s;
-        transition: 0.4s; }
-        header .navbar-nav .menu-item.dropdown .dropdown-menu li a:hover {
-          color: black;
-          background-color: #ffed00;
-          color: white; }
-    header .navbar-nav .menu-item.dropdown .dropdown-menu .active a, header .navbar-nav .menu-item.dropdown .dropdown-menu .active a:focus, header .navbar-nav .menu-item.dropdown .dropdown-menu .active a:hover {
-      background-color: #DDD;
-      color: #444; }
-header.transparent .navbar {
-  background-color: transparent;
-  color: white; }
-  header.transparent .navbar.navbar-default {
-    border-color: transparent; }
-  header.transparent .navbar .navbar-nav .menu-item > a {
-    color: white; }
-    header.transparent .navbar .navbar-nav .menu-item > a:hover {
-      color: white !important; }
-      header.transparent .navbar .navbar-nav .menu-item > a:hover::before {
-        border-color: white; }
-    header.transparent .navbar .navbar-nav .menu-item > a::after {
-      background-color: white; }
-    header.transparent .navbar .navbar-nav .menu-item > a.dropdown-toggle {
-      color: black; }
-  header.transparent .navbar .navbar-nav .menu-item.btn-light a {
-    color: black !important; }
-  header.transparent .navbar .navbar-nav .menu-item.active a {
-    color: #ffed00;
-    font-weight: bold; }
-    header.transparent .navbar .navbar-nav .menu-item.active a::before {
-      color: white;
-      font-weight: normal; }
-    header.transparent .navbar .navbar-nav .menu-item.active a::after {
-      background-color: #ffed00; }
-  header.transparent .navbar .navbar-nav .menu-item.dropdown a:hover {
-    background-color: transparent !important;
-    color: #ffed00 !important; }
 
 @media screen and (max-width: 585px) {
   header .static {
     display: none; } }
-@media screen and (max-width: 1160px) {
-  header .navbar-collapse .navbar-nav {
-    float: none;
-    margin: 0;
-    display: block;
-    justify-content: center; }
-    header .navbar-collapse .navbar-nav > li > a {
+@media screen and (max-width: 1180px) {
+  #main-header .navbar {
+    background: transparent;
+    border-bottom: 0; }
+
+  #main-header .navbar .navbar-collapse {
+    position: fixed;
+    height: 100vh !important;
+    width: 300px;
+    left: -300px;
+    top: 0;
+    border-right: 1px solid #ffed00;
+    max-height: none;
+    color: black !important;
+    padding: 0;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+    background-color: white; }
+    #main-header .navbar .navbar-collapse * {
+      color: black !important; }
+      #main-header .navbar .navbar-collapse *:hover {
+        color: black !important; }
+    #main-header .navbar .navbar-collapse a {
+      padding: 20px !important;
       text-align: center; }
-      header .navbar-collapse .navbar-nav > li > a::before {
-        content: ""; } }
+      #main-header .navbar .navbar-collapse a::after {
+        display: none !important; }
+      #main-header .navbar .navbar-collapse a:hover {
+        font-weight: bold;
+        background-color: #ffed00; }
+    #main-header .navbar .navbar-collapse.in {
+      left: 0; } }
+@media screen and (min-width: 1180px) {
+  #main-header .navbar .navbar-collapse, #main-header .navbar .navbar-collapse.in {
+    left: -300px; } }
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+  color: black; }
+
 footer {
   background-color: #ffed00;
   padding: 15px;
@@ -2397,23 +2428,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 371px;
-          top: 157px; }
+          left: 103px;
+          top: 86px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 269px;
-          top: 61px; }
+          left: 305px;
+          top: 27px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 286px;
-          top: 46px; }
+          left: 83px;
+          top: 41px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 201px;
-          top: 200px; }
+          left: 336px;
+          top: 197px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 6px;
-          top: 7px; }
+          left: 383px;
+          top: 179px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 399px;
-          top: 88px; }
+          left: 205px;
+          top: 142px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);

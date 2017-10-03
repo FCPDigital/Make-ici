@@ -66,30 +66,30 @@ header {
 	.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
 		background-color: transparent;
 	}
-	.navbar-collapse {
-		.navbar-nav {
-			float: right;
-			margin: 0;
-			justify-content: space-around;
-			.menu-item {
-				padding: 0;
-			}
+/* 	.navbar-collapse {
+	.navbar-nav {
+		float: right;
+		margin: 0;
+		justify-content: space-around;
+		.menu-item {
+			padding: 0;
 		}
-		&.collapse.in {
-			.navbar-nav {
-				float: none;
-				margin: 0;
-				display: block;
-				justify-content:center;
-				&> li > a {
-					text-align: center;
-					&::before {
-						content:"";
-					}
+	}
+	&.collapse.in {
+		.navbar-nav {
+			float: none;
+			margin: 0;
+			display: block;
+			justify-content:center;
+			&> li > a {
+				text-align: center;
+				&::before {
+					content:"";
 				}
 			}
 		}
 	}
+} */
 
 	.navbar-nav	{
 
@@ -280,19 +280,55 @@ header {
 	}
 }
 
-@media screen and (max-width: $break-point-1){
-	header .navbar-collapse {
-		.navbar-nav {
-			float: none;
-			margin: 0;
-			display: block;
-			justify-content:center;
-			&> li > a {
-				text-align: center;
-				&::before {
-					content:"";
-				}
+@media screen and (max-width: 1180px) {
+	#main-header .navbar {
+		background: transparent;
+		border-bottom: 0;
+	}
+	#main-header .navbar .navbar-collapse {
+		position: fixed;
+		height: 100vh !important; 			// Override
+		width: 300px;
+		left: -300px;
+		top: 0;
+		border-right: 1px solid $color-3;
+		max-height: none;					// Override
+		color: black !important;
+		padding: 0;
+		@include transition(.5s);
+		background-color: white; 
+		* {
+			color: black !important; 		// Override
+			&:hover {
+				color: black !important;	// Override
 			}
 		}
-	}
+		a {
+			padding: 20px !important;
+			text-align: center;
+			&::after {
+				display: none !important;
+			}
+			&:hover {
+				font-weight: bold;
+				background-color: $color-3; 	// Override
+			}
+		}
+		&.in {
+			left: 0;
+		}
+	} 
 }
+
+@media screen and (min-width: 1180px) {
+	#main-header .navbar .navbar-collapse, #main-header .navbar .navbar-collapse.in {
+		left: -300px;
+	}
+
+} 
+
+//Bouton burger
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+	color: black;
+}
+
