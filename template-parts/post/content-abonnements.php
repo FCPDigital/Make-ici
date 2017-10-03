@@ -28,14 +28,14 @@ Ce template est appelé notamment dans archive-abonnement.php
 		<?php // Sidebar de droite ?>
 		<div class="archive-sidebar">
 			
-			<?php if (!get_field("cost_per_month") || get_field("cost_per_month") == "") { ?>
+			<?php if (get_field("cost_per_month") && get_field("cost_per_month") != "") { ?>
 			<div class="cost_per_month">
 				<i class="fa fa-eur" aria-hidden="true"></i>
 				<p>Coût mensuel :<br><?php echo get_field("cost_per_month"); ?></p>
 			</div>
 			<?php } ?>
 			
-			<?php if (!get_field("cost_registration") || get_field("cost_registration") == "") { ?>
+			<?php if (get_field("cost_registration") && get_field("cost_registration") != "") { ?>
 			<div class="cost_registration">
 				<i class="fa fa-inscription" aria-hidden="true"></i>
 				<p>Frais d'inscription :<br><?php echo get_field("cost_registration"); ?></p>
