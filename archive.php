@@ -1,30 +1,26 @@
 <?php get_header(); ?>
 
 <main id="archive" class="site-main" role="main">
-	<div class="landing">
 		<div class="container">
-			<h1 class="left-full-border"><?php echo single_cat_title(); ?></h1>
-
-			<?php $count = $GLOBALS['wp_query']->post_count; ?>
-			<div id="main-carousel" class="carousel <?php if($count > 4){echo 'active-control';} ?>">
-				<div class="carousel-body">
-					<div class="archive-head carousel-container">
-						<?php	/* Start the Loop */
-							while ( have_posts() ) : the_post();
-								get_template_part( 'template-parts/post/content-head', get_post_format() );
-								$count++;
-							endwhile;	?>
-					</div>
-				</div>
-
-				<div class="carousel-control">
-					<p class="carousel-control-mention">Voir d'autres abonnements</p>
-					<a href="#" class="carousel-control-btn" data-direction="left"></a>
-					<a href="#" class="carousel-control-btn" data-direction="right"></a>
-				</div>
+			<?php 
+			$title = single_cat_title( '', false );
+			if ($title == "") $title = "Evenements";
+			if ($title == "Non classé") $title = "Articles";
+			 ?>
+			<h1 class="main-title left-full-border"><?php echo $title ?></h1>
+			<div class="items">
+				<?php	/* Start the Loop */
+				$count = 0;
+				while ( have_posts() ) : the_post();
+					set_query_var("item", get_post());
+					$size = ($count % 5 == 0) ? 'item--wide' : 'item--small';
+					set_query_var("size", $size);
+					get_template_part( 'template-parts/post/content', "head-post" );
+					$count++;
+				endwhile;	?>
 			</div>
+			
 		</div>
-	</div>
 </main>
 
 <?php get_footer();

@@ -640,16 +640,18 @@ a {
   .item__content {
     padding: 10px 16px;
     color: white;
+    line-height: 1.5em;
     font-size: 11px; }
     .item__content p {
       color: white;
       margin: 0;
       padding: 0;
-      font-size: 11px; }
+      font-size: 11px;
+      line-height: 1.5em; }
     .item__content--no-pad {
       padding: 10px 0; }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 860px) {
   .item--wide, .item--small, .item--tall {
     width: calc(100% - 15px); } }
 /*
@@ -657,7 +659,11 @@ Style des archive.php, inclue les abonnements, les entreprises, les formations.
 */
 h1 {
   font-size: 2.5em;
-  font-weight: bold; }
+  font-weight: bold;
+  color: white; }
+
+#archive {
+  padding-top: 120px; }
 
 .section-post {
   min-height: 600px;
@@ -2381,23 +2387,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 130px;
-          top: 78px; }
+          left: 318px;
+          top: 192px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 25px;
-          top: 62px; }
+          left: 217px;
+          top: 236px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 188px;
-          top: 242px; }
+          left: 24px;
+          top: 55px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 240px;
-          top: 229px; }
+          left: 327px;
+          top: 70px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 181px;
-          top: 214px; }
+          left: 169px;
+          top: 152px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 183px;
-          top: 41px; }
+          left: 262px;
+          top: 38px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);

@@ -11,19 +11,11 @@ get_header(); ?>
 			<h1 class="main-title">Actualités</h1>
 			
 			<div class="items">
-
-				<div class="item item--wide">
-					<div class="item__banner">
-						<p class="item__title item__title--top-left">Incubateur de Made in france</p>
-						<span class="item__corner item__corner--bottom-right">20 juin 2017</span>
-					</div>
-					<div class="item__thumbnail">
-						<img src="http://a.dilcdn.com/bl/wp-content/uploads/sites/6/2017/05/yoda-advice-always-in-motion-is-the-future.jpg" alt="">
-					</div>
-					<div class="item__content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus assumenda optio esse eaque rem veniam et nostrum, distinctio animi. Dolorum a atque distinctio molestiae pariatur neque inventore quod cum, reprehenderit!</p>
-					</div>
-				</div>
+				<?php $actus = get_posts([ "limit" => 4 ]); 
+				set_query_var("item", $actus[0]);
+				set_query_var("size", "item--wide");
+				get_template_part( 'template-parts/post/content', "head-post");
+				?>
 
 				<div class="item item--tall item--small item--border">
 					<div class="item__banner item__banner--dark">
@@ -31,9 +23,7 @@ get_header(); ?>
 					</div>
 					<div class="item__content">
 						<div class="twitter-widget">
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident nam a, excepturi explicabo obcaecati saepe facilis? Atque error deserunt molestias quo quia animi recusandae. Fugit pariatur odio totam sunt maxime.
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis voluptates veniam qui aliquam, dolorem atque laborum laudantium blanditiis quisquam minus quas ea labore itaque illo iusto ipsam tenetur nostrum excepturi.
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim sapiente excepturi deleniti provident, ad quaerat commodi adipisci, consectetur beatae nesciunt perspiciatis odio dicta ipsam, facilis et vero! Magnam, distinctio saepe!
+						<?php dynamic_sidebar( 'actue-event' ); ?>
 						</div>
 						<div class="item__action">
 							<a href="twitter url" class="btn btn--light">Tous les tweets</a>
@@ -41,44 +31,19 @@ get_header(); ?>
 					</div>
 				</div>
 				
-				<div class="item item--small">
-					<div class="item__banner">
-						<p class="item__title item__title--top-left">Incubateur de Made in france</p>
-						<span class="item__corner item__corner--bottom-right">20 juin 2017</span>
-					</div>
-					<div class="item__thumbnail">
-						<img src="http://a.dilcdn.com/bl/wp-content/uploads/sites/6/2017/05/yoda-advice-always-in-motion-is-the-future.jpg" alt="">
-					</div>
-					<div class="item__content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus assumenda </p>
-					</div>
-				</div>
-
-				<div class="item item--small">
-					<div class="item__banner">
-						<p class="item__title item__title--top-left">Incubateur de Made in france</p>
-						<span class="item__corner item__corner--bottom-right">20 juin 2017</span>
-					</div>
-					<div class="item__thumbnail">
-						<img src="http://a.dilcdn.com/bl/wp-content/uploads/sites/6/2017/05/yoda-advice-always-in-motion-is-the-future.jpg" alt="">
-					</div>
-					<div class="item__content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus assumenda </p>
-					</div>
-				</div>
-
-				<div class="item item--wide">
-					<div class="item__banner">
-						<p class="item__title item__title--top-left">Incubateur de Made in france</p>
-						<span class="item__corner item__corner--bottom-right">20 juin 2017</span>
-					</div>
-					<div class="item__thumbnail">
-						<img src="http://a.dilcdn.com/bl/wp-content/uploads/sites/6/2017/05/yoda-advice-always-in-motion-is-the-future.jpg" alt="">
-					</div>
-					<div class="item__content">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus assumenda optio esse eaque rem veniam et nostrum, distinctio animi. Dolorum a atque distinctio molestiae pariatur neque inventore quod cum, reprehenderit!</p>
-					</div>
-				</div>
+				<?php 
+				set_query_var("item", $actus[1]);
+				set_query_var("size", "item--small");
+				get_template_part( 'template-parts/post/content', "head-post");
+		
+				set_query_var("item", $actus[2]);
+				set_query_var("size", "item--small");
+				get_template_part( 'template-parts/post/content', "head-post");
+				
+				set_query_var("item", $actus[3]);
+				set_query_var("size", "item--wide");
+				get_template_part( 'template-parts/post/content', "head-post");
+				?>
 				<div class="clr"></div>
 			</div>
 

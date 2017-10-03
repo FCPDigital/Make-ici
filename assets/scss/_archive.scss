@@ -6,12 +6,17 @@ Style des archive.php, inclue les abonnements, les entreprises, les formations.
 h1 {
 	font-size: 2.5em;
 	font-weight: bold;
+	color: white;
+}
+
+#archive {
+	padding-top: 120px;
 }
 
 .section-post {
 	min-height: 600px;
 	padding: 50px 0;
-	padding-top: 120px;
+	padding-top: $body-top;
 	background-color: rgba(#28201c, 0.85);
 	background-position: center;
 	background-repeat: no-repeat;

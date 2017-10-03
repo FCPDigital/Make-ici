@@ -106,12 +106,15 @@ $small-size: 11px;
 	&__content {
 		padding: $padding-top $padding-side;
 		color: white;
+		line-height: 1.5em;
 		font-size: $small-size;
+
 		p {
 			color: white;
 			margin:0;
 			padding:0;
 			font-size: $small-size;
+			line-height: 1.5em;
 		}
 		&--no-pad {
 			padding: $padding-top 0;
@@ -120,7 +123,7 @@ $small-size: 11px;
 }
 
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: $break-point-2) {
 	.item {
 		&--wide, &--small, &--tall {
 			width: calc(100% - #{$space});

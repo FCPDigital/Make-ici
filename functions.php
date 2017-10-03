@@ -758,6 +758,10 @@ function get_excerpt_truncate($post, $value){
 	return wp_trim_words( get_the_excerpt($post), $value, "...");
 }
 
+function truncate_content($content, $value) {
+	return strip_tags(substr( $content, 0, $value ));
+}
+
 function init_sidebar(){
 	register_sidebar( array(
 		 'name'					=> __( 'Footer 1', 'makeici' ),
@@ -767,25 +771,32 @@ function init_sidebar(){
 		 'after_widget'	=> '</aside>',
 		 'before_title'	=> '<h3 class="widget-title">',
 		 'after_title'	 => '</h3>',
- ));
- register_sidebar( array(
-		 'name'					=> __( 'Footer 2', 'makeici' ),
-		 'id'						=> 'sidebar-2',
-		 'description'	 => __( 'Appears in the footer section of the site.', 'makeici' ),
-		 'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		 'after_widget'	=> '</aside>',
-		 'before_title'	=> '<h3 class="widget-title">',
-		 'after_title'	 => '</h3>',
- ));
- register_sidebar( array(
-		'name'					=> __( 'Footer 3', 'makeici' ),
-		'id'						=> 'sidebar-3',
-		'description'	 => __( 'Appears in the footer section of the site.', 'makeici' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'	=> '</aside>',
-		'before_title'	=> '<h3 class="widget-title">',
-		'after_title'	 => '</h3>',
- ));
+ 	));
+	 register_sidebar( array(
+			 'name'					=> __( 'Footer 2', 'makeici' ),
+			 'id'						=> 'sidebar-2',
+			 'description'	 => __( 'Appears in the footer section of the site.', 'makeici' ),
+			 'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			 'after_widget'	=> '</aside>',
+			 'before_title'	=> '<h3 class="widget-title">',
+			 'after_title'	 => '</h3>',
+	 ));
+	 register_sidebar( array(
+			'name'					=> __( 'Footer 3', 'makeici' ),
+			'id'						=> 'sidebar-3',
+			'description'	 => __( 'Appears in the footer section of the site.', 'makeici' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'	=> '</aside>',
+			'before_title'	=> '<h3 class="widget-title">',
+			'after_title'	 => '</h3>',
+	 ));
+	 register_sidebar( array(
+			'name'					=> __( 'Actu-Event', 'makeici' ),
+			'id'						=> 'actue-event',
+			'description'	 => __( 'Apparait dans la page Actu & Evenements', 'makeici' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'	=> '</aside>'
+	 ));
 }
 
 add_action( 'widgets_init', 'init_sidebar' );
