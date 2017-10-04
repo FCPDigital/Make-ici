@@ -445,9 +445,6 @@ h1 {
 
 
 @media screen and (max-width: $break-point-1){
-	.timeline {
-		left: 16px;
-	}
 	.loop-archive .archive-body-item {
 		.container {
 			@include transform(translateX($big-pad));
@@ -474,14 +471,6 @@ h1 {
 }
 
 @media screen and (max-width:860px){
-	.timeline {
-		visibility: hidden;
-		left: -100px;
-	}
-	.timeline {
-		visibility: hidden;
-		left: -100px;
-	}
 	.loop-archive .archive-body-item {
 		.container {
 			@include transform(translateX(0));
@@ -523,14 +512,6 @@ h1 {
 }
 
 @media screen and (max-width:860px){
-	.timeline {
-		visibility: hidden;
-		left: -100px;
-	}
-	.timeline {
-		visibility: hidden;
-		left: -100px;
-	}
 	.loop-archive .archive-body-item {
 		.container {
 			@include transform(translateX(0));

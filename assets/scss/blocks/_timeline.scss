@@ -1,0 +1,75 @@
+.timeline {
+	position: fixed;
+	height: calc(100vh - 120px);
+	width: 110px;
+	border-right: 1px solid $color-3;
+	z-index: 998;
+	top: 95px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	left: calc(50% - 625px);
+	@include transition(.4s);
+	&.hide-state {
+		left: -150px;
+	}
+	.timeline-item {
+		left: 0;
+		color: $color-3;
+		flex: 1;
+		width: auto;
+		display: block;
+		max-height: 14px;
+		text-align: right;
+		padding-right: 20px;
+		position: relative;
+		font-size: 12px;
+		letter-spacing: 1px;
+		cursor: pointer;
+		text-decoration: none;
+		opacity: .6;
+		@include transition(.4s);
+		&.active {
+			opacity: 1;
+			&::after	{
+				@include transform(translateX(50%) translateY(-50%) scale(1.6));
+			}
+		}
+		&::after {
+			content:"";
+			position: absolute;
+			top: 50%;
+			right: 0;
+			width: 10px;
+			height: 10px;
+			border-radius: 50%;
+			background-color: $color-3;
+			@include transition(.4s);
+			@include transform(translateX(50%) translateY(-50%) scale(1));
+		}
+	}
+	.active-point {
+		position: absolute;
+		display: block;
+		width: 15px;
+		height: 15px;
+		background-color: $color-3;
+		border-radius: 50%;
+		right: -7px;
+		top: 0;
+		@include transition(.4s);
+	}
+}
+
+@media screen and (max-width: $break-point-1){
+	.timeline {
+		left: -150px;
+	}
+}
+
+@media screen and (max-width:860px){
+	.timeline {
+		visibility: hidden;
+		left: -150px;
+	}
+}

@@ -384,11 +384,6 @@ a {
 
   .page-template-template-checkout .container, .woocommerce-cart .container {
     width: 100%; } }
-.wpcf7 .input-checkbox-container .wpcf7-list-item {
-  line-height: 1em;
-  display: inline-block;
-  margin: 10px; }
-
 @font-face {
   font-family: "CenturyGothic Bold";
   src: url("assets/fonts/CenturyGothic_Bold.ttf"); }
@@ -659,6 +654,93 @@ a {
 @media screen and (max-width: 860px) {
   .item--wide, .item--small, .item--tall {
     width: calc(100% - 15px); } }
+.timeline {
+  position: fixed;
+  height: calc(100vh - 120px);
+  width: 110px;
+  border-right: 1px solid #ffed00;
+  z-index: 998;
+  top: 95px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  left: calc(50% - 625px);
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s; }
+  .timeline.hide-state {
+    left: -150px; }
+  .timeline .timeline-item {
+    left: 0;
+    color: #ffed00;
+    flex: 1;
+    width: auto;
+    display: block;
+    max-height: 14px;
+    text-align: right;
+    padding-right: 20px;
+    position: relative;
+    font-size: 12px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    text-decoration: none;
+    opacity: .6;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s; }
+    .timeline .timeline-item.active {
+      opacity: 1; }
+      .timeline .timeline-item.active::after {
+        -webkit-transform: translateX(50%) translateY(-50%) scale(1.6);
+        -moz-transform: translateX(50%) translateY(-50%) scale(1.6);
+        -ms-transform: translateX(50%) translateY(-50%) scale(1.6);
+        -o-transform: translateX(50%) translateY(-50%) scale(1.6);
+        transform: translateX(50%) translateY(-50%) scale(1.6); }
+    .timeline .timeline-item::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #ffed00;
+      -webkit-transition: 0.4s;
+      -moz-transition: 0.4s;
+      -ms-transition: 0.4s;
+      -o-transition: 0.4s;
+      transition: 0.4s;
+      -webkit-transform: translateX(50%) translateY(-50%) scale(1);
+      -moz-transform: translateX(50%) translateY(-50%) scale(1);
+      -ms-transform: translateX(50%) translateY(-50%) scale(1);
+      -o-transform: translateX(50%) translateY(-50%) scale(1);
+      transform: translateX(50%) translateY(-50%) scale(1); }
+  .timeline .active-point {
+    position: absolute;
+    display: block;
+    width: 15px;
+    height: 15px;
+    background-color: #ffed00;
+    border-radius: 50%;
+    right: -7px;
+    top: 0;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s; }
+
+@media screen and (max-width: 1160px) {
+  .timeline {
+    left: -150px; } }
+@media screen and (max-width: 860px) {
+  .timeline {
+    visibility: hidden;
+    left: -150px; } }
 /*
 Style des archive.php, inclue les abonnements, les entreprises, les formations.
 */
@@ -1065,9 +1147,6 @@ h1 {
   padding-right: 0; }
 
 @media screen and (max-width: 1160px) {
-  .timeline {
-    left: 16px; }
-
   .loop-archive .archive-body-item .container {
     -webkit-transform: translateX(64px);
     -moz-transform: translateX(64px);
@@ -1087,14 +1166,6 @@ h1 {
       width: 100%;
       text-align: center; } }
 @media screen and (max-width: 860px) {
-  .timeline {
-    visibility: hidden;
-    left: -100px; }
-
-  .timeline {
-    visibility: hidden;
-    left: -100px; }
-
   .loop-archive .archive-body-item .container {
     -webkit-transform: translateX(0);
     -moz-transform: translateX(0);
@@ -1127,14 +1198,6 @@ h1 {
     flex-direction: column;
     justify-content: center; } }
 @media screen and (max-width: 860px) {
-  .timeline {
-    visibility: hidden;
-    left: -100px; }
-
-  .timeline {
-    visibility: hidden;
-    left: -100px; }
-
   .loop-archive .archive-body-item .container {
     -webkit-transform: translateX(0);
     -moz-transform: translateX(0);
@@ -1195,7 +1258,7 @@ Ces styles sont davantage propre aux fonctionalité de Woocommerce natif
   background-repeat: no-repeat;
   background-position: center;
   background-size: 70%;
-  z-index: 10003;
+  z-index: 10001;
   color: transparent;
   background-image: url("assets/images/cart.png"); }
   #cart-btn[data-count]::after {
@@ -2413,23 +2476,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 6px;
-          top: 89px; }
+          left: 383px;
+          top: 16px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 51px;
-          top: 145px; }
+          left: 328px;
+          top: 16px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 52px;
-          top: 161px; }
+          left: 349px;
+          top: 170px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 8px;
-          top: 198px; }
+          left: 366px;
+          top: 14px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 379px;
-          top: 186px; }
+          left: 95px;
+          top: 248px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 319px;
-          top: 177px; }
+          left: 143px;
+          top: 41px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);
@@ -2564,7 +2627,7 @@ form select {
   min-height: 600px;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.8);
-  z-index: 1000;
+  z-index: 1002;
   -webkit-transition: 0.4s;
   -moz-transition: 0.4s;
   -ms-transition: 0.4s;

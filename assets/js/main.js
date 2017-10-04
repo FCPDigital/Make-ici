@@ -274,13 +274,6 @@ AwesomePanel = {
 		if(n) this.activeBtn.setAttribute("style", setPrefix("transform", "translateY("+n.offsetTop+"px)"));
 	},
 
-	//Attend un peu et replace l'item actif de la timeline (callback window.onresize)
-	resizeEvent:function(){
-		setTimeout(function(){
-			var c = document.querySelector(".timeline-item.active");
-			AwesomePanel.activeBtn.setAttribute("style", setPrefix("transform", "translateY("+c.offsetTop+"px)"));
-		}, 300)
-	},
 
 	//Cache la timeline
 	hideTimeline:function(){
@@ -344,6 +337,19 @@ AwesomePanel = {
 			absDiff: Math.abs(scrollTop - y)
 		};
 	},
+
+	//Attend un peu et replace l'item actif de la timeline (callback window.onresize)
+	resizeEvent:function(){
+/*		if(window.innerWidth > 1160) {
+			var value = (window.innerWidth - 1000) / 4;
+			AwesomePanel.timeline.setAttribute("style", "left:" + value + "px;");
+		}*/
+		setTimeout(function(){
+			var c = document.querySelector(".timeline-item.active");
+			AwesomePanel.activeBtn.setAttribute("style", setPrefix("transform", "translateY("+c.offsetTop+"px)"));
+		}, 300)
+	},
+
 
 	// Evenemnt de scroll
 	scrollEvent:function(){
