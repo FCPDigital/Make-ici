@@ -57,6 +57,8 @@ Ce template est appelé notamment dans archive-abonnement.php
 				//Si l'abonnement est lié à un produit (comme l'abonnement à la carte) on affiche le lien vers ce produit
 				if(get_field("is_product")){
 					echo "<a class='btn btn-colored action-abonnement' href='".get_the_permalink(get_field("form_code"))."'>Je m'abonne</a>";
+				} elseif (get_field("link") && get_field("link !== ''")) {
+					echo "<a class='btn btn-colored action-abonnement' href='".get_field("link")."'>Je m'abonne</a>";
 				} else {
 					//Sinon on appelle le shortcode du formulaire ajax
 					echo do_shortcode("[form value=\"Je m'abonne\" class='btn btn-colored action-abonnement' action='abonnement_form' get='title=".get_the_title()."' param='".get_the_ID()."']");

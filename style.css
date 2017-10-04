@@ -384,6 +384,11 @@ a {
 
   .page-template-template-checkout .container, .woocommerce-cart .container {
     width: 100%; } }
+.wpcf7 .input-checkbox-container .wpcf7-list-item {
+  line-height: 1em;
+  display: inline-block;
+  margin: 10px; }
+
 @font-face {
   font-family: "CenturyGothic Bold";
   src: url("assets/fonts/CenturyGothic_Bold.ttf"); }
@@ -2228,7 +2233,10 @@ form select {
   .wpforms-container .input-checkbox-container label, .wpcf7 .input-checkbox-container label {
     color: white; }
   .wpforms-container .input-checkbox-container .wpcf7-list-item, .wpcf7 .input-checkbox-container .wpcf7-list-item {
-    font-size: 11px; }
+    font-size: 11px;
+    line-height: 1em;
+    display: inline-block;
+    margin: 10px; }
   .wpforms-container .input-checkbox-container input[type="checkbox"], .wpcf7 .input-checkbox-container input[type="checkbox"] {
     display: inline-block;
     height: 15px;
@@ -2405,23 +2413,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 235px;
-          top: 225px; }
+          left: 6px;
+          top: 89px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 38px;
-          top: 40px; }
+          left: 51px;
+          top: 145px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 163px;
-          top: 85px; }
+          left: 52px;
+          top: 161px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 335px;
-          top: 31px; }
+          left: 8px;
+          top: 198px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 87px;
-          top: 37px; }
+          left: 379px;
+          top: 186px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 329px;
-          top: 162px; }
+          left: 319px;
+          top: 177px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);
