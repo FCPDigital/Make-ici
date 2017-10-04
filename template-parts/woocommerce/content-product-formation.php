@@ -47,13 +47,13 @@ Contenu d'une page formation. Appelé dans :
 						$abonnePrice = $price;
 					}
 					?>
-					<p>Tarif abonnés :<br><?php echo $abonnePrice; ?> € H/T</p>
+					<p>Tarif abonnés :<br><?php echo $abonnePrice; ?> € TTC</p>
 
 				</div>
 
 				<div class="cost_sale fa-container">
 					<i class="fa fa-eur" aria-hidden="true"></i>
-					<p>Tarif non abonnées :<br><?php echo $product->get_price() ?> € H/T</p>
+					<p>Tarif non abonnées :<br><?php echo $product->get_price() ?> € TTC</p>
 				</div>
 
 				<?php if($brand) { ?>

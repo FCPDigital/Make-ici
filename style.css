@@ -94,6 +94,18 @@ body {
 .margin-right-big {
   margin-right: 64px !important; }
 
+.margin-top-medium {
+  margin-top: 32px !important; }
+
+.margin-bottom-medium {
+  margin-bottom: 32px !important; }
+
+.margin-left-medium {
+  margin-left: 32px !important; }
+
+.margin-right-medium {
+  margin-right: 32px !important; }
+
 .margin-top-small {
   margin-top: 16px !important; }
 
@@ -108,6 +120,12 @@ body {
 
 .inv-margin-top-small {
   margin-top: -16px !important; }
+
+.no-deco {
+  text-decoration: none;
+  color: black; }
+  .no-deco:hover {
+    text-decoration: none; }
 
 .bold {
   font-weight: bold; }
@@ -825,86 +843,6 @@ h1 {
   .landing .carousel.active-control .carousel-body {
     width: 75%; }
 
-.timeline {
-  position: fixed;
-  height: calc(100vh - 120px);
-  width: 110px;
-  border-right: 1px solid #ffed00;
-  z-index: 998;
-  top: 95px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  left: calc(50% - 625px);
-  -webkit-transition: 0.4s;
-  -moz-transition: 0.4s;
-  -ms-transition: 0.4s;
-  -o-transition: 0.4s;
-  transition: 0.4s; }
-  .timeline.hide-state {
-    left: -150px; }
-  .timeline .timeline-item {
-    left: 0;
-    color: #ffed00;
-    flex: 1;
-    width: auto;
-    display: block;
-    max-height: 14px;
-    text-align: right;
-    padding-right: 20px;
-    position: relative;
-    font-size: 12px;
-    letter-spacing: 1px;
-    cursor: pointer;
-    text-decoration: none;
-    opacity: .6;
-    -webkit-transition: 0.4s;
-    -moz-transition: 0.4s;
-    -ms-transition: 0.4s;
-    -o-transition: 0.4s;
-    transition: 0.4s; }
-    .timeline .timeline-item.active {
-      opacity: 1; }
-      .timeline .timeline-item.active::after {
-        -webkit-transform: translateX(50%) translateY(-50%) scale(1.6);
-        -moz-transform: translateX(50%) translateY(-50%) scale(1.6);
-        -ms-transform: translateX(50%) translateY(-50%) scale(1.6);
-        -o-transform: translateX(50%) translateY(-50%) scale(1.6);
-        transform: translateX(50%) translateY(-50%) scale(1.6); }
-    .timeline .timeline-item::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      right: 0;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background-color: #ffed00;
-      -webkit-transition: 0.4s;
-      -moz-transition: 0.4s;
-      -ms-transition: 0.4s;
-      -o-transition: 0.4s;
-      transition: 0.4s;
-      -webkit-transform: translateX(50%) translateY(-50%) scale(1);
-      -moz-transform: translateX(50%) translateY(-50%) scale(1);
-      -ms-transform: translateX(50%) translateY(-50%) scale(1);
-      -o-transform: translateX(50%) translateY(-50%) scale(1);
-      transform: translateX(50%) translateY(-50%) scale(1); }
-  .timeline .active-point {
-    position: absolute;
-    display: block;
-    width: 15px;
-    height: 15px;
-    background-color: #ffed00;
-    border-radius: 50%;
-    right: -7px;
-    top: 0;
-    -webkit-transition: 0.4s;
-    -moz-transition: 0.4s;
-    -ms-transition: 0.4s;
-    -o-transition: 0.4s;
-    transition: 0.4s; }
-
 .archive-head .archive-head-item {
   margin: 30px 5px;
   text-align: center;
@@ -1035,6 +973,8 @@ h1 {
       position: relative;
       z-index: 1;
       padding-right: 48px; }
+      .loop-archive .archive-body-item .archive-main--fullsize {
+        width: 100%; }
       .loop-archive .archive-body-item .archive-main .archive-main-head {
         margin-bottom: 32px;
         letter-spacing: 1px; }
@@ -1258,7 +1198,7 @@ Ces styles sont davantage propre aux fonctionalité de Woocommerce natif
   background-repeat: no-repeat;
   background-position: center;
   background-size: 70%;
-  z-index: 10001;
+  z-index: 1001;
   color: transparent;
   background-image: url("assets/images/cart.png"); }
   #cart-btn[data-count]::after {
@@ -2476,23 +2416,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 383px;
-          top: 16px; }
+          left: 8px;
+          top: 121px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 328px;
-          top: 16px; }
+          left: 37px;
+          top: 128px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 349px;
-          top: 170px; }
+          left: 14px;
+          top: 59px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 366px;
-          top: 14px; }
+          left: 362px;
+          top: 8px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 95px;
-          top: 248px; }
+          left: 80px;
+          top: 201px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 143px;
-          top: 41px; }
+          left: 223px;
+          top: 50px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);

@@ -8,7 +8,7 @@ Affiche le nom du categorie et un carousel des produits y correspondant
 
 <section id="item-<?php echo get_category_slug($category); ?>" class=" perspective-corner	archive-body-item awesome-panel-item container-fluid page-section" style="background-image:url('<?php echo get_category_thumbnail($category); ?>')">
 	<div class="container">
-		<div class="archive-main">
+		<div class="archive-main archive-main--fullsize">
 			<div class="archive-main-head">
 				<h2 class="title">
 					<?php echo get_category_title($category); ?>

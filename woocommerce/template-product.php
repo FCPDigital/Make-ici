@@ -48,7 +48,6 @@ $categories = get_woocommerce_categories();
 						<?php } ?>
 					</div>
 				</div>
-
 			</div>
 
 		</div>

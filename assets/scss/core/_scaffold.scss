@@ -24,13 +24,24 @@ body {
 .margin-left-big { margin-left: $big-pad !important; }
 .margin-right-big { margin-right: $big-pad !important; }
 
+.margin-top-medium { margin-top: $medium-pad !important; }
+.margin-bottom-medium { margin-bottom: $medium-pad !important; }
+.margin-left-medium { margin-left: $medium-pad !important; }
+.margin-right-medium { margin-right: $medium-pad !important; }
+
 .margin-top-small { margin-top: $small-pad !important; }
 .margin-bottom-small { margin-bottom: $small-pad !important; }
 .margin-left-small { margin-left: $small-pad !important; }
 .margin-right-small { margin-right: $small-pad !important; }
 
 .inv-margin-top-small { margin-top: -1*$small-pad !important}
-
+.no-deco {
+	text-decoration: none;
+	color: black;
+	&:hover {
+		text-decoration: none;
+	}
+}
 //FONT
 .bold { font-weight: bold; }
 
