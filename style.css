@@ -1194,7 +1194,7 @@ Ces styles sont davantage propre aux fonctionalité de Woocommerce natif
   background-repeat: no-repeat;
   background-position: center;
   background-size: 70%;
-  z-index: 2;
+  z-index: 10003;
   color: transparent;
   background-image: url("assets/images/cart.png"); }
   #cart-btn[data-count]::after {
@@ -1804,6 +1804,10 @@ header.transparent .navbar {
   header .static {
     display: none; } }
 @media screen and (max-width: 1230px) {
+  #cart-btn {
+    top: 14px;
+    right: 100px; }
+
   #main-header .navbar {
     background: transparent;
     border-bottom: 0; }
@@ -2405,23 +2409,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 251px;
-          top: 35px; }
+          left: 13px;
+          top: 63px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 6px;
-          top: 144px; }
+          left: 309px;
+          top: 2px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 308px;
-          top: 35px; }
+          left: 334px;
+          top: 185px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 39px;
-          top: 212px; }
+          left: 266px;
+          top: 47px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 146px;
-          top: 231px; }
+          left: 303px;
+          top: 141px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 366px;
-          top: 86px; }
+          left: 300px;
+          top: 193px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);
