@@ -1008,17 +1008,13 @@ h1 {
           width: 100%;
           padding-left: 40px;
           display: inline-block; }
-      .loop-archive .archive-body-item .archive-sidebar .cost_per_month {
-        margin-top: 10px; }
-      .loop-archive .archive-body-item .archive-sidebar .cost_registration {
-        margin-bottom: 10px; }
-        .loop-archive .archive-body-item .archive-sidebar .cost_registration .fa-inscription {
-          width: 25px;
-          height: 30px;
-          background-image: url("assets/images/picto-inscription.png");
-          background-repeat: no-repeat;
-          background-position: center;
-          background-size: contain; }
+      .loop-archive .archive-body-item .archive-sidebar .cost_registration .fa-inscription {
+        width: 25px;
+        height: 30px;
+        background-image: url("assets/images/picto-inscription.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain; }
       .loop-archive .archive-body-item .archive-sidebar .mention {
         margin-top: 0;
         text-align: center;
@@ -1806,7 +1802,7 @@ header.transparent .navbar {
 @media screen and (max-width: 1230px) {
   #cart-btn {
     top: 14px;
-    right: 100px; }
+    right: 130px; }
 
   #main-header .navbar {
     background: transparent;
@@ -2409,23 +2405,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 13px;
-          top: 63px; }
+          left: 235px;
+          top: 225px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 309px;
-          top: 2px; }
+          left: 38px;
+          top: 40px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 334px;
-          top: 185px; }
+          left: 163px;
+          top: 85px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 266px;
-          top: 47px; }
+          left: 335px;
+          top: 31px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 303px;
-          top: 141px; }
+          left: 87px;
+          top: 37px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 300px;
-          top: 193px; }
+          left: 329px;
+          top: 162px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);

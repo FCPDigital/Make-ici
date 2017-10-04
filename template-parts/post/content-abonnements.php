@@ -41,8 +41,14 @@ Ce template est appelé notamment dans archive-abonnement.php
 				<p>Frais d'inscription :<br><?php echo get_field("cost_registration"); ?></p>
 			</div>
 			<?php } ?>
+	
+			<?php if (get_field("cost_registration") && get_field("cost_registration") != "") { ?>
+			<div class="fa-container">
+				<i class="fa fa-calendar" aria-hidden="true"></i>
+				<p>Durée minimale :<br><?php echo get_field("duration_min");	?> / Préavis <?php echo get_field("duration_preavis");	?></p>
+			</div>
+			<?php } ?>
 
-			<p class="mention">Durée minimale :<br><?php echo get_field("duration_min");	?> / Préavis <?php echo get_field("duration_preavis");	?></p>
 			<img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="">
 			<?php echo get_field("mention_supplementaire"); ?>
 
