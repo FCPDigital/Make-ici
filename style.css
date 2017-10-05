@@ -157,6 +157,10 @@ body {
   flex-wrap: wrap;
   justify-content: center; }
 
+.flex-start {
+  align-items: flex-start;
+  justify-content: space-between; }
+
 .full-width {
   min-width: 100%; }
 
@@ -700,7 +704,11 @@ a {
     padding: 0; }
   .list__image {
     color: #ffed00;
-    font-size: 45px; }
+    font-size: 45px;
+    width: 45px;
+    height: 45px;
+    display: block;
+    margin: auto; }
   .list__title {
     text-align: left;
     color: #ffed00;
@@ -780,14 +788,20 @@ a {
   border: 1px solid #ffed00;
   font-weight: bold;
   letter-spacing: 2Px;
-  margin: 50px 0 30px 0;
-  display: inline-block; }
+  margin: 20px;
+  display: inline-block;
+  text-align: center;
+  font-size: 11px; }
   .frame--light {
     background-color: white;
     color: black; }
   .frame--dark {
     background-color: black;
     color: #ffed00; }
+
+.flex-wrap-container .frame {
+  margin: 20px 0;
+  width: 250px; }
 
 /*
 Style des archive.php, inclue les abonnements, les entreprises, les formations.
@@ -2448,23 +2462,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 75px;
-          top: 131px; }
+          left: 98px;
+          top: 190px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 195px;
-          top: 194px; }
+          left: 92px;
+          top: 204px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 303px;
-          top: 176px; }
+          left: 245px;
+          top: 238px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 391px;
-          top: 12px; }
+          left: 337px;
+          top: 129px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 285px;
-          top: 21px; }
+          left: 261px;
+          top: 182px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 235px;
-          top: 135px; }
+          left: 314px;
+          top: 240px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);
