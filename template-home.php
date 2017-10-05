@@ -44,7 +44,7 @@ $postCur = get_post(); // On stocke le post courant pour éviter le bug de la bo
 								<p class="equipements-title"><?php echo get_the_title($equipement); ?></p>
 							</div>
 							<div class="equipements-content">
-								<?php echo get_the_excerpt() ?>
+								<?php echo get_field('description') ?>
 							</div>
 						</div>
 					</div>
