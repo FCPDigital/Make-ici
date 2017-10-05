@@ -14,6 +14,7 @@ get_header(); ?>
 				<?php $actus = get_posts([ "limit" => 4 ]); 
 				set_query_var("item", $actus[0]);
 				set_query_var("size", "item--wide");
+				setup_postdata($actus[0]);
 				get_template_part( 'template-parts/post/content', "head-post");
 				?>
 
@@ -34,14 +35,17 @@ get_header(); ?>
 				<?php 
 				set_query_var("item", $actus[1]);
 				set_query_var("size", "item--small");
+				setup_postdata($actus[1]);
 				get_template_part( 'template-parts/post/content', "head-post");
 		
 				set_query_var("item", $actus[2]);
 				set_query_var("size", "item--small");
+				setup_postdata($actus[2]);
 				get_template_part( 'template-parts/post/content', "head-post");
 				
 				set_query_var("item", $actus[3]);
 				set_query_var("size", "item--wide");
+				setup_postdata($actus[3]);
 				get_template_part( 'template-parts/post/content', "head-post");
 				?>
 				<div class="clr"></div>

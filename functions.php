@@ -254,7 +254,6 @@ function last_posts(){
 					while ( $posts_query->have_posts() ) {	
 						$posts_query->the_post();	
 						if($count < $limit){
-							//include( locate_template("template-parts/woocommerce/content-last-posts.php") );
 							set_query_var("item", $posts_query->get_post());
 							set_query_var("size", "item--small");
 							set_query_var("class", "carousel-item");
