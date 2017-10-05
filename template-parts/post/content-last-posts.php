@@ -1,7 +1,7 @@
 	<?php /*
 	Ce template est appelé juste pour les derniers produits afficher.
 	il est utiliser dans la fonction :
-	get_last_products() dans functions.php
+	last_posts() dans functions.php
 	*/ ?>
 
 	<div class="carousel-item">

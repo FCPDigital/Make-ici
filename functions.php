@@ -185,7 +185,7 @@ function rfvc_update_order_status( $order_status, $order_id ) {
 ////////////////////////////////
 
 // Renvoi les derniers produits sous la forme d'un carousel
-function get_last_posts(){
+function last_products(){
 
 	$meta_query = array();
 	$args = array();
@@ -204,6 +204,7 @@ function get_last_posts(){
 	$products = array_slice($products, 0, 5);
 	$limit = count($products);
 	$activeControl = ($limit>3) ?	"active-control" : "";
+
 	?>
 	<div class="archive-main-body">
 		<div class="product-carousel carousel <?php echo $activeControl; ?>">
@@ -226,6 +227,70 @@ function get_last_posts(){
 				<a href="#" class="carousel-control-btn" data-direction="right"></a>
 			</div>
 		</div>
+	</div>
+	<?php
+}
+
+
+function last_posts(){
+
+	$meta_query = array();
+	$args = array();
+
+	$posts_query = new WP_Query( [
+		'post_type' => "post",
+		'posts_per_page' => 8	
+	] );	
+	$limit = count($posts_query->posts);
+	$activeControl = ($limit>3) ?	"active-control" : "";
+
+	?>
+	<div class="archive-main-body">
+		<div class="product-carousel carousel <?php echo $activeControl; ?>" >
+			<div class="carousel-body">
+				<div class="archive-head carousel-container">
+					<?php
+					$count = 0;
+					while ( $posts_query->have_posts() ) {	
+						$posts_query->the_post();	
+						if($count < $limit){
+							//include( locate_template("template-parts/woocommerce/content-last-posts.php") );
+							set_query_var("item", $posts_query->get_post());
+							set_query_var("size", "item--small");
+							set_query_var("class", "carousel-item");
+							get_template_part( 'template-parts/post/content', "head-post");
+							$count++;
+						}
+				 	}
+					?>
+				</div>
+			</div>
+			<div class="carousel-control">
+				<a href="#" class="carousel-control-btn" data-direction="left"></a>
+				<a href="#" class="carousel-control-btn" data-direction="right"></a>
+			</div>
+		</div>
+	</div>
+	<?php
+}
+
+function equipements_list() {
+	echo get_field("equipement", $postCur); ?>
+	<div class="single-body equipements-container">
+	 	<?php 
+		$equipements = get_posts( array('post_type' => 'equipements', 'posts_per_page' => '12'));
+		foreach($equipements as $equipement){ setup_postdata( $equipement ); ?>
+			<div class="equipements-item" id="post-<?php echo get_the_ID($equipement); ?>">
+				<div class="equipements-item-content">
+					<div class="equipements-title-container">
+						<p class="equipements-title"><?php echo get_the_title($equipement); ?></p>
+					</div>
+					<div class="equipements-content">
+						<?php echo get_field('description', $equipement) ?>
+					</div>
+				</div>
+			</div>
+		<?php } ?>
 	</div>
 	<?php
 }
@@ -320,7 +385,6 @@ function sort_by_date($products){
 			if($products_sort[$i]["date"]){
 				//Si la date est inferieur à celle du produit on ajoute avant
 				if($nextDate && $nextDate < $products_sort[$i]["date"] ) {
-					// echo "Date courante est inférieur à celle du produit :".$products_sort[$i]["el"];
 					if($i==0){
 						array_unshift($tmp_products_sort, $tmp);
 					} else {

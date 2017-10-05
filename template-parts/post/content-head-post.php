@@ -1,5 +1,5 @@
-<div class="item <?php echo $size; ?>">
-	<?php //var_dump($post) ?>
+
+<div class="item <?php echo $size; ?> <?php echo $class; ?>">
 	<a href="<?php echo get_the_permalink($item) ?>">
 	<div class="item__banner">
 		<p class="item__title item__title--top-left"><?php echo get_the_title($item); ?></p>
@@ -12,8 +12,9 @@
 	<div class="item__content">
 
 		<?php 
-		$truncValue = $size == 'item--wide' ? 300 : 150;
-		echo truncate_content($item->post_content, $truncValue); 
+		$truncValue = $size == 'item--wide' ? 300 : 100;
+
+		echo truncate_content(get_the_content($item), $truncValue); 
 		?>
 	</div>
 </div>

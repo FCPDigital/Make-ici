@@ -42,24 +42,8 @@ $postCur = get_post(); // On stocke le post courant pour éviter le bug de la bo
 	
 	<div id="anchor-2" class="section-post equipements" style="background-image:url(<?php echo get_field('bg_equipement', $postCur); ?>);">
 		<div class="container">
-			<h2 class="left-full-border">Equipements et services</h2>
-			 <?php echo get_field("equipement", $postCur); ?>
-			 <div class="single-body equipements-container">
-			 	<?php 
-				$equipements = get_posts( array('post_type' => 'equipements', 'posts_per_page' => '12'));
-				foreach($equipements as $equipement){ setup_postdata( $equipement ); ?>
-					<div class="equipements-item" id="post-<?php echo get_the_ID($equipement); ?>">
-						<div class="equipements-item-content">
-							<div class="equipements-title-container">
-								<p class="equipements-title"><?php echo get_the_title($equipement); ?></p>
-							</div>
-							<div class="equipements-content">
-								<?php echo get_field('description', $equipement) ?>
-							</div>
-						</div>
-					</div>
-				<?php } ?>
-			</div>
+			<h2 class="left-full-border">Prochains évènements</h2>
+			<?php last_posts(); ?>
 			<a class="scroll-btn scroll-btn--content" href="#anchor-3" data-scroll>
 				<span>Les formations</span>
 			</a>
@@ -68,7 +52,7 @@ $postCur = get_post(); // On stocke le post courant pour éviter le bug de la bo
 	<div id="anchor-3" class="section-post last-posts" style="background-image:url(<?php echo get_field('bg_last_posts', $postCur); ?>);">
 		<div class="container">
 			<h2 class="left-full-border">Prochaines formations</h2>
-			<?php get_last_posts(); ?>
+			<?php last_products(); ?>
 			<div class="clr"></div>
 		</div>
 	</div>
