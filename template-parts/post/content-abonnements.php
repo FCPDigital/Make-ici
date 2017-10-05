@@ -45,7 +45,7 @@ Ce template est appelé notamment dans archive-abonnement.php
 			<?php if (get_field("cost_registration") && get_field("cost_registration") != "") { ?>
 			<div class="fa-container">
 				<i class="fa fa-calendar" aria-hidden="true" style="font-size: 25px;"></i>
-				<p>Durée minimale :<br><?php echo get_field("duration_min");	?> / Préavis <?php echo get_field("duration_preavis");	?></p>
+				<p>Durée minimale = <?php echo get_field("duration_min");	?> <br>Préavis = <?php echo get_field("duration_preavis");	?></p>
 			</div>
 			<?php } ?>
 
