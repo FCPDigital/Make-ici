@@ -29,10 +29,11 @@ Ce template est appelé notamment dans archive-entreprises.php
 				<?php //Sidebar de droite ?>
 				<div class="col-sm-4">
 					<img src="<?php echo get_field('image'); ?>" alt="">
+					<div>
+						<?php echo get_field('lien_') ?>
+					</div>
 				</div>
-				<div>
-					<?php echo get_field('lien_') ?>
-				</div>
+			
 			</div>
 	</div>
 

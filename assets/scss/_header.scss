@@ -130,7 +130,7 @@ header {
 			}
 			&.btn.btn-light {
 				padding: 10px 20px;
-				height: 45px;
+				min-height: 45px;
 				margin-top: 12px;
 				&:hover {
 					background-color: $color-3;
