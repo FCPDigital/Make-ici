@@ -23,5 +23,11 @@
 	.frame {
 		margin: 20px 0;
 		width: 250px;
+		line-height: 20px;
+		display: flex;
+		text-align: center;
+		flex-direction: column;
+		justify-content: center;
+		min-height: 55px;
 	}
 }

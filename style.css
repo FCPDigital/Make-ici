@@ -801,7 +801,13 @@ a {
 
 .flex-wrap-container .frame {
   margin: 20px 0;
-  width: 250px; }
+  width: 250px;
+  line-height: 20px;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 55px; }
 
 /*
 Style des archive.php, inclue les abonnements, les entreprises, les formations.
@@ -2462,23 +2468,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 98px;
-          top: 190px; }
+          left: 71px;
+          top: 2px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 92px;
-          top: 204px; }
+          left: 62px;
+          top: 227px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 245px;
-          top: 238px; }
+          left: 326px;
+          top: 163px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 337px;
-          top: 129px; }
+          left: 328px;
+          top: 160px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 261px;
-          top: 182px; }
+          left: 25px;
+          top: 61px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 314px;
-          top: 240px; }
+          left: 263px;
+          top: 206px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);
