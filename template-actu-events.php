@@ -5,7 +5,7 @@
 
 get_header(); ?>
 
-<main id="actu-event" class="site-main actu-events" role="main" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>)">
+<main id="actu-event" class="site-main actu-events landing" role="main" style="background-image: url(<?php echo get_the_post_thumbnail_url(); ?>)">
 	<div class="wrapper container">
 		<div class="flex-big main-part">
 			<h1 class="main-title">Actualités</h1>

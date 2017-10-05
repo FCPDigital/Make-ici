@@ -60,6 +60,9 @@ body {
 	flex-wrap: wrap;
 	justify-content: center;
 }
+.flex-start {
+	align-items: flex-start;
+}
 
 //SIZES
 .full-width { min-width: 100% }

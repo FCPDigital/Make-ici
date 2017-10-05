@@ -32,6 +32,14 @@ Appelé dans :
 					<p><?php echo $product->get_price_html() ?></p>
 				</div>
 
+				<?php if($brand) { ?>
+			<!-- 		<div class="formator fa-container margin-bottom-small">
+				<i class="fa fa-user" aria-hidden="true"></i>
+				<p><strong>Le Formateur :</strong><br>
+					<?php echo $brand[0]->description; ?></p>
+			</div> -->
+				<?php } ?>
+
 				<?php
 				//appelle de la fonction de woocommerce gérant l'affichage du panier et des variations
 				do_action( 'woocommerce_single_product_summary' );
