@@ -4,6 +4,7 @@ Contenu d'un produit simple : ex carte cadeau ou abonnement à la carte.
 Appelé dans :
 - product-other.php
 */
+$brand = get_the_terms( get_the_ID(), 'product_brand' );
 ?>
 <section id="item-<?php echo $slug; ?>" class=" perspective-corner	archive-body-item awesome-panel-item container-fluid page-section" style="background-image:url('<?php echo get_the_post_thumbnail_url(); ?>')">
 
@@ -33,11 +34,11 @@ Appelé dans :
 				</div>
 
 				<?php if($brand) { ?>
-			<!-- 		<div class="formator fa-container margin-bottom-small">
-				<i class="fa fa-user" aria-hidden="true"></i>
-				<p><strong>Le Formateur :</strong><br>
-					<?php echo $brand[0]->description; ?></p>
-			</div> -->
+				<div class="formator fa-container margin-bottom-small">
+					<i class="fa fa-user" aria-hidden="true"></i>
+					<p><strong>Le Formateur :</strong><br>
+						<?php echo $brand[0]->description; ?></p>
+				</div>
 				<?php } ?>
 
 				<?php
