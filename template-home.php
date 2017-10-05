@@ -24,10 +24,20 @@ $postCur = get_post(); // On stocke le post courant pour éviter le bug de la bo
 		<div class="container">
 			<h1 class="left-full-border"><?php echo get_the_title(); ?></h1>
 			<div class="single-body">
-				<?php the_content($postCur); ?>
+				<div class="flex-wrap-container margin-top-big">
+					<?php the_content($postCur); ?>
+				</div>
+				<div class="center margin-top-big">
+					<a href="" class="btn btn--light">ICI Montreuil en images</a>
+				</div>
 			</div>
 		</div>
-		<a class="scroll-btn" href="#anchor-2" data-scroll></a>
+
+	<!-- <div class="scroll-btn">
+	<span>Evenements à venir</span> -->
+			<a class="scroll-btn scroll-btn--content" href="#anchor-2" data-scroll></a>
+		<!-- </div> -->
+		
 	</div>
 	
 	<div id="anchor-2" class="section-post equipements" style="background-image:url(<?php echo get_field('bg_equipement', $postCur); ?>);">
@@ -50,7 +60,9 @@ $postCur = get_post(); // On stocke le post courant pour éviter le bug de la bo
 					</div>
 				<?php } ?>
 			</div>
-			<a class="scroll-btn" href="#anchor-3" data-scroll></a>
+			<a class="scroll-btn scroll-btn--content" href="#anchor-3" data-scroll>
+				<span>Les formations</span>
+			</a>
 		</div> 
 	</div>
 	<div id="anchor-3" class="section-post last-posts" style="background-image:url(<?php echo get_field('bg_last_posts', $postCur); ?>);">

@@ -50,16 +50,16 @@ body {
 .right {float: right;}
 .clr {clear: both;}
 .center {text-align: center; margin: auto; }
-.flex-wrap-container { 
-	display: flex; 
-	flex-wrap: wrap;
-	justify-content: center;
-}
 
 //FLEX
 .flex {	display: flex; }
 .flex-big { flex:2; }
 .flex-small { flex:1;}
+.flex-wrap-container { 
+	display: flex; 
+	flex-wrap: wrap;
+	justify-content: center;
+}
 
 //SIZES
 .full-width { min-width: 100% }
@@ -130,24 +130,7 @@ body {
 }
 
 
-.frame {
-	padding: 10px 20px;
-	font-size: 13px;
-	color: $color-3;
-	border: 1px solid $color-3;
-	font-weight: bold;
-	letter-spacing: 2Px;
-	margin: 50px 0 30px 0;
-	display: inline-block;
-	&--light {
-		background-color: white;
-		color: black;
-	}
-	&--dark {
-		background-color: black;
-		color: $color-3;
-	}
-}
+
 
 p {
 	line-height: 2;
@@ -220,88 +203,6 @@ a {
 		@include transform(translateX(100px));
 	}
 }
-
-////////////////////////////////////////////////////////////////////////////////
-//
-//								Notice
-//
-////////////////////////////////////////////////////////////////////////////////
-#notification {
-	position: fixed;
-	top: calc(50% - 25px);
-	margin: auto;
-	background-color: white;
-	padding: 20px 40px;
-	color: black;
-	left: 50%;
-	transform: translateX(-50%);
-	text-align: center;
-	#notif-close-btn {
-		padding: 8px 20px;
-		margin-top: 15px;
-	}
-}
-
-#notice {
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	width: 600px;
-	text-align: center;
-	background-color: #15aa41;
-	padding: 40px;
-	color: white;
-	transform: translateY(-50%) translateX(-50%);
-	z-index: 1001;
-	padding-bottom: 70px;
-	outline: 1000px solid rgba(255,255,255,.8);
-	strong {
-		font-size: 1.3em;
-		font-weight: 500;
-	}
-	em {
-		margin-bottom: 0px;
-		display: block;
-		font-weight: bold;
-	}
-	.action {
-		position: absolute;
-		bottom: 0;
-		left: 0;
-		width: 100%;
-		border: 2px solid #15aa41;
-		background-color: white;
-		#closeNotice{
-			color: #15aa41;
-			text-transform: uppercase;
-			font-weight: bold;
-			display: block;
-			padding: 15px;
-		}
-	}
-	&[data-type="success"]{
-		background-color: #15aa41;
-	}
-	&[data-type="success"]{
-		background-color: rgb(255, 42, 42);
-	}
-}
-
-@media screen and(max-width: 600px) {
-	#notice {
-		width: 100%;
-		padding: 20px;
-	}
-}
-
-@media screen and(max-height: 600px) {
-	#notice {
-		height: auto;
-		top: 0;
-		transform: translateY(0);
-	}
-}
-
 
 ////////////////////////////////////////////////////////////////////////////////
 //
