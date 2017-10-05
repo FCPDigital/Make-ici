@@ -98,6 +98,9 @@ h1 {
 		padding-bottom: 60px;
 		position: relative;
 		min-width: 200px;
+		a {
+			text-decoration: none; // Usefull in archive-equipement
+		}
 		&:first-child {
 			margin-left: 0;
 		}

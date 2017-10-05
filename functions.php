@@ -386,7 +386,7 @@ function shortcode_staff($atts){
 				<img src='".get_the_post_thumbnail_url()."' alt=''>
 				<div class='staff-item-content'>
 					<h3>".get_the_title()."</h3>
-					<p><?php the_content() ?></p>
+					<p>".get_the_content()."</p>
 					<a href='#'	data-getarg='contact=".get_field('e-mail')."' data-wpxhr='contact_form' data-xhrarg='".get_the_ID()."' class='btn btn-colored action-abonnement'>Contactez le(a)</a>
 				</div>
 			</div>";
@@ -425,11 +425,12 @@ add_shortcode( 'form', 'shortcode_formbtn' );
 
 function shortcode_frames($atts){
 	$args = shortcode_atts( array(
-		'value' => null
+		'value' => null,
+		'type' => 'dark'
 	), $atts );
 	$value = $args["value"];
 	if($value){
-		echo "<span class='framed'>".$value."</span>";
+		echo "<span class='frame frame--".$args['type']."'>".$value."</span>";
 	}
 }
 

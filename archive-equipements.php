@@ -16,7 +16,7 @@ get_header(); ?>
 			<div id="main-carousel" class="">
 				<div class="">
 					<div class="archive-head classic-list">
-						<div class="archive-head carousel-container">
+						<div class="archive-head flex-wrap-container">
 							<?php while ( have_posts() ) : the_post(); ?>
 								<div class="archive-head-item carousel-item">
 									<a href="#item-<?php echo get_the_slug(); ?>" data-scroll data-target="#item-<?php echo get_the_slug(); ?>" >
