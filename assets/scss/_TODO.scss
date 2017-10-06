@@ -309,6 +309,59 @@ color:#000;
 	strong {
 	    font-weight: bold;
 	}
+
+	.dropdown {
+				height: 45px;
+				margin: 12px 10px;
+				background-color: $color-3;
+				font-weight: bold;
+				border: 2px solid $color-3;
+				@include transition(.4s);
+				&:hover {
+					background-color: transparent;
+				}
+				a {
+					padding: 0;
+					color:black;
+					padding: 12px 10px;
+					background-color: $color-3 !important;
+					&::before, &::after {
+						display: none !important;
+					}
+					&:hover {
+						background-color: transparent !important;
+						color: $color-3 !important;
+					}
+				}
+				.dropdown-menu {
+					margin-top: 10px;
+					border: 0;
+					padding: 0;
+					li {
+						text-align: center;
+						&.active {
+							background-color: $color-3;
+						}
+						a {
+							background-color: transparent !important;
+							padding: 10px 10%;
+							color: $color-2;
+							@include transition(.4s);
+							&:hover {
+								color: black;
+								background-color: $color-3;
+								color: white;
+							}
+						}
+					}
+					.active {
+						a, a:focus, a:hover {
+							background-color: #DDD;
+							color: #444;
+						}
+					}
+				}
+			}
 }
 
 

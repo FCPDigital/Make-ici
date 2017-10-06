@@ -2542,23 +2542,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 43px;
-          top: 205px; }
+          left: 103px;
+          top: 213px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 16px;
-          top: 187px; }
+          left: 250px;
+          top: 46px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 194px;
-          top: 218px; }
+          left: 357px;
+          top: 42px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 108px;
-          top: 101px; }
+          left: 109px;
+          top: 97px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 206px;
-          top: 39px; }
+          left: 270px;
+          top: 1px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 127px;
-          top: 59px; }
+          left: 69px;
+          top: 74px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);
@@ -3008,6 +3008,53 @@ color:#000;
   color: white; }
 .make-ici-homepage strong {
   font-weight: bold; }
+.make-ici-homepage .dropdown {
+  height: 45px;
+  margin: 12px 10px;
+  background-color: #ffed00;
+  font-weight: bold;
+  border: 2px solid #ffed00;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -ms-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s; }
+  .make-ici-homepage .dropdown:hover {
+    background-color: transparent; }
+  .make-ici-homepage .dropdown a {
+    padding: 0;
+    color: black;
+    padding: 12px 10px;
+    background-color: #ffed00 !important; }
+    .make-ici-homepage .dropdown a::before, .make-ici-homepage .dropdown a::after {
+      display: none !important; }
+    .make-ici-homepage .dropdown a:hover {
+      background-color: transparent !important;
+      color: #ffed00 !important; }
+  .make-ici-homepage .dropdown .dropdown-menu {
+    margin-top: 10px;
+    border: 0;
+    padding: 0; }
+    .make-ici-homepage .dropdown .dropdown-menu li {
+      text-align: center; }
+      .make-ici-homepage .dropdown .dropdown-menu li.active {
+        background-color: #ffed00; }
+      .make-ici-homepage .dropdown .dropdown-menu li a {
+        background-color: transparent !important;
+        padding: 10px 10%;
+        color: #000;
+        -webkit-transition: 0.4s;
+        -moz-transition: 0.4s;
+        -ms-transition: 0.4s;
+        -o-transition: 0.4s;
+        transition: 0.4s; }
+        .make-ici-homepage .dropdown .dropdown-menu li a:hover {
+          color: black;
+          background-color: #ffed00;
+          color: white; }
+    .make-ici-homepage .dropdown .dropdown-menu .active a, .make-ici-homepage .dropdown .dropdown-menu .active a:focus, .make-ici-homepage .dropdown .dropdown-menu .active a:hover {
+      background-color: #DDD;
+      color: #444; }
 
 .su-custom-gallery {
   display: flex;
