@@ -9,6 +9,7 @@ $padding-top: 10px;
 $padding-side: 16px;
 $big-size: 15px;
 $small-size: 11px;
+$banner-h: 60px;
 
 .items-col {
 	display: block;
@@ -41,6 +42,12 @@ $small-size: 11px;
 	&--no-limit {
 		height: auto;
 	}
+	&__link {
+		text-decoration: none;
+		&:hover {
+			text-decoration: none;
+		}
+	}
 	&__banner {
 		background-color: $color-3;
 		color: black;
@@ -49,7 +56,7 @@ $small-size: 11px;
 		justify-content: center; 
 		position: relative;
 		padding: $padding-top $padding-side;
-		min-height: 50px;
+		min-height: $banner-h;
 		&--dark {
 			background-color: $color-2;
 			color: $color-3;
@@ -60,27 +67,31 @@ $small-size: 11px;
 		font-weight: bold;
 		line-height: 1em;
 		font-size: $big-size;
-		&--top-left {
-			position: absolute;
-			top: $padding-top;
-			left: $padding-side;
+		text-decoration: none;
+		&--left {
 			text-align: left;
+		}
+		&--right {
+			text-align: right;
 		}
 	}
 	&__action {
 		text-align: center;
-		margin: 20px 0;
+		margin: $padding-top 0;
 	}
 	&__subtitle {
 		
 	}
-	&__corner {
-		position: absolute;
+	&__mention {
 		font-size: $small-size;
 		font-weight: bold;
-		&--bottom-right {
-			right: $padding-side;
-			bottom: $padding-top;
+		display: block;
+		text-decoration: none;
+		&--right {
+			text-align: right;
+		}
+		&--left {
+			text-align: left;
 		}
 	}
 
@@ -106,7 +117,7 @@ $small-size: 11px;
 	&__content {
 		padding: $padding-top $padding-side;
 		color: white;
-		line-height: 1.5em;
+		line-height: $big-size;
 		font-size: $small-size;
 
 		p {
@@ -114,7 +125,7 @@ $small-size: 11px;
 			margin:0;
 			padding:0;
 			font-size: $small-size;
-			line-height: 1.5em;
+			line-height: $big-size;
 		}
 		&--no-pad {
 			padding: $padding-top 0;

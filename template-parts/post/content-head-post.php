@@ -1,9 +1,9 @@
 
 <div class="item <?php echo $size; ?> <?php echo $class; ?>">
-	<a href="<?php echo get_the_permalink($item) ?>">
+	<a class="item__link" href="<?php echo get_the_permalink($item) ?>">
 	<div class="item__banner">
-		<p class="item__title item__title--top-left"><?php echo get_the_title($item); ?></p>
-		<span class="item__corner item__corner--bottom-right"><?php echo get_the_date('D M j', $item); ?></span>
+		<p class="item__title item__title--left"><?php echo get_the_title($item); ?></p>
+		<span class="item__corner item__mention item__mention--right"><?php echo get_the_date('D M j', $item); ?></span>
 	</div>
 	</a>
 	<div class="item__thumbnail">
