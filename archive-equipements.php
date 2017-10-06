@@ -5,7 +5,7 @@ Archive du custom-post equipements.
 get_header(); ?>
 
 <main id="abonnements-archive" class="site-main" role="main">
-	<div class="landing">
+	<div class="landing" style='background-image: url("http://makeici.org/icimontreuil/wp-content/uploads/sites/2/2017/10/ICIMontreuil_AtelierMe%CC%81tal.Soudure.jpg");'>
 		<div class="container">
 			<h1 class="left-full-border">Equipements et services</h1>
 			<div class="margin-top-medium">
