@@ -11,12 +11,12 @@ Contenu d'une page formation. Appelé dans :
 			<div class="archive-main">
 
 				<div class="archive-main-head">
-					<h2 class="title">
+					<h1 class="title">
 						<?php echo get_the_title(); ?>
-					</h2>
-					<h3>
+					</h1>
+					<h2 class="subtitle">
 						<?php echo $category; ?>
-					</h3>
+					</h2>
 				</div>
 
 				<div class="archive-main-body">

@@ -13,7 +13,7 @@ Ce template est appelé notamment dans archive-abonnement.php
     <?php //Contenu central de la section ?>
     <div class="archive-main">
       <div class="archive-main-head">
-        <h2 class="left-full-border">
+        <h2 class="left-full-border title">
           <?php echo get_the_title(); ?>
         </h2>
         <h3 >

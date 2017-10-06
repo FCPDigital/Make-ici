@@ -1050,11 +1050,11 @@ h1 {
       .loop-archive .archive-body-item .archive-main .archive-main-head {
         margin-bottom: 32px;
         letter-spacing: 1px; }
-        .loop-archive .archive-body-item .archive-main .archive-main-head h2 {
+        .loop-archive .archive-body-item .archive-main .archive-main-head .title {
           font-size: 2.5em;
           font-weight: bold;
           display: inline-block; }
-        .loop-archive .archive-body-item .archive-main .archive-main-head h3 {
+        .loop-archive .archive-body-item .archive-main .archive-main-head .subtitle {
           display: block;
           font-style: italic;
           margin-left: 0px;
@@ -2493,23 +2493,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 334px;
-          top: 39px; }
+          left: 125px;
+          top: 77px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 213px;
-          top: 127px; }
+          left: 73px;
+          top: 60px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 292px;
-          top: 192px; }
+          left: 206px;
+          top: 74px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 108px;
-          top: 216px; }
+          left: 107px;
+          top: 191px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 40px;
-          top: 228px; }
+          left: 183px;
+          top: 74px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 242px;
-          top: 199px; }
+          left: 71px;
+          top: 92px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);

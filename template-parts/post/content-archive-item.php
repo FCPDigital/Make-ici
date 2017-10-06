@@ -16,7 +16,7 @@ Ce template est appelé notamment dans archive-abonnement.php
 				<h2 class="title">
 					<?php echo get_the_title(); ?>
 				</h2>
-				<h3>
+				<h3 class="subtitle">
 					<?php echo get_field("subtitle"); ?>
 				</h3>
 			</div>

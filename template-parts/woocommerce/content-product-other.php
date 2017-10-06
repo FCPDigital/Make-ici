@@ -15,7 +15,7 @@ $brand = get_the_terms( get_the_ID(), 'product_brand' );
 					<h2 class="title">
 						<?php echo get_the_title(); ?>
 					</h2>
-					<h3>
+					<h3 class="subtitle">
 						<?php echo $category; ?>
 					</h3>
 				</div>
