@@ -2542,23 +2542,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 103px;
-          top: 213px; }
+          left: 234px;
+          top: 101px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 250px;
-          top: 46px; }
+          left: 125px;
+          top: 134px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 357px;
-          top: 42px; }
+          left: 165px;
+          top: 111px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 109px;
-          top: 97px; }
+          left: 136px;
+          top: 194px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 270px;
-          top: 1px; }
+          left: 57px;
+          top: 126px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 69px;
-          top: 74px; }
+          left: 236px;
+          top: 44px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);
@@ -3014,6 +3014,7 @@ color:#000;
   background-color: #ffed00;
   font-weight: bold;
   border: 2px solid #ffed00;
+  display: inline-block;
   -webkit-transition: 0.4s;
   -moz-transition: 0.4s;
   -ms-transition: 0.4s;
@@ -3025,7 +3026,8 @@ color:#000;
     padding: 0;
     color: black;
     padding: 12px 10px;
-    background-color: #ffed00 !important; }
+    background-color: #ffed00 !important;
+    text-decoration: none; }
     .make-ici-homepage .dropdown a::before, .make-ici-homepage .dropdown a::after {
       display: none !important; }
     .make-ici-homepage .dropdown a:hover {

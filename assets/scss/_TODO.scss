@@ -316,6 +316,7 @@ color:#000;
 				background-color: $color-3;
 				font-weight: bold;
 				border: 2px solid $color-3;
+				display: inline-block;
 				@include transition(.4s);
 				&:hover {
 					background-color: transparent;
@@ -325,6 +326,7 @@ color:#000;
 					color:black;
 					padding: 12px 10px;
 					background-color: $color-3 !important;
+					text-decoration: none;
 					&::before, &::after {
 						display: none !important;
 					}
