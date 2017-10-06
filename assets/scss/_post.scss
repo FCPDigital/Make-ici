@@ -103,7 +103,8 @@ Contient l'ensemble des style particulier propre aux posts et au pages.
 				color: black;
 				font-size: 15px;
 				font-weight: bold;
-				margin-bottom: 16px;
+				margin-bottom: $small-pad;
+				padding: 0;
 			}
 			p {
 				font-size: 12px;

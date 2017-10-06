@@ -298,6 +298,15 @@ a {
     -o-transform: translateX(100px);
     transform: translateX(100px); }
 
+.woocommerce-variation-price .price
+.woocommerce-Price-amount.amount {
+  display: block;
+  text-align: center;
+  font-size: 2em;
+  color: #ffed00;
+  font-weight: bold;
+  margin-bottom: 16px; }
+
 @media (max-width: 1230px) {
   #content-page {
     padding: 64px 16px; }
@@ -580,7 +589,8 @@ a {
     font-size: 11px;
     font-weight: bold;
     display: block;
-    text-decoration: none; }
+    text-decoration: none;
+    margin-top: 8px; }
     .item__mention--right {
       text-align: right; }
     .item__mention--left {
@@ -2058,7 +2068,8 @@ Contient l'ensemble des style particulier propre aux posts et au pages.
         color: black;
         font-size: 15px;
         font-weight: bold;
-        margin-bottom: 16px; }
+        margin-bottom: 16px;
+        padding: 0; }
       .staff-container .staff-item .staff-item-content p {
         font-size: 12px;
         line-height: 1.2;
@@ -2478,23 +2489,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 53px;
-          top: 84px; }
+          left: 61px;
+          top: 221px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 357px;
-          top: 227px; }
+          left: 47px;
+          top: 204px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 15px;
-          top: 21px; }
+          left: 279px;
+          top: 128px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 231px;
-          top: 173px; }
+          left: 194px;
+          top: 179px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 306px;
-          top: 116px; }
+          left: 73px;
+          top: 103px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 186px;
-          top: 186px; }
+          left: 341px;
+          top: 29px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);
