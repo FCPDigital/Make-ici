@@ -143,6 +143,9 @@ body {
   text-align: center;
   margin: auto; }
 
+.upper {
+  text-transform: uppercase; }
+
 .flex {
   display: flex; }
 
@@ -535,6 +538,15 @@ a {
     -ms-transform: rotate(360deg);
     -o-transform: rotate(360deg);
     transform: rotate(360deg); } }
+.scroll-btn-container {
+  display: block;
+  clear: both; }
+  .scroll-btn-container .scroll-btn__title {
+    text-align: center;
+    color: #ffed00;
+    margin-bottom: 32px;
+    display: block; }
+
 .items-col {
   display: block;
   flex-wrap: wrap;
@@ -2502,23 +2514,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 201px;
-          top: 192px; }
+          left: 180px;
+          top: 17px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 345px;
-          top: 196px; }
+          left: 154px;
+          top: 162px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 75px;
-          top: 69px; }
+          left: 235px;
+          top: 35px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 66px;
-          top: 128px; }
+          left: 65px;
+          top: 193px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 177px;
-          top: 27px; }
+          left: 26px;
+          top: 61px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 197px;
-          top: 180px; }
+          left: 147px;
+          top: 221px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);
@@ -2838,7 +2850,10 @@ header .navbar-nav .menu-item.dropdown .dropdown-menu li a {
   margin-top: 0px;
   margin-bottom: 0px;
   font-weight: bold;
-  text-align: center; }
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
 
 .loop-archive .archive-body-item .archive-main .archive-main-body p {
   margin-bottom: 0px; }

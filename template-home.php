@@ -44,9 +44,11 @@ $postCur = get_post(); // On stocke le post courant pour éviter le bug de la bo
 		<div class="container">
 			<h2 class="left-full-border">Prochains évènements</h2>
 			<?php last_posts(); ?>
-			<a class="scroll-btn scroll-btn--content" href="#anchor-3" data-scroll>
-				<span>Les formations</span>
-			</a>
+			<div class="scroll-btn-container">
+				<span class="scroll-btn__title">Les formations</span>
+				<a class="scroll-btn" href="#anchor-3" data-scroll></a>
+			</div>
+			
 		</div> 
 	</div>
 	<div id="anchor-3" class="section-post last-posts" style="background-image:url(<?php echo get_field('bg_last_posts', $postCur); ?>);">

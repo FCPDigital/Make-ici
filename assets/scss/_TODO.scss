@@ -142,6 +142,9 @@ header .navbar-nav .menu-item.dropdown .dropdown-menu li a {
 		margin-bottom: 0px;
 		font-weight: bold;
 		text-align: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 }
 
 
