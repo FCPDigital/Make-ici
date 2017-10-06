@@ -53,14 +53,16 @@ if( isset($style) && $style=="compact" ){
 		</p>
 
 		
-
+		<?php $countDate = count(get_all_dates($product)); ?>
 		<?php $nextDate = get_next_date($product);
 		if($nextDate){
 			echo "<p class='more-info'><a href=\"".get_permalink($product)."\">En savoir plus</a></P><br><a href=\"".get_permalink($product)."\" data-by-xhr class=\"btn btn-colored\">Inscription<br>Prochaine session le <br>".$nextDate->format("d/m/Y")."</a>";
-		} else {
+		} elseif($countDate !== 0) {
 			echo"<p class='no-dates'>Pas de session à venir.</p><br>";
 			echo "<p><a href=\"".get_permalink($product)."\" data-by-xhr class=\"btn btn-light\">En savoir plus</a></p>";
-		} ?>
+		} else {
+			echo "<p><a href=\"".get_permalink($product)."\" data-by-xhr class=\"btn btn-light\">En savoir plus</a></p>";
+		}?>
 	</div>
 
 	

@@ -347,7 +347,8 @@ function get_variation_attribute($product){
 	return $var_data;
 }
 
-function get_next_date($product, $attibute_name="attribute_pa_date"){
+
+function get_all_dates($product, $attibute_name="attribute_pa_date") {
 	$data = get_variation_attribute($product);
 	$date = [];
 	for($i=0; $i<count($data); $i++){
@@ -357,6 +358,11 @@ function get_next_date($product, $attibute_name="attribute_pa_date"){
 			}
 		}
 	}
+	return $date;
+}
+
+function get_next_date($product, $attibute_name="attribute_pa_date"){
+	$date = get_all_dates($product);
 	$currentDate = DateTime::createFromFormat('U', time());
 	$nextDate = false;
 	for($i=0; $i<count($date); $i++){
