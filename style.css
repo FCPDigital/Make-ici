@@ -2542,23 +2542,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 145px;
-          top: 148px; }
+          left: 43px;
+          top: 205px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 189px;
-          top: 111px; }
+          left: 16px;
+          top: 187px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 17px;
-          top: 191px; }
+          left: 194px;
+          top: 218px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 375px;
-          top: 98px; }
+          left: 108px;
+          top: 101px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 279px;
-          top: 4px; }
+          left: 206px;
+          top: 39px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 379px;
-          top: 153px; }
+          left: 127px;
+          top: 59px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);
@@ -2982,10 +2982,31 @@ woocommerce table.cart .product-name a {
   padding: 0 10px; }
 
 /*html, bod*/
-.section-post {
+/* 	header .navbar-brand > img {
+    display: block;
+    height: 90px;
+    margin-top: -5px;
+}
+footer .copyright a{
+color:#000;
+} */
+.make-ici-homepage .su-column-size-1-6 {
+  width: 19% !important;
+  text-align: center;
+  font-size: 13px;
+  letter-spacing: 1.5px;
+  line-height: 1.7; }
+.make-ici-homepage .last-mission {
+  margin: 0px !important; }
+.make-ici-homepage .mission-icone {
+  font-size: 25px;
+  margin-right: 21px;
+  margin-left: -48px; }
+.make-ici-homepage .su-column {
+  margin: 0 1% 0 0 !important; }
+.make-ici-homepage .section-post {
   color: white; }
-
-strong {
+.make-ici-homepage strong {
   font-weight: bold; }
 
 .su-custom-gallery {

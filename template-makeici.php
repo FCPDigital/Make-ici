@@ -5,7 +5,7 @@
 
 get_header(); ?>
 
-<main id="page" class="site-main homepage" role="main">
+<main id="page" class="site-main homepage make-ici-homepage" role="main">
 	<div id="anchor-0" class="landing" style="background-image:url(<?php echo get_field('bg_main'); ?>);">
 		<video muted loop autoplay poster="images/bg.png" id="bgvid">
 			<source src="<?php echo get_template_directory_uri() ?>/assets/videos/bg.mp4" type="video/mp4">

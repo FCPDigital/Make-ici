@@ -274,15 +274,43 @@ woocommerce table.cart .product-name a {
 //				TODO Makeici.org
 //
 //////////////////////////////////////////////////////////
+/* 	header .navbar-brand > img {
+    display: block;
+    height: 90px;
+    margin-top: -5px;
+}
+footer .copyright a{
+color:#000;
+} */
+.make-ici-homepage {
+	.su-column-size-1-6 {
+	    width: 19% !important;
+		text-align: center;
+		font-size: 13px;
+		letter-spacing: 1.5px;
+		line-height: 1.7;
+	}
+	.last-mission{
+	  margin:0px !important;
+	}
+	.mission-icone
+	{
+	    font-size: 25px;
+	    margin-right: 21px;
+	    margin-left: -48px;
+	}
+	.su-column {
+	    margin: 0 1% 0 0 !important;
+	}
+	.section-post {
+  	  color: white;
+	}
 
-
-.section-post {
-    color: white;
+	strong {
+	    font-weight: bold;
+	}
 }
 
-strong {
-    font-weight: bold;
-}
 
 .su-custom-gallery {
     display: flex;
