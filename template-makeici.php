@@ -56,21 +56,7 @@ get_header(); ?>
 		<div class="container">
 			<h2 class="left-full-border">Make ICI - Staff</h2>
 			<div class="single-body staff-container">
-				<?php $posts = new WP_Query(array(
-					'post_type'=> 'staff',
-					'limit' => 5,
-					'order'=> "ASC"
-				)); ?>
-				<?php while ( $posts->have_posts() ) : $posts->the_post(); ?>
-					<div class="staff-item" id="post-<?php the_ID(); ?>">
-						<img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="">
-						<div class="staff-item-content">
-							<h3><?php echo get_the_title(); ?></h3>
-							<p><?php the_content() ?></p>
-							<a href="#"  data-getarg="contact=<?php echo get_field('e-mail'); ?>" data-wpxhr="contact_form" data-xhrarg="<?php echo get_the_ID(); ?>" class="btn btn-colored action-abonnement">Contactez le(a)</a>
-						</div>
-					</div>
-				<?php endwhile; ?>
+				<?php do_shortcode("[staff]") ?>
 				<?php wp_reset_query(); ?>
 			</div>
 		</div>
