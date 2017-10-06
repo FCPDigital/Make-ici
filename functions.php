@@ -214,7 +214,16 @@ function last_products(){
 					$count = 0;
 					foreach ( $products as $product ) : setup_postdata( $product );
 					if($count < $limit){
-						include( locate_template("template-parts/woocommerce/content-last-products.php") );
+						set_query_var("item", $product);
+						set_query_var("size", "item--small");
+						set_query_var("class", "carousel-item");
+						set_query_var("limit", 80);
+						set_query_var("heightAuto", true);
+						set_query_var("callback", [
+							"content" => "En savoir plus",
+							"url" => get_permalink($product)
+						]);
+						get_template_part( 'template-parts/post/content', "head-post");
 						$count++;
 					}
 				 	endforeach;
@@ -843,8 +852,11 @@ function get_excerpt_truncate($post, $value){
 	return wp_trim_words( get_the_excerpt($post), $value, "...");
 }
 
-function truncate_content($content, $value) {
-	return strip_tags(substr( $content, 0, $value ));
+function truncate_content($content, $value, $suffixe = '...') {
+	if(strlen($content) < $value) {
+		$suffixe = '';
+	}
+	return strip_tags(substr( $content, 0, $value )).$suffixe;
 }
 
 function init_sidebar(){

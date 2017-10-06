@@ -545,6 +545,8 @@ a {
   height: 300px;
   box-sizing: border-box;
   overflow: hidden; }
+  .item--height-auto {
+    height: auto; }
   .item--border {
     border: 1px solid #ffed00; }
   .item--wide {
@@ -595,6 +597,8 @@ a {
       text-align: right; }
     .item__mention--left {
       text-align: left; }
+  .item__callback {
+    left: 0; }
   .item__thumbnail {
     width: 100%;
     max-height: 150px;
@@ -2489,23 +2493,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 61px;
-          top: 221px; }
+          left: 334px;
+          top: 39px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 47px;
-          top: 204px; }
+          left: 213px;
+          top: 127px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 279px;
-          top: 128px; }
+          left: 292px;
+          top: 192px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 194px;
-          top: 179px; }
+          left: 108px;
+          top: 216px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 73px;
-          top: 103px; }
+          left: 40px;
+          top: 228px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 341px;
-          top: 29px; }
+          left: 242px;
+          top: 199px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);

@@ -26,6 +26,9 @@ $banner-h: 60px;
 	height: $height;
 	box-sizing: border-box;
 	overflow: hidden;
+	&--height-auto {
+		height: auto;
+	}
 	&--border {
 		border: 1px solid $color-3;
 	}
@@ -94,6 +97,10 @@ $banner-h: 60px;
 		&--left {
 			text-align: left;
 		}
+	}
+	
+	&__callback {
+		left: 0;
 	}
 
 	&__thumbnail {
