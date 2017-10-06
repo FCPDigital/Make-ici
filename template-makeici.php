@@ -56,7 +56,7 @@ get_header(); ?>
 		<div class="container">
 			<h2 class="left-full-border">Make ICI - Staff</h2>
 			<div class="single-body staff-container">
-				<?php do_shortcode("[staff]") ?>
+				<?php echo do_shortcode("[staff]") ?>
 				<?php wp_reset_query(); ?>
 			</div>
 		</div>
