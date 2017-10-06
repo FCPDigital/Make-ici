@@ -212,9 +212,9 @@ h1 {
 		background-size: cover;
 		color: white;
 		padding: 50px 0;
+		overflow: hidden;
 		@include transition(.25s);
 		@include transform(scale3d(1, 1, 1) );
-		overflow: hidden;
 		&::before{
 			position: absolute;
 			content: "";
@@ -251,6 +251,8 @@ h1 {
 					font-style: italic;
 					margin-left: 0px;
 					margin-top: 10px;
+					font-size: 1.2em;
+					font-weight: normal;
 				}
 			}
 			.archive-main-body {
@@ -450,6 +452,10 @@ h1 {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+		&--top {
+			padding-top: 2*$big-pad;
+			display: block;
+		}
 	}
 }
 

@@ -6,7 +6,7 @@ Ce template est appelé notamment dans archive-abonnement.php
  ?>
 
 <?php //L'id sert à identifier les section pour la navigation en timeline, le background sert à afficher l'image de fond ?>
-<section id="item-<?php echo get_the_slug(); ?>" class="archive-body-item awesome-panel-item container-fluid page-section" style="background-image:url('<?php echo get_the_post_thumbnail_url(); ?>')">
+<section id="item-<?php echo get_the_slug(); ?>" class="archive-body-item archive-body-item--top awesome-panel-item container-fluid page-section" style="background-image:url('<?php echo get_the_post_thumbnail_url(); ?>')">
 
 	<div class="container">
 
