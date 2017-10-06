@@ -43,9 +43,11 @@
 	<?php
 	//Bouton du panier
 	global $woocommerce; ?>
-	<?php if($woocommerce->cart->cart_contents_count>0){
+	<?php if($woocommerce && $woocommerce->cart->cart_contents_count>0){
 		$dataCount='data-count="'.$woocommerce->cart->cart_contents_count.'"';
 	} else {
 		$dataCount="";
 	}?>
+	<?php if($woocommerce) { ?>
 	<a id="cart-btn" <?php echo $dataCount ?> href="<?php echo $woocommerce->cart->get_cart_url(); ?>">Panier</a>
+	<?php } ?>
