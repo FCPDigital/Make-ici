@@ -1977,6 +1977,10 @@ Contient l'ensemble des style particulier propre aux posts et au pages.
 #page h1 {
   margin-bottom: 32px; }
 
+#single .widget-social {
+  text-align: center;
+  margin-top: 30px; }
+
 .single-body p  {
   margin-bottom: 16px; }
 .single-body h2 {
@@ -2468,23 +2472,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 71px;
-          top: 2px; }
+          left: 330px;
+          top: 173px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 62px;
-          top: 227px; }
+          left: 304px;
+          top: 55px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 326px;
-          top: 163px; }
+          left: 207px;
+          top: 43px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 328px;
-          top: 160px; }
+          left: 187px;
+          top: 94px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 25px;
-          top: 61px; }
+          left: 291px;
+          top: 179px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 263px;
-          top: 206px; }
+          left: 233px;
+          top: 198px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);
