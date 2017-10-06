@@ -475,7 +475,7 @@ function shortcode_staff($atts){
 	$posts = new WP_Query(array(
 		'post_type'=> 'staff',
 		'limit' => (int) $args["limit"],
-		'order'=> $args["ASC"]
+		'order'=> $args["order"]
 	));
 
 	$content="<div class='single-body staff-container'>";
