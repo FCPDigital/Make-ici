@@ -887,7 +887,7 @@ function init_sidebar(){
 			'name'					=> __( 'Below Post', 'makeici' ),
 			'id'						=> 'below-post',
 			'description'	 => __( 'Bloc de widget en bas des Post et des Events', 'makeici' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'before_widget' => '<aside id="%1$s" class="widget-social %2$s">',
 			'after_widget'	=> '</aside>'
 	 ));
 }

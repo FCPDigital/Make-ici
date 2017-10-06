@@ -8,6 +8,13 @@ Contient l'ensemble des style particulier propre aux posts et au pages.
 	}
 }
 
+#single {
+	.widget-social {
+		text-align: center;
+		margin-top: 30px;
+	}
+}
+
 // Format de texte d'une page simple
 .single-body {
 	p {
