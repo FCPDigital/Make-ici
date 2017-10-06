@@ -16,6 +16,7 @@
 				</div>
 			<div class="col-sm-4 ">
 				<div class="rest-img"><?php echo the_post_thumbnail('large');?></div>
+				<?php dynamic_sidebar( 'below-post' ); ?>
 			</div>
 			<?php endwhile; // End of the loop. ?>
 		</div>
