@@ -159,6 +159,9 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center; }
+  .flex-wrap-container .center img {
+    width: 280px;
+    height: auto; }
 
 .flex-start {
   align-items: flex-start;
@@ -2539,23 +2542,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 115px;
-          top: 108px; }
+          left: 52px;
+          top: 157px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 268px;
-          top: 38px; }
+          left: 208px;
+          top: 164px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 274px;
-          top: 211px; }
+          left: 330px;
+          top: 209px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 303px;
-          top: 7px; }
+          left: 127px;
+          top: 197px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 195px;
-          top: 46px; }
+          left: 182px;
+          top: 78px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 198px;
-          top: 27px; }
+          left: 216px;
+          top: 118px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);

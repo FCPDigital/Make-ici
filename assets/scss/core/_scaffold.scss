@@ -60,6 +60,10 @@ body {
 	display: flex; 
 	flex-wrap: wrap;
 	justify-content: center;
+	.center img {
+		width: 280px;
+		height: auto;
+	}
 }
 .flex-start {
 	align-items: flex-start;
