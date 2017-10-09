@@ -57,7 +57,7 @@ get_header(); ?>
 			<div class="items">
 				<div class="item item--border item--wide item--no-limit">
 					<div class="item__banner item__banner--dark">
-						<p class="item__title item__title--top-left">Prochains évènements</p>
+						<p class="item__title item__title--top-left">Les évènements</p>
 					</div>
 					<div class="item__content item__content--no-pad events">
 						<?php $events = new WP_Query([ 

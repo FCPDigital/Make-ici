@@ -10,7 +10,12 @@
 						<div class="actions">
 							<a href="http://makeici.org/icimontreuil/category/event-act/"> &lt; Retours</a>
 						</div>
-						<p class="date-actu"><? echo get_the_date();?></p>
+						<?php if(get_post_type(get_post()) == 'events') { ?>
+							<p class="date-actu"><? the_field('date_event');?></p>
+						<?php } else { ?>
+							<p class="date-actu"><? echo get_the_date();?></p>
+						<?php } ?>
+						
 						<?php the_content(); ?>
 					</div>
 				</div>
