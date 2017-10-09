@@ -68,7 +68,7 @@ get_header(); ?>
 						
 						<div class="events-item">
 							<a href="<?php echo get_the_permalink($item) ?>">
-							<p class="events-item__content"><?php echo get_the_title(); ?><br><?php echo get_field("date_event"); ?></p>
+							<p class="events-item__content"><?php echo get_the_title(); ?><br><?php the_field("date_event"); ?></p>
 							<div class="item__thumbnail">
 								<img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="">
 							</div>
