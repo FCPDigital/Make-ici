@@ -2599,23 +2599,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 393px;
-          top: 61px; }
+          left: 350px;
+          top: 172px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 376px;
-          top: 130px; }
+          left: 54px;
+          top: 208px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 253px;
-          top: 216px; }
+          left: 171px;
+          top: 238px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 247px;
-          top: 100px; }
+          left: 170px;
+          top: 121px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 333px;
-          top: 199px; }
+          left: 394px;
+          top: 232px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 377px;
-          top: 102px; }
+          left: 285px;
+          top: 52px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);
@@ -3155,6 +3155,10 @@ color:#000;
 .events-item:first-child .events-item__content {
   border-top: 0;
   margin-top: -10px !important; }
+.events-item .item__thumbnail img {
+  transition: all .4s; }
+.events-item:hover .item__thumbnail img {
+  transform: scale(1.05) translateY(-50%); }
 
 @media screen and (max-width: 860px) {
   .actu-events .wrapper .main-part {
