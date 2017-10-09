@@ -34,6 +34,22 @@ body {
 .margin-left-small { margin-left: $small-pad !important; }
 .margin-right-small { margin-right: $small-pad !important; }
 
+.padding-top-big { padding-top: $big-pad !important; }
+.padding-bottom-big { padding-bottom: $big-pad !important; }
+.padding-left-big { padding-left: $big-pad !important; }
+.padding-right-big { padding-right: $big-pad !important; }
+
+.padding-top-medium { padding-top: $medium-pad !important; }
+.padding-bottom-medium { padding-bottom: $medium-pad !important; }
+.padding-left-medium { padding-left: $medium-pad !important; }
+.padding-right-medium { padding-right: $medium-pad !important; }
+
+.padding-top-small { padding-top: $small-pad !important; }
+.padding-bottom-small { padding-bottom: $small-pad !important; }
+.padding-left-small { padding-left: $small-pad !important; }
+.padding-right-small { padding-right: $small-pad !important; }
+
+
 .inv-margin-top-small { margin-top: -1*$small-pad !important}
 .no-deco {
 	text-decoration: none;

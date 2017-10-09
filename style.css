@@ -118,6 +118,42 @@ body {
 .margin-right-small {
   margin-right: 16px !important; }
 
+.padding-top-big {
+  padding-top: 64px !important; }
+
+.padding-bottom-big {
+  padding-bottom: 64px !important; }
+
+.padding-left-big {
+  padding-left: 64px !important; }
+
+.padding-right-big {
+  padding-right: 64px !important; }
+
+.padding-top-medium {
+  padding-top: 32px !important; }
+
+.padding-bottom-medium {
+  padding-bottom: 32px !important; }
+
+.padding-left-medium {
+  padding-left: 32px !important; }
+
+.padding-right-medium {
+  padding-right: 32px !important; }
+
+.padding-top-small {
+  padding-top: 16px !important; }
+
+.padding-bottom-small {
+  padding-bottom: 16px !important; }
+
+.padding-left-small {
+  padding-left: 16px !important; }
+
+.padding-right-small {
+  padding-right: 16px !important; }
+
 .inv-margin-top-small {
   margin-top: -16px !important; }
 
@@ -567,6 +603,11 @@ a {
   height: 300px;
   box-sizing: border-box;
   overflow: hidden; }
+  .item--animate {
+    transition: all .5s ease; }
+    .item--animate:hover {
+      transform: translateY(-10px);
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4); }
   .item--height-auto {
     height: auto; }
   .item--border {
@@ -581,9 +622,11 @@ a {
   .item--no-limit {
     height: auto; }
   .item__link {
-    text-decoration: none; }
+    text-decoration: none;
+    color: white; }
     .item__link:hover {
-      text-decoration: none; }
+      text-decoration: none;
+      color: white; }
   .item__banner {
     background-color: #ffed00;
     color: black;
@@ -2556,23 +2599,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 174px;
-          top: 156px; }
+          left: 393px;
+          top: 61px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 26px;
-          top: 78px; }
+          left: 376px;
+          top: 130px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 351px;
-          top: 245px; }
+          left: 253px;
+          top: 216px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 330px;
-          top: 249px; }
+          left: 247px;
+          top: 100px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 151px;
-          top: 56px; }
+          left: 333px;
+          top: 199px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 167px;
-          top: 6px; }
+          left: 377px;
+          top: 102px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);

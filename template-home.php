@@ -13,7 +13,7 @@ $postCur = get_post(); // On stocke le post courant pour éviter le bug de la bo
 <main id="page" class="site-main homepage" role="main">
 
 	<div class="landing" style="background-image:url(<?php echo get_field('bg_main', $postCur); ?>);">	 
-	 <div class="container">
+		<div class="container">
 			<div class="landing-legend">
 				<h2>ICI MONTREUIL</h2> est une manufacture collaborative et solidaire pour les artisans, artistes,<br> designers, startups et entrepreneurs du “Faire”
 			</div>
@@ -46,8 +46,7 @@ $postCur = get_post(); // On stocke le post courant pour éviter le bug de la bo
 				<span class="scroll-btn__title">Les formations</span>
 				<a class="scroll-btn" href="#anchor-3" data-scroll></a>
 			</div>
-			
-		</div> 
+		</div>
 	</div>
 	<div id="anchor-3" class="section-post last-posts" style="background-image:url(<?php echo get_field('bg_last_posts', $postCur); ?>);">
 		<div class="container">

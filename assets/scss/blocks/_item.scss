@@ -30,6 +30,13 @@ $banner-h: 60px;
 	height: $height;
 	box-sizing: border-box;
 	overflow: hidden;
+	&--animate {
+		transition: all .5s ease;
+		&:hover {
+			transform: translateY(-10px);
+			box-shadow: 0px 5px 15px rgba(0,0,0,.4);
+		}
+	}
 	&--height-auto {
 		height: auto;
 	}
@@ -51,8 +58,10 @@ $banner-h: 60px;
 	}
 	&__link {
 		text-decoration: none;
+		color: white;
 		&:hover {
 			text-decoration: none;
+			color: white;
 		}
 	}
 	&__banner {
@@ -131,7 +140,6 @@ $banner-h: 60px;
 		color: white;
 		line-height: $big-size;
 		font-size: $small-size;
-
 		p {
 			color: white;
 			margin:0;

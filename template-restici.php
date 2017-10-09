@@ -44,51 +44,49 @@ get_header(); ?>
 			<h2 class="left-full-border">3 Formules, tous les midis</h2>
 			<div class="single-body">
 				<div id="main-carousel" class="carousel ">
-				<div class="carousel-body rest">
-					<div class="archive-head carousel-container">
-						
-		<div class="archive-head-item carousel-item">
- 		 <div class="title-container">
-	 			 <p class="title">
-		 		 SUR PLACE</p>
-				</div>
-					<div>
-					<img src="http://makeici.org/icimontreuil/wp-content/uploads/sites/2/2017/07/img-surplace.jpg" alt="">
-				</div>
-		 		 <p class="excerpt rest">
-		 		 Pour passer un moment dans un environnement Arty, notre salle <br>contient plus de 30 places assises
-				</p>
-		</div>
-			 
-		<div class="archive-head-item carousel-item">
- 		 <div class="title-container">
-	 			 <p class="title">
-		 		À EMPORTER</p>
-				</div>
-					<div>
-					<img src="http://makeici.org/icimontreuil/wp-content/uploads/sites/2/2017/07/img-emporter.jpg" alt="">
-				</div>
-		 		 <p class="excerpt rest">
-		 		 Deliveroo peut vous livrer directement sur votre lieu de travail ou <br>vous pouvez venir chercher votre repas sur place
-		 		 <a href="https://deliveroo.fr/fr/menu/paris/montreuil-robespierre/restici" target="blank_" class="margin-top-big margin-left-small btn btn-light rest">Commander sur Deliveroo</a>
-				</p>
-		</div>
-		
-		<div class="archive-head-item carousel-item">
- 		 <div class="title-container">
-	 			 <p class="title">
-		 		GROUPES</p>
-				</div>
-					<div>
-					<img src="http://makeici.org/icimontreuil/wp-content/uploads/sites/2/2017/07/img-groupe.jpg" alt="">
-				</div>
-		 		 <p class="excerpt rest">Nous pouvons accueillir des groupes de<br> 5 à 50 pax
-		 		<?php echo get_field("texte_group"); ?>
-				</p>
-		</div>
-		
-		</div>
-		</div>
+					<div class="carousel-body rest">
+						<div class="archive-head carousel-container">
+
+							<div class="item  item--height-auto archive-head-item carousel-item">
+								<div class="item__banner">
+									<p class="item__title">SUR PLACE</p>
+								</div>
+								<div class="item__thumbnail">
+									<img src="http://makeici.org/icimontreuil/wp-content/uploads/sites/2/2017/07/img-surplace.jpg" alt="">
+								</div>
+								<div class="item__content margin-bottom-medium">
+									<p>Pour passer un moment dans un environnement Arty, notre salle <br>contient plus de 30 places assises</p>
+								</div>
+							</div>
+
+							<div class="item  item--height-auto archive-head-item carousel-item">
+								<div class="item__banner">
+									<p class="item__title">À EMPORTER</p>
+								</div>
+								<div class="item__thumbnail">
+									<img src="http://makeici.org/icimontreuil/wp-content/uploads/sites/2/2017/07/img-emporter.jpg" alt="">
+								</div>
+								<div class="item__content margin-bottom-medium">
+									Deliveroo peut vous livrer directement sur votre lieu de travail ou <br>vous pouvez venir chercher votre repas sur place
+								</div>
+								<div class="item__actions">
+		 							<a href="https://deliveroo.fr/fr/menu/paris/montreuil-robespierre/restici" target="blank_" class="btn btn--light">Commander sur Deliveroo</a>
+		 						</div>
+							</div>
+
+							<div class="item  item--height-auto archive-head-item carousel-item">
+								<div class="item__banner">
+									<p class="item__title">GROUPES</p>
+								</div>
+								<div class="item__thumbnail">
+									<img src="http://makeici.org/icimontreuil/wp-content/uploads/sites/2/2017/07/img-groupe.jpg" alt="">
+								</div>
+								<div class="item__content margin-bottom-medium">
+									<p>Nous pouvons accueillir des groupes de<br> 5 à 50 pax<?php echo get_field("texte_group"); ?></p>
+								</div>
+							</div>
+						</div>
+					</div>
 			</div>
 		</div>
 		<a class="scroll-btn" href="#anchor-3" data-scroll></a>
