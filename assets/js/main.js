@@ -407,76 +407,6 @@ AwesomePanel = {
 	}
 }
 
-////////////////////////////////////////////////////////////////////////////////
-//
-//							 Perspective Corner
-//
-////////////////////////////////////////////////////////////////////////////////
-
-perspectivecorner = {
-	intensity: 1, //Deg
-	mouseLeave :function(event){
-		if(this.initialStyle) {
-			this.setAttribute("style", this.initialStyle+ ";" +setPrefix("transform", "rotate3d(1, 1, 1, 0deg) scale3d(1,1,1)")+"box-shadow: 0px 0px 30px rgba(0,0,0,.5)" );
-		} else {
-			this.setAttribute("style", setPrefix("transform", "rotate3d(1, 1, 1, 0deg) scale3d(1,1,1)")+"box-shadow: 0px 0px 30px rgba(0,0,0,.5)" );
-		}
-		self.currentEl = null;
-	},
-	mouseEnter:function(event){
-		var self = perspectivecorner;
-		self.currentEl = this;
-	},
-	mouseMove:function(event){
-
-		var rX, rY, signX, signY,
-		midW = window.innerWidth/2, midH = this.innerHeight/2,
-		self = perspectivecorner;
-
-		rY = event.layerX > midW ? ((event.layerX - midW)/midW) : ((event.layerX - midW)/midW);
-		rX = event.layerY > midH ? ((event.layerY - midH)/midH) : ((event.layerY - midH)/midH);
-
-		console.log(rX, rY);
-		// rY *= -1;
-		rX *= -1;
-
-		var scale = "scale(1)";
-
-		console.log(self.currentEl.initialStyle );
-		if(self.currentEl.initialStyle) {
-			self.currentEl.setAttribute("style", self.currentEl.initialStyle+";" + setPrefix("transform", "rotate3d("+rX+", "+rY+", 0, "+self.intensity+"deg) translateZ(-50px) scale3d(1,1,1)")+"box-shadow: "+(-1*rY*self.intensity)+"px "+(rX*self.intensity)/2+"px 100px rgba(0,0,0,.5)" );
-		} else {
-			self.currentEl.setAttribute("style", setPrefix("transform", "rotate3d("+rX+", "+rY+", 0, "+self.intensity+"deg) translateZ(-50px) scale3d(1,1,1)")+"box-shadow: "+(-1*rY*self.intensity)+"px "+(rX*self.intensity)/2+"px 100px rgba(0,0,0,.5)" );
-		}
-
-
-		event.stopImmediatePropagation();
-		if(event.stopPropagation) {
-			event.stopPropagation();
-
-		} else {
-			event.cancelBubble = true;
-		}
-	},
-	initEvent:function(el){
-		if(el.getAttribute("data-perspective-effect")){
-			el.effectiveChild = el.querySelector(el.getAttribute("data-perspective-effect"));
-			el.effectiveChild.classList.add("data-perspective-child-effect");
-		}
-		el.initialStyle = el.getAttribute("style");
-		el.addEventListener("mouseenter", perspectivecorner.mouseEnter, true);
-		el.addEventListener("mouseleave", perspectivecorner.mouseLeave, false);
-
-	},
-	init:function(){
-		this.els = document.getElementsByClassName("perspective-corner");
-		for(i=0; i<this.els.length; i++){
-			this.initEvent(this.els[i]);
-		}
-		window.addEventListener("mousemove", perspectivecorner.mouseMove, true);
-	}
-}
-
 
 ////////////////////////////////////////////////////////////////////////////////
 //
@@ -753,18 +683,12 @@ HeaderScroll = {
 
 
 window.addEventListener("load", function(){
-	smoothScroll.init({
-		offset: 40
-	});
-	AwesomePanel.init({
-		snapping: false
-	});
+	smoothScroll.init({ offset: 40 });
+	AwesomePanel.init({ snapping: false });
 	Popin.init();
 	scrollToTop();
 	manageProductCarousel();
 	var carousel = new MakeCarousel(document.querySelector("#main-carousel"));
 	XhrManage.init();
 	HeaderScroll.init();
-
-
 }, false)
