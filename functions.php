@@ -198,6 +198,7 @@ function last_products(){
 	// The Query
 	$args['post_type'] = "product";
 	$args['meta_query'] = $meta_query;
+	$args['posts_per_page'] = -1;
 
 	$products = new WP_Query($args);
 	$products = sort_by_date($products);
