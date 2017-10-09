@@ -42,7 +42,7 @@ Contenu d'une page formation. Appelé dans :
 					$price = (int) $product->get_price();
 					$reduc = (float) esc_attr( get_option('reduction_promo'));
 					if($reduc){
-						$abonnePrice = $price*$reduc;
+						$abonnePrice = floor($price*$reduc);
 					} else {
 						$abonnePrice = $price;
 					}
