@@ -1360,8 +1360,6 @@ Ces styles sont davantage propre aux fonctionalité de Woocommerce natif
     transform: none; }
 #boutique .carousel.active-control .carousel-control {
   width: 15%; }
-#boutique .carousel.active-control .carousel-body {
-  width: 85%; }
 
 .carousel.product-carousel .carousel-item {
   background-color: white;
@@ -2143,8 +2141,8 @@ Contient l'ensemble des style particulier propre aux posts et au pages.
 .carousel .carousel-body {
   position: relative;
   overflow: hidden;
-  width: 75%;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  width: 720px; }
   .carousel .carousel-body .carousel-container {
     -webkit-transition: 0.4s;
     -moz-transition: 0.4s;
@@ -2156,7 +2154,9 @@ Contient l'ensemble des style particulier propre aux posts et au pages.
     .carousel .carousel-body .carousel-container .carousel-item {
       margin: 30px 5px;
       position: relative;
-      flex: 1; }
+      flex: 1;
+      min-width: 230px;
+      max-width: 230px; }
       .carousel .carousel-body .carousel-container .carousel-item .crop-img {
         height: 150px;
         overflow: hidden; }
@@ -2191,7 +2191,6 @@ Contient l'ensemble des style particulier propre aux posts et au pages.
           width: 100%;
           bottom: 25px; }
 .carousel.active-control .carousel-body {
-  width: 75%;
   display: inline-block;
   float: left;
   flex-wrap: nowrap; }
@@ -2234,8 +2233,11 @@ Contient l'ensemble des style particulier propre aux posts et au pages.
       background-image: url("assets/images/right-arrow.png"); }
 
 @media screen and (max-width: 860px) {
-  .carousel .carousel-body, .carousel .active-control.carousel-body {
-    width: 100% !important; }
+  .carousel .carousel-body, .carousel.active-control .carousel-body {
+    width: 480px;
+    margin: auto;
+    float: none !important;
+    display: block; }
   .carousel.active-control {
     position: relative; }
     .carousel.active-control .carousel-body {
@@ -2245,6 +2247,15 @@ Contient l'ensemble des style particulier propre aux posts et au pages.
       width: 100%;
       padding: 20px 0;
       top: 0; } }
+@media screen and (max-width: 480px) {
+  .carousel .carousel-body, .carousel.active-control .carousel-body {
+    width: 240px;
+    margin: auto;
+    float: none !important;
+    display: block; }
+    .carousel .carousel-body .carousel-container .carousel-item, .carousel.active-control .carousel-body .carousel-container .carousel-item {
+      max-width: 100%;
+      width: 100%; } }
 /*
 Contient une grande partie des style de formulaire. Notamment les surcharge de WPForm et Contact Form 7
 */
@@ -2542,23 +2553,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 234px;
-          top: 101px; }
+          left: 153px;
+          top: 156px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 125px;
-          top: 134px; }
+          left: 358px;
+          top: 112px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 165px;
-          top: 111px; }
+          left: 82px;
+          top: 49px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 136px;
-          top: 194px; }
+          left: 393px;
+          top: 237px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 57px;
-          top: 126px; }
+          left: 120px;
+          top: 33px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 236px;
-          top: 44px; }
+          left: 12px;
+          top: 33px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);

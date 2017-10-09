@@ -605,18 +605,26 @@ function MakeCarousel(el){
 	this.carousel = el;
 	this.currentItem= 0;
 	this.nbItemRow = 3;
+	var self = this;
 
 	if(this.carousel && this.carousel.className.match("active-control")){
 
 		this.body = this.carousel.querySelector(".carousel-body");
+		this.items = this.carousel.querySelectorAll(".carousel-container .carousel-item");
+		this.container = this.carousel.querySelector(".carousel-container")
 		this.control = {
 			left: this.carousel.querySelector(".carousel-control .carousel-control-btn[data-direction='left']"),
 			right: this.carousel.querySelector(".carousel-control .carousel-control-btn[data-direction='right']")
 		}
-		this.items = this.carousel.querySelectorAll(".carousel-container .carousel-item");
-		this.container = this.carousel.querySelector(".carousel-container");
+		this.initEvents();
+		self.updateSize();
+	}
+}
 
-		var self = this;
+MakeCarousel.prototype = {
+
+	initEvents: function(){
+		var self =this;
 		this.control.left.addEventListener("click", function(e){
 			e.preventDefault();
 			self.move(this.getAttribute("data-direction"));
@@ -625,56 +633,61 @@ function MakeCarousel(el){
 			e.preventDefault();
 			self.move(this.getAttribute("data-direction"));
 		})
-
-		self.updateSize();
 		window.addEventListener("resize", function(){
 			self.updateSize();
 		})
-	}
-}
-MakeCarousel.prototype.move = function(direction){
-	this.updateSize();
+	},
 
+	move: function(direction){
+		this.updateSize();
+		if(direction == "right"){
+			if(this.items.length - this.currentItem > this.nbItemRow ) this.currentItem++;
+		} else if(direction == "left"){
+			if(this.currentItem > 0) this.currentItem--;
+		}
+		var t = -1*(100/this.items.length*this.currentItem);	console.log(t);
+		var t = -1*(240*this.currentItem); console.log(t)
 
+		this.container.setAttribute("style", "width: "+this.width+";"+setPrefix("transform", "translateX("+t+"px)"))
+		this.manageSelector();
+	},
 
-	if(direction == "right"){
-		if(this.items.length - this.currentItem > this.nbItemRow ) this.currentItem++;
-	} else if(direction == "left"){
-		if(this.currentItem > 0) this.currentItem--;
-	}
-	var t = -1*(100/this.items.length*this.currentItem);	console.log(t);
-	this.container.setAttribute("style", "width: "+this.width+";"+setPrefix("transform", "translateX("+t+"%)"))
-	this.manageSelector();
-}
+	updateSize: function(){
+		if(window.innerWidth < 1160 && window.innerWidth > 800 && this.nbItemRow != 2){
+			this.nbItemRow = 2;
+		}
+		if(window.innerWidth > 1160){
+			this.nbItemRow = 3;
+		}
+		if(window.innerWidth < 800 && this.nbItemRow != 1){
+			this.nbItemRow = 1;
+		}
+		this.manageSelector();
+		/*this.width = this.items.length*(100/this.nbItemRow)+"%";*/
+		this.width = (this.items.length-1)*240+"px";
+		this.container.style.width = this.width;
+	},
 
-MakeCarousel.prototype.updateSize=function(){
-	if(window.innerWidth < 1160 && window.innerWidth > 800 && this.nbItemRow != 2){
-		this.nbItemRow = 2;
-	}
+	manageSelector: function(){
+		if(this.currentItem == 0) {
+			this.control.left.classList.add("hide");
+		} else {
+			this.control.left.classList.remove("hide");
+		}
 
-
-	if(window.innerWidth > 1160){
-		this.nbItemRow = 3;
-	}
-	if(window.innerWidth < 800 && this.nbItemRow != 1){
-		this.nbItemRow = 1;
-	}
-	this.manageSelector();
-	this.width = this.items.length*(100/this.nbItemRow)+"%";
-	this.container.style.width = this.width;
-}
-
-MakeCarousel.prototype.manageSelector = function(){
-	if(this.currentItem == 0) {
-		this.control.left.classList.add("hide");
-	} else {
-		this.control.left.classList.remove("hide");
-	}
-
-	if(this.items.length - this.currentItem == this.nbItemRow ){
-		this.control.right.classList.add("hide")
-	} else {
-		this.control.right.classList.remove("hide");
+		if(this.items.length - this.currentItem == this.nbItemRow ){
+			this.control.right.classList.add("hide")
+		} else {
+			this.control.right.classList.remove("hide");
+		}
+		
+		if (this.items.length <= this.nbItemRow) {
+			this.control.left.classList.add("hide");
+			this.control.right.classList.add("hide");
+			while(this.currentItem > 0) {
+				this.move("left");
+			}
+		}
 	}
 
 }

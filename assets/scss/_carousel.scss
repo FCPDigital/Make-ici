@@ -5,8 +5,8 @@
 	.carousel-body {
 		position: relative;
 		overflow: hidden;
-		width: 75%;
 		flex-wrap: wrap;
+		width: 720px;
 		.carousel-container {
 			@include transition(.4s);
 			display: flex;
@@ -15,6 +15,8 @@
 				margin: 30px 5px;
 				position: relative;
 				flex: 1;
+				min-width: 230px;
+				max-width: 230px;
 				.crop-img {
 					height: 150px;
 					overflow: hidden;
@@ -62,7 +64,6 @@
 
 	&.active-control {
 		.carousel-body {
-			width: 75%;
 			display: inline-block;
 			float: left;
 			flex-wrap: nowrap;
@@ -112,8 +113,11 @@
 
 @media screen and (max-width:$break-point-2){
 	.carousel {
-		.carousel-body, .active-control.carousel-body {
-			width: 100% !important;
+		.carousel-body, &.active-control .carousel-body {
+			width: 480px;
+			margin: auto;
+			float: none !important;
+			display: block;	
 		}
 		&.active-control {
 			position: relative;
@@ -126,6 +130,19 @@
 				padding: 20px 0;
 				top: 0;
 			}
+		}
+	}
+}
+
+@media screen and (max-width:$break-point-3){
+	.carousel .carousel-body, .carousel.active-control .carousel-body {
+		width: 240px;
+		margin: auto;
+		float: none !important;
+		display: block;	
+		.carousel-container .carousel-item {
+			max-width: 100%;
+			width: 100%;
 		}
 	}
 }

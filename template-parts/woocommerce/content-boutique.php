@@ -22,7 +22,7 @@ Affiche le nom du categorie et un carousel des produits y correspondant
 				$products_sort = sort_by_date($products);
 				//Si le compte est superieur à 3 on active les fleche de direction
 				?>
-				<div class="product-carousel carousel <?php if($count > 3){echo 'active-control';} ?>">
+				<div class="product-carousel carousel active-control">
 					<div class="carousel-body">
 						<div class="archive-head carousel-container">
 							<?php	/* Start the Loop */
