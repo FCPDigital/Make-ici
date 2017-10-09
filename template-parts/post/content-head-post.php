@@ -3,7 +3,7 @@
 	<a class="item__link" href="<?php echo get_the_permalink($item) ?>">
 	<div class="item__banner">
 		<p class="item__title item__title--left"><?php echo truncate_content(get_the_title($item), 70); ?></p>
-		<span class="item__corner item__mention item__mention--right"><?php echo get_the_date('D M j', $item); ?></span>
+		<span class="item__corner item__mention item__mention--right"><?php echo get_the_date('D j M', $item); ?></span>
 	</div>
 	</a>
 	<div class="item__thumbnail">
