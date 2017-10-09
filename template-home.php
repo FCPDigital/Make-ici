@@ -15,10 +15,11 @@ $postCur = get_post(); // On stocke le post courant pour éviter le bug de la bo
 	<div class="landing" style="background-image:url(<?php echo get_field('bg_main', $postCur); ?>);">	 
 		<div class="container">
 			<div class="landing-legend">
-				<h2>ICI MONTREUIL</h2> est une manufacture collaborative et solidaire pour les artisans, artistes,<br> designers, startups et entrepreneurs du “Faire”
+				<h2><?php echo strtoupper(get_bloginfo("name")); ?></h2> 
+				<?php echo get_bloginfo("description"); ?>
 			</div>
 		</div>
-		<a id="scroll" href="#anchor-1" data-scroll>Découvrez ICI Montreuil</a>
+		<a id="scroll" href="#anchor-1" data-scroll>Découvrez <?php echo get_bloginfo("name"); ?></a>
 	</div>
 	<div id="anchor-1" class="section-post" style="background-image: url(<?php echo get_the_post_thumbnail_url($postCur); ?>);">
 		<div class="container">
@@ -28,7 +29,7 @@ $postCur = get_post(); // On stocke le post courant pour éviter le bug de la bo
 					<?php the_content($postCur); ?>
 				</div>
 				<div class="center margin-top-big">
-					<a href="https://www.instagram.com/icimontreuil" class="btn btn--light">ICI Montreuil en images</a>
+					<a href="https://www.instagram.com/icimontreuil" class="btn btn--light"><?php echo get_bloginfo("name"); ?> en images</a>
 				</div>
 			</div>
 			<div class="scroll-btn-container margin-top-medium">
