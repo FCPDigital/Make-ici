@@ -2637,23 +2637,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 378px;
-          top: 92px; }
+          left: 173px;
+          top: 121px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 367px;
-          top: 190px; }
+          left: 186px;
+          top: 212px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 137px;
-          top: 192px; }
+          left: 342px;
+          top: 13px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 194px;
-          top: 141px; }
+          left: 377px;
+          top: 191px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 304px;
-          top: 101px; }
+          left: 134px;
+          top: 230px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 28px;
-          top: 224px; }
+          left: 111px;
+          top: 98px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);
@@ -3180,6 +3180,9 @@ color:#000;
         border: 0;
         background-color: transparent; }
 
+@media screen and (max-width: 860px) {
+  .make-ici-homepage .su-column-size-1-6 {
+    width: 100% !important; } }
 .actu-events {
   padding: 120px 0; }
   .actu-events .wrapper {

@@ -282,6 +282,8 @@ woocommerce table.cart .product-name a {
 footer .copyright a{
 color:#000;
 } */
+
+
 .make-ici-homepage {
 	.su-column-size-1-6 {
 	    width: 19% !important;
@@ -395,6 +397,14 @@ color:#000;
 			    border: 0;
 			    background-color: transparent;
 			}
+		}
+	}
+}
+
+@media screen and (max-width: $break-point-2) {
+	.make-ici-homepage {
+		.su-column-size-1-6 {
+		    width: 100% !important;
 		}
 	}
 }
