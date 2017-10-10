@@ -157,8 +157,12 @@ h1 {
 				color: black;
 				display: flex;
 				flex-direction: column;
+				line-height: 1.5em;
 				justify-content: center;
 				height: calc(100% - 52px); // Remove btn height : border(4) + margin-top(8) + line-height(20) + padding(20)
+				p {
+					line-height: 1.5em;
+				}
 			}
 		}
 	}
@@ -182,6 +186,7 @@ h1 {
 			.btn {
 				width: 100%;
 				left:0;
+				font-size: 12px;
 				@include transform(translateX(0));
 				bottom: 0;
 				position: relative;
