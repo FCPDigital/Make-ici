@@ -2071,7 +2071,13 @@ header.transparent .navbar {
         font-weight: bold;
         background-color: #ffed00; }
     #main-header .navbar .navbar-collapse.in {
-      left: 0; } }
+      left: 0; }
+    #main-header .navbar .navbar-collapse .menu-item.dropdown .dropdown-menu {
+      background-color: #ffeba5;
+      position: relative;
+      z-index: 999;
+      top: -3px;
+      border-bottom: 1px solid #bbb; } }
 @media screen and (min-width: 1210px) {
   #main-header .navbar .navbar-collapse, #main-header .navbar .navbar-collapse.in {
     left: -300px; } }
@@ -2662,23 +2668,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 355px;
-          top: 177px; }
+          left: 161px;
+          top: 204px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 309px;
-          top: 214px; }
+          left: 302px;
+          top: 192px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 395px;
-          top: 90px; }
+          left: 334px;
+          top: 42px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 95px;
-          top: 238px; }
+          left: 264px;
+          top: 68px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 329px;
-          top: 208px; }
+          left: 198px;
+          top: 202px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 145px;
-          top: 110px; }
+          left: 286px;
+          top: 237px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);

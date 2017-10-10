@@ -308,6 +308,13 @@ header {
 		&.in {
 			left: 0;
 		}
+		.menu-item.dropdown .dropdown-menu {
+			background-color: #ffeba5;
+			position: relative;
+			z-index: 999;
+			top: -3px;
+			border-bottom: 1px solid #bbb;
+		}
 	} 
 }
 
