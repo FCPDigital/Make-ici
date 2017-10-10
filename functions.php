@@ -536,6 +536,19 @@ function shortcode_frames($atts){
 
 add_shortcode( 'frame', 'shortcode_frames' );
 
+
+function shortcode_box($atts, $content) {
+	$args = shortcode_atts( array(
+		'color' => 'yellow'
+	), $atts );
+	if($content){
+		echo "<div class='box box--".$args["color"]."'>".$content."</div>";
+	}
+}
+
+add_shortcode( 'box', 'shortcode_box' );
+
+
 function shortcode_carousel($atts){
 	$args = shortcode_atts( array(
 		'category' => null,

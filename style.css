@@ -894,6 +894,16 @@ a {
   justify-content: center;
   min-height: 55px; }
 
+.box {
+  padding: 16px;
+  line-height: 1.5em;
+  padding: 16px;
+  font-size: 13px;
+  margin: 10px 0; }
+  .box--yellow {
+    background-color: #ffed00;
+    color: black; }
+
 .container-404 {
   perspective: 500px; }
   .container-404 .title {
@@ -2599,23 +2609,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 350px;
-          top: 172px; }
+          left: 211px;
+          top: 36px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 54px;
-          top: 208px; }
+          left: 237px;
+          top: 39px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 171px;
-          top: 238px; }
+          left: 167px;
+          top: 168px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 170px;
-          top: 121px; }
+          left: 11px;
+          top: 87px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 394px;
-          top: 232px; }
+          left: 35px;
+          top: 99px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 285px;
-          top: 52px; }
+          left: 322px;
+          top: 27px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);
