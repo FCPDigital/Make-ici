@@ -76,14 +76,23 @@ span.framed {
 		margin-top:30px;
 }
 
-.rest-img{
-background-color: #000;
-
+.rest-img {
+	background-color: #000;
+	margin-bottom: $medium-pad;
 }
 .rest-img-content{
-padding: 10px 10px;
-font-size: 14px;
-text-align: center;
+	padding: 10px 10px;
+	font-size: 14px;
+	text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+	.rest-img img {
+		margin: auto;
+		display: block;
+		padding-top: $medium-pad;
+	}
+
 }
 
 

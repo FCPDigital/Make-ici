@@ -27,7 +27,7 @@ get_header(); ?>
 					<div class="rest-img"><img src="<?php echo get_field("photo_chef"); ?>" width="304" alt="">
 						<p class="rest-img-content"><?php echo get_field("texte_chef"); ?><p>&nbsp;</p></p>
 					</div>
-					</div>
+				</div>
 					
 					
 					
