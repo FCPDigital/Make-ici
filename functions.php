@@ -123,7 +123,7 @@ function wpm_variation_price_format( $price, $product ) {
 
 	// Si les prix sont différents on affiche "À partir de ..."
 	if ($min_price != $max_price){
-		$price = sprintf( __( 'A partir de %1$s', 'woocommerce' ), wc_price( $min_price ) );
+		$price = sprintf( __( 'A partir de %1$s TTC', 'woocommerce' ), wc_price( $min_price ) );
 		return $price;
 	// Sinon on affiche juste le prix
 	} else {

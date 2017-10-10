@@ -391,7 +391,6 @@ h1 {
 @media screen and (max-width: $break-point-1){
 	.loop-archive .archive-body-item {
 		.container {
-			@include transform(translateX($big-pad));
 		}
 		.archive-main {
 			padding-right: $small-pad;
