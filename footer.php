@@ -39,8 +39,11 @@
 	<div class="copyright">
 		<p>
 			<?php if (get_page_by_title("Mention Légales")): ?>
-				<a href="<?php get_permalink(get_page_by_title("Mention Légales")); ?>">Mentions légales</a> -
+				<a href="<?php echo get_permalink(get_page_by_title("Mention Légales")); ?>">Mentions légales</a> -
 			<?php endif;?>
+			<?php if(get_page_by_title("Conditions Générales de Vente")): ?>
+				<a href="<?php echo get_permalink(get_page_by_title("Mention Légales")); ?>">CGV</a> -
+			<?php endif; ?>
 			Copyright © Make ICI - Tous droits réservés - Assemblés par FCP
 		</p>
 	</div>

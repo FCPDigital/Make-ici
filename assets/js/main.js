@@ -488,9 +488,9 @@ Callback = {
 XhrManage = {
 	request : [],
 	initEvent:function(el){
-		console.log(el);
 		var self = this;
 		el.addEventListener("click", function(e){
+			console.log("Click", this)
 			var action = this.getAttribute("data-wpxhr");
 			var arg = this.getAttribute("data-xhrarg");
 			var get = (this.getAttribute("data-getarg")) ? "?"+this.getAttribute("data-getarg") : "";
