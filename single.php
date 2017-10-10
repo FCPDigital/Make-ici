@@ -8,7 +8,7 @@
 				<div class="col-sm-8"> 
 					<div class="single-body">
 						<div class="actions">
-							<a href="<?php wp_get_referer() ?>"> &lt; Retours</a>
+							<?php do_action("back_button"); ?>
 						</div>
 						<?php if(get_post_type(get_post()) == 'events') { ?>
 							<p class="date-actu"><? the_field('date_event');?></p>

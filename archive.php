@@ -19,7 +19,6 @@
 					$count++;
 				endwhile;	?>
 			</div>
-			
 		</div>
 </main>
 

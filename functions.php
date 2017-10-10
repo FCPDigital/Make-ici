@@ -752,6 +752,14 @@ add_action( 'init', 'create_post_type_equipements' );
 add_action( 'init', 'create_post_type_events' );
 
 
+add_action( 'back_button', 'wpse221640_back_button' );
+function wpse221640_back_button() {
+    if ( wp_get_referer() ){
+        $button    = "<a href='#' onclick='javascript:history.back()'> &lt; Retours</a>";
+        echo ( $button );
+    }
+}
+
 //////////////////////////////////////////////////////
 //
 //						woocommerce
