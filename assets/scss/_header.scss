@@ -210,21 +210,21 @@ header {
 		}
 		.navbar-nav .menu-item {
 			& > a {
-			 color: white;
-			 &:hover {
-				 color: white !important;
-				 &::before {
-					 border-color: white;
-				 }
-			 }
-			 &::after { background-color: white; }
-			 &.dropdown-toggle {
-				 color: black;
-			 }
-		 }
-		 &.btn-light a {
-			 color: black !important;
-		 }
+				color: white;
+				&:hover {
+					color: white !important;
+					&::before {
+						border-color: white;
+					}
+				}
+				&::after { background-color: white; }
+				&.dropdown-toggle {
+					color: black;
+				}
+			}
+			&.btn-light a {
+				 color: black !important;
+			}
 			&.active {
 				a {
 					color: $color-3;
@@ -239,15 +239,27 @@ header {
 				}
 			}
 			&.dropdown {
-					a:hover {
-						background-color: transparent !important;
-						color: $color-3 !important;
-					}
+				a:hover {
+					background-color: transparent !important;
+					color: $color-3 !important;
+				}
 			}
 		}
 	}
 }
 
+.page-template-template-makeici {
+	header.transparent .navbar .navbar-nav .menu-item.active a {
+		color: white;
+		font-weight: normal;
+		&::after {
+			background-color: white;
+		}
+	}
+	header .navbar-nav .menu-item.current-menu-item a::after {
+		transform: scaleX(0);
+	}
+}
 
 @media screen and (max-width: 585px){
 	header .static {
