@@ -2316,7 +2316,7 @@ Contient l'ensemble des style particulier propre aux posts et au pages.
     flex-wrap: nowrap; }
 .carousel.active-control .carousel-control {
   display: flex;
-  width: 25%;
+  width: 120px;
   display: inline-block;
   position: relative;
   justify-content: center;
@@ -2671,23 +2671,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 294px;
-          top: 170px; }
+          left: 124px;
+          top: 195px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 307px;
-          top: 197px; }
+          left: 186px;
+          top: 202px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 134px;
-          top: 24px; }
+          left: 185px;
+          top: 152px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 340px;
-          top: 86px; }
+          left: 138px;
+          top: 161px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 112px;
-          top: 239px; }
+          left: 158px;
+          top: 153px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 165px;
-          top: 201px; }
+          left: 135px;
+          top: 218px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);
