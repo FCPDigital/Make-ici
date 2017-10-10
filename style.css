@@ -1947,7 +1947,7 @@ header .navbar-nav {
         background-color: transparent !important;
         color: #ffed00 !important; }
     header .navbar-nav .menu-item.dropdown .dropdown-menu {
-      margin-top: 10px;
+      margin-top: 0px;
       border: 0;
       padding: 0; }
       header .navbar-nav .menu-item.dropdown .dropdown-menu li {
@@ -2637,23 +2637,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 31px;
-          top: 112px; }
+          left: 378px;
+          top: 92px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 68px;
-          top: 184px; }
+          left: 367px;
+          top: 190px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 39px;
-          top: 110px; }
+          left: 137px;
+          top: 192px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 4px;
-          top: 1px; }
+          left: 194px;
+          top: 141px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 206px;
-          top: 155px; }
+          left: 304px;
+          top: 101px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 26px;
-          top: 97px; }
+          left: 28px;
+          top: 224px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);
@@ -3127,16 +3127,20 @@ color:#000;
     color: black;
     padding: 12px 10px;
     background-color: #ffed00 !important;
-    text-decoration: none; }
+    text-decoration: none;
+    font-size: 14px; }
     .make-ici-homepage .dropdown a::before, .make-ici-homepage .dropdown a::after {
       display: none !important; }
     .make-ici-homepage .dropdown a:hover {
       background-color: transparent !important;
       color: #ffed00 !important; }
   .make-ici-homepage .dropdown .dropdown-menu {
-    margin-top: 10px;
+    margin-top: 0px;
     border: 0;
-    padding: 0; }
+    padding: 0;
+    width: calc(100% + 4px);
+    margin-left: -2px;
+    z-index: 999; }
     .make-ici-homepage .dropdown .dropdown-menu li {
       text-align: center; }
       .make-ici-homepage .dropdown .dropdown-menu li.active {
