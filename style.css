@@ -206,6 +206,9 @@ body {
 .full-width {
   min-width: 100%; }
 
+.size-big {
+  font-size: 20px; }
+
 .main-title {
   font-size: 2.5em;
   font-weight: bold;
@@ -1741,7 +1744,7 @@ body.woocommerce-checkout #customer_details h3::after {
       transform: translateY(-50%);
       top: 40%; }
       .homepage .landing .container .landing-legend h2 {
-        font-size: 18px; }
+        font-size: 30px; }
     .homepage .landing #scroll {
       color: #ffed00;
       position: absolute;
@@ -2640,23 +2643,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 115px;
-          top: 97px; }
+          left: 325px;
+          top: 215px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 218px;
-          top: 246px; }
+          left: 101px;
+          top: 107px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 137px;
-          top: 56px; }
+          left: 226px;
+          top: 43px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 249px;
-          top: 136px; }
+          left: 335px;
+          top: 118px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 13px;
-          top: 222px; }
+          left: 227px;
+          top: 207px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 258px;
-          top: 31px; }
+          left: 142px;
+          top: 49px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);

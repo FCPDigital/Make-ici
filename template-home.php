@@ -15,8 +15,11 @@ $postCur = get_post(); // On stocke le post courant pour éviter le bug de la bo
 	<div class="landing" style="background-image:url(<?php echo get_field('bg_main', $postCur); ?>);">	 
 		<div class="container">
 			<div class="landing-legend">
-				<h2><?php echo strtoupper(get_bloginfo("name")); ?></h2> 
+				<h2 class="size-big"><?php echo strtoupper(get_bloginfo("name")); ?></h2> 
 				<?php echo get_bloginfo("description"); ?>
+			</div>
+			<div class="center margin-top-medium">
+				<a href='<?php echo get_permalink(get_page_by_title("Visite Guidée")) ?>' class="btn btn--light">Visiter ICI Montreuil</a>
 			</div>
 		</div>
 		<a id="scroll" href="#anchor-1" data-scroll>Découvrez <?php echo get_bloginfo("name"); ?></a>
