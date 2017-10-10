@@ -39,7 +39,7 @@ get_header(); ?>
 				<div id="main-carousel" class="carousel ">
 					<div class="carousel-body rest">
 						<div class="archive-head carousel-container">
-							<div class="item  item--height-auto archive-head-item carousel-item">
+							<div class="item  item--height-auto archive-head-item carousel-item carousel-item--width-auto">
 								<div class="item__banner">
 									<p class="item__title">SUR PLACE</p>
 								</div>
@@ -51,7 +51,7 @@ get_header(); ?>
 								</div>
 							</div>
 
-							<div class="item  item--height-auto archive-head-item carousel-item">
+							<div class="item  item--height-auto archive-head-item carousel-item carousel-item--width-auto">
 								<div class="item__banner">
 									<p class="item__title">À EMPORTER</p>
 								</div>
@@ -66,7 +66,7 @@ get_header(); ?>
 		 						</div>
 							</div>
 
-							<div class="item  item--height-auto archive-head-item carousel-item">
+							<div class="item  item--height-auto archive-head-item carousel-item carousel-item--width-auto">
 								<div class="item__banner">
 									<p class="item__title">GROUPES</p>
 								</div>

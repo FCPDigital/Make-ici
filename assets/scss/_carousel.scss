@@ -17,6 +17,9 @@
 				flex: 1;
 				min-width: 230px;
 				max-width: 230px;
+				&--width-auto {
+					max-width: none;
+				}
 				.crop-img {
 					height: 150px;
 					overflow: hidden;
