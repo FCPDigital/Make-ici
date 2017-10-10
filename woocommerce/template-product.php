@@ -40,10 +40,10 @@ $categories = get_woocommerce_categories();
 							<div class="archive-head-item carousel-item text-item">
 								<div class="content">
 									<p>
-										Tous les jeudis, visite de nos ateliers, rencontre avec le staff et les résidents
+										Offrez une expérience unique dans nos ateliers équipés. Nos cartes cadeaux sont valables pour tous nos stages et formations bouton.
 									</p>
 								</div>
-								<a href="<?php echo get_permalink(get_page_by_title('Visite Guidée')); ?>#visit-form" class="btn btn-colored action-abonnement">Inscrivez vous</a>
+								<a href="<?php echo get_permalink(esc_attr( get_option('gift_card_id'))); ?>" class="btn btn-colored">Offres une carte cadeau</a>
 							</div>
 						<?php } ?>
 					</div>
