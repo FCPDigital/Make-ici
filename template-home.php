@@ -33,7 +33,7 @@ $postCur = get_post(); // On stocke le post courant pour éviter le bug de la bo
 				</div>
 			</div>
 			<div class="scroll-btn-container margin-top-medium">
-				<span class="scroll-btn__title">Les actualités</span>
+				<span class="scroll-btn__title">L'actualité</span>
 				<a class="scroll-btn" href="#anchor-2" data-scroll></a>
 			</div>
 		</div>	
@@ -44,7 +44,7 @@ $postCur = get_post(); // On stocke le post courant pour éviter le bug de la bo
 			<h2 class="left-full-border">L'actualité</h2>
 			<?php last_posts(); ?>
 			<div class="scroll-btn-container">
-				<span class="scroll-btn__title">Les formations</span>
+				<span class="scroll-btn__title">Prochaines formations</span>
 				<a class="scroll-btn" href="#anchor-3" data-scroll></a>
 			</div>
 		</div>
