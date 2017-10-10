@@ -20,7 +20,7 @@ get_header(); ?>
   </div>
   <div id="anchor-1" class="section-post" style="background-image: url(<?php echo get_field('bg_residents'); ?>);">
     <div class="container">
-			<h2 class="left-full-border">La communauté ICI</h2>
+		<h2 class="left-full-border margin-bottom-medium">La communauté ICI</h2>
       <?php echo get_field("residents"); ?>
       <div class="clr"></div>
     </div>
@@ -28,7 +28,7 @@ get_header(); ?>
   </div>
   <div id="anchor-2" class="section-post equipements" style="background-image:url(<?php echo get_field('bg_hand_made'); ?>);">
     <div class="container">
-      <h2 class="left-full-border">Hand Made ICI</h2>
+      <h2 class="left-full-border margin-bottom-medium">Hand Made ICI</h2>
       <?php echo get_field("hand_made"); ?>
       <div class="clr"></div>
     </div>
@@ -36,7 +36,7 @@ get_header(); ?>
   </div>
   <div id="anchor-3" class="section-post equipements" style="background-image:url(<?php echo get_field('bg_partenaires'); ?>);">
     <div class="container">
-      <h2 class="left-full-border">Partenaires</h2>
+      <h2 class="left-full-border margin-bottom-medium">Partenaires</h2>
       <?php echo get_field("partenaires"); ?>
       <div class="clr"></div>
     </div>
