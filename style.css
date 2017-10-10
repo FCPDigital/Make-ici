@@ -1443,14 +1443,14 @@ Ces styles sont davantage propre aux fonctionalité de Woocommerce natif
   color: black;
   padding-bottom: 70px; }
   .carousel.product-carousel .carousel-item .title {
-    font-size: 12px;
+    font-size: 12px !important;
     margin-top: 16px;
     padding: 0 16px;
     margin-bottom: 16px;
     font-weight: bold; }
     .carousel.product-carousel .carousel-item .title .upper.bold {
       font-weight: bold;
-      font-size: 15px;
+      font-size: 15px !important;
       margin-bottom: 5px; }
   .carousel.product-carousel .carousel-item .excerpt {
     padding: 0 16px;
@@ -2671,23 +2671,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 124px;
-          top: 195px; }
+          left: 112px;
+          top: 198px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 186px;
-          top: 202px; }
+          left: 51px;
+          top: 34px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 185px;
-          top: 152px; }
+          left: 51px;
+          top: 25px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 138px;
-          top: 161px; }
+          left: 111px;
+          top: 207px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 158px;
-          top: 153px; }
+          left: 73px;
+          top: 95px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 135px;
-          top: 218px; }
+          left: 115px;
+          top: 50px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);

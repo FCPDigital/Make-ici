@@ -81,10 +81,10 @@ Ces styles sont davantage propre aux fonctionalité de Woocommerce natif
 		.title {
 			.upper.bold {
 				font-weight: bold;
-				font-size: 15px;
+				font-size: 15px !important;
 				margin-bottom: 5px;
 			}
-			font-size: 12px;
+			font-size: 12px !important;
 			margin-top: $small-pad;
 			padding: 0	$small-pad;
 			margin-bottom:	$small-pad;
