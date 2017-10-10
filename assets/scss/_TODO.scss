@@ -290,6 +290,11 @@ color:#000;
 		letter-spacing: 1.5px;
 		line-height: 1.7;
 	}
+	#menu-ici_sites {
+		text-align: center;
+		float: none;
+		margin-top: 200px;
+	}
 	.last-mission{
 	  margin:0px !important;
 	}
@@ -317,6 +322,7 @@ color:#000;
 				font-weight: bold;
 				border: 2px solid $color-3;
 				display: inline-block;
+				float: none;
 				@include transition(.4s);
 				&:hover {
 					background-color: transparent;

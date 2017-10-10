@@ -2629,23 +2629,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 150px;
-          top: 181px; }
+          left: 130px;
+          top: 23px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 324px;
-          top: 44px; }
+          left: 97px;
+          top: 65px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 134px;
-          top: 27px; }
+          left: 280px;
+          top: 139px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 374px;
-          top: 81px; }
+          left: 152px;
+          top: 128px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
           left: 181px;
-          top: 231px; }
+          top: 3px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 323px;
-          top: 179px; }
+          left: 238px;
+          top: 29px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);
@@ -3083,6 +3083,10 @@ color:#000;
   font-size: 13px;
   letter-spacing: 1.5px;
   line-height: 1.7; }
+.make-ici-homepage #menu-ici_sites {
+  text-align: center;
+  float: none;
+  margin-top: 200px; }
 .make-ici-homepage .last-mission {
   margin: 0px !important; }
 .make-ici-homepage .mission-icone {
@@ -3102,6 +3106,7 @@ color:#000;
   font-weight: bold;
   border: 2px solid #ffed00;
   display: inline-block;
+  float: none;
   -webkit-transition: 0.4s;
   -moz-transition: 0.4s;
   -ms-transition: 0.4s;
