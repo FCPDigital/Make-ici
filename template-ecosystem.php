@@ -20,7 +20,6 @@ get_header(); ?>
 			<a class="scroll-btn" href="#anchor-1" data-scroll></a>
 		</div>
     </div>
-    <a class="scroll-btn" href="#anchor-1" data-scroll></a>
   </div>
   <div id="anchor-1" class="section-post" style="background-image: url(<?php echo get_field('bg_residents'); ?>);">
     <div class="container">

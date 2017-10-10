@@ -11,7 +11,7 @@ get_header(); ?>
 			<source src="<?php echo get_template_directory_uri() ?>/assets/videos/bg.mp4" type="video/mp4">
 		</video>
 		<div class="container">
-			<h3 class="landing-legend"><strong class="size-big margin-bottom-medium">Make ICI </strong> <br>est le premier réseau de manufactures<br> collaboratives et solidaires pour les artisans, artistes,<br> designers, startups et entrepreneurs du '<strong>FAIRE</strong>'</h3>
+			<h3 class="landing-legend"><strong class="size-extra margin-bottom-medium">Make ICI </strong> <br>est le premier réseau de manufactures<br> collaboratives et solidaires pour les artisans, artistes,<br> designers, startups et entrepreneurs du '<strong>FAIRE</strong>'</h3>
 			<?php
 			wp_nav_menu( array(
 				'menu' => 'ici_sites',
