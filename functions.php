@@ -699,7 +699,7 @@ function create_post_type_abonnement() {
 			),
 			'public' => true,
 			'has_archive' => true,
-			'menu_icon' => 'dashicons-backup',
+			'menu_icon' => 'dashicons-tickets-alt',
 			'supports' => array( 'title', 'editor', 'custom-fields', 'thumbnail', 'excerpt' )
 		)
 	);
@@ -731,7 +731,7 @@ function create_post_type_events() {
 			),
 			'public' => true,
 			'has_archive' => true,
-			'menu_icon' => 'dashicons-businessman',
+			'menu_icon' => 'dashicons-calendar-alt',
 			'supports' => array( 'title', 'editor', 'custom-fields', 'thumbnail', 'excerpt' )
 		)
 	);
@@ -946,6 +946,7 @@ function register_my_setting() {
 	register_setting( 'formulaire', 'abonnement_form_id', "intval" );
 	register_setting( 'formulaire', 'contact_form_id', "intval" );
 	register_setting( 'formulaire', 'reduction_promo', "float" );
+	register_setting( 'formulaire', 'instagram_account', "string" );
 }
 add_action( 'admin_init', 'register_my_setting' );
 
