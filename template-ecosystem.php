@@ -15,6 +15,10 @@ get_header(); ?>
 				<?php the_content(); ?>
 			</div>
 			<?php endwhile; // End of the loop. ?>
+		<div class="scroll-btn-container margin-top-medium">
+			<span class="scroll-btn__title">La communauté ICI</span>
+			<a class="scroll-btn" href="#anchor-1" data-scroll></a>
+		</div>
     </div>
     <a class="scroll-btn" href="#anchor-1" data-scroll></a>
   </div>
@@ -23,16 +27,22 @@ get_header(); ?>
 		<h2 class="left-full-border margin-bottom-medium">La communauté ICI</h2>
       <?php echo get_field("residents"); ?>
       <div class="clr"></div>
+      	<div class="scroll-btn-container margin-top-medium">
+			<span class="scroll-btn__title">Hand Made ICI</span>
+			<a class="scroll-btn" href="#anchor-2" data-scroll></a>
+		</div>
     </div>
-    <a class="scroll-btn" href="#anchor-2" data-scroll></a>
   </div>
   <div id="anchor-2" class="section-post equipements" style="background-image:url(<?php echo get_field('bg_hand_made'); ?>);">
     <div class="container">
       <h2 class="left-full-border margin-bottom-medium">Hand Made ICI</h2>
       <?php echo get_field("hand_made"); ?>
       <div class="clr"></div>
+      <div class="scroll-btn-container margin-top-medium">
+			<span class="scroll-btn__title">Partenaires</span>
+			<a class="scroll-btn" href="#anchor-3" data-scroll></a>
+		</div>
     </div>
-    <a class="scroll-btn" href="#anchor-3" data-scroll></a>
   </div>
   <div id="anchor-3" class="section-post equipements" style="background-image:url(<?php echo get_field('bg_partenaires'); ?>);">
     <div class="container">
