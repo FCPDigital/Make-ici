@@ -1723,7 +1723,7 @@ body.woocommerce-checkout #customer_details h3::after {
     min-height: 100%;
     width: auto;
     height: auto;
-    z-index: -100;
+    z-index: 0;
     background: url(polina.jpg) no-repeat;
     background-size: cover; }
   .homepage .landing {
@@ -2639,23 +2639,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 391px;
-          top: 10px; }
+          left: 268px;
+          top: 21px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 265px;
-          top: 237px; }
+          left: 267px;
+          top: 238px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 336px;
-          top: 74px; }
+          left: 345px;
+          top: 189px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 71px;
-          top: 163px; }
+          left: 289px;
+          top: 132px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 292px;
-          top: 104px; }
+          left: 361px;
+          top: 46px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 299px;
-          top: 3px; }
+          left: 263px;
+          top: 76px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);
