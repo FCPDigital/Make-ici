@@ -8,7 +8,7 @@
 				<div class="col-sm-8"> 
 					<div class="single-body">
 						<div class="actions">
-							<a href="http://makeici.org/icimontreuil/category/event-act/"> &lt; Retours</a>
+							<a href="<?php wp_get_referer() ?>"> &lt; Retours</a>
 						</div>
 						<?php if(get_post_type(get_post()) == 'events') { ?>
 							<p class="date-actu"><? the_field('date_event');?></p>
