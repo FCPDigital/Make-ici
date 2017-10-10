@@ -1707,6 +1707,23 @@ body.woocommerce-checkout #customer_details h3::after {
     color: white; }
   .homepage > div, .homepage .container {
     position: relative; }
+  .homepage.make-ici-homepage h2 {
+    margin-bottom: 32px; }
+  .homepage.make-ici-homepage .landing {
+    background-color: rgba(0, 0, 0, 0.6); }
+    .homepage.make-ici-homepage .landing::before {
+      background-color: transparent; }
+    .homepage.make-ici-homepage .landing video#bgvid {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: -100;
+      background: url(polina.jpg) no-repeat;
+      background-size: cover; }
   .homepage .landing {
     min-height: 600px;
     height: 100vh;
@@ -2612,23 +2629,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 250px;
-          top: 71px; }
+          left: 150px;
+          top: 181px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 167px;
-          top: 138px; }
+          left: 324px;
+          top: 44px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 188px;
-          top: 28px; }
+          left: 134px;
+          top: 27px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 15px;
-          top: 142px; }
+          left: 374px;
+          top: 81px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 302px;
-          top: 153px; }
+          left: 181px;
+          top: 231px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 12px;
-          top: 174px; }
+          left: 323px;
+          top: 179px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);
