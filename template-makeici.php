@@ -30,9 +30,11 @@ get_header(); ?>
 			<div class="single-body">
 				<?php echo get_field("presentation"); ?>
 			</div>
+			<div class="scroll-btn-container margin-top-medium">
+				<span class="scroll-btn__title">Mission</span>
+				<a class="scroll-btn" href="#anchor-2" data-scroll></a>
+			</div>
 		</div>
-		
-		<a class="scroll-btn" href="#anchor-2" data-scroll></a>
 	</div>
 	<div id="anchor-2" class="section-post last-posts" style="background-image:url(<?php echo get_field('bg_mission'); ?>);">
 		<div class="container">
@@ -40,8 +42,11 @@ get_header(); ?>
 			<div class="single-body">
 				<?php echo get_field("mission"); ?>
 			</div>
+			<div class="scroll-btn-container margin-top-medium">
+				<span class="scroll-btn__title">Make ICI en chiffres</span>
+				<a class="scroll-btn" href="#anchor-3" data-scroll></a>
+			</div>
 		</div>
-		<a class="scroll-btn" href="#anchor-3" data-scroll></a>
 	</div>
 	<div id="anchor-3" class="section-post last-posts" style="background-image:url(<?php echo get_field('bg_chiffres'); ?>);">
 		<div class="container">
@@ -49,8 +54,11 @@ get_header(); ?>
 			<div class="single-body">
 				<?php echo get_field("chiffres"); ?>
 			</div>
+			<div class="scroll-btn-container margin-top-medium">
+				<span class="scroll-btn__title">Staff</span>
+				<a class="scroll-btn" href="#anchor-4" data-scroll></a>
+			</div>
 		</div>
-		<a class="scroll-btn" href="#anchor-4" data-scroll></a>
 	</div>
 	<div id="anchor-4" class="section-post last-posts" style="background-image:url(<?php echo get_field('bg_staff'); ?>);">
 		<div class="container">
@@ -59,8 +67,11 @@ get_header(); ?>
 				<?php echo do_shortcode("[staff]") ?>
 				<?php wp_reset_query(); ?>
 			</div>
+			<div class="scroll-btn-container margin-top-medium">
+				<span class="scroll-btn__title">La carte</span>
+				<a class="scroll-btn" href="#anchor-5" data-scroll></a>
+			</div>
 		</div>
-		<a class="scroll-btn" href="#anchor-5" data-scroll></a>
 	</div>
 
 	<div id="anchor-5" class="section-post map" >
