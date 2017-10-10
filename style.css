@@ -1710,7 +1710,8 @@ body.woocommerce-checkout #customer_details h3::after {
   .homepage.make-ici-homepage h2 {
     margin-bottom: 32px; }
   .homepage.make-ici-homepage .landing::before {
-    background-color: rgba(0, 0, 0, 0.6); }
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1; }
   .homepage.make-ici-homepage .landing #scroll {
     z-index: 1; }
   .homepage.make-ici-homepage .landing .container {
@@ -2639,23 +2640,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 268px;
-          top: 21px; }
+          left: 115px;
+          top: 97px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 267px;
-          top: 238px; }
+          left: 218px;
+          top: 246px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 345px;
-          top: 189px; }
+          left: 137px;
+          top: 56px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 289px;
-          top: 132px; }
+          left: 249px;
+          top: 136px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 361px;
-          top: 46px; }
+          left: 13px;
+          top: 222px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 263px;
-          top: 76px; }
+          left: 258px;
+          top: 31px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);
