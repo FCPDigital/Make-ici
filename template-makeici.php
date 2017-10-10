@@ -68,7 +68,7 @@ get_header(); ?>
 				<?php wp_reset_query(); ?>
 			</div>
 			<div class="scroll-btn-container margin-top-medium">
-				<span class="scroll-btn__title">La carte</span>
+				<span class="scroll-btn__title">Manufactures</span>
 				<a class="scroll-btn" href="#anchor-5" data-scroll></a>
 			</div>
 		</div>
