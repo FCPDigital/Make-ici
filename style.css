@@ -194,14 +194,21 @@ body {
 .flex-wrap-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; }
+  justify-content: center;
+  width: 100%; }
   .flex-wrap-container .center img {
     width: 280px;
     height: auto; }
 
+.space-between {
+  justify-content: space-between; }
+
 .flex-start {
   align-items: flex-start;
   justify-content: space-between; }
+
+.flex-row-3-item {
+  min-width: 26% !important; }
 
 .full-width {
   min-width: 100%; }
@@ -477,6 +484,16 @@ a {
     .btn--light:hover, .single_add_to_cart_button--light:hover {
       background-color: #ffed00;
       color: black; }
+  .btn__fa, .single_add_to_cart_button__fa {
+    color: inherit;
+    font-size: 20px;
+    margin-right: 10px;
+    float: left;
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    transform: scale(1.2); }
 
 .btn-svg {
   color: #fdec01;
@@ -2645,23 +2662,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 233px;
-          top: 25px; }
+          left: 355px;
+          top: 177px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 142px;
-          top: 176px; }
+          left: 309px;
+          top: 214px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 315px;
-          top: 122px; }
+          left: 395px;
+          top: 90px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 363px;
-          top: 74px; }
+          left: 95px;
+          top: 238px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 228px;
-          top: 201px; }
+          left: 329px;
+          top: 208px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 251px;
-          top: 31px; }
+          left: 145px;
+          top: 110px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);

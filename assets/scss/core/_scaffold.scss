@@ -76,14 +76,19 @@ body {
 	display: flex; 
 	flex-wrap: wrap;
 	justify-content: center;
+	width: 100%;
 	.center img {
 		width: 280px;
 		height: auto;
 	}
 }
+.space-between {justify-content: space-between}
 .flex-start {
 	align-items: flex-start;
 	justify-content: space-between;
+}
+.flex-row-3-item {
+	min-width: 26% !important;
 }
 
 //SIZES
