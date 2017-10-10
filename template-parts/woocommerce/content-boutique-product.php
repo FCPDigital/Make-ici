@@ -37,7 +37,7 @@ if( isset($style) && $style=="compact" ){
 	<div class="carousel-item">
 		<div class="title-container">
 			<p class="title">
-			<span class="upper"><?php echo get_field("formation_type", $product); ?></span><br>
+			<span class="upper bold"><?php echo get_field("formation_type", $product); ?></span><br>
 			<?php echo get_the_title($product); ?>
 		</p>
 		</div>
