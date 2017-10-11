@@ -372,9 +372,8 @@ color:#000;
 							color: $color-2;
 							@include transition(.4s);
 							&:hover {
-								color: black;
+								color: black !important;
 								background-color: $color-3;
-								color: white;
 							}
 						}
 					}
