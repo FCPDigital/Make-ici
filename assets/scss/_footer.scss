@@ -12,6 +12,9 @@ footer {
 		border-top: 1px solid black;
 	}
 	#menu-social {
+		li {
+			float: left;
+		}
 		a {
 			font-size: 2em;
 			color: black;
@@ -68,5 +71,20 @@ footer {
 				text-decoration: underline;
 			}
 		}
+	}
+}
+
+
+@media screen and (max-width: 600px) {
+	footer #menu-social {
+		display: inline-block;
+		text-align: center;
+	}
+	footer .row .flex-item {
+		max-width: 100%;
+		min-width: 100%;
+		text-align: center;
+		padding: 0 50px;
+		box-sizing: border-box;
 	}
 }

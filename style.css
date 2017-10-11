@@ -2116,6 +2116,8 @@ footer {
     padding: 15px;
     text-align: center;
     border-top: 1px solid black; }
+  footer #menu-social li {
+    float: left; }
   footer #menu-social a {
     font-size: 2em;
     color: black;
@@ -2171,6 +2173,17 @@ footer {
         color: black;
         text-decoration: underline; }
 
+@media screen and (max-width: 600px) {
+  footer #menu-social {
+    display: inline-block;
+    text-align: center; }
+
+  footer .row .flex-item {
+    max-width: 100%;
+    min-width: 100%;
+    text-align: center;
+    padding: 0 50px;
+    box-sizing: border-box; } }
 /*
 Contient l'ensemble des style particulier propre aux posts et au pages. 
 */
@@ -2688,23 +2701,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 342px;
-          top: 11px; }
+          left: 11px;
+          top: 222px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 281px;
-          top: 206px; }
+          left: 31px;
+          top: 137px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 115px;
-          top: 85px; }
+          left: 125px;
+          top: 196px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 117px;
-          top: 41px; }
+          left: 179px;
+          top: 222px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 155px;
-          top: 182px; }
+          left: 400px;
+          top: 215px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 10px;
-          top: 44px; }
+          left: 359px;
+          top: 204px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);
