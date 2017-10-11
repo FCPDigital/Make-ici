@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main id="archive" class="site-main" role="main">
+<main id="archive" class="background background--mask" style="background-image: url(http://makeici.org/icimontreuil/wp-content/uploads/sites/2/2017/05/home-ici-montreuil.jpg);" role="main">
 		<div class="container">
 			<?php 
 			$title = single_cat_title( '', false );
