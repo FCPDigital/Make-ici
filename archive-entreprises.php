@@ -14,10 +14,10 @@ get_header(); ?>
 				<div class="carousel-body">
 					<div class="archive-head carousel-container">
 						<?php	/* Start the Loop */
-							while ( have_posts() ) : the_post();
-								get_template_part( 'template-parts/post/content-head', get_post_format() );
-								$count++;
-							endwhile;	?>
+						while ( have_posts() ) : the_post();
+							get_template_part( 'template-parts/post/content-head', get_post_format() );
+							$count++;
+						endwhile; ?>
 					</div>
 				</div>
 

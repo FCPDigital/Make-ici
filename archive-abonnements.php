@@ -8,8 +8,8 @@ get_header(); ?>
 	<div class="landing background background--mask">
 		<div class="container">
 			<h1 class="left-full-border">Abonnements</h1>
-			<?php //Carousel
-			$count = wp_count_posts('abonnements')->publish; ?>
+			
+			<?php $count = wp_count_posts('abonnements')->publish; ?>
 			<div id="main-carousel" class="carousel <?php if($count > 4){echo 'active-control';} ?>">
 				<div class="carousel-body">
 					<div class="archive-head carousel-container">

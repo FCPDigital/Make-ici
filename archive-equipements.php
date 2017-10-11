@@ -4,8 +4,8 @@ Archive du custom-post equipements.
 */
 get_header(); ?>
 
-<main id="abonnements-archive" class="site-main" role="main">
-	<div class="landing" style='background-image: url("http://makeici.org/icimontreuil/wp-content/uploads/sites/2/2017/10/ICIMontreuil_AtelierMe%CC%81tal.Soudure.jpg");'>
+<main id="abonnements-archive" role="main">
+	<div class="landing background background--mask" style='background-image: url("http://makeici.org/icimontreuil/wp-content/uploads/sites/2/2017/10/ICIMontreuil_AtelierMe%CC%81tal.Soudure.jpg");'>
 		<div class="container">
 			<h1 class="left-full-border">Équipements et services</h1>
 			<div class="margin-top-medium">
@@ -13,7 +13,7 @@ get_header(); ?>
 					<strong>Dans nos 1.800m2,</strong> nous mettons à votre disposition <strong>des ateliers ultra équipés, des dizaines de machines professionnelles et d'outils électroportatifs.</strong> Des formations aux outils de conception et de fabrication sont organisées chaque semaine pour vous permettre d'acquérir de nouvelles compétences pour développer votre créativité et votre activité.
 				</p>
 			</div>
-			<div id="main-carousel" class="">
+			<div id="main-carousel">
 				<div class="">
 					<div class="archive-head classic-list">
 						<div class="archive-head flex-wrap-container flex-start">
@@ -33,8 +33,8 @@ get_header(); ?>
 		</div>
 	</div>
 
-	<div class="body loop-archive" id="looper-snap">
-		<div id="scroll-container">
+	<div class="body loop-archive">
+		<div>
 			<?php
 			//Parcours les abonnements
 			while ( have_posts() ) : the_post();
