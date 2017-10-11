@@ -4,8 +4,8 @@ Archive du custom-post entreprise.
 */
 get_header(); ?>
 
-<main id="entreprise-archive" class="site-main" role="main">
-	<div class="landing">
+<main id="entreprise-archive" role="main">
+	<div class="landing background background--mask">
 		<div class="container">
 			<h1 class="left-full-border">Entreprise</h1>
 
@@ -30,8 +30,8 @@ get_header(); ?>
 
 		</div>
 	</div>
-	<div class="body loop-archive" id="looper-snap">
-		<div id="scroll-container">
+	<div class="body loop-archive">
+		<div>
 			<?php
 			if ( have_posts() ) : ?>
 				<?php

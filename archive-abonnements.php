@@ -4,11 +4,10 @@ Archive du custom-post abonnement.
 */
 get_header(); ?>
 
-<main id="abonnements-archive" class="site-main" role="main">
-	<div class="landing">
+<main id="abonnements-archive" role="main">
+	<div class="landing background background--mask">
 		<div class="container">
 			<h1 class="left-full-border">Abonnements</h1>
-
 			<?php //Carousel
 			$count = wp_count_posts('abonnements')->publish; ?>
 			<div id="main-carousel" class="carousel <?php if($count > 4){echo 'active-control';} ?>">
@@ -31,8 +30,8 @@ get_header(); ?>
 		</div>
 	</div>
 
-	<div class="body loop-archive" id="looper-snap">
-		<div id="scroll-container">
+	<div class="body loop-archive">
+		<div>
 			<?php
 			//Parcours les abonnements
 			while ( have_posts() ) : the_post();

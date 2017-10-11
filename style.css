@@ -946,7 +946,7 @@ a {
 
 .container-404 {
   perspective: 500px; }
-  .container-404 .title {
+  .container-404__title {
     font-size: 40px;
     color: #ffed00;
     text-align: center; }
@@ -2688,23 +2688,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 198px;
-          top: 12px; }
+          left: 46px;
+          top: 115px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 24px;
-          top: 152px; }
+          left: 100px;
+          top: 118px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 282px;
-          top: 195px; }
+          left: 373px;
+          top: 96px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 267px;
-          top: 163px; }
+          left: 53px;
+          top: 20px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 77px;
-          top: 38px; }
+          left: 191px;
+          top: 158px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 199px;
-          top: 82px; }
+          left: 281px;
+          top: 175px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);
