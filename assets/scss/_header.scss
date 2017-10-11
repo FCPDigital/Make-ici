@@ -168,7 +168,7 @@ header {
 					}
 					&:hover {
 						background-color: transparent !important;
-						color: $color-3 !important;
+						color: lighten(#000, 10%);
 					}
 				}
 				.dropdown-menu {

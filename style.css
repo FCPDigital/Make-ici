@@ -1988,7 +1988,7 @@ header .navbar-nav {
         display: none !important; }
       header .navbar-nav .menu-item.dropdown a:hover {
         background-color: transparent !important;
-        color: #ffed00 !important; }
+        color: #1a1a1a; }
     header .navbar-nav .menu-item.dropdown .dropdown-menu {
       margin-top: 0px;
       border: 0;
@@ -2688,23 +2688,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 46px;
-          top: 115px; }
+          left: 257px;
+          top: 195px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 100px;
-          top: 118px; }
+          left: 129px;
+          top: 22px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 373px;
-          top: 96px; }
+          left: 339px;
+          top: 19px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 53px;
-          top: 20px; }
+          left: 103px;
+          top: 166px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 191px;
-          top: 158px; }
+          left: 388px;
+          top: 159px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 281px;
-          top: 175px; }
+          left: 183px;
+          top: 156px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);
