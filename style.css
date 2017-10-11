@@ -2393,6 +2393,7 @@ Contient l'ensemble des style particulier propre aux posts et au pages.
     .carousel.active-control .carousel-control {
       position: absolute;
       width: 100%;
+      height: 80px;
       padding: 20px 0;
       top: 0; } }
 @media screen and (max-width: 480px) {
@@ -2701,23 +2702,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 11px;
-          top: 222px; }
+          left: 165px;
+          top: 238px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 31px;
-          top: 137px; }
+          left: 60px;
+          top: 245px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 125px;
-          top: 196px; }
+          left: 233px;
+          top: 238px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 179px;
-          top: 222px; }
+          left: 192px;
+          top: 2px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 400px;
-          top: 215px; }
+          left: 193px;
+          top: 111px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 359px;
-          top: 204px; }
+          left: 364px;
+          top: 19px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);
