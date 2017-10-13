@@ -218,6 +218,7 @@ function last_products(){
 						set_query_var("item", $product);
 						set_query_var("size", "item--small");
 						set_query_var("class", "carousel-item");
+						set_query_var("date", get_next_date($product));
 						set_query_var("limit", 80);
 						set_query_var("heightAuto", true);
 						set_query_var("callback", [
