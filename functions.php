@@ -525,7 +525,11 @@ function shortcode_formbtn($atts){
 	$class = $args["class"];
 
 	if($args["title"]) {
-		$get = ($get !== '') ? $get.'&title='.htmlspecialchars($args["title"]) : 'title='.htmlspecialchars($args["title"]);
+		if($get == "") {
+			$get = 'title='.htmlspecialchars($args["title"]);
+		} else {
+			$get .= '&title='.htmlspecialchars($args["title"]);
+		}
 	}
 
 	if($value){
