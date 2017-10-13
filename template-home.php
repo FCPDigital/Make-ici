@@ -32,7 +32,7 @@ $postCur = get_post(); // On stocke le post courant pour éviter le bug de la bo
 					<?php the_content($postCur); ?>
 				</div>
 				<div class="center margin-top-big">
-					<a href="https://www.instagram.com/icimontreuil" class="btn btn--light"><i class="fa fa-instagram btn__fa" aria-hidden="true"></i><?php echo get_bloginfo("name"); ?> en images</a>
+					<a href="https://www.instagram.com/icimontreuil" target="blank_" class="btn btn--light"><?php echo get_bloginfo("name"); ?> en images</a>
 				</div>
 			</div>
 			<div class="scroll-btn-container margin-top-medium">
