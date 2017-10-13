@@ -513,16 +513,20 @@ function shortcode_formbtn($atts){
 	$args = shortcode_atts( array(
 		'value' => null,
 		'get' => null,
+		'title' => null,
 		'param' => null,
 		'class' => "btn btn-colored",
 		'action' => "classic_form"
 	), $atts );
-
 	$value = $args["value"];
 	$get = ($args["get"]) ? "data-getarg='".$args["get"]."'" : "";
 	$param = $args["param"];
 	$action = $args["action"];
 	$class = $args["class"];
+
+	if($args["title"]) {
+		$get = ($get !== '') ? $get.'&title='.htmlspecialchars($args["title"]) : 'title='.htmlspecialchars($args["title"]);
+	}
 
 	if($value){
 		return "<a href='#' ".$get." data-wpxhr='".$action."' data-xhrarg='".$param."' class='".$class."'>".$value."</a>";
@@ -833,9 +837,13 @@ function contact_form() {
 
 function classic_form(){
 	$param = $_POST['param'];
+	$gets = $_GET;
 	if (is_array($param)){
 		$id = (isset($param["id"])) ? (int) $param["id"] : null;
 		$value = (isset($param["value"])) ? $param["value"] : "Formulaire";
+		if($gets["title"]) {
+			$value = htmlspecialchars($gets["title"]);
+		}
 	} else {
 		$id = (int) $param;
 		$value = null;
