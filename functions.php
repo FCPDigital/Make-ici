@@ -337,7 +337,7 @@ function manage_date_order_variable_product($options){
 function get_variation_attribute($product){
 	$product_variable = new WC_Product_Variable( $product->ID );
 	$variations = $product_variable->get_available_variations();
-
+	//var_dump($variations);
 	$var_data = [];
 	foreach ($variations as $variation) {
 		if($variation['variation_id']){
@@ -352,6 +352,7 @@ function get_variation_attribute($product){
 function get_all_dates($product, $attibute_name="attribute_pa_date") {
 	$data = get_variation_attribute($product);
 	$date = [];
+	//var_dump($data);
 	for($i=0; $i<count($data); $i++){
 		foreach($data[$i] as $attrName => $var_name) {
 			if( $attrName == $attibute_name ) {
@@ -363,11 +364,17 @@ function get_all_dates($product, $attibute_name="attribute_pa_date") {
 }
 
 function get_next_date($product, $attibute_name="attribute_pa_date"){
+	//echo get_the_title($product);
 	$date = get_all_dates($product);
+	//var_dump( $date );
+	//echo '----------------';
 	$currentDate = DateTime::createFromFormat('U', time());
 	$nextDate = false;
+
 	for($i=0; $i<count($date); $i++){
+		//echo $date[$i].'...';
 		$date[$i] = DateTime::createFromFormat( "dmY" , $date[$i] );
+		if(!$date[$i]) $date[$i] = DateTime::createFromFormat( "d/m/Y" , $date[$i] );
 		if( $date[$i] > $currentDate ){
 			//Si une date à venir est définis et que celle examiné est plus récente OU que aucune date prochaine n'est définis
 			if(($nextDate&&$date[$i]<$nextDate)||($nextDate==false)){
