@@ -1752,24 +1752,25 @@ body.woocommerce-checkout #customer_details h3::after {
     position: relative; }
   .homepage.make-ici-homepage h2 {
     margin-bottom: 32px; }
-  .homepage.make-ici-homepage .landing::before {
-    background-color: rgba(0, 0, 0, 0.6);
-    z-index: 1; }
-  .homepage.make-ici-homepage .landing #scroll {
-    z-index: 1; }
-  .homepage.make-ici-homepage .landing .container {
-    z-index: 2; }
-  .homepage.make-ici-homepage .landing video#bgvid {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: 0;
-    background: url("assets/images/bg.png") no-repeat;
-    background-size: cover; }
+  .homepage.make-ici-homepage .landing {
+    background: url("assets/images/bg.png") no-repeat; }
+    .homepage.make-ici-homepage .landing::before {
+      background-color: rgba(0, 0, 0, 0.6);
+      z-index: 1; }
+    .homepage.make-ici-homepage .landing #scroll {
+      z-index: 1; }
+    .homepage.make-ici-homepage .landing .container {
+      z-index: 2; }
+    .homepage.make-ici-homepage .landing video#bgvid {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: 0;
+      background-size: cover; }
   .homepage .landing {
     min-height: 600px;
     height: 100vh;
@@ -2716,23 +2717,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 42px;
-          top: 21px; }
+          left: 91px;
+          top: 249px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 34px;
-          top: 76px; }
+          left: 321px;
+          top: 161px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 56px;
-          top: 194px; }
+          left: 303px;
+          top: 104px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 258px;
-          top: 186px; }
+          left: 362px;
+          top: 45px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 184px;
-          top: 31px; }
+          left: 155px;
+          top: 19px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 353px;
-          top: 225px; }
+          left: 145px;
+          top: 83px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);
