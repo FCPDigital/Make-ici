@@ -2058,6 +2058,11 @@ header.transparent .navbar {
     top: 14px;
     right: 130px; }
 
+  #menu-header {
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box; }
+
   #main-header .navbar {
     background: transparent;
     border-bottom: 0; }
@@ -2708,23 +2713,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 310px;
-          top: 25px; }
+          left: 46px;
+          top: 17px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 120px;
-          top: 161px; }
+          left: 119px;
+          top: 92px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 268px;
-          top: 87px; }
+          left: 148px;
+          top: 12px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 169px;
-          top: 68px; }
+          left: 129px;
+          top: 244px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 56px;
-          top: 69px; }
+          left: 229px;
+          top: 5px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 95px;
-          top: 14px; }
+          left: 302px;
+          top: 38px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);

@@ -272,6 +272,11 @@ header {
 		top: 14px;
 		right: 130px;
 	}
+	#menu-header {
+		width: 100%;
+		margin: 0;
+		box-sizing: border-box;
+	}
 	#main-header .navbar {
 		background: transparent;
 		border-bottom: 0;
