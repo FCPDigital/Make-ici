@@ -43,8 +43,8 @@ Contenu d'une page formation. Appelé dans :
 							<?php echo $brand[0]->description; ?></p>
 					</div>
 					<style type="text/css">
-					.woocommerce div.product form.cart .button {display:none;}
-					woocommerce-variation single_variation {display:none;}
+					#single-product .loop-archive .single_add_to_cart_button {display:none;}
+					.woocommerce-variation.single_variation p {display:none;}
 					</style>
 				<?php } ?>
 				<?php
