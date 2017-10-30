@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Produit Maker
+ * Template Name: Produit with form
  */
 
 	$product = get_post();
@@ -14,7 +14,7 @@
 	<div class="body loop-archive" id="looper-snap">
 		<div id="scroll-container">
 			<?php
-				include( locate_template('template-parts/woocommerce/content-product-other.php') );
+				include( locate_template('template-parts/woocommerce/content-product-form.php') );
 			?>
 		</div>
 	</div>
