@@ -5,9 +5,13 @@
 			<p class="item__title item__title--left"><?php echo truncate_content(get_the_title($item), 70); ?></p>
 			<span class="item__corner item__mention item__mention--right">
 				<?php if($date) { 
-					echo $date->format("D j M"); 
+					$formatter = new IntlDateFormatter('fr_FR', IntlDateFormatter::SHORT, IntlDateFormatter::SHORT);
+					$formatter->setPattern('E d M');
+					echo $formatter->format($date);
+
+					//echo $date->format("D j M"); 
 				} else { 
-					echo get_the_date('D j M', $item);
+					echo get_the_date('D. j M', $item);
 				}; ?>	
 			</span>
 		</div>
