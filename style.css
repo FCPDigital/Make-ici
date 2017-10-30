@@ -2092,12 +2092,12 @@ header.transparent .navbar {
         background-color: #ffed00; }
     #main-header .navbar .navbar-collapse.in {
       left: 0; }
-    #main-header .navbar .navbar-collapse .menu-item.dropdown .dropdown-menu {
-      background-color: #ffeba5;
-      position: relative;
-      z-index: 999;
-      top: -3px;
-      border-bottom: 1px solid #bbb; } }
+    #main-header .navbar .navbar-collapse .menu-item.dropdown {
+      height: auto; }
+      #main-header .navbar .navbar-collapse .menu-item.dropdown .dropdown-menu {
+        position: relative;
+        z-index: 999;
+        top: -3px; } }
 @media screen and (min-width: 1210px) {
   #main-header .navbar .navbar-collapse, #main-header .navbar .navbar-collapse.in {
     left: -300px; } }
@@ -2702,23 +2702,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 350px;
-          top: 4px; }
+          left: 104px;
+          top: 234px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 214px;
-          top: 121px; }
+          left: 386px;
+          top: 32px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 10px;
-          top: 226px; }
+          left: 286px;
+          top: 137px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 19px;
-          top: 172px; }
+          left: 6px;
+          top: 157px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 288px;
-          top: 156px; }
+          left: 345px;
+          top: 241px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 197px;
-          top: 104px; }
+          left: 45px;
+          top: 106px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);
