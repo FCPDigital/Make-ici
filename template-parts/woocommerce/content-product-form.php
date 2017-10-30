@@ -36,36 +36,20 @@ Contenu d'une page formation. Appelé dans :
 					</div>
 				<?php } ?>
 
-				<div class="cost_max fa-container">
-					<i class="fa fa-eur" aria-hidden="true"></i>
-					<?php
-					$price = (int) $product->get_price();
-					$reduc = (float) esc_attr( get_option('reduction_promo'));
-					if($reduc){
-						$abonnePrice = round($price*$reduc);
-					} else {
-						$abonnePrice = $price;
-					}
-					?>
-					<p>Tarif abonnés :<br><?php echo $abonnePrice; ?> € TTC</p>
-
-				</div>
-
-				<div class="cost_sale fa-container">
-					<i class="fa fa-eur" aria-hidden="true"></i>
-					<p>Tarif non abonnées :<br><?php echo $product->get_price() ?> € TTC</p>
-				</div>
-
 				<?php if($brand) { ?>
 					<div class="formator fa-container margin-bottom-small">
 						<i class="fa fa-user" aria-hidden="true"></i>
 						<p><strong>Le Formateur :</strong><br>
 							<?php echo $brand[0]->description; ?></p>
 					</div>
+					<style type="text/css">
+					<style type="text/css">.single_add_to_cart_button:display:none</style></style>
 				<?php } ?>
 				<?php
 				//appelle de la fonction de woocommerce gérant l'affichage du panier et des variations
 				do_action( 'woocommerce_single_product_summary' );
+				
+				echo get_field("short_code_formulaire");
 
 				// Affiche un lien vers la page produit des cartes cadeaux ?>
 				<a href="<?php echo get_permalink(esc_attr( get_option('gift_card_id'))); ?>" class="btn btn-colored gift-card-link">Achetez une carte cadeau</a>
