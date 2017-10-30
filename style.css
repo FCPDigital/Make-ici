@@ -2093,11 +2093,17 @@ header.transparent .navbar {
     #main-header .navbar .navbar-collapse.in {
       left: 0; }
     #main-header .navbar .navbar-collapse .menu-item.dropdown {
-      height: auto; }
+      height: auto;
+      margin: 0;
+      border-right: 0;
+      border-left: 0; }
       #main-header .navbar .navbar-collapse .menu-item.dropdown .dropdown-menu {
+        background-color: #ffed00;
         position: relative;
         z-index: 999;
-        top: -3px; } }
+        top: -3px;
+        float: none;
+        box-shadow: none; } }
 @media screen and (min-width: 1210px) {
   #main-header .navbar .navbar-collapse, #main-header .navbar .navbar-collapse.in {
     left: -300px; } }
@@ -2702,23 +2708,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 104px;
-          top: 234px; }
+          left: 310px;
+          top: 25px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 386px;
-          top: 32px; }
+          left: 120px;
+          top: 161px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 286px;
-          top: 137px; }
+          left: 268px;
+          top: 87px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 6px;
-          top: 157px; }
+          left: 169px;
+          top: 68px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 345px;
-          top: 241px; }
+          left: 56px;
+          top: 69px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 45px;
-          top: 106px; }
+          left: 95px;
+          top: 14px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);
