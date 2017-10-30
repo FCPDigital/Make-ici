@@ -44,6 +44,7 @@ Contenu d'une page formation. Appelé dans :
 					</div>
 					<style type="text/css">
 					#single-product .loop-archive .single_add_to_cart_button {display:none;}
+					#single-product .loop-archive .single_variation_wrap {padding: 0px;}
 					.woocommerce-variation.single_variation p {display:none;}
 					</style>
 				<?php } ?>
