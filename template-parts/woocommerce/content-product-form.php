@@ -43,7 +43,9 @@ Contenu d'une page formation. Appelé dans :
 							<?php echo $brand[0]->description; ?></p>
 					</div>
 					<style type="text/css">
-					<style type="text/css">.single_add_to_cart_button:display:none</style></style>
+					.woocommerce div.product form.cart .button {display:none;}
+					woocommerce-variation single_variation {display:none;}
+					</style>
 				<?php } ?>
 				<?php
 				//appelle de la fonction de woocommerce gérant l'affichage du panier et des variations
