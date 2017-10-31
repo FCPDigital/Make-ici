@@ -40,7 +40,7 @@ $categories = get_woocommerce_categories();
 							<div class="archive-head-item carousel-item text-item">
 								<div class="content">
 									<p>
-										Offrez une expérience unique dans nos ateliers équipés. Nos cartes cadeaux sont valables pour tous nos stages et formations bouton.
+										Offrez une expérience unique dans nos ateliers équipés. Nos cartes cadeaux sont valables pour tous nos stages et formations.
 									</p>
 								</div>
 								<a href="<?php echo get_permalink(esc_attr( get_option('gift_card_id'))); ?>" class="btn btn-colored">Offrez une carte cadeau</a>
