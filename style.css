@@ -2551,6 +2551,13 @@ form select {
   .wpforms-container .input-checkbox-container .wpcf7-checkbox, .wpcf7 .input-checkbox-container .wpcf7-checkbox {
     margin-top: 10px;
     display: block; }
+.wpforms-container span.wpcf7-not-valid-tip, .wpcf7 span.wpcf7-not-valid-tip {
+  color: #ffed00;
+  font-size: 0.7em;
+  font-weight: normal;
+  display: block;
+  position: absolute;
+  bottom: 8px; }
 .wpforms-container .wpforms-field-textarea, .wpforms-container .textarea-container, .wpcf7 .wpforms-field-textarea, .wpcf7 .textarea-container {
   width: calc(100% - 20px); }
   .wpforms-container .wpforms-field-textarea textarea, .wpforms-container .textarea-container textarea, .wpcf7 .wpforms-field-textarea textarea, .wpcf7 .textarea-container textarea {
@@ -2717,23 +2724,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 91px;
-          top: 249px; }
+          left: 259px;
+          top: 176px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 321px;
-          top: 161px; }
+          left: 388px;
+          top: 34px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 303px;
-          top: 104px; }
+          left: 295px;
+          top: 241px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 362px;
-          top: 45px; }
+          left: 213px;
+          top: 176px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 155px;
-          top: 19px; }
+          left: 143px;
+          top: 82px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 145px;
-          top: 83px; }
+          left: 360px;
+          top: 6px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);
