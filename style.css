@@ -2552,7 +2552,8 @@ form select {
     margin-top: 10px;
     display: block; }
 .wpforms-container .wpcf7-form-control-wrap, .wpcf7 .wpcf7-form-control-wrap {
-  display: inline-block; }
+  display: inline-block;
+  width: 100%; }
 .wpforms-container span.wpcf7-not-valid-tip, .wpcf7 span.wpcf7-not-valid-tip {
   color: #ffed00;
   font-size: 0.7em;
@@ -2726,23 +2727,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 153px;
-          top: 190px; }
+          left: 166px;
+          top: 217px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 226px;
-          top: 246px; }
+          left: 261px;
+          top: 167px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 297px;
-          top: 125px; }
+          left: 239px;
+          top: 221px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 30px;
-          top: 248px; }
+          left: 220px;
+          top: 204px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 124px;
-          top: 216px; }
+          left: 183px;
+          top: 21px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 25px;
-          top: 91px; }
+          left: 277px;
+          top: 112px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);
