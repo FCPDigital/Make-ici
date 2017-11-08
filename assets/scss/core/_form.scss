@@ -166,7 +166,9 @@ form {
 		}
 	}
 
-
+	.wpcf7-form-control-wrap {
+		display: inline-block;
+	}
 	span.wpcf7-not-valid-tip {
 	    color: $color-3;
 	    font-size: 0.7em;
@@ -175,7 +177,7 @@ form {
 	    position: absolute;
 	    bottom: 8px;
 	}
-	
+
 	.wpforms-field-textarea, .textarea-container {
 		width: calc(100% - 20px);
 		textarea {
