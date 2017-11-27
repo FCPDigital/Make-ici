@@ -19,8 +19,9 @@ $postCur = get_post(); // On stocke le post courant pour éviter le bug de la bo
 				<?php echo get_bloginfo("description"); ?>
 			</div>
 			<div class="center margin-top-medium">
-				<a href='<?php echo get_permalink(get_page_by_title("Visite Guidée")) ?>' class="btn btn--light">Visiter ICI Montreuil</a>
-			</div>
+				<a href='<?php echo get_permalink(get_page_by_title("Visite Guidée")) ?>' class="btn btn--light">Visiter ICI Montreuil</a><br><br>
+				<a class=" btn btn-colored" href="https://www.welcometothejungle.co/companies/make-ici/jobs/responsable-communication-evenement-formation_montreuil">Pour les intéressés, on recrute!</a>
+							</div>
 		</div>
 		<a id="scroll" href="#anchor-1" data-scroll>Découvrez <?php echo get_bloginfo("name"); ?></a>
 	</div>
