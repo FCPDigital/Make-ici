@@ -7,7 +7,7 @@ require_once('helpers/wp_bootstrap_navwalker.php');
 
 //////////////////////////////////////////////////////
 //
-//						TEMPLATING CUSTOM POST
+//				TEMPLATING CUSTOM POST
 //
 //////////////////////////////////////////////////////
 
@@ -874,11 +874,11 @@ add_action( 'wp_ajax_nopriv_classic_form', 'classic_form' );
 //////////////////////////////////////////////////////
 
 //Remove span wrapper in input form wp_contact_form_7
-add_filter('wpcf7_form_elements', function($content) {
+/*add_filter('wpcf7_form_elements', function($content) {
 		$content = preg_replace('/<(span).*?class="\s*(?:.*\s)?wpcf7-form-control-wrap(?:\s[^"]+)?\s*"[^\>]*>(.*)<\/\1>/i', '\2', $content);
 		return $content;
 });
-
+*/
 
 
 //INITIALISATION DES SCRIPTS
@@ -975,6 +975,8 @@ function register_my_setting() {
 	register_setting( 'formulaire', 'contact_form_id', "intval" );
 	register_setting( 'formulaire', 'reduction_promo', "float" );
 	register_setting( 'formulaire', 'instagram_account', "string" );
+	register_setting( 'formulaire', 'map_thumbnail_url', "float" );
+	register_setting( 'formulaire', 'address', "float" );
 }
 add_action( 'admin_init', 'register_my_setting' );
 
