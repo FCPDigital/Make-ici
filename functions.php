@@ -1024,6 +1024,14 @@ function my_theme_options() {
 			<label>Identifiant du formulaire de contact spécifique</label><br>
 			<input class="form-control" value="<?php echo esc_attr( get_option('contact_form_id') ); ?>" name="contact_form_id" type="text"/>
 		</div>
+		<div class="form-group">
+			<label>Url de la google map (envoyé via email)</label><br>
+			<input class="form-control" value="<?php echo esc_attr( get_option('map_thumbnail_url') ); ?>" name="map_thumbnail_url" type="text"/>
+		</div>
+		<div class="form-group">
+			<label>Adresse </label><br>
+			<input class="form-control" value="<?php echo esc_attr( get_option('address') ); ?>" name="address" type="text"/>
+		</div>
 		<?php submit_button(); ?>
 		</form>
 	</div>
