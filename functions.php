@@ -975,8 +975,9 @@ function register_my_setting() {
 	register_setting( 'formulaire', 'contact_form_id', "intval" );
 	register_setting( 'formulaire', 'reduction_promo', "float" );
 	register_setting( 'formulaire', 'instagram_account', "string" );
-	register_setting( 'formulaire', 'map_thumbnail_url', "float" );
-	register_setting( 'formulaire', 'address', "float" );
+	register_setting( 'formulaire', 'map_thumbnail_url', "string" );
+	register_setting( 'formulaire', 'address', "string" );
+	register_setting( 'formulaire', 'bg_email', "string" );
 }
 add_action( 'admin_init', 'register_my_setting' );
 
@@ -1031,6 +1032,10 @@ function my_theme_options() {
 		<div class="form-group">
 			<label>Adresse </label><br>
 			<input class="form-control" value="<?php echo esc_attr( get_option('address') ); ?>" name="address" type="text"/>
+		</div>
+		<div class="form-group">
+			<label>Image banners des emails</label><br>
+			<input class="form-control" value="<?php echo esc_attr( get_option('bg_email') ); ?>" name="bg_email" type="text"/>
 		</div>
 		<?php submit_button(); ?>
 		</form>
