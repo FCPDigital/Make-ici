@@ -257,7 +257,7 @@ a {
 	@include transform(translateX(0));
 	&.hide {
 		display: block !important;
-		@include transform(translateX(200%));
+		@include transform(translateX(40px));
 	}
 }
 
