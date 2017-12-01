@@ -239,6 +239,28 @@ a {
 	}
 }
 
+.resident_button {
+	background-color: $color-3;
+	position: fixed;
+	width: auto;
+	right: 55px;
+	bottom: $small-pad;
+	height: $medium-pad;
+	background-image: none;
+	text-align: center;
+	display: block;
+	text-decoration: none;
+	font-weight: bold;
+	padding: 10px;
+	text-transform: uppercase;
+	@include transition(.4s);
+	@include transform(translateX(0));
+	&.hide {
+		display: block !important;
+		@include transform(translateX(200%));
+	}
+}
+
 .su-slider {
 	max-width: 760px;
 	max-height: 500px;

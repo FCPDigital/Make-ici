@@ -1,7 +1,8 @@
 
 <footer class="container-fluid" role="contentinfo">
-	<a href="#" class="scroll-to-top" data-scroll></a>
-	
+	<a href="#" class="scroll-to-top display-scroll hide" data-scroll></a>
+	<a href="<?php echo get_permalink(get_page_by_title("Visite Guidée")); ?>" class="resident_button display-scroll hide">Devenez résident !</a>
+
 	<div class="row">
 		<div class="flex-item">
 			<?php dynamic_sidebar( 'sidebar-1' ); ?>

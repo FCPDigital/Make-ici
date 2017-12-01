@@ -646,12 +646,24 @@ function manageProductCarousel(){
 ////////////////////////////////////////////////////////////////////////////////
 
 function scrollToTop(){
-	var scrollBtn = document.querySelector(".scroll-to-top");
-	window.addEventListener("scroll", function(){
+	var scrollBtns = document.querySelectorAll(".display-scroll");
+	var scrollBtn;
+	for(var i=0; i<scrollBtns.length; i++) {
+		scrollBtn = scrollBtns[i];
 		if(window.scrollTop < window.innerHeight/2 && !scrollBtn.className.match("hide")) {
 			scrollBtn.classList.add("hide");
 		} else if(window.scrollTop > window.innerHeight/2 && scrollBtn.className.match("hide")){
 			scrollBtn.classList.remove("hide");
+		}
+	}
+	window.addEventListener("scroll", function(){
+		for(var i=0; i<scrollBtns.length; i++) {
+			scrollBtn = scrollBtns[i];
+			if(window.scrollTop < window.innerHeight/2 && !scrollBtn.className.match("hide")) {
+				scrollBtn.classList.add("hide");
+			} else if(window.scrollTop > window.innerHeight/2 && scrollBtn.className.match("hide")){
+				scrollBtn.classList.remove("hide");
+			}
 		}
 	}, false)
 }
