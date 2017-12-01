@@ -1,7 +1,10 @@
 
 <footer class="container-fluid" role="contentinfo">
 	<a href="#" class="scroll-to-top display-scroll hide" data-scroll></a>
-	<a href="<?php echo get_permalink(get_page_by_title("Visite Guidée")); ?>" class="resident_button display-scroll hide">Devenez résident !</a>
+	<?php if(get_page_by_title("Visite Guidée")) { ?>
+		<a href="<?php echo get_permalink(get_page_by_title("Visite Guidée")); ?>" class="resident_button display-scroll hide">Devenez résident !</a>
+	<?php } ?>
+	
 
 	<div class="row">
 		<div class="flex-item">
