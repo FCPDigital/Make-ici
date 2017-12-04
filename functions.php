@@ -326,7 +326,7 @@ function manage_date_order_variable_product($options){
 	$c = date_create_from_format('dmY', date("dmY"))->getTimestamp();
 	foreach( $options as $option) {
 		if( $option ){
-			$date = date_create_from_format( "dmY" , $option ) ? date_create_from_format( "dmY" , $option ) : date_create_from_format( "d/m/Y" , $option );
+			$date = adaptFormat( $option );
 			$date = $date->getTimestamp();
 			if($date > $c){
 				array_push($optionsManage, $option);
@@ -365,6 +365,13 @@ function get_all_dates($product, $attibute_name="attribute_pa_date") {
 	return $date;
 }
 
+function adaptFormat($value) {
+	if(DateTime::createFromFormat( "dmY" , $value) ){
+		return DateTime::createFromFormat( "dmY" , $value);
+	}
+	return DateTime::createFromFormat( "d-m-Y" , $value);
+}	
+
 function get_next_date($product, $attibute_name="attribute_pa_date"){
 	//echo get_the_title($product);
 	$date = get_all_dates($product);
@@ -375,7 +382,7 @@ function get_next_date($product, $attibute_name="attribute_pa_date"){
 
 	for($i=0; $i<count($date); $i++){
 		//echo $date[$i].'...';
-		$date[$i] = DateTime::createFromFormat( "dmY" , $date[$i] );
+		$date[$i] = adaptFormat($date[$i]);
 		if(!$date[$i]) $date[$i] = DateTime::createFromFormat( "d/m/Y" , $date[$i] );
 		if( $date[$i] > $currentDate ){
 			//Si une date à venir est définis et que celle examiné est plus récente OU que aucune date prochaine n'est définis
