@@ -317,7 +317,7 @@ function get_the_slug(){
 
 // Formate une date de type 31122917 en 31/12/2017
 function get_format_date($string){
-	 return preg_replace("/(\d{2})(\d{2})(\d{4})/",	"$1/$2/$3", $string);
+	 return preg_replace("/(\d{2})-?(\d{2})-?(\d{4})/",	"$1/$2/$3", $string);
 }
 
 
