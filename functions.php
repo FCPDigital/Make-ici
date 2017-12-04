@@ -326,7 +326,8 @@ function manage_date_order_variable_product($options){
 	$c = date_create_from_format('dmY', date("dmY"))->getTimestamp();
 	foreach( $options as $option) {
 		if( $option ){
-			$date = date_create_from_format( "dmY" , $option ) -> getTimestamp();
+			$date = date_create_from_format( "dmY" , $option ) ? date_create_from_format( "dmY" , $option ) : date_create_from_format( "d/m/Y" , $option );
+			$date = $date->getTimestamp();
 			if($date > $c){
 				array_push($optionsManage, $option);
 			}
