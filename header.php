@@ -19,6 +19,13 @@
   'https://connect.facebook.net/en_US/fbevents.js');
   fbq('init', '338770209922464');
   fbq('track', 'PageView');
+  fbq('track', 'CompleteRegistration');
+  fbq('track', 'Lead');
+  fbq('track', 'Purchase', {value: '0.00', currency: 'USD'});
+  fbq('track', 'AddPaymentInfo');
+  fbq('track', 'InitiateCheckout');
+  fbq('track', 'AddToCart');
+  fbq('track', 'ViewContent');
 </script>
 <noscript><img height="1" width="1" style="display:none"
   src="https://www.facebook.com/tr?id=338770209922464&ev=PageView&noscript=1"
