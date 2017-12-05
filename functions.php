@@ -323,18 +323,37 @@ function get_format_date($string){
 
 function manage_date_order_variable_product($options){
 	$optionsManage = [];
+	$dateManage = [];
 	$c = date_create_from_format('dmY', date("dmY"))->getTimestamp();
 	foreach( $options as $option) {
-		if( $option ){
+		if( $option )
+		{
 			$date = adaptFormat( $option );
 			$date = $date->getTimestamp();
-			if($date > $c){
-				array_push($optionsManage, $option);
+			if($date > $c)
+			{
+				$placed = false;
+				for ($i=0; $i<count($dateManage); $i++)
+				{
+					if($date < $dateManage[$i])
+					{
+						array_splice( $dateManage, $i, 0, [$date]);
+						array_splice( $optionsManage, $i, 0, [$option]);
+						$placed = true;
+						break;
+					}
+				}
+				if(!$placed)
+				{
+					array_push($dateManage, $date);
+					array_push($optionsManage, $option);
+				}
 			}
 		}
 	}
 	return $optionsManage;
 }
+
 
 function get_variation_attribute($product){
 	$product_variable = new WC_Product_Variable( $product->ID );
