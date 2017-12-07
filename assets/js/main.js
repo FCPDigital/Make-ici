@@ -550,7 +550,8 @@ function MakeCarousel(el){
 		this.container = this.carousel.querySelector(".carousel-container")
 		this.control = {
 			left: this.carousel.querySelector(".carousel-control .carousel-control-btn[data-direction='left']"),
-			right: this.carousel.querySelector(".carousel-control .carousel-control-btn[data-direction='right']")
+			right: this.carousel.querySelector(".carousel-control .carousel-control-btn[data-direction='right']"),
+			label: this.carousel.querySelector(".carousel-control-label")
 		}
 		this.initEvents();
 		self.updateSize();
@@ -609,17 +610,20 @@ MakeCarousel.prototype = {
 			this.control.left.classList.add("hide");
 		} else {
 			this.control.left.classList.remove("hide");
+			this.control.label.classList.remove("hide");
 		}
 
 		if(this.items.length - this.currentItem == this.nbItemRow ){
 			this.control.right.classList.add("hide")
 		} else {
 			this.control.right.classList.remove("hide");
+			this.control.label.classList.remove("hide");
 		}
 		
 		if (this.items.length <= this.nbItemRow) {
 			this.control.left.classList.add("hide");
 			this.control.right.classList.add("hide");
+			this.control.label.classList.add("hide");
 			while(this.currentItem > 0) {
 				this.move("left");
 			}

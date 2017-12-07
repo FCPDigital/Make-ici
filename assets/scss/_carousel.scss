@@ -83,15 +83,16 @@
 			padding: 150px 10px;
 			font-size: 3em;
 			opacity: 1;
-			.carousel-control-mention {
+			.carousel-control-label {
 				text-align: center;
 				font-size: 13px;
 				color: $color-3;
-				margin-bottom:$small-pad;
+				margin-top: $small-pad;
+				font-weight: bold;
 			}
 			.carousel-control-btn {
-				width: 30px;
-				height: 30px;
+				width: 40px;
+				height: 40px;
 				background-position: center;
 				background-repeat: no-repeat;
 				background-size: contain;

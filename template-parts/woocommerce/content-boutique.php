@@ -36,6 +36,7 @@ Affiche le nom du categorie et un carousel des produits y correspondant
 					<div class="carousel-control">
 						<a href="#" class="carousel-control-btn" data-direction="left"></a>
 						<a href="#" class="carousel-control-btn" data-direction="right"></a>
+						<p class="carousel-control-label">Voir plus de formations</p>
 					</div>
 				</div>
 			</div>
