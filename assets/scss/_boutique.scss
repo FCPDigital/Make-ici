@@ -468,4 +468,16 @@ body.woocommerce-checkout {
 		display: block;
 		text-align: center;
 	}
+
+	body.woocommerce-checkout .woocommerce-checkout {
+		#customer_details {
+			width: 100%;
+		}
+		#order_review {
+			width: 100%;
+		}
+		 #order_review_heading {
+		 	width: 100%;
+		 }
+	}
 }
