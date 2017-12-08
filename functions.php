@@ -911,6 +911,7 @@ add_action( 'wp_ajax_nopriv_classic_form', 'classic_form' );
 //INITIALISATION DES SCRIPTS
 function make_ici_scripts() {
 	wp_register_script('smoothScroll', get_template_directory_uri() . '/assets/js/smoothscroll.js', array('jquery'),'1.1', true);
+	wp_register_script('turbolink', get_template_directory_uri() . '/assets/js/turbolink.js', array('jquery'),'1.1', true);
 	wp_register_script('main', get_template_directory_uri() . '/assets/js/main.js', array('jquery'),'1.1', true);
 
 	wp_enqueue_script('smoothScroll');

@@ -278,7 +278,7 @@ header {
 		box-sizing: border-box;
 	}
 	#main-header .navbar {
-		background: transparent;
+		background: rgba(0, 0, 0, .6);
 		border-bottom: 0;
 	}
 	#main-header .navbar .navbar-collapse {
@@ -335,7 +335,6 @@ header {
 	#main-header .navbar .navbar-collapse, #main-header .navbar .navbar-collapse.in {
 		left: -300px;
 	}
-
 } 
 
 //Bouton burger

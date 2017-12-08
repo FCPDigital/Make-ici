@@ -2107,7 +2107,7 @@ header.transparent .navbar {
     box-sizing: border-box; }
 
   #main-header .navbar {
-    background: transparent;
+    background: rgba(0, 0, 0, 0.6);
     border-bottom: 0; }
 
   #main-header .navbar .navbar-collapse {
@@ -2767,23 +2767,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 289px;
-          top: 77px; }
+          left: 337px;
+          top: 221px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 56px;
-          top: 199px; }
+          left: 384px;
+          top: 214px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 46px;
-          top: 77px; }
+          left: 182px;
+          top: 245px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 139px;
-          top: 250px; }
+          left: 277px;
+          top: 176px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 197px;
-          top: 167px; }
+          left: 191px;
+          top: 66px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 391px;
-          top: 114px; }
+          left: 29px;
+          top: 63px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);

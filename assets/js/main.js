@@ -1,4 +1,3 @@
-
 // Prototype permettant à un élément de se supprimer du DOM lui même
 Node.prototype.remove = function(){
 	var parent = this.parentNode;
@@ -610,20 +609,20 @@ MakeCarousel.prototype = {
 			this.control.left.classList.add("hide");
 		} else {
 			this.control.left.classList.remove("hide");
-			this.control.label.classList.remove("hide");
+			if(this.control.label) this.control.label.classList.remove("hide");
 		}
 
 		if(this.items.length - this.currentItem == this.nbItemRow ){
 			this.control.right.classList.add("hide")
 		} else {
 			this.control.right.classList.remove("hide");
-			this.control.label.classList.remove("hide");
+			if(this.control.label) this.control.label.classList.remove("hide");
 		}
 		
 		if (this.items.length <= this.nbItemRow) {
 			this.control.left.classList.add("hide");
 			this.control.right.classList.add("hide");
-			this.control.label.classList.add("hide");
+			if(this.control.label) this.control.label.classList.add("hide");
 			while(this.currentItem > 0) {
 				this.move("left");
 			}
