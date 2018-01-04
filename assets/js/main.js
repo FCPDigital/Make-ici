@@ -539,7 +539,7 @@ XhrManage = {
 function MakeCarousel(el){
 	this.carousel = el;
 	this.currentItem= 0;
-	this.nbItemRow = 3;
+	this.nbItemRow = 4;
 	var self = this;
 
 	if(this.carousel && this.carousel.className.match("active-control")){
@@ -589,11 +589,11 @@ MakeCarousel.prototype = {
 	},
 
 	updateSize: function(){
-		if(window.innerWidth < 1160 && window.innerWidth > 800 && this.nbItemRow != 2){
-			this.nbItemRow = 2;
+		if(window.innerWidth < 1160 && window.innerWidth > 800 && this.nbItemRow != 3){
+			this.nbItemRow = 3;
 		}
 		if(window.innerWidth > 1160){
-			this.nbItemRow = 3;
+			this.nbItemRow = 4;
 		}
 		if(window.innerWidth < 800 && this.nbItemRow != 1){
 			this.nbItemRow = 1;
@@ -698,6 +698,72 @@ HeaderScroll = {
 
 ////////////////////////////////////////////////////////////////////////////////
 //
+//								Dynamic Date
+//
+////////////////////////////////////////////////////////////////////////////////
+
+var DynamicDate = {
+
+	displayList: function(){
+
+	},
+
+	hideList: function(){
+
+	},
+
+	updateDom: function(data){
+		for(var i = 0, key; i < this.outputs.length; i++ ){
+			key =  this.outputs[i].getAttribute("data-dynamic-date");
+			value = data[key];
+			if( value ){
+				this.outputs[i].innerHTML = value;
+			}
+		}
+	},
+
+	setListItemClick: function(el) {
+		var dataLine; 
+		var self = this;
+		el.addEventListener("click", function(){
+			var r = parseInt(this.getAttribute("data-dynamic-date-rank"));
+			if( r >= 0 && self.data[r] ){
+				self.updateDom(self.data[r]);
+			}
+
+		}, false)
+	},
+
+	setListItems: function(){
+		var collection = [];
+		for(var i = 0; i < this.data.length; i++) {
+
+			collection.push(document.createElement('p'));
+			collection[i].setAttribute('data-dynamic-date-rank', i);
+			collection[i].className = "dynamic-date__list-item";
+			collection[i].innerHTML = this.data[i]["formation_start"];
+			this.setListItemClick(collection[i]);
+			this.list.appendChild(collection[i]);
+			console.log(collection[i])
+		}
+	},
+
+	init: function(){
+		this.dataContainer = document.getElementById("date_data");
+		if(this.dataContainer){
+			this.outputs = document.querySelectorAll("*[data-dynamic-date]");
+			this.selector = document.getElementById("dynamic-date__selector");
+			this.list = document.getElementById("dynamic-date__list");
+			this.data = JSON.parse(this.dataContainer.textContent);
+			if( this.data ){
+				this.setListItems();
+			}
+		}
+	}
+}
+
+////////////////////////////////////////////////////////////////////////////////
+//
 //								Window load
 //
 ////////////////////////////////////////////////////////////////////////////////
@@ -712,6 +778,7 @@ window.addEventListener("load", function(){
 	var carousel = new MakeCarousel(document.querySelector("#main-carousel"));
 	XhrManage.init();
 	HeaderScroll.init();
+	DynamicDate.init();
 
 	if(window.mobilecheck()) document.querySelector('#bgvid').remove();
 }, false)

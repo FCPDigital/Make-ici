@@ -91,6 +91,14 @@ body {
 	min-width: 26% !important;
 }
 
+
+.font-size-b {
+	font-size: $size-b;
+}
+.font-size-n {
+	font-size: $size-n;
+}
+
 //SIZES
 .full-width { min-width: 100% }
 
@@ -99,6 +107,27 @@ body {
 img.size-full {
 	width: 100%;
 }
+img.height-s {
+	height: 120px;
+	margin: auto;
+	display: block;
+}
+
+.separator--center {
+	position: relative;
+	&::after {
+		content:"";
+		height: calc(100% - #{2*$big-pad});
+		position: absolute;
+		top: $big-pad;
+		left: 50%;
+		width: 1px; 
+		background-color: black;
+	}
+}
+
+.color-white { color: white; }
+
 .main-title {
 	font-size: 2.5em;
 	font-weight: bold;
@@ -133,7 +162,9 @@ img.size-full {
 	float: left;
 	margin-right: 10px;
 }
-
+ul.styled {
+	list-style: inside;
+}
 
 .overlay {
 	background-color: rgba(0,0,0,.8);
@@ -340,6 +371,10 @@ a {
 		.container {
 			width: 100%;
 		}
+	}
+
+	.separator--center::after {
+		display: none;
 	}
 }
 

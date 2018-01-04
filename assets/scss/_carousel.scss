@@ -6,7 +6,7 @@
 		position: relative;
 		overflow: hidden;
 		flex-wrap: wrap;
-		width: 720px;
+		width: 960px;
 		.carousel-container {
 			@include transition(.4s);
 			display: flex;
@@ -78,11 +78,12 @@
 			display: flex;
 			width: 120px;
 			display: inline-block;
-			position: relative;
+			position: absolute;
 			justify-content: center;
 			padding: 150px 10px;
 			font-size: 3em;
 			opacity: 1;
+			left: auto;
 			.carousel-control-label {
 				text-align: center;
 				font-size: 13px;
@@ -115,10 +116,10 @@
 	}
 }
 
-@media screen and (max-width:$break-point-2){
+@media screen and (max-width:$break-point-1){
 	.carousel {
 		.carousel-body, &.active-control .carousel-body {
-			width: 480px;
+			width: 720px;
 			margin: auto;
 			float: none !important;
 			display: block;	
@@ -136,6 +137,15 @@
 				top: 0;
 			}
 		}
+	}
+}
+
+@media screen and (max-width:$break-point-2){
+	.carousel {
+		.carousel-body, &.active-control .carousel-body {
+			width: 480px;
+		}
+		
 	}
 }
 

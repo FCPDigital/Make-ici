@@ -210,6 +210,12 @@ body {
 .flex-row-3-item {
   min-width: 26% !important; }
 
+.font-size-b {
+  font-size: 20px; }
+
+.font-size-n {
+  font-size: 14px; }
+
 .full-width {
   min-width: 100%; }
 
@@ -221,6 +227,25 @@ body {
 
 img.size-full {
   width: 100%; }
+
+img.height-s {
+  height: 120px;
+  margin: auto;
+  display: block; }
+
+.separator--center {
+  position: relative; }
+  .separator--center::after {
+    content: "";
+    height: calc(100% - 128px);
+    position: absolute;
+    top: 64px;
+    left: 50%;
+    width: 1px;
+    background-color: black; }
+
+.color-white {
+  color: white; }
 
 .main-title {
   font-size: 2.5em;
@@ -248,6 +273,9 @@ img.size-full {
 .fa-custom, .ico {
   float: left;
   margin-right: 10px; }
+
+ul.styled {
+  list-style: inside; }
 
 .overlay {
   background-color: rgba(0, 0, 0, 0.8); }
@@ -436,7 +464,10 @@ a {
     width: 100%; }
 
   .page-template-template-checkout .container, .woocommerce-cart .container {
-    width: 100%; } }
+    width: 100%; }
+
+  .separator--center::after {
+    display: none; } }
 @media screen and (max-width: 860px) {
   .container {
     width: 100%; }
@@ -961,6 +992,24 @@ a {
   .box--yellow {
     background-color: #ffed00;
     color: black; }
+  .box--black {
+    background-color: black;
+    color: #ffed00; }
+  .box--white {
+    background-color: white;
+    border: 2px solid black;
+    color: black; }
+  .box--font-m {
+    font-size: 14px;
+    font-weight: bold; }
+  .box--pad-m {
+    padding: 32px; }
+  .box--pad-s {
+    padding: 8px; }
+  .box--marge-null {
+    margin: 0; }
+  .box__parent {
+    min-height: 64px; }
 
 .background {
   background-repeat: no-repeat;
@@ -978,6 +1027,39 @@ a {
     display: block;
     z-index: 0;
     background-color: rgba(40, 32, 28, 0.85); }
+  .background--mask-yellow::before {
+    background-color: rgba(255, 237, 0, 0.85); }
+  .background--white {
+    background-color: white; }
+  .background--black {
+    background-color: black;
+    color: white; }
+
+.section {
+  padding: 64px 0; }
+
+.bubble {
+  background-color: black;
+  color: white;
+  padding: 16px;
+  position: relative;
+  text-align: center; }
+  .bubble p {
+    font-size: 12px; }
+  .bubble::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -20px;
+    border-top: 10px solid black;
+    border-left: 12px solid black;
+    border-right: 12px solid transparent;
+    border-bottom: 10px solid transparent; }
+  .bubble--left::after {
+    left: 30%; }
+  .bubble--right::after {
+    right: 30%;
+    transform: rotateY(180deg); }
 
 .container-404 {
   perspective: 500px; }
@@ -1487,8 +1569,6 @@ Ces styles sont davantage propre aux fonctionalité de Woocommerce natif
     -ms-transform: none;
     -o-transform: none;
     transform: none; }
-#boutique .carousel.active-control .carousel-control {
-  width: 15%; }
 
 .carousel.product-carousel .carousel-item {
   background-color: white;
@@ -2342,7 +2422,7 @@ Contient l'ensemble des style particulier propre aux posts et au pages.
   position: relative;
   overflow: hidden;
   flex-wrap: wrap;
-  width: 720px; }
+  width: 960px; }
   .carousel .carousel-body .carousel-container {
     -webkit-transition: 0.4s;
     -moz-transition: 0.4s;
@@ -2402,11 +2482,12 @@ Contient l'ensemble des style particulier propre aux posts et au pages.
   display: flex;
   width: 120px;
   display: inline-block;
-  position: relative;
+  position: absolute;
   justify-content: center;
   padding: 150px 10px;
   font-size: 3em;
-  opacity: 1; }
+  opacity: 1;
+  left: auto; }
   .carousel.active-control .carousel-control .carousel-control-label {
     text-align: center;
     font-size: 13px;
@@ -2435,9 +2516,9 @@ Contient l'ensemble des style particulier propre aux posts et au pages.
     .carousel.active-control .carousel-control .carousel-control-btn[data-direction="right"] {
       background-image: url("assets/images/right-arrow.png"); }
 
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 1160px) {
   .carousel .carousel-body, .carousel.active-control .carousel-body {
-    width: 480px;
+    width: 720px;
     margin: auto;
     float: none !important;
     display: block; }
@@ -2451,6 +2532,9 @@ Contient l'ensemble des style particulier propre aux posts et au pages.
       height: 80px;
       padding: 20px 0;
       top: 0; } }
+@media screen and (max-width: 860px) {
+  .carousel .carousel-body, .carousel.active-control .carousel-body {
+    width: 480px; } }
 @media screen and (max-width: 480px) {
   .carousel .carousel-body, .carousel.active-control .carousel-body {
     width: 240px;
@@ -2767,23 +2851,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 337px;
-          top: 221px; }
+          left: 354px;
+          top: 12px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 384px;
-          top: 214px; }
+          left: 273px;
+          top: 188px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 182px;
-          top: 245px; }
+          left: 18px;
+          top: 75px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 277px;
-          top: 176px; }
+          left: 296px;
+          top: 24px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 191px;
-          top: 66px; }
+          left: 333px;
+          top: 231px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 29px;
-          top: 63px; }
+          left: 320px;
+          top: 183px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);
