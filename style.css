@@ -2894,23 +2894,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 392px;
-          top: 168px; }
+          left: 237px;
+          top: 29px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 151px;
-          top: 120px; }
+          left: 89px;
+          top: 105px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 68px;
-          top: 235px; }
+          left: 37px;
+          top: 247px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 159px;
-          top: 148px; }
+          left: 191px;
+          top: 124px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 376px;
-          top: 140px; }
+          left: 362px;
+          top: 127px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 75px;
-          top: 22px; }
+          left: 369px;
+          top: 57px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);
