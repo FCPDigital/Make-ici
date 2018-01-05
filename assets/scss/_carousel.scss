@@ -76,7 +76,7 @@
 		}
 		.carousel-control {
 			display: flex;
-			width: 120px;
+			width: 150px;
 			display: inline-block;
 			position: absolute;
 			justify-content: center;
@@ -84,6 +84,10 @@
 			font-size: 3em;
 			opacity: 1;
 			left: auto;
+			@include transition(all .4s);  
+			&.hide {
+				opacity: 0;
+			}
 			.carousel-control-label {
 				text-align: center;
 				font-size: 13px;
@@ -102,7 +106,7 @@
 				opacity: 1;
 				@include transition(.4s);
 				&.hide {
-					opacity: 0;
+					opacity: 0.2;
 					display: inline-block !important;
 				}
 				&[data-direction="left"]{

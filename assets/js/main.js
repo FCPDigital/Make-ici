@@ -548,6 +548,7 @@ function MakeCarousel(el){
 		this.items = this.carousel.querySelectorAll(".carousel-container .carousel-item");
 		this.container = this.carousel.querySelector(".carousel-container")
 		this.control = {
+			container: this.carousel.querySelector(".carousel-control"),
 			left: this.carousel.querySelector(".carousel-control .carousel-control-btn[data-direction='left']"),
 			right: this.carousel.querySelector(".carousel-control .carousel-control-btn[data-direction='right']"),
 			label: this.carousel.querySelector(".carousel-control-label")
@@ -605,6 +606,11 @@ MakeCarousel.prototype = {
 	},
 
 	manageSelector: function(){
+		if( this.items.length <= this.nbItemRow ){
+			this.control.container.classList.add("hide");
+		} else {
+			this.control.container.classList.remove("hide");
+		}
 		if(this.currentItem == 0) {
 			this.control.left.classList.add("hide");
 		} else {
