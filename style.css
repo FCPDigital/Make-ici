@@ -1128,7 +1128,7 @@ h1 {
   min-height: 600px;
   padding: 50px 0;
   padding-top: 120px;
-  background-color: rgba(40, 32, 28, 0.85);
+  background-color: rgba(20, 16, 14, 0.9);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -1144,7 +1144,7 @@ h1 {
     height: 100%;
     display: block;
     z-index: 0;
-    background-color: rgba(40, 32, 28, 0.85); }
+    background-color: rgba(20, 16, 14, 0.9); }
   .section-post .scroll-btn {
     width: 40px;
     height: 40px;
@@ -1191,7 +1191,7 @@ h1 {
     height: 100%;
     display: block;
     z-index: 0;
-    background-color: rgba(40, 32, 28, 0.85); }
+    background-color: rgba(20, 16, 14, 0.9); }
   .landing .carousel .carousel-body {
     width: 100%; }
   .landing .carousel.active-control .carousel-body {
@@ -1326,7 +1326,7 @@ h1 {
       height: 100%;
       display: block;
       z-index: 0;
-      background-color: rgba(40, 32, 28, 0.85); }
+      background-color: rgba(20, 16, 14, 0.9); }
     .loop-archive .archive-body-item .archive-main {
       width: 75%;
       float: left;
@@ -1598,7 +1598,7 @@ Ces styles sont davantage propre aux fonctionalité de Woocommerce natif
     transform: none; }
 
 #boutique .carousel-body .carousel-container .carousel-item {
-  background-color: white; }
+  background-color: #EEE; }
   #boutique .carousel-body .carousel-container .carousel-item .excerpt {
     color: black; }
 
@@ -2894,23 +2894,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 237px;
-          top: 29px; }
+          left: 239px;
+          top: 132px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 89px;
-          top: 105px; }
+          left: 319px;
+          top: 212px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 37px;
-          top: 247px; }
+          left: 368px;
+          top: 42px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 191px;
-          top: 124px; }
+          left: 359px;
+          top: 177px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 362px;
-          top: 127px; }
+          left: 144px;
+          top: 119px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 369px;
-          top: 57px; }
+          left: 177px;
+          top: 184px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);

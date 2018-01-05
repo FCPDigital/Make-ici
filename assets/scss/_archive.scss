@@ -17,7 +17,7 @@ h1 {
 	min-height: 600px;
 	padding: 50px 0;
 	padding-top: $body-top;
-	background-color: rgba(#28201c, 0.85);
+	background-color: $mask;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -33,7 +33,7 @@ h1 {
 		height: 100%;
 		display: block;
 		z-index: 0;
-		background-color: rgba(#28201c, 0.85);
+		background-color: $mask;
 	}
 	.scroll-btn {
 		width: 40px;
@@ -77,7 +77,7 @@ h1 {
 		height: 100%;
 		display: block;
 		z-index: 0;
-		background-color: rgba(#28201c, 0.85);
+		background-color: $mask;
 	}
 	.carousel {
 		.carousel-body {
@@ -229,7 +229,7 @@ h1 {
 			height: 100%;
 			display: block;
 			z-index: 0;
-			background-color: rgba(#28201c, 0.85);
+			background-color: $mask;
 		}
 		.container {
 			// transform: translateX(0) translateZ(0);
