@@ -84,9 +84,15 @@ Ces styles sont davantage propre aux fonctionalité de Woocommerce natif
 .carousel.product-carousel {
 	
 	.carousel-item {
-		
 		padding-bottom: $small-pad;
 		margin-bottom: 90px !important;
+		&.compact {
+			padding-bottom: 70px;
+			margin-bottom: 0 !important; 
+			.btn, .no-date {
+				top: auto;
+			}
+		}
 		.title {
 			.upper.bold {
 				font-weight: bold;
