@@ -39,6 +39,11 @@ a {
 	color: $color-3;
 }
 
+.container {
+	width: $wrapper;
+    position: relative;
+} 
+
 
 .fa-container {
 	height: 55px !important;

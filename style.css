@@ -96,6 +96,10 @@ a {
   font-size: 30px;
   color: #ffed00; }
 
+.container {
+  width: 1000px;
+  position: relative; }
+
 .fa-container  {
   height: 55px !important; }
 
@@ -313,10 +317,6 @@ a {
 @font-face {
   font-family: "CenturyGothic Regular";
   src: url("assets/fonts/CenturyGothic_Regular.ttf"); }
-.container {
-  width: 1000px;
-  position: relative; }
-
 ul.styled {
   list-style: inside; }
 
@@ -2894,23 +2894,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 239px;
-          top: 132px; }
+          left: 61px;
+          top: 185px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 319px;
-          top: 212px; }
+          left: 365px;
+          top: 70px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 368px;
-          top: 42px; }
+          left: 114px;
+          top: 205px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 359px;
-          top: 177px; }
+          left: 67px;
+          top: 33px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 144px;
-          top: 119px; }
+          left: 74px;
+          top: 109px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 177px;
-          top: 184px; }
+          left: 37px;
+          top: 134px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);
