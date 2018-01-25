@@ -708,14 +708,73 @@ HeaderScroll = {
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-var DynamicDate = {
-
-	displayList: function(){
-
+Bem = {
+	safeInstance: function(arg) {		
+		if( el instanceof String ) {
+			this.el = document.querySelector("el")
+		}
 	},
 
-	hideList: function(){
+	compose(block, element, modifier) {
+		element = element ? "__"+element : "";
+		modifier = modifier ? "--"+modifier : "";
+		return block+element+modifier;
+	},
 
+	Element: function(el, block){
+		this.el = el; 
+		this.block = block;
+		this.modifiers = [];
+		this.analyze();
+	}
+}
+
+Bem.Element.prototype = {
+
+
+
+	stateExist(state) {
+		if( this.modifiers.indexOf(state) >= 0 ) return true;
+		return false;
+	},
+
+	addState(state) {
+		if( !this.stateExist(state) ){
+			var stateClass = Bem.compose(this.block, this.element, state);
+		}
+	},
+
+	removeState(state) {
+		if( this.stateExist(state) ){
+			var stateClass = Bem.compose(this.block, this.element, state);
+		}
+	},
+
+	analyze: function(){
+		var classes = this.el.className.split(/\s/);
+		var reg = new RegExp("^("+this.block+")(?:__(.+?)(?:\-\-(.+?))?)?$");
+		for(var i=0; i<classes.length; i++){
+			var match = classes[i].match(reg);
+			if ( match ){
+				this.block = match[1];
+				if( match[2] ) this.element = match[2];
+				if( match[3] && match[3] !== undefined ) this.modifiers.push(match[3]);
+			}
+		}
+	}
+}
+
+
+var DynamicDate = {
+
+	set display(value){
+		if( value === true && !this.list.className.match(/\sdynamic\-date__list\-\-extend/)){
+			this.list.className+= " dynamic-date__list--extend";
+		}
+	},
+
+	get display(){
+		return this._display;
 	},
 
 	updateDom: function(data){
@@ -736,7 +795,6 @@ var DynamicDate = {
 			if( r >= 0 && self.data[r] ){
 				self.updateDom(self.data[r]);
 			}
-
 		}, false)
 	},
 
@@ -754,6 +812,12 @@ var DynamicDate = {
 		}
 	},
 
+	initEvents: function(){
+		this.selector.addEventListener("click", function(){
+
+		}, false)
+	},
+
 	init: function(){
 		this.dataContainer = document.getElementById("date_data");
 		if(this.dataContainer){
@@ -763,6 +827,7 @@ var DynamicDate = {
 			this.data = JSON.parse(this.dataContainer.textContent);
 			if( this.data ){
 				this.setListItems();
+				this.initEvents();
 			}
 		}
 	}
