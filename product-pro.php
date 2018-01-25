@@ -37,6 +37,27 @@ get_header();
 		</div>
 	</div>
 
+	<div class="row section background background--mask" style="background-image: url(<?php echo get_template_directory_uri().'/assets/images/bg-1.jpg' ?> ); ">
+		<div class="container">
+			<div class="row margin-bottom-small color-white">
+				<div class="col-sm-12 margin-bottom-medium">
+					<ul class="ul styled">
+						<li>10% de théorie, 90% de pratique : <a href="" class="color-white">Voici le programme détaillé</a></li>
+						<li>Découvrez ICI Montreuil et la formation Entrepreneur-Maker en vidéo</li>
+					</ul>
+				</div>
+				<div class="col-sm-6">
+					<iframe width="420" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY" class="full-width"></iframe>
+					<p class="margin-top-small">La formation Entreoreneur-Maker résumé en 5 min</p>
+				</div>
+				<div class="col-sm-6">
+					<iframe width="420" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY" class="full-width"></iframe>
+					<p class="margin-top-small">La formation Entrepreneur-Maker résumé en 5 min</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<!-- Yellow -->
 	<div class="row section background background--mask background--mask-yellow" style="background-image: url(<?php echo get_template_directory_uri().'/assets/images/bg-2.jpg' ?>);">
 		<div class="container">
@@ -44,21 +65,29 @@ get_header();
 				<div id="date_data" style="display: none;">
 					<?php echo get_field("date_data"); ?>
 				</div>
-				<div class="col-sm-6">
+				<div class="col-sm-12">
 					<p class="bold box__parent">
-						<span class="col-sm-6 box box--marge-null box--black box--font-m box--pad-s margin-right-small" data-dynamic-date="apply_period">Janvier - Février 2018 :</span> 
+						<span class="col-sm-3 box box--marge-null box--black box--font-m box--pad-s margin-right-small" data-dynamic-date="apply_period">Février - Février 2018 :</span> 
 						Période de candidature
 					</p>
 					<p class="bold box__parent">
-						<span class="col-sm-6 box box--marge-null box--black box--font-m box--pad-s margin-right-small" data-dynamic-date="apply_day">5 mars 2018 : </span>
-						 Journée de candidature
+						<span class="col-sm-3 box box--marge-null box--black box--font-m box--pad-s margin-right-small" data-dynamic-date="apply_day">Jeudi 8 février 2018 : </span>
+						 à 9h et 19h : sessions d'informations aux candidats et visite
 					</p>
 					<p class="bold box__parent">
-						<span class="col-sm-6 box box--marge-null box--black box--font-m box--pad-s margin-right-small" data-dynamic-date="formation_start">19 mars 2018</span>
-						 Début de la formation
+						<span class="col-sm-3 box box--marge-null box--black box--font-m box--pad-s margin-right-small" data-dynamic-date="formation_start">Lundi 5 mars 2018 : </span>
+						 Journée d'entretiens et d'ateliers pour 40 pré-sélectionné-e-s
+					</p>
+					<p class="bold box__parent">
+						<span class="col-sm-3 box box--marge-null box--black box--font-m box--pad-s margin-right-small" data-dynamic-date="apply_period">Lundi 19 mars 2018 :</span> 
+						Rentre - début de la formation
+					</p>
+					<p class="bold box__parent">
+						<span class="col-sm-3 box box--marge-null box--black box--font-m box--pad-s margin-right-small" data-dynamic-date="apply_day">26 juillet 2018 : </span>
+						 fin de la formation
 					</p>
 				</div>
-				<div class="col-sm-6 float-right">
+			<!-- 	<div class="col-sm-6 float-right">
 					<p>
 						<a id="dynamic-date__selector" class="btn btn-dark" href="">
 							<i class="fa fa-calendar" aria-hidden="true"></i> Consultez les autres date ici.
@@ -67,18 +96,14 @@ get_header();
 					<div id="dynamic-date__list" class="dynamic-date__list dynamic-date__list--hidden">
 						
 					</div>
-				</div>
+				</div> -->
 				<div class="col-sm-12">
 					<div class="margin-top-medium box box--white box--block box--pad-m">
-						<img class="left margin-right-medium" src="<?php echo get_template_directory_uri().'/assets/images/picto-objectif.png' ?>" alt="">
-						<div>
-							<p>Notre objectif est d'accueillir :</p>
-							<ul class="styled">
-								<li>7 personnes qui peuvent faire financer leur formation (par leur employeur ou sur fonds propres)</li>
-								<li>7 jeunes en recherche d'emploi originaire de Montreuil et quartiers limitrophes.</li>
-							</ul>
-							<p>Non diplomé-e-s bienvenu-e-s : c'est la motivation qui compte ! :-)</p>
+						<img class="left margin-right-medium" src="<?php echo get_template_directory_uri().'/assets/images/picto-objectif.png' ?>" alt=""/>
+						<div class="left">
+							<?php echo the_field("bloc_text_goal"); ?>
 						</div>
+						<div class="clr"></div>
 					</div>
 				</div>
 			</div>
@@ -89,19 +114,28 @@ get_header();
 	<div class="row separator--center section background--white">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-3">
-					<div class="bubble bubble--left">
-						<p>Je suis salarié ou demandeur d'emploi,<br> je veux faire<br> la formation</p>
+				<div class="col-sm-6 border-right border-bottom padding-bottom-big">
+					<div class="col-sm-6 col-sm-offset-3">
+						<div class="bubble bubble--left">
+							<p>Je suis salarié ou demandeur d'emploi,<br> je veux faire<br> la formation</p>
+						</div>
+						<img class="height-s margin-top-medium" src="<?php echo get_template_directory_uri().'/assets/images/picto-salarie.png' ?>" alt="">
+						<a href="" class="btn btn-block btn-colored">Je candidate</a>
 					</div>
-					<img class="height-s margin-top-medium" src="<?php echo get_template_directory_uri().'/assets/images/picto-salarie.png' ?>" alt="">
-					<a href="" class="btn btn-block btn-colored">Je candidate</a>
+					
 				</div>
-				<div class="col-sm-3 col-sm-offset-6">
-					<div class="bubble bubble--right">
-						<p>Je suis prescripteur (Pôle Emploi, OPCA, employeur) et je cherche des informations</p>
+				<div class="col-sm-6 border-bottom">
+					<div class="col-sm-6 col-sm-offset-3 padding-bottom-big">
+						<div class="bubble bubble--right">
+							<p>Je suis prescripteur (Pôle Emploi, OPCA, employeur) et je cherche des informations</p>
+						</div>
+						<img class="height-s margin-top-medium" src="<?php echo get_template_directory_uri().'/assets/images/picto-prescripteur.png' ?>" alt="">
+						<a href="" class="btn btn-block btn-colored">Je candidate</a>
 					</div>
-					<img class="height-s margin-top-medium" src="<?php echo get_template_directory_uri().'/assets/images/picto-prescripteur.png' ?>" alt="">
-					<a href="" class="btn btn-block btn-colored">Je candidate</a>
+				</div>
+				<div class="col-sm-12 margin-top-medium">
+					<p class="bold underline">Quelques informations complémentaires</p>
+					<?php echo the_field("bloc_info_complementaire") ?>
 				</div>
 			</div>
 		</div>
