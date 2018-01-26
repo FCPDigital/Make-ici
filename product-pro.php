@@ -38,7 +38,7 @@ get_header();
 			<div class="row margin-bottom-small color-white">
 				<div class="col-sm-12 margin-bottom-medium">
 					<ul class="ul styled">
-						<li>10% de théorie, 90% de pratique : <a href="" class="color-white">Voici le programme détaillé</a></li>
+						<li>10% de théorie, 90% de pratique : <a href="<?php the_field("url_program"); ?>" class="color-white">Voici le programme détaillé</a></li>
 						<li>Découvrez ICI Montreuil et la formation Entrepreneur-Maker en vidéo</li>
 					</ul>
 				</div>
@@ -126,7 +126,6 @@ get_header();
 							<p>Je suis prescripteur (Pôle Emploi, OPCA, employeur) et je cherche des informations</p>
 						</div>
 						<img class="height-s margin-top-medium" src="<?php echo get_template_directory_uri().'/assets/images/picto-question.png' ?>" alt="">
-						<!--<a href="<?php echo home_url(); ?>/contact" class="btn btn-block btn-colored">Je pose des questions</a>-->
 						<?php echo do_shortcode("[form value=\"Je pose des questions\" class='btn btn-colored btn-block' param='".get_field("link_form_question")."']"); ?>
 					</div>
 				</div>
