@@ -107,7 +107,7 @@ get_header();
 	</div>
 
 	<!-- Actions -->
-	<div class="row separator--center section background--white">
+	<div class="row section background--white">
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-6 border-right border-bottom padding-bottom-big">
