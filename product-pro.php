@@ -38,7 +38,7 @@ get_header();
 			<div class="row margin-bottom-small color-white">
 				<div class="col-sm-12 margin-bottom-medium">
 					<ul class="ul styled">
-						<li>10% de théorie, 90% de pratique : <a href="<?php the_field("url_program"); ?>" class="color-white">Voici le programme détaillé</a></li>
+						<li>10% de théorie, 90% de pratique : <a href="<?php the_field("url_program"); ?>" class="color-white" target="_blank">Voici le programme détaillé</a></li>
 						<li>Découvrez ICI Montreuil et la formation Entrepreneur-Maker en vidéo</li>
 					</ul>
 				</div>
