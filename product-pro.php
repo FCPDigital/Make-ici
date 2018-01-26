@@ -43,11 +43,11 @@ get_header();
 					</ul>
 				</div>
 				<div class="col-sm-6">
-					<iframe src="https://player.vimeo.com/video/212746280" width="420" height="350" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+					<iframe src="https://player.vimeo.com/video/212746280" width="420" height="300" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 					<p class="margin-top-small">La formation Entreoreneur-Maker résumé en 5 min</p>
 				</div>
 				<div class="col-sm-6">
-					<iframe src="https://player.vimeo.com/video/207325945" width="420" height="350" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+					<iframe src="https://player.vimeo.com/video/207325945" width="420" height="300" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 					<p class="margin-top-small">La formation Entrepreneur-Maker résumé en 5 min</p>
 				</div>
 			</div>
@@ -116,7 +116,7 @@ get_header();
 							<p>Je suis salarié ou demandeur d'emploi,<br> je veux faire<br> la formation</p>
 						</div>
 						<img class="height-s margin-top-medium" src="<?php echo get_template_directory_uri().'/assets/images/picto-candidat.png' ?>" alt="">
-						<a href="" class="btn btn-block btn-colored">Je candidate !</a>
+						<a href="https://docs.google.com/forms/d/e/1FAIpQLSd3LDMYQ18NzZH0JSM2Dsr4K5KNHt20M8WOso5J_0eCTHN6Sg/viewform" class="btn btn-block btn-colored">Je candidate !</a>
 					</div>
 					
 				</div>
@@ -126,7 +126,7 @@ get_header();
 							<p>Je suis prescripteur (Pôle Emploi, OPCA, employeur) et je cherche des informations</p>
 						</div>
 						<img class="height-s margin-top-medium" src="<?php echo get_template_directory_uri().'/assets/images/picto-question.png' ?>" alt="">
-						<a href="" class="btn btn-block btn-colored">Je pose des questions</a>
+						<a href="<?php echo home_url(); ?>/contact" class="btn btn-block btn-colored">Je pose des questions</a>
 					</div>
 				</div>
 				<div class="col-sm-12 margin-top-medium">
