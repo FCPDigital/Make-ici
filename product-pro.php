@@ -127,6 +127,7 @@ get_header();
 						</div>
 						<img class="height-s margin-top-medium" src="<?php echo get_template_directory_uri().'/assets/images/picto-question.png' ?>" alt="">
 						<a href="<?php echo home_url(); ?>/contact" class="btn btn-block btn-colored">Je pose des questions</a>
+						<?php echo do_shortcode("[form value=\"Je pose des questions\" class='btn btn-colored btn-block' param='1029']"); ?>
 					</div>
 				</div>
 				<div class="col-sm-12 margin-top-medium">
