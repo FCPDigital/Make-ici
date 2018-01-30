@@ -1,5 +1,8 @@
-# Make ICI
-
+ 
+<h1>
+<img src="https://github.com/SolalDR/Make-ici/blob/master/assets/images/logo.png?raw=true" height="30"/>
+Make ICI
+</h1>
 Thème multi-site Make ICI pour le compte du fablab MakeICI.
 Le thème est versionner <a href="https://github.com/SolalDR/Make-ici">ici</a>
 Les sites actuels sont référencé sous le domaine <a href="http://makeici.org">http://makeici.org</a>
