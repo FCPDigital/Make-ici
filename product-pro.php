@@ -44,11 +44,11 @@ get_header();
 				</div>
 				<div class="col-sm-6">
 					<iframe src="https://player.vimeo.com/video/212746280" width="420" height="300" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-					<p class="margin-top-small">La formation Entreoreneur-Maker résumé en 5 min</p>
+					<p class="margin-top-small">La formation Entrepreneur-Maker résumée en 5 min</p>
 				</div>
 				<div class="col-sm-6">
 					<iframe src="https://player.vimeo.com/video/207325945" width="420" height="300" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-					<p class="margin-top-small">La formation Entrepreneur-Maker résumé en 5 min</p>
+					<p class="margin-top-small">La formation Entrepreneur-Maker résumée en 5 min</p>
 				</div>
 			</div>
 		</div>
@@ -63,7 +63,7 @@ get_header();
 				</div>
 				<div class="col-sm-12">
 					<p class="bold box__parent">
-						<span class="col-sm-3 box box--marge-null box--black box--font-m box--pad-s margin-right-small" data-dynamic-date="apply_period">Février - Février 2018 :</span> 
+						<span class="col-sm-3 box box--marge-null box--black box--font-m box--pad-s margin-right-small" data-dynamic-date="apply_period">Février 2018 :</span> 
 						Période de candidature
 					</p>
 					<p class="bold box__parent">
@@ -76,7 +76,7 @@ get_header();
 					</p>
 					<p class="bold box__parent">
 						<span class="col-sm-3 box box--marge-null box--black box--font-m box--pad-s margin-right-small" data-dynamic-date="formation_start">Lundi 19 mars 2018 :</span> 
-						Rentre - début de la formation
+						 Rentrée - début de la formation
 					</p>
 					<p class="bold box__parent">
 						<span class="col-sm-3 box box--marge-null box--black box--font-m box--pad-s margin-right-small" data-dynamic-date="formation_end">26 juillet 2018 : </span>
