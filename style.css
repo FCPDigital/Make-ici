@@ -541,6 +541,8 @@ img.height-s {
   -ms-transition: 0.4s;
   -o-transition: 0.4s;
   transition: 0.4s; }
+  .btn--no-pad, .single_add_to_cart_button--no-pad {
+    padding: 10px 0; }
   .btn.btn-block, .single_add_to_cart_button.btn-block {
     width: auto;
     display: block; }
@@ -2915,23 +2917,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 111px;
-          top: 198px; }
+          left: 290px;
+          top: 15px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 326px;
-          top: 94px; }
+          left: 355px;
+          top: 105px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 301px;
-          top: 32px; }
+          left: 7px;
+          top: 83px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 278px;
-          top: 137px; }
+          left: 211px;
+          top: 48px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 251px;
-          top: 149px; }
+          left: 95px;
+          top: 55px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 324px;
-          top: 73px; }
+          left: 132px;
+          top: 130px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);

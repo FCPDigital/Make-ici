@@ -116,7 +116,7 @@ get_header();
 							<p>Je suis salarié ou demandeur d'emploi,<br> je veux faire<br> la formation</p>
 						</div>
 						<img class="height-s margin-top-medium" src="<?php echo get_template_directory_uri().'/assets/images/picto-candidat.png' ?>" alt="">
-						<a href="https://docs.google.com/forms/d/e/1FAIpQLSd3LDMYQ18NzZH0JSM2Dsr4K5KNHt20M8WOso5J_0eCTHN6Sg/viewform" class="btn btn-block btn-colored">Je candidate !</a>
+						<a href="https://docs.google.com/forms/d/e/1FAIpQLSd3LDMYQ18NzZH0JSM2Dsr4K5KNHt20M8WOso5J_0eCTHN6Sg/viewform" class="btn btn--no-pad btn-block btn-colored">Je candidate !</a>
 					</div>
 					
 				</div>
@@ -126,7 +126,7 @@ get_header();
 							<p>Je suis prescripteur (Pôle Emploi, OPCA, employeur) et je cherche des informations</p>
 						</div>
 						<img class="height-s margin-top-medium" src="<?php echo get_template_directory_uri().'/assets/images/picto-question.png' ?>" alt="">
-						<?php echo do_shortcode("[form value=\"Je pose des questions\" class='btn btn-colored btn-block' param='".get_field("link_form_question")."']"); ?>
+						<?php echo do_shortcode("[form value=\"Je pose des questions\" class='btn btn-colored btn-block btn--no-pad' param='".get_field("link_form_question")."']"); ?>
 					</div>
 				</div>
 				<div class="col-sm-12 margin-top-medium">
