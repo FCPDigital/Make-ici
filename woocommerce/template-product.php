@@ -11,7 +11,7 @@ $categories = get_woocommerce_categories();
 <main id="boutique" class="site-main" role="main">
 	<div class="landing">
 		<div class="container">
-			<h1 class="left-full-border">Formations</h1>
+			<h1 class="left-full-border"><?php echo get_the_title(); ?></h1>
 			<?php
 			while ( have_posts() ) : the_post();
 				the_content();
