@@ -24,7 +24,7 @@ Contenu d'une page formation. Appelé dans :
 					<?php the_content(); ?>
 				</div>
 				<div class="actions">
-					<a href="<?php echo get_permalink( get_page_by_title("Formations") ) ?>#item-<?php echo $slug; ?>"> < Retours aux formations</a>
+					<a href="<?php echo get_site_url()."/formations/"; ?>#item-<?php echo $slug; ?>"> < Retours aux formations</a>
 				</div>
 			</div>
 
@@ -70,7 +70,6 @@ Contenu d'une page formation. Appelé dans :
 				// Affiche un lien vers la page produit des cartes cadeaux ?>
 				<a href="<?php echo get_permalink(esc_attr( get_option('gift_card_id'))); ?>" class="btn btn-colored gift-card-link">Achetez une carte cadeau</a>
 			</div>
-
 
 			<?php // Si le produit à une categorie, on affiche un carousel des autres produits de la categorie.
 			if($category){ ?>

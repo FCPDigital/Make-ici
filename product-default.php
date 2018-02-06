@@ -23,7 +23,7 @@
 		$categories = get_woocommerce_categories();
 		if ( count($categories) > 0 ) :
 			for ( $i=0; $i<count($categories); $i++ ) :	$tmp_category = $categories[$i] ?>
-			<a class="timeline-item prevent-timeline-action" data-target="#item-<?php echo get_category_slug($tmp_category); ?>" href="<?php echo get_permalink( get_page_by_title("Formations") ) ?>#item-<?php echo get_category_slug($tmp_category); ?>">
+			<a class="timeline-item prevent-timeline-action" data-target="#item-<?php echo get_category_slug($tmp_category); ?>" href="<?php echo get_site_url()."/formations/"; ?>#item-<?php echo get_category_slug($tmp_category); ?>">
 				<?php echo get_category_title($tmp_category); ?>
 			</a>
 		<?php
