@@ -28,6 +28,13 @@
   fbq('track', 'AddToCart');
   fbq('track', 'ViewContent');
 </script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-822287168"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-822287168');
+</script>
 <noscript><img height="1" width="1" style="display:none"
   src="https://www.facebook.com/tr?id=338770209922464&ev=PageView&noscript=1"
 /></noscript>
