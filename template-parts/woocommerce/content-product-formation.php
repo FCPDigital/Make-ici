@@ -34,8 +34,10 @@ Contenu d'une page formation. Appelé dans :
 						<i class="fa fa-clock-o" aria-hidden="true"></i>
 						<p>Durée :<br><?php echo get_field("duration"); ?></p>
 					</div>
-				<?php } ?>
-
+				<?php }
+				
+				if (get_field("display-price-abo") != "oui") { ?>
+				
 				<div class="cost_max fa-container">
 					<i class="fa fa-eur" aria-hidden="true"></i>
 					<?php
@@ -50,6 +52,7 @@ Contenu d'une page formation. Appelé dans :
 					<p>Tarif abonnés :<br><?php echo $abonnePrice; ?> € TTC</p>
 
 				</div>
+				<?php } ?>
 
 				<div class="cost_sale fa-container">
 					<i class="fa fa-eur" aria-hidden="true"></i>
