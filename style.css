@@ -1115,7 +1115,8 @@ img.height-s {
   position: fixed;
   top: 110px;
   margin: 0 !important;
-  right: calc(50% + 500px); }
+  right: calc(50% + 500px);
+  z-index: 999; }
 
 .acc {
   width: 100%;
@@ -2973,23 +2974,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 134px;
-          top: 136px; }
+          left: 261px;
+          top: 178px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 9px;
-          top: 215px; }
+          left: 137px;
+          top: 203px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 209px;
-          top: 232px; }
+          left: 23px;
+          top: 14px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 238px;
-          top: 231px; }
+          left: 106px;
+          top: 162px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 340px;
-          top: 190px; }
+          left: 201px;
+          top: 220px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 378px;
-          top: 201px; }
+          left: 90px;
+          top: 206px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);

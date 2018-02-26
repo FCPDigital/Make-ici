@@ -4,16 +4,16 @@ Contenu d'une page formation. Appelé dans :
 - product-default.php
 */
 ?>
+<div class="actions product__back--fixe">
+	<a href="<?php echo get_site_url()."/formations/"; ?>#item-<?php echo $slug; ?>"> < Retours</a>
+</div>
 
 <section id="item-<?php echo $slug; ?>" class=" perspective-corner	archive-body-item awesome-panel-item container-fluid page-section" style="background-image:url('<?php echo get_the_post_thumbnail_url(); ?>')">
 
 		<div class="container">
 			<div class="archive-main">
 				
-				<div class="actions product__back--fixe">
-					<a href="<?php echo get_site_url()."/formations/"; ?>#item-<?php echo $slug; ?>"> < Retours</a>
-				</div>
-
+				
 				<div class="archive-main-head">
 					<h1 class="title">
 						<?php echo get_the_title(); ?>
