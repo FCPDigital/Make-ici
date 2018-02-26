@@ -1111,6 +1111,52 @@ img.height-s {
     right: 30%;
     transform: rotateY(180deg); }
 
+.product__back--fixe {
+  position: fixed;
+  top: 110px;
+  margin: 0 !important;
+  right: calc(50% + 500px); }
+
+.acc {
+  width: 100%;
+  margin: 0 auto; }
+  .acc__btn {
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0px;
+    transition: 0.3s all ease;
+    background: transparent;
+    color: #FFED00;
+    cursor: pointer;
+    outline: none;
+    font-size: 16px;
+    border-bottom: 1px solid #FFED00;
+    font-weight: bold; }
+    .acc__btn:hover {
+      background: transparent;
+      color: #FFED00; }
+    .acc__btn--active .icon {
+      transform: rotate(180deg); }
+    .acc__btn--active + .acc__panel {
+      max-height: calc(100vh + 10px); }
+    .acc__btn .icon {
+      z-index: 9;
+      margin-bottom: 10px;
+      margin-right: 20px;
+      transition: 0.4s; }
+      .acc__btn .icon .fa {
+        font-size: 25px; }
+  .acc__panel {
+    padding: 0px 0px;
+    margin: 10px 0;
+    max-height: 0;
+    overflow: hidden;
+    color: white;
+    transition: 1s all ease-in-out; }
+
 .container-404 {
   perspective: 500px; }
   .container-404__title {
@@ -1309,6 +1355,9 @@ h1 {
       margin-top: 8px;
       line-height: 20px; }
 
+#single-product #scroll-container {
+  perspective: none; }
+
 .loop-archive {
   background-color: #000; }
   .loop-archive.scale-min .archive-body-item {
@@ -1424,6 +1473,13 @@ h1 {
         width: 25px;
         height: 30px;
         background-image: url("assets/images/picto-inscription.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain; }
+      .loop-archive .archive-body-item .archive-sidebar .fa-discover {
+        width: 25px;
+        height: 30px;
+        background-image: url("assets/images/ico/picto-discover.png");
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain; }
@@ -2917,23 +2973,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 290px;
-          top: 15px; }
+          left: 134px;
+          top: 136px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 355px;
-          top: 105px; }
+          left: 9px;
+          top: 215px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 7px;
-          top: 83px; }
+          left: 209px;
+          top: 232px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 211px;
-          top: 48px; }
+          left: 238px;
+          top: 231px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 95px;
-          top: 55px; }
+          left: 340px;
+          top: 190px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 132px;
-          top: 130px; }
+          left: 378px;
+          top: 201px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);

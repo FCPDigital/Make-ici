@@ -197,6 +197,9 @@ h1 {
 	}
 }
 
+#single-product #scroll-container{
+	perspective: none;
+}
 .loop-archive {
 	background-color: $color-2;
 	&.scale-min {
@@ -328,6 +331,15 @@ h1 {
 					background-position: center;
 					background-size: contain;
 				}
+			}
+
+			.fa-discover {
+				width: 25px;
+				height: 30px;
+				background-image: url("assets/images/ico/picto-discover.png");
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: contain;
 			}
 			.mention {
 				margin-top: 0;

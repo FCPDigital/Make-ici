@@ -833,6 +833,25 @@ var DynamicDate = {
 	}
 }
 
+
+function accordionManage() {
+	// Data
+	accButtons = document.querySelectorAll('.acc__btn');
+
+
+	// Functions
+	function toggleAccordion() {
+	   this.classList.toggle('acc__btn--active');
+	}
+
+	// Events
+	for(var i=0; i<accButtons.length; i++) {
+	  (function(rank){
+	    accButtons[rank].addEventListener('click', toggleAccordion);
+	  })(i);
+	}
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 //
 //								Window load
@@ -850,6 +869,6 @@ window.addEventListener("load", function(){
 	XhrManage.init();
 	HeaderScroll.init();
 	DynamicDate.init();
-
+	accordionManage();
 	if(window.mobilecheck()) document.querySelector('#bgvid').remove();
 }, false)

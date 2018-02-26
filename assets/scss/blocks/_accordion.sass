@@ -1,0 +1,46 @@
+.acc
+	width: 100%
+	margin: 0 auto
+	&__item
+
+	&__btn
+		border: none
+		display: flex
+		justify-content: space-between
+		align-items: center
+		width: 100%
+		padding: 10px 0px
+		transition: .3s all ease
+		background: transparent
+		color: #FFED00
+		cursor: pointer
+		outline: none
+		font-size: 16px
+		border-bottom: 1px solid #FFED00
+		font-weight: bold
+		&:hover 
+			background: transparent
+			color: #FFED00
+		
+		&--active
+			.icon
+				transform: rotate(180deg)
+			& + .acc__panel
+				max-height: calc(100vh + 10px)
+
+		.icon 
+			z-index: 9
+			margin-bottom: 10px
+			margin-right: 20px
+			transition: .4s
+			.fa
+				font-size: 25px
+
+	&__panel
+		padding: 0px 0px
+		margin: 10px 0
+		max-height: 0
+		overflow: hidden
+		color: white
+		transition: 1s all ease-in-out
+
