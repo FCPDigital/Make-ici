@@ -1767,6 +1767,8 @@ Ces styles sont davantage propre aux fonctionalité de Woocommerce natif
 #single-product .loop-archive .single_variation_wrap {
   padding: 20px;
   padding-top: 0; }
+  #single-product .loop-archive .single_variation_wrap .quantity {
+    display: none; }
 #single-product .loop-archive .single_add_to_cart_button {
   margin-top: 10px;
   background-color: #ffed00;
@@ -2998,23 +3000,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 162px;
-          top: 80px; }
+          left: 111px;
+          top: 202px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 316px;
-          top: 79px; }
+          left: 388px;
+          top: 203px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 263px;
-          top: 38px; }
+          left: 232px;
+          top: 191px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 229px;
-          top: 96px; }
+          left: 286px;
+          top: 36px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 276px;
-          top: 42px; }
+          left: 118px;
+          top: 121px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 303px;
-          top: 34px; }
+          left: 263px;
+          top: 14px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);
