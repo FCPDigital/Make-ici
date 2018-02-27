@@ -48,6 +48,11 @@ $cat = get_the_category()[0]->category_nicename;
 					<a href="<?php echo get_post_permalink(get_post()) ?>" class="inline-block">Lire plus</a>
 				<?php } ?>
 			</div>
+			<?php if (get_field("date_event")) { ?>
+				<div class="actu__info">
+					<p><?php echo get_field("date_event"); ?></p>
+				</div>
+			<?php } ?>
 		</div>
 	</div>
 </div>
