@@ -1113,11 +1113,32 @@ img.height-s {
 
 .product__back--fixe {
   position: fixed;
-  top: 110px;
+  top: 105px;
   margin: 0 !important;
   right: calc(50% + 500px);
   z-index: 999; }
 
+.su-carousel {
+  margin-top: 15px !important; }
+
+.su-carousel .su-carousel-slide img {
+  border: none !important;
+  background: transparent !important;
+  border-radius: 0 !important; }
+
+@media screen and (max-width: 600px) {
+  .loop-archive .archive-body-item .archive-main .archive-main-head .title {
+    font-size: 1.8em !important; }
+
+  .loop-archive .archive-body-item .archive-main .archive-main-head .subtitle {
+    text-align: left; }
+
+  .product__back--fixe {
+    position: relative;
+    top: 80px;
+    margin: 0 !important;
+    z-index: 999;
+    left: 20px; } }
 .acc {
   width: 100%;
   margin: 0 auto; }
@@ -1424,7 +1445,8 @@ h1 {
           font-weight: normal; }
       .loop-archive .archive-body-item .archive-main .archive-main-body {
         font-size: 14px;
-        line-height: 2em; }
+        line-height: 2em;
+        margin-bottom: 30px; }
         .loop-archive .archive-body-item .archive-main .archive-main-body p {
           margin-bottom: 16px; }
         .loop-archive .archive-body-item .archive-main .archive-main-body strong {
@@ -1446,24 +1468,26 @@ h1 {
       font-size: 12px;
       width: 25%;
       padding-bottom: 16px;
-      float: left; }
-      .loop-archive .archive-body-item .archive-sidebar .cost_per_month, .loop-archive .archive-body-item .archive-sidebar .cost_registration, .loop-archive .archive-body-item .archive-sidebar .fa-container {
+      float: left;
+      margin-bottom: 30px; }
+      .loop-archive .archive-body-item .archive-sidebar .cost_per_month, .loop-archive .archive-body-item .archive-sidebar .cost_registration, .loop-archive .archive-body-item .archive-sidebar .cost, .loop-archive .archive-body-item .archive-sidebar .fa-container {
         min-height: 50px;
         padding: 5px 19px;
         position: relative; }
-        .loop-archive .archive-body-item .archive-sidebar .cost_per_month i, .loop-archive .archive-body-item .archive-sidebar .cost_registration i, .loop-archive .archive-body-item .archive-sidebar .fa-container i {
+        .loop-archive .archive-body-item .archive-sidebar .cost_per_month i, .loop-archive .archive-body-item .archive-sidebar .cost_registration i, .loop-archive .archive-body-item .archive-sidebar .cost i, .loop-archive .archive-body-item .archive-sidebar .fa-container i {
           font-size: 30px;
           width: 30px;
           color: #ffed00;
           position: absolute;
           text-align: center;
           top: 50%;
+          left: 20px;
           -webkit-transform: translateY(-40%);
           -moz-transform: translateY(-40%);
           -ms-transform: translateY(-40%);
           -o-transform: translateY(-40%);
           transform: translateY(-40%); }
-        .loop-archive .archive-body-item .archive-sidebar .cost_per_month p, .loop-archive .archive-body-item .archive-sidebar .cost_registration p, .loop-archive .archive-body-item .archive-sidebar .fa-container p {
+        .loop-archive .archive-body-item .archive-sidebar .cost_per_month p, .loop-archive .archive-body-item .archive-sidebar .cost_registration p, .loop-archive .archive-body-item .archive-sidebar .cost p, .loop-archive .archive-body-item .archive-sidebar .fa-container p {
           line-height: 2em;
           font-size: 12px;
           margin-top: 10px;
@@ -1532,7 +1556,7 @@ h1 {
   .loop-archive .archive-body-item .archive-main {
     padding-right: 16px; }
   .loop-archive .archive-body-item .archive-sidebar .cost_per_month, .loop-archive .archive-body-item .archive-sidebar .cost_registration {
-    padding: 10px; }
+    padding: 5px 19px; }
     .loop-archive .archive-body-item .archive-sidebar .cost_per_month i, .loop-archive .archive-body-item .archive-sidebar .cost_registration i {
       display: block;
       float: none;
@@ -1556,7 +1580,7 @@ h1 {
     width: 100%; }
     .loop-archive .archive-body-item .archive-sidebar .cost_per_month, .loop-archive .archive-body-item .archive-sidebar .cost_registration {
       height: 70px;
-      padding: 10px 50px; }
+      padding: 10px 20px; }
       .loop-archive .archive-body-item .archive-sidebar .cost_per_month i, .loop-archive .archive-body-item .archive-sidebar .cost_registration i {
         display: inline-block;
         float: left;
@@ -1591,7 +1615,7 @@ h1 {
     width: 100%; }
     .loop-archive .archive-body-item .archive-sidebar .cost_per_month, .loop-archive .archive-body-item .archive-sidebar .cost_registration {
       height: 70px;
-      padding: 10px 50px; }
+      padding: 10px 20px; }
       .loop-archive .archive-body-item .archive-sidebar .cost_per_month i, .loop-archive .archive-body-item .archive-sidebar .cost_registration i {
         display: inline-block;
         float: left;
@@ -1725,7 +1749,8 @@ Ces styles sont davantage propre aux fonctionalité de Woocommerce natif
   font-size: 12px;
   margin-top: 10px;
   width: 100%;
-  padding-left: 40px; }
+  padding-left: 40px;
+  text-align: left; }
 #single-product .loop-archive .fa-container i {
   margin-right: 10px; }
 #single-product .loop-archive .fa-container.formator p {
@@ -1733,9 +1758,8 @@ Ces styles sont davantage propre aux fonctionalité de Woocommerce natif
   #single-product .loop-archive .fa-container.formator p strong {
     font-size: 12px; }
 #single-product .loop-archive .archive-body-item {
+  padding-top: 100px;
   border-top: 0; }
-  #single-product .loop-archive .archive-body-item:first-child {
-    padding-top: 100px; }
 #single-product .loop-archive .related_products {
   float: left; }
   #single-product .loop-archive .related_products .carousel-item {
@@ -2191,7 +2215,7 @@ header .navbar-nav {
     margin-right: 10px;
     padding-right: 0; }
   header .navbar-nav .menu-item.btn.btn-light {
-    padding: 10px 20px;
+    padding: 10px;
     min-height: 45px;
     margin-top: 12px; }
     header .navbar-nav .menu-item.btn.btn-light:hover {
@@ -2974,23 +2998,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 261px;
-          top: 178px; }
+          left: 162px;
+          top: 80px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 137px;
-          top: 203px; }
+          left: 316px;
+          top: 79px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 23px;
-          top: 14px; }
+          left: 263px;
+          top: 38px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 106px;
-          top: 162px; }
+          left: 229px;
+          top: 96px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 201px;
-          top: 220px; }
+          left: 276px;
+          top: 42px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 90px;
-          top: 206px; }
+          left: 303px;
+          top: 34px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);

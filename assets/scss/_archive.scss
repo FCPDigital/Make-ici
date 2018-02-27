@@ -266,6 +266,7 @@ h1 {
 			.archive-main-body {
 				font-size: 14px;
 				line-height: 2em;
+				margin-bottom: 30px;
 				p {
 					margin-bottom: $small-pad;
 				}
@@ -298,7 +299,8 @@ h1 {
 			width: 25%;
 			padding-bottom: $small-pad;
 			float: left;
-			.cost_per_month, .cost_registration, .fa-container {
+			margin-bottom: 30px;
+			.cost_per_month, .cost_registration, .cost, .fa-container {
 				min-height: 50px;
 				padding: 5px 19px;
 				position: relative;
@@ -309,6 +311,7 @@ h1 {
 					position: absolute;
 					text-align: center;
 					top: 50%;
+					left: 20px;
 					@include transform(translateY(-40%));
 				}
 				p {
@@ -414,7 +417,7 @@ h1 {
 		}
 		.archive-sidebar {
 			.cost_per_month, .cost_registration {
-				padding: 10px;
+				padding: 5px 19px;
 				i {
 					display: block;
 					float: none;
@@ -444,7 +447,7 @@ h1 {
 			width: 100%;
 			.cost_per_month, .cost_registration {
 				height: 70px;
-				padding: 10px 50px;
+				padding: 10px 20px;
 				i {
 					display: inline-block;
 					float: left;
@@ -489,7 +492,7 @@ h1 {
 			width: 100%;
 			.cost_per_month, .cost_registration {
 				height: 70px;
-				padding: 10px 50px;
+				padding: 10px 20px;
 				i {
 					display: inline-block;
 					float: left;

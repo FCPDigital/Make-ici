@@ -2,7 +2,27 @@
 	&__back
 		&--fixe
 			position: fixed
-			top: 110px
+			top: 105px
 			margin: 0 !important
 			right: calc(50% + 500px)
 			z-index: 999
+
+
+.su-carousel
+	margin-top: 15px !important
+.su-carousel .su-carousel-slide img
+	border: none !important
+	background: transparent !important
+	border-radius: 0 !important
+
+@media screen and (max-width: 600px)
+	.loop-archive .archive-body-item .archive-main .archive-main-head .title
+		font-size: 1.8em !important
+	.loop-archive .archive-body-item .archive-main .archive-main-head .subtitle
+		text-align: left
+	.product__back--fixe
+		position: relative
+		top: 80px
+		margin: 0 !important
+		z-index: 999
+		left: 20px

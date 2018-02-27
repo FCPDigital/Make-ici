@@ -143,6 +143,7 @@ Ces styles sont davantage propre aux fonctionalité de Woocommerce natif
 				margin-top: 10px;
 				width: 100%;
 				padding-left: 40px;
+				text-align: left;
 			}
 			i {
 				margin-right: 10px;
@@ -158,9 +159,8 @@ Ces styles sont davantage propre aux fonctionalité de Woocommerce natif
 		}
 
 		.archive-body-item {
-			&:first-child {
-				padding-top: 100px;
-			}
+		
+			padding-top: 100px;
 			border-top: 0;
 
 		}
