@@ -14,9 +14,15 @@ if( $theme == "pagination" ){
 	]; 
 }
 
-
-$cat = get_the_category()[0]->category_nicename;
-	if($cat == "non-classe") { $cat = "actu"; }
+$cats = get_the_category();
+$availableCats = ["event", "actu", "non-classe"];
+for($i=0; $i<count($cats); $i++) {
+	if( array_search($cats[$i]->category_nicename, $availableCats) >= 0){
+		$cat = $cats[$i]->category_nicename;
+		break;
+	}
+}
+if(!isset($cat) || $cat == "non-classe") { $cat = "actu"; }
 
 	$date = get_the_date("U");
 	if(get_field("date_event")){
