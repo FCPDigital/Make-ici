@@ -153,6 +153,7 @@ function get_woocommerce_categories(){
 	return get_categories( $args );
 }
 
+
 // Retourne la photo de backgroup d'une categorie woocommerce
 function get_category_thumbnail($category){
 	$id = $category->term_id;
@@ -910,9 +911,11 @@ add_action( 'wp_ajax_nopriv_classic_form', 'classic_form' );
 
 //INITIALISATION DES SCRIPTS
 function make_ici_scripts() {
+	wp_register_script('masonry', "https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js", array('jquery'), "1.1", true);
 	wp_register_script('smoothScroll', get_template_directory_uri() . '/assets/js/smoothscroll.js', array('jquery'),'1.1', true);
 	wp_register_script('main', get_template_directory_uri() . '/assets/js/main.js', array('jquery'),'1.1', true);
 
+	wp_enqueue_script('masonry');
 	wp_enqueue_script('smoothScroll');
 	wp_enqueue_script('main');
 

@@ -5,7 +5,7 @@ Contenu d'une page formation. Appelé dans :
 */
 ?>
 <div class="actions product__back--fixe">
-	<a href="<?php echo get_site_url()."/formations/"; ?>#item-<?php echo $slug; ?>"> < Retours</a>
+	<a href="<?php echo get_site_url()."/formations/"; ?>#item-<?php echo $slug; ?>"> < Retour</a>
 </div>
 
 <section id="item-<?php echo $slug; ?>" class=" perspective-corner	archive-body-item awesome-panel-item container-fluid page-section" style="background-image:url('<?php echo get_the_post_thumbnail_url(); ?>')">

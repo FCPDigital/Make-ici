@@ -26,7 +26,11 @@ Text Domain: makeici
 @import "blocks/section";	// Background du site
 @import "blocks/bubble";	// Background du site
 @import "blocks/product";	// Style des formations
-@import "blocks/accordion";	// Style des formations
+@import "blocks/accordion";	// Accordion
+@import "blocks/masonry";	// Masonry
+@import "blocks/actu";	// Masonry
+@import "blocks/filter";	// Masonry
+@import "blocks/single";	// Masonry
 
 @import "_notfound";
 @import "archive";

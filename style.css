@@ -314,7 +314,10 @@ strong {
     width: 100%; }
 
   .page-template-template-checkout .container, .woocommerce-cart .container {
-    width: 100%; } }
+    width: 100%; }
+
+  .hidden-sm-down {
+    display: none; } }
 @font-face {
   font-family: "CenturyGothic Bold";
   src: url("assets/fonts/CenturyGothic_Bold.ttf"); }
@@ -1179,6 +1182,144 @@ img.height-s {
     color: white;
     transition: 1s all ease-in-out; }
 
+.masonry__item {
+  width: 300px;
+  transition: all 0.3s ease-in-out; }
+  .masonry__item.hidding {
+    opacity: 0; }
+  .masonry__item .item {
+    width: 100%;
+    float: none;
+    height: auto; }
+
+.actu__item {
+  height: auto;
+  width: 100%;
+  position: relative;
+  margin-bottom: 20px;
+  text-align: left; }
+  .actu__item-ref {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px;
+    color: white;
+    width: 40px;
+    height: 30px;
+    z-index: 2;
+    background-color: black;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: center; }
+    .actu__item-ref--actu {
+      background-image: url("assets/images/ico/actu.svg"); }
+    .actu__item-ref--event {
+      background-image: url("assets/images/ico/event.svg"); }
+  .actu__item-thumbnail {
+    display: block;
+    width: 100%;
+    height: auto; }
+    .actu__item-thumbnail-container--crop {
+      height: 150px;
+      overflow: hidden;
+      position: relative; }
+      .actu__item-thumbnail-container--crop .actu__item-thumbnail {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%); }
+  .actu__item-content {
+    background-color: #EEE;
+    padding: 10px 10px 15px 10px;
+    color: black; }
+  .actu__item-title {
+    font-weight: bold;
+    color: black;
+    font-size: 17px;
+    line-height: 1;
+    margin-bottom: 10px; }
+  .actu__item-excerpt {
+    color: black;
+    font-size: 12px;
+    word-wrap: break-word;
+    line-height: 1.7;
+    margin-bottom: 10px; }
+
+.filter {
+  margin-bottom: 30px; }
+  .filter__item {
+    background-color: transparent;
+    border: 0;
+    color: white; }
+    .filter__item .ico-event, .filter__item .ico-actu {
+      width: 30px;
+      height: 20px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      display: inline-block; }
+    .filter__item .ico-event {
+      background-image: url("assets/images/ico/event.svg"); }
+    .filter__item .ico-actu {
+      background-image: url("assets/images/ico/actu.svg"); }
+    .filter__item--active {
+      color: #ffed00;
+      font-weight: bold; }
+
+.single__title {
+  margin-bottom: 20px !important; }
+.single__top {
+  margin-top: 20px; }
+.single__thumbnail {
+  display: block;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  position: absolute;
+  transform: translateY(-50%); }
+  .single__thumbnail-container {
+    height: 350px;
+    overflow: hidden;
+    position: relative; }
+.single__content {
+  margin-top: 25px; }
+.single__date {
+  text-align: right;
+  padding: 0;
+  margin: 0;
+  font-size: 20px;
+  font-weight: normal;
+  line-height: 2; }
+.single__pagination {
+  margin-top: 30px; }
+  .single__pagination-link {
+    color: #ffed00;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 20px;
+    text-decoration: none; }
+    .single__pagination-link:hover, .single__pagination-link:focus {
+      text-decoration: underline;
+      color: #ffed00; }
+  .single__pagination .masonry__item {
+    width: 100%; }
+  .single__pagination-right > * {
+    float: right;
+    width: 90%;
+    text-align: right; }
+  .single__pagination-left > * {
+    float: left;
+    width: 90%;
+    text-align: left; }
+.single__subtitle, .single .single-body h2 {
+  color: white;
+  text-transform: none;
+  text-align: left;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  line-height: 2; }
+
 .container-404 {
   perspective: 500px; }
   .container-404__title {
@@ -1768,7 +1909,7 @@ Ces styles sont davantage propre aux fonctionalité de Woocommerce natif
   padding: 20px;
   padding-top: 0; }
   #single-product .loop-archive .single_variation_wrap .quantity {
-    display: none; }
+    display: none !important; }
 #single-product .loop-archive .single_add_to_cart_button {
   margin-top: 10px;
   background-color: #ffed00;
@@ -2692,7 +2833,10 @@ Contient l'ensemble des style particulier propre aux posts et au pages.
     display: block; }
     .carousel .carousel-body .carousel-container .carousel-item, .carousel.active-control .carousel-body .carousel-container .carousel-item {
       max-width: 100%;
-      width: 100%; } }
+      width: 100%; }
+
+  .carousel--disable-on-responsive {
+    display: none; } }
 /*
 Contient une grande partie des style de formulaire. Notamment les surcharge de WPForm et Contact Form 7
 */
@@ -3000,23 +3144,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 111px;
-          top: 202px; }
+          left: 50px;
+          top: 216px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 388px;
-          top: 203px; }
+          left: 306px;
+          top: 81px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 232px;
-          top: 191px; }
+          left: 242px;
+          top: 163px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 286px;
-          top: 36px; }
+          left: 354px;
+          top: 213px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 118px;
-          top: 121px; }
+          left: 24px;
+          top: 230px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 263px;
-          top: 14px; }
+          left: 92px;
+          top: 105px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);

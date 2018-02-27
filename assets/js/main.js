@@ -1,3 +1,7 @@
+if(!$) {
+	window.$ = jQuery 
+}
+
 // Prototype permettant à un élément de se supprimer du DOM lui même
 Node.prototype.remove = function(){
 	var parent = this.parentNode;
@@ -852,6 +856,83 @@ function accordionManage() {
 	}
 }
 
+
+var Filter = {
+
+	display: function(el){
+		el.classList.remove("hidding");
+		el.classList.remove("hide");
+		var self = this;
+		setTimeout(function(){
+			self.grid.masonry("layout");
+		}, 300);
+	},
+
+	hide: function(el){
+		el.classList.add("hidding");
+		var self =this;
+		setTimeout(function(){
+			el.classList.add("hide");
+			el.classList.remove("hidding");
+			self.grid.masonry("layout");
+		}, 300)
+	},
+
+	update: function(filters){
+		var found;
+		for(var i=0; i<this.els.length; i++){
+			found = false;
+			for(var j=0; j<filters.length; j++){
+				if( this.els[i].getAttribute("data-filter-ref").split(",").indexOf(filters[j]) >= 0 ){
+					found = true;
+					break;
+				}
+			}
+			if( found ){
+				this.display(this.els[i]);
+			} else {
+				this.hide(this.els[i]);
+			}
+		}	
+	},
+
+	initEvent: function(el){
+		var self = this;
+		el.addEventListener("click", function(){
+			self.currentFilter.classList.remove("filter__item--active");
+			self.currentFilter = this;
+			this.classList.add("filter__item--active");
+			var filters = el.getAttribute("data-filter").split(",");
+			self.update(filters);
+		})		
+	},
+
+	init: function(masonry){
+		this.grid = masonry; 
+		this.els = document.querySelectorAll("*[data-filter-ref]");
+		this.filters = document.querySelectorAll("*[data-filter]");
+		this.currentFilter = this.filters[0];
+		for(var i=0; i<this.filters.length; i++){
+			this.initEvent(this.filters[i])
+		}
+	}
+}
+
+
+
+function loadMasonry(){
+	var $grid = $('.masonry'); 
+	$grid.masonry({
+	  // options...
+	  itemSelector: '.masonry__item',
+	  columnWidth: 300,
+	  gutter: 25,
+	  horizontalOrder: false,
+	  isFitWidth: true
+	});
+	Filter.init($grid);
+}
+
 ////////////////////////////////////////////////////////////////////////////////
 //
 //								Window load
@@ -864,6 +945,7 @@ window.addEventListener("load", function(){
 	AwesomePanel.init({ snapping: false });
 	Popin.init();
 	scrollToTop();
+	loadMasonry();
 	manageProductCarousel();
 	var carousel = new MakeCarousel(document.querySelector("#main-carousel"));
 	XhrManage.init();

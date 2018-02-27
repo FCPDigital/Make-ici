@@ -1,0 +1,64 @@
+.single 
+	
+	&__title
+		margin-bottom: 20px !important
+
+	&__top
+		margin-top: 20px
+
+	&__thumbnail
+		display: block
+		width: 100%
+		top: 50%
+		left: 0
+		position: absolute
+		transform: translateY(-50%)
+
+		&-container
+			height: 350px
+			overflow: hidden
+			position: relative
+	
+	&__content
+		margin-top: 25px
+
+	&__date
+		text-align: right
+		padding: 0
+		margin: 0
+		font-size: 20px
+		font-weight: normal
+		line-height: 2
+
+	&__pagination
+		margin-top: 30px
+		&-link
+			color: $color-3
+			font-weight: bold
+			display: inline-block
+			margin-bottom: 20px
+			text-decoration: none
+			&:hover , &:focus
+				text-decoration: underline
+				color: $color-3
+		.masonry__item
+			width: 100%
+		&-right > *
+			float: right
+			width: 90%
+			text-align: right
+		&-left > *
+			float: left
+			width: 90%
+			text-align: left
+
+
+	&__subtitle, .single-body h2
+		color: white
+		text-transform: none
+		text-align: left
+		font-size: 20px
+		font-weight: bold
+		margin: 0
+		padding: 0
+		line-height: 2

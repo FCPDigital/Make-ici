@@ -175,7 +175,7 @@ Ces styles sont davantage propre aux fonctionalité de Woocommerce natif
 			padding: 20px;
 			padding-top: 0;
 			.quantity {
-				display: none;
+				display: none !important;
 			}
 		}
 		.single_add_to_cart_button {

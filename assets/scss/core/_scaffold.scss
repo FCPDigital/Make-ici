@@ -229,7 +229,6 @@ strong {
 
 
 
-
 @media (max-width: 1230px) {
 		 #content-page {
 			padding: $big-pad $small-pad;
@@ -280,6 +279,8 @@ strong {
 	.separator--center::after {
 		display: none;
 	}
+
+
 }
 
 
@@ -291,5 +292,10 @@ strong {
 		.container {
 			width: 100%;
 		}
+	}
+
+		
+	.hidden-sm-down {
+		display: none;
 	}
 }

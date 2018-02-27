@@ -1,0 +1,28 @@
+// Use in archive.php
+.filter
+	margin-bottom: 30px
+
+	&__list
+		
+	&__item
+		background-color: transparent
+		border: 0
+		color: white
+
+		.ico-event, .ico-actu
+			width: 30px
+			height: 20px
+			background-repeat: no-repeat
+			background-size: contain
+			background-position: center
+			display: inline-block
+
+		.ico-event
+			background-image: url("assets/images/ico/event.svg")
+
+		.ico-actu
+			background-image: url("assets/images/ico/actu.svg")
+
+		&--active
+			color: $color-3
+			font-weight: bold

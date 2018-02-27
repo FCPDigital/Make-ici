@@ -118,6 +118,8 @@
 			}
 		}
 	}
+
+
 }
 
 @media screen and (max-width:$break-point-1){
@@ -163,5 +165,8 @@
 			max-width: 100%;
 			width: 100%;
 		}
+	}
+	.carousel--disable-on-responsive {
+		display: none;
 	}
 }
