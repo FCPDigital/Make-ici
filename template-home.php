@@ -11,7 +11,7 @@ $postCur = get_post(); // On stocke le post courant pour éviter le bug de la bo
 
 
 <main id="page" class="site-main homepage" role="main">
-
+	<?php $currentPost = get_post(); ?>
 	<div class="landing" style="background-image:url(<?php echo get_field('bg_main', $postCur); ?>);">
 		<?php if (get_field("slider_id")){
 			echo do_shortcode("[smartslider3 slider=".get_field("slider_id")."]");
@@ -41,6 +41,7 @@ $postCur = get_post(); // On stocke le post courant pour éviter le bug de la bo
 		</div>
 	</div>
 	<div id="anchor-2" class="section-post" style="background-image: url(<?php echo get_the_post_thumbnail_url($postCur); ?>);">
+		<?php $post = $currentPost; setup_postdata($currentPost); ?>
 		<div class="container">
 			<h1 class="left-full-border"><?php echo get_the_title(); ?></h1>
 			<div class="single-body">
