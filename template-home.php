@@ -23,11 +23,11 @@ $postCur = get_post(); // On stocke le post courant pour éviter le bug de la bo
 				<?php echo get_bloginfo("description"); ?>
 			</div>
 			<div class="center margin-top-medium">
-				<a href='<?php echo get_permalink(get_page_by_title("Visite Guidée")) ?>' class="btn btn--light">Découvrez nos prochaines formations</a><br>
+				<a href='<?php echo get_permalink(get_page_by_title("Visite Guidée")) ?>' class="btn btn--light">Visiter ICI Montreuil</a><br>
 			</div>
 		</div>
-		<?php } ?>
-		<a id="scroll" href="#anchor-1" data-scroll>Découvrez <?php echo get_bloginfo("name"); ?></a> 
+			<?php } ?>
+		<a id="scroll" href="#anchor-1" data-scroll>Découvrez nos prochaines formations</a> 
 	</div>
 	<div id="anchor-1" class="section-post" style="background-image: url(<?php echo get_the_post_thumbnail_url($postCur); ?>);">
 		<div class="container">
