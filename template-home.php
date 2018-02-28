@@ -12,17 +12,22 @@ $postCur = get_post(); // On stocke le post courant pour éviter le bug de la bo
 
 <main id="page" class="site-main homepage" role="main">
 
-	<div class="landing" style="background-image:url(<?php echo get_field('bg_main', $postCur); ?>);">	 
+	<div class="landing" style="background-image:url(<?php echo get_field('bg_main', $postCur); ?>);">
+		<?php if (get_field("slider_id")){
+			echo do_shortcode("[smartslider3 slider=".get_field("slider_id")."]");
+		} else { ?>
+
 		<div class="container">
 			<div class="landing-legend">
 				<h2 class="size-extra margin-bottom-medium"><?php echo strtoupper(get_bloginfo("name")); ?></h2> 
 				<?php echo get_bloginfo("description"); ?>
 			</div>
 			<div class="center margin-top-medium">
-				<a href='<?php echo get_permalink(get_page_by_title("Visite Guidée")) ?>' class="btn btn--light">Visiter ICI Montreuil</a><br>
+				<a href='<?php echo get_permalink(get_page_by_title("Visite Guidée")) ?>' class="btn btn--light">Découvrez nos prochaines formations</a><br>
 			</div>
 		</div>
-		<a id="scroll" href="#anchor-1" data-scroll>Découvrez <?php echo get_bloginfo("name"); ?></a>
+		<?php } ?>
+		<a id="scroll" href="#anchor-1" data-scroll>Découvrez <?php echo get_bloginfo("name"); ?></a> 
 	</div>
 	<div id="anchor-1" class="section-post" style="background-image: url(<?php echo get_the_post_thumbnail_url($postCur); ?>);">
 		<div class="container">

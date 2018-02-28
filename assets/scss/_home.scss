@@ -43,7 +43,39 @@
 		height: 100vh;
 		text-align: center;
 		position: relative;
-		padding-top: 50px;
+		padding-top: 0px;
+		.nextend-arrow {
+			top: auto !important;
+			left: auto !important;
+			bottom: auto !important;
+			right: auto !important;
+
+			bottom: 65px !important;
+			border: 1px solid white;
+			border-radius: 100%;
+			padding: 5px;
+			width: 25px !important;
+			height: 25px !important;
+			&-previous {
+				right: 80px !important;
+			}
+			&-next {
+				right: 30px !important;
+			}
+		}
+
+		.n2-ss-swipe-element {
+			height: 100vh !important;
+		}
+
+		.n2-ss-layers-container {
+			margin: 0 !important;
+		}
+		.n2-ss-section-main-content {
+			height: 100vh !important;
+		}
+
+
 		.container {
 			@include transform(translateY(-50%));
 			top: 40%;
