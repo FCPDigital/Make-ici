@@ -250,7 +250,7 @@ strong {
   -o-transform: translateX(0);
   transform: translateX(0); }
   .resident_button.hide {
-    display: block !important;
+    display: none !important;
     -webkit-transform: translateX(40px);
     -moz-transform: translateX(40px);
     -ms-transform: translateX(40px);
@@ -2190,7 +2190,7 @@ body.woocommerce-checkout #customer_details h3::after {
       left: auto !important;
       bottom: auto !important;
       right: auto !important;
-      bottom: 65px !important;
+      bottom: 35px !important;
       border: 1px solid white;
       border-radius: 100%;
       padding: 5px;
@@ -2219,7 +2219,7 @@ body.woocommerce-checkout #customer_details h3::after {
       color: #ffed00;
       position: absolute;
       text-decoration: none;
-      bottom: 100px;
+      bottom: 50px;
       display: inline-block;
       padding-bottom: 10px;
       left: 50%;
@@ -3171,23 +3171,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 239px;
-          top: 10px; }
+          left: 172px;
+          top: 40px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 87px;
-          top: 231px; }
+          left: 369px;
+          top: 197px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 203px;
-          top: 194px; }
+          left: 209px;
+          top: 49px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 146px;
-          top: 216px; }
+          left: 239px;
+          top: 158px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 355px;
-          top: 148px; }
+          left: 359px;
+          top: 134px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 296px;
-          top: 18px; }
+          left: 365px;
+          top: 79px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);
