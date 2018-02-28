@@ -71,7 +71,7 @@ Contenu d'une page formation. Appelé dans :
 					<div class="formator fa-container margin-bottom-small">
 						<i class="fa fa-user" aria-hidden="true"></i>
 						<p><strong>Le Formateur :</strong><br>
-							<?php echo $brand[0]->description; ?></p>
+						<?php echo $brand[0]->description; ?></p>
 					</div>
 				<?php } ?>
 				<?php
@@ -86,13 +86,12 @@ Contenu d'une page formation. Appelé dans :
 				<?php if(get_field("advanced_content")) { ?>
 				<div class="acc margin-bottom-big margin-top-medium">
 					<div class="acc__item">
-						<button class="acc__btn">
+						<button class="acc__btn acc__btn--active">
 							Descriptif 
 							<div class="icon">
 								<i class="fa fa-angle-down"></i>
 							</div>
 						</button>
-
 						<div class="acc__panel">
 							<?php echo get_field("advanced_content"); ?>
 						</div>
