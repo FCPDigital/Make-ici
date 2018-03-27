@@ -19,7 +19,7 @@ $postCur = get_post(); // On stocke le post courant pour éviter le bug de la bo
 
 		<div class="container">
 			<div class="landing-legend">
-				<h2 class="size-extra margin-bottom-medium"><?php echo strtoupper(get_bloginfo("name")); ?></h2> 
+				<h2 class="size-extra margin-bottom-medium"><?php echo strtoupper(get_bloginfo("name")); ?></h2>
 				<?php echo get_bloginfo("description"); ?>
 			</div>
 			<div class="center margin-top-medium">
@@ -27,25 +27,27 @@ $postCur = get_post(); // On stocke le post courant pour éviter le bug de la bo
 			</div>
 		</div>
 			<?php } ?>
-		<a id="scroll" href="#anchor-1" data-scroll>Découvrez nos prochaines formations</a> 
+			<?php if(!get_field("hide-formations", $postCur)) { ?>
+				<a id="scroll" href="#anchor-1" data-scroll>Découvrez nos prochaines formations</a>
+			<?php } else { ?>
+				<a id="scroll" href="#anchor-2" data-scroll><?php echo strtoupper(get_bloginfo("name")); ?> en quelques mots</a>
+			<?php } ?>
 	</div>
 
-	<?php if(get_field("display-formations", $postCur) === null || get_field("display-formations", $postCur) === true) {
-		echo "<!-- Display -->";
-	} else {
-		echo "<!-- Hide -->";
-	} ?>
-	<div id="anchor-1" class="section-post last-posts" style="background-image:url(<?php echo get_field('bg_last_posts', $postCur); ?>);">
-		<div class="container">
-			<h2 class="left-full-border">Prochaines formations</h2>
-			<?php last_products(); ?>
-			<div class="clr"></div>
-			<div class="scroll-btn-container margin-top-medium">
-				<span class="scroll-btn__title">Ici Montreuil en quelques mots</span>
-				<a class="scroll-btn" href="#anchor-2" data-scroll></a>
+	<?php if(!get_field("hide-formations", $postCur)) { ?>
+		<div id="anchor-1" class="section-post last-posts" style="background-image:url(<?php echo get_field('bg_last_posts', $postCur); ?>);">
+			<div class="container">
+				<h2 class="left-full-border">Prochaines formations</h2>
+				<?php last_products(); ?>
+				<div class="clr"></div>
+				<div class="scroll-btn-container margin-top-medium">
+					<span class="scroll-btn__title">Ici Montreuil en quelques mots</span>
+					<a class="scroll-btn" href="#anchor-2" data-scroll></a>
+				</div>
 			</div>
 		</div>
-	</div>
+	<?php } ?>
+
 	<div id="anchor-2" class="section-post" style="background-image: url(<?php echo get_the_post_thumbnail_url($postCur); ?>);">
 		<?php $post = $currentPost; setup_postdata($currentPost); ?>
 		<div class="container">
@@ -62,16 +64,16 @@ $postCur = get_post(); // On stocke le post courant pour éviter le bug de la bo
 				<span class="scroll-btn__title">L'actualité</span>
 				<a class="scroll-btn" href="#anchor-3" data-scroll></a>
 			</div>
-		</div>	
+		</div>
 	</div>
-	
+
 	<div id="anchor-3" class="section-post equipements" style="background-image:url(<?php echo get_field('bg_equipement', $postCur); ?>);">
 		<div class="container">
 			<h2 class="left-full-border">L'actualité</h2>
 			<?php last_posts(); ?>
 		</div>
 	</div>
-	
+
 </main>
 
 <?php endwhile; // End of the loop. ?>
