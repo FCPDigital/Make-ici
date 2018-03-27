@@ -29,6 +29,12 @@ $postCur = get_post(); // On stocke le post courant pour éviter le bug de la bo
 			<?php } ?>
 		<a id="scroll" href="#anchor-1" data-scroll>Découvrez nos prochaines formations</a> 
 	</div>
+
+	<?php if(get_field("display-formations", $postCur) === null || get_field("display-formations", $postCur) === true) {
+		echo "<!-- Display -->";
+	} else {
+		echo "<!-- Hide -->";
+	} ?>
 	<div id="anchor-1" class="section-post last-posts" style="background-image:url(<?php echo get_field('bg_last_posts', $postCur); ?>);">
 		<div class="container">
 			<h2 class="left-full-border">Prochaines formations</h2>
