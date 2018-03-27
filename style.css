@@ -2245,6 +2245,9 @@ body.woocommerce-checkout #customer_details h3::after {
         -ms-transform: rotate(90deg);
         -o-transform: rotate(90deg);
         transform: rotate(90deg); }
+  .homepage .list {
+    flex: 1;
+    min-width: 300px; }
   .homepage .section-post {
     padding: 75px 0; }
     .homepage .section-post.last-posts .carousel-body {
@@ -3171,23 +3174,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 172px;
-          top: 40px; }
+          left: 106px;
+          top: 225px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 369px;
-          top: 197px; }
+          left: 48px;
+          top: 184px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 209px;
-          top: 49px; }
+          left: 298px;
+          top: 183px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 239px;
-          top: 158px; }
-        #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 359px;
-          top: 134px; }
-        #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 365px;
+          left: 9px;
           top: 79px; }
+        #visite .plan-container .stage .pointer:nth-child(5) {
+          left: 280px;
+          top: 137px; }
+        #visite .plan-container .stage .pointer:nth-child(6) {
+          left: 126px;
+          top: 186px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);
