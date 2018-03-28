@@ -22,7 +22,7 @@ Contenu d'une page formation. Appelé dans :
 						<?php echo $category; ?>
 					</h2>
 				</div>
-
+				<!--<?php var_dump(get_field("front_display"));  ?>-->
 				<div class="archive-main-body">
 					<?php if( get_field("front_display") ) { ?>
 						<div class="archive-main__front-display">
