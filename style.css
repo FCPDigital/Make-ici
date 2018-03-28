@@ -1593,11 +1593,24 @@ h1 {
       .loop-archive .archive-body-item .archive-main .archive-main-body {
         font-size: 14px;
         line-height: 2em;
-        margin-bottom: 30px; }
+        margin-bottom: 30px;
+        position: relative; }
         .loop-archive .archive-body-item .archive-main .archive-main-body p {
           margin-bottom: 16px; }
         .loop-archive .archive-body-item .archive-main .archive-main-body strong {
           font-weight: bold; }
+      .loop-archive .archive-body-item .archive-main .archive-main__front-display {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%) rotate(30deg);
+        font-size: 50px;
+        width: 100%;
+        text-align: center;
+        font-weight: bold;
+        color: #ffed00; }
+      .loop-archive .archive-body-item .archive-main .archive-main__hide-display {
+        opacity: 0.2; }
       .loop-archive .archive-body-item .archive-main .actions {
         margin: 32px 0; }
         .loop-archive .archive-body-item .archive-main .actions a {
@@ -3174,23 +3187,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 106px;
-          top: 225px; }
+          left: 52px;
+          top: 149px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 48px;
-          top: 184px; }
+          left: 41px;
+          top: 5px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 298px;
-          top: 183px; }
+          left: 56px;
+          top: 208px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 9px;
-          top: 79px; }
+          left: 292px;
+          top: 53px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 280px;
-          top: 137px; }
+          left: 365px;
+          top: 141px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 126px;
-          top: 186px; }
+          left: 242px;
+          top: 50px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);

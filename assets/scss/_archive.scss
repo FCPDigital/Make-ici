@@ -267,6 +267,8 @@ h1 {
 				font-size: 14px;
 				line-height: 2em;
 				margin-bottom: 30px;
+				position: relative;
+
 				p {
 					margin-bottom: $small-pad;
 				}
@@ -274,6 +276,23 @@ h1 {
 					font-weight: bold;
 				}
 			}
+
+			.archive-main__front-display {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translateX(-50%) translateY(-50%) rotate(30deg);
+				font-size: 50px;
+				width: 100%;
+				text-align: center;
+				font-weight: bold;
+				color: $color-3;
+			}
+
+			.archive-main__hide-display {
+				opacity: 0.2;
+			}
+
 			.actions {
 				margin: $medium-pad 0;
 				a {

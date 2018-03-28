@@ -24,8 +24,20 @@ Contenu d'une page formation. Appelé dans :
 				</div>
 
 				<div class="archive-main-body">
-					<?php setup_postdata(get_post()); ?>
-					<?php the_content(); ?>
+					<?php if( get_field("front_display") ) { ?>
+						<div class="archive-main__front-display">
+							<?php echo get_field("front_display"); ?>
+						</div>
+						<div class="archive-main__hide-display">
+					<?php } ?>
+					
+					<?php 
+					setup_postdata(get_post());
+					the_content(); 
+
+					if( get_field("front_display") ) {
+						echo "</div>";
+					} ?>
 				</div>
 				
 			</div>
