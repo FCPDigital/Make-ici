@@ -1,8 +1,8 @@
 
 <footer class="container-fluid" role="contentinfo">
 	<a href="#" class="scroll-to-top display-scroll hide" data-scroll></a>
-	<?php if(get_page_by_title("Visite Guidée")) { ?>
-		<a href="<?php echo get_permalink(get_page_by_title("Visite Guidée")); ?>" class="resident_button display-scroll hide">Devenez résident !</a>
+	<?php if(get_page_by_title("Prendre un atelier ICI")) { ?>
+		<a href="<?php echo get_permalink(get_page_by_title("Prendre un atelier ICI")); ?>" class="resident_button display-scroll hide">Devenez résident !</a>
 	<?php } ?>
 	
 
