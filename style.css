@@ -2561,6 +2561,17 @@ header.transparent .navbar {
 @media screen and (min-width: 1210px) {
   #main-header .navbar .navbar-collapse, #main-header .navbar .navbar-collapse.in {
     left: -300px; } }
+/* Fixe bug responsive */
+@media screen and (max-width: 1350px) {
+  header .navbar-nav .menu-item > a {
+    font-size: 13px;
+    letter-spacing: 0px; }
+
+  header .navbar-nav .menu-item.btn.btn-light {
+    padding: 10px 5px; }
+
+  header .navbar-nav .menu-item.dropdown a {
+    padding: 12px 5px; } }
 .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
   color: black; }
 
@@ -3187,23 +3198,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 52px;
-          top: 149px; }
+          left: 297px;
+          top: 241px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 41px;
-          top: 5px; }
+          left: 259px;
+          top: 156px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 56px;
-          top: 208px; }
+          left: 331px;
+          top: 123px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 292px;
-          top: 53px; }
+          left: 31px;
+          top: 98px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 365px;
-          top: 141px; }
+          left: 271px;
+          top: 108px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 242px;
-          top: 50px; }
+          left: 6px;
+          top: 30px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);
