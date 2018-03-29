@@ -59,7 +59,7 @@ Contenu d'une page formation. Appelé dans :
 				
 				if (get_field("display-price-abo") != "oui") { ?>
 				
-					<div class="cost_max fa-container">
+				<!--	<div class="cost_max fa-container">
 						<i class="fa fa-eur" aria-hidden="true"></i>
 						<?php
 						$price = (int) $product->get_price();
@@ -71,13 +71,13 @@ Contenu d'une page formation. Appelé dans :
 						}
 						?>
 						<p>Tarif abonnés :<br><?php echo $abonnePrice; ?> € TTC</p>
-					</div>
+					</div>-->
 
 				<?php } ?>
 
 				<div class="cost_sale fa-container">
 					<i class="fa fa-eur" aria-hidden="true"></i>
-					<p>Tarif non abonnées :<br><?php echo $product->get_price() ?> € TTC</p>
+					<p>Tarif :<br><?php echo $product->get_price() ?> € TTC</p>
 				</div>
 				<?php if($brand && get_class($brand) != "WP_Error") { ?>
 					<div class="formator fa-container margin-bottom-small">
