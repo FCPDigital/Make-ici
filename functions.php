@@ -1019,7 +1019,7 @@ function init_sidebar(){
 		'name'					=> __( 'Widget Entreprise', 'makeici' ),
 		'id'						=> 'widget-entreprise',
 		'description'	 => __( 'Bloc de widget en bas de la colonne de droite des formation', 'makeici' ),
-		'before_widget' => '<aside id="%1$s" class="widget-entreprise %2$s">',
+		'before_widget' => '<aside id="%1$s" class="widget-entreprise margin-top-small %2$s">',
 		'after_widget'	=> '</aside>',
 		'before_title' => '<h3 class="margin-bottom-small margin-top-small">',
 		'after_title' => '</h3>'
@@ -1036,6 +1036,13 @@ function themeprefix_add_to_cart_redirect() {
 	return $checkout_url;
 }
 
+function abonnement_archive_title( $title ) {
+    if(is_post_type_archive('abonnements'))
+        return 'Nos abonnements';
+    return $title;
+}
+add_filter( 'wp_title', 'abonnement_archive_title' );
+add_filter( 'get_the_archive_title', 'abonnement_archive_title' );
 
 //////////////////////////////////////////////////////
 //
