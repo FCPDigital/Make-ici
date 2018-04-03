@@ -990,15 +990,19 @@ function init_sidebar(){
 			'id'						=> 'widget-post',
 			'description'	 => __( 'Bloc de widget en bas des Post', 'makeici' ),
 			'before_widget' => '<aside id="%1$s" class="widget-post %2$s">',
-			'after_widget'	=> '</aside>'
+			'after_widget'	=> '</aside>',
+			'before_title' => '<h3 class="margin-bottom-small margin-top-small">',
+			'after_title' => '</h3>'
 	));
 
 	 register_sidebar( array(
 		'name'					=> __( 'Widget Abonnements', 'makeici' ),
 		'id'						=> 'widget-abonnement',
 		'description'	 => __( 'Bloc de widget en bas de la colonne de droite de la page évenement', 'makeici' ),
-		'before_widget' => '<aside id="%1$s" class="widget-abonnement %2$s">',
-		'after_widget'	=> '</aside>'
+		'before_widget' => '<aside id="%1$s" class="widget-abonnement center margin-top-small %2$s">',
+		'after_widget'	=> '</aside>',
+		'before_title' => '<h3 class="margin-bottom-small margin-top-small">',
+		'after_title' => '</h3>'
 	));
 
 	register_sidebar( array(
@@ -1006,7 +1010,9 @@ function init_sidebar(){
 		'id'						=> 'widget-formation',
 		'description'	 => __( 'Bloc de widget en bas de la colonne de droite des formation', 'makeici' ),
 		'before_widget' => '<aside id="%1$s" class="widget-formation %2$s">',
-		'after_widget'	=> '</aside>'
+		'after_widget'	=> '</aside>',
+		'before_title' => '<h3 class="margin-bottom-small margin-top-small">',
+		'after_title' => '</h3>'
 	));
 
 	register_sidebar( array(
@@ -1014,7 +1020,9 @@ function init_sidebar(){
 		'id'						=> 'widget-entreprise',
 		'description'	 => __( 'Bloc de widget en bas de la colonne de droite des formation', 'makeici' ),
 		'before_widget' => '<aside id="%1$s" class="widget-entreprise %2$s">',
-		'after_widget'	=> '</aside>'
+		'after_widget'	=> '</aside>',
+		'before_title' => '<h3 class="margin-bottom-small margin-top-small">',
+		'after_title' => '</h3>'
 	));
 }
 

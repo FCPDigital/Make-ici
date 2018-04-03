@@ -23,6 +23,7 @@ Ce template est appelé notamment dans archive-entreprises.php
 					</div>
 					<div class="archive-main-body">
 						<?php the_content(); ?>
+						<?php dynamic_sidebar( 'widget-entreprise' ); ?>
 					</div>
 				</div>
 
@@ -32,7 +33,7 @@ Ce template est appelé notamment dans archive-entreprises.php
 					<div>
 						<?php echo get_field('lien_') ?>
 					</div>
-					<?php dynamic_sidebar( 'widget-entreprise' ); ?>
+					
 				</div>
 			
 			</div>
