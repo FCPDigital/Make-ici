@@ -45,9 +45,10 @@
 						</div>
 						
 					</div>
+					<?php dynamic_sidebar( 'widget-post' ); ?>
+
 				</div>
 
-			<?php //dynamic_sidebar( 'below-post' ); ?>
 
 			<?php
 			$next_post = get_next_post();

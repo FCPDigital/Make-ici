@@ -38,6 +38,7 @@ Contenu d'une page formation. Appelé dans :
 					if( get_field("front_display") ) {
 						echo "</div>";
 					} ?>
+					<?php dynamic_sidebar( 'widget-formation' ); ?>
 				</div>
 				
 			</div>

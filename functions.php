@@ -983,21 +983,39 @@ function init_sidebar(){
 			'before_title'	=> '<h3 class="widget-title">',
 			'after_title'	 => '</h3>',
 	 ));
-	 register_sidebar( array(
-			'name'					=> __( 'Actu-Event', 'makeici' ),
-			'id'						=> 'actue-event',
-			'description'	 => __( 'Apparait dans la page Actu & Evenements', 'makeici' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget'	=> '</aside>'
-	 ));
+
 
 	register_sidebar( array(
-			'name'					=> __( 'Below Post', 'makeici' ),
-			'id'						=> 'below-post',
-			'description'	 => __( 'Bloc de widget en bas des Post et des Events', 'makeici' ),
-			'before_widget' => '<aside id="%1$s" class="widget-social %2$s">',
+			'name'					=> __( 'Widget Actu', 'makeici' ),
+			'id'						=> 'widget-post',
+			'description'	 => __( 'Bloc de widget en bas des Post', 'makeici' ),
+			'before_widget' => '<aside id="%1$s" class="widget-post %2$s">',
 			'after_widget'	=> '</aside>'
-	 ));
+	));
+
+	 register_sidebar( array(
+		'name'					=> __( 'Widget Abonnements', 'makeici' ),
+		'id'						=> 'widget-abonnement',
+		'description'	 => __( 'Bloc de widget en bas de la colonne de droite de la page évenement', 'makeici' ),
+		'before_widget' => '<aside id="%1$s" class="widget-abonnement %2$s">',
+		'after_widget'	=> '</aside>'
+	));
+
+	register_sidebar( array(
+		'name'					=> __( 'Widget Formation', 'makeici' ),
+		'id'						=> 'widget-formation',
+		'description'	 => __( 'Bloc de widget en bas de la colonne de droite des formation', 'makeici' ),
+		'before_widget' => '<aside id="%1$s" class="widget-formation %2$s">',
+		'after_widget'	=> '</aside>'
+	));
+
+	register_sidebar( array(
+		'name'					=> __( 'Widget Entreprise', 'makeici' ),
+		'id'						=> 'widget-entreprise',
+		'description'	 => __( 'Bloc de widget en bas de la colonne de droite des formation', 'makeici' ),
+		'before_widget' => '<aside id="%1$s" class="widget-entreprise %2$s">',
+		'after_widget'	=> '</aside>'
+	));
 }
 
 add_action( 'widgets_init', 'init_sidebar' );

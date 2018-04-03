@@ -32,6 +32,7 @@ Ce template est appelé notamment dans archive-entreprises.php
 					<div>
 						<?php echo get_field('lien_') ?>
 					</div>
+					<?php dynamic_sidebar( 'widget-entreprise' ); ?>
 				</div>
 			
 			</div>

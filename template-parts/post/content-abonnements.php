@@ -66,6 +66,7 @@ Ce template est appelé notamment dans archive-abonnement.php
 			}
 			?>
 
+			<?php dynamic_sidebar( 'widget-abonnement' ); ?>
 		</div>
 
 	</div>
