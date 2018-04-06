@@ -63,23 +63,27 @@ get_header();
 				</div>
 				<div class="col-sm-12">
 					<p class="bold box__parent">
-						<span class="col-sm-3 box box--marge-null box--black box--font-m box--pad-s margin-right-small" data-dynamic-date="apply_period">Février 2018 :</span> 
-						Période de candidature
+						<span class="col-sm-3 box box--marge-null box--black box--font-m box--pad-s margin-right-small" data-dynamic-date="apply_period">Mercredi 13 juin 2018 : </span> 
+						à 9h et 19h : Sessions d'informations aux candidats et visite d’ICI Montreuil 
 					</p>
 					<p class="bold box__parent">
-						<span class="col-sm-3 box box--marge-null box--black box--font-m box--pad-s margin-right-small" data-dynamic-date="information_candidat">Jeudi 8 février 2018 : </span>
-						 à 9h et 19h : sessions d'informations aux candidats et visite
+						<span class="col-sm-3 box box--marge-null box--black box--font-m box--pad-s margin-right-small" data-dynamic-date="information_candidat">31 août 2018  : </span>
+						 Fin de la période de candidature
 					</p>
 					<p class="bold box__parent">
-						<span class="col-sm-3 box box--marge-null box--black box--font-m box--pad-s margin-right-small" data-dynamic-date="entretien_day">Lundi 5 mars 2018 : </span>
-						 Journée d'entretiens et d'ateliers pour 40 pré-sélectionné-e-s
+						<span class="col-sm-3 box box--marge-null box--black box--font-m box--pad-s margin-right-small" data-dynamic-date="entretien_day">Lundi 10 septembre 2018 : </span>
+						d'entretiens et épreuve pour 20 candidats pré-sélectionnés
 					</p>
 					<p class="bold box__parent">
-						<span class="col-sm-3 box box--marge-null box--black box--font-m box--pad-s margin-right-small" data-dynamic-date="formation_start">Lundi 19 mars 2018 :</span> 
+						<span class="col-sm-3 box box--marge-null box--black box--font-m box--pad-s margin-right-small" data-dynamic-date="formation_start">Lundi 24 septembre 2018 :</span> 
 						 Rentrée - début de la formation
 					</p>
 					<p class="bold box__parent">
-						<span class="col-sm-3 box box--marge-null box--black box--font-m box--pad-s margin-right-small" data-dynamic-date="formation_end">26 juillet 2018 : </span>
+						<span class="col-sm-3 box box--marge-null box--black box--font-m box--pad-s margin-right-small" data-dynamic-date="formation_end">Janvier 2018 : </span>
+						 Stage de 1 mois
+					</p>
+					<p class="bold box__parent">
+						<span class="col-sm-3 box box--marge-null box--black box--font-m box--pad-s margin-right-small" data-dynamic-date="formation_end">28 février 2019 : </span>
 						 fin de la formation
 					</p>
 				</div>
