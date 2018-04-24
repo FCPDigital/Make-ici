@@ -54,8 +54,11 @@ Contenu d'une page formation. Appelé dans :
 				
 				echo get_field("short_code_formulaire");
 
-				// Affiche un lien vers la page produit des cartes cadeaux ?>
-				<a href="<?php echo get_permalink(esc_attr( get_option('gift_card_id'))); ?>" class="btn btn-colored gift-card-link">Achetez une carte cadeau</a>
+				if( get_field("gift_card_active") ) {
+					// Affiche un lien vers la page produit des cartes cadeaux ?>
+					<a href="<?php echo get_permalink(esc_attr( get_option('gift_card_id'))); ?>" class="btn btn-colored gift-card-link">Achetez une carte cadeau</a>
+				}
+				
 			</div>
 
 

@@ -87,7 +87,7 @@ h2 {
   font-weight: bold; }
 
 a {
-  color: black;
+  color: #ffed00;
   text-decoration: underline; }
 
 strong {
@@ -447,6 +447,9 @@ ul.styled, ol.styled {
 
 .upper {
   text-transform: uppercase; }
+
+.font-size-xs {
+  font-size: 11px; }
 
 .font-size-b {
   font-size: 20px; }
@@ -1325,6 +1328,21 @@ img.height-s {
   margin: 0;
   padding: 0;
   line-height: 2; }
+
+.article h2 {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 20px; }
+.article h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-weight: bold; }
+.article a {
+  color: #ffed00; }
+.article strong, .article b {
+  font-weight: bold; }
+.article em, .article i {
+  font-style: italic; }
 
 .container-404 {
   perspective: 500px; }
@@ -3198,23 +3216,23 @@ form select {
         animation-iteration-count: infinite;
         animation-duration: 1s; }
         #visite .plan-container .stage .pointer:nth-child(1) {
-          left: 297px;
-          top: 241px; }
+          left: 201px;
+          top: 221px; }
         #visite .plan-container .stage .pointer:nth-child(2) {
-          left: 259px;
-          top: 156px; }
+          left: 278px;
+          top: 140px; }
         #visite .plan-container .stage .pointer:nth-child(3) {
-          left: 331px;
-          top: 123px; }
+          left: 152px;
+          top: 222px; }
         #visite .plan-container .stage .pointer:nth-child(4) {
-          left: 31px;
-          top: 98px; }
+          left: 326px;
+          top: 48px; }
         #visite .plan-container .stage .pointer:nth-child(5) {
-          left: 271px;
-          top: 108px; }
+          left: 327px;
+          top: 188px; }
         #visite .plan-container .stage .pointer:nth-child(6) {
-          left: 6px;
-          top: 30px; }
+          left: 203px;
+          top: 93px; }
     #visite .plan-container .stage.active-hover:nth-child(1) {
       -webkit-transform: translateZ(0px) scale(1.1) rotateX(10deg);
       -moz-transform: translateZ(0px) scale(1.1) rotateX(10deg);
