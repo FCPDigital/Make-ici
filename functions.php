@@ -1059,6 +1059,7 @@ function register_my_setting() {
 	register_setting( 'formulaire', 'map_thumbnail_url', "string" );
 	register_setting( 'formulaire', 'address', "string" );
 	register_setting( 'formulaire', 'bg_email', "string" );
+	register_setting( 'formulaire', 'social_instagram', "string");
 }
 add_action( 'admin_init', 'register_my_setting' );
 
@@ -1117,6 +1118,10 @@ function my_theme_options() {
 		<div class="form-group">
 			<label>Image banners des emails</label><br>
 			<input class="form-control" value="<?php echo esc_attr( get_option('bg_email') ); ?>" name="bg_email" type="text"/>
+		</div>
+		<div class="form-group">
+			<label>Compte instagram</label><br>
+			<input class="form-control" value="<?php echo esc_attr( get_option('social_instagram') ); ?>" name="social_instagram" type="text"/>
 		</div>
 		<?php submit_button(); ?>
 		</form>
