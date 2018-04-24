@@ -19,7 +19,7 @@ Contenu d'une page formation. Appelé dans :
 					</h2>
 				</div>
 
-				<div class="archive-main-body">
+				<div class="archive-main-body article">
 					<?php setup_postdata(get_post()); ?>
 					<?php the_content(); ?>
 				</div>

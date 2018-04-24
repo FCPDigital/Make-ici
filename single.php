@@ -40,7 +40,7 @@
 							</div>
 						<?php } ?>
 						
-						<div class="single__content">
+						<div class="single__content article">
 							<?php the_content(); ?>
 						</div>
 						

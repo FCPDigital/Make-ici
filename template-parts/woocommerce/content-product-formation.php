@@ -32,8 +32,10 @@ Contenu d'une page formation. Appelé dans :
 					<?php } ?>
 					
 					<?php 
-					setup_postdata(get_post());
-					the_content(); 
+					setup_postdata(get_post()); ?>
+
+					<div class="article"><?php the_content(); ?></div><?php
+					
 
 					if( get_field("front_display") ) {
 						echo "</div>";

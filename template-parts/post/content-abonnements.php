@@ -20,7 +20,7 @@ Ce template est appelé notamment dans archive-abonnement.php
 					<?php echo get_field("subtitle"); ?>
 				</h3>
 			</div>
-			<div class="archive-main-body">
+			<div class="archive-main-body article">
 				<?php the_content(); ?>
 			</div>
 		</div>

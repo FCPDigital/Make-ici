@@ -20,7 +20,7 @@ $brand = get_the_terms( get_the_ID(), 'product_brand' );
 					</h3>
 				</div>
 
-				<div class="archive-main-body">
+				<div class="archive-main-body article">
 					<?php setup_postdata(get_post()); ?>
 					<?php the_content(); ?>
 				</div>

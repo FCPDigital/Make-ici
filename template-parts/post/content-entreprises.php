@@ -22,7 +22,9 @@ Ce template est appelé notamment dans archive-entreprises.php
 							</h3>
 					</div>
 					<div class="archive-main-body">
-						<?php the_content(); ?>
+						<div class="article">
+							<?php the_content(); ?>
+						</div>
 						<?php dynamic_sidebar( 'widget-entreprise' ); ?>
 					</div>
 				</div>
