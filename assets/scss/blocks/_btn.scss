@@ -53,6 +53,11 @@
 		font-size: 12px;
 		padding: 10px 20px;
 		letter-spacing: 1px;
+		color: black;
+		&:hover {
+			background-color: $color-3;
+			color: black;
+		}
 	}
 
 	&[data-wpxhr].loading {
