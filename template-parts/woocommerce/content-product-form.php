@@ -51,14 +51,15 @@ Contenu d'une page formation. Appelé dans :
 				<?php
 				//appelle de la fonction de woocommerce gérant l'affichage du panier et des variations
 				do_action( 'woocommerce_single_product_summary' );
-				
-				echo get_field("short_code_formulaire");
+
+				echo do_shortcode(get_field("short_code_formulaire"));
 
 				if( get_field("gift_card_active") ) {
 					// Affiche un lien vers la page produit des cartes cadeaux ?>
 					<a href="<?php echo get_permalink(esc_attr( get_option('gift_card_id'))); ?>" class="btn btn-colored gift-card-link">Achetez une carte cadeau</a>
-				}
-				
+
+				<?php } ?>
+
 			</div>
 
 
