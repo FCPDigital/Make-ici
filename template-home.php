@@ -23,14 +23,14 @@ $postCur = get_post(); // On stocke le post courant pour éviter le bug de la bo
 				<?php echo get_bloginfo("description"); ?>
 			</div>
 			<div class="center margin-top-medium">
-				<a href='<?php echo get_permalink(get_page_by_title("Prendre un atelier ICI")) ?>' class="btn btn--light">Visiter ICI Montreuil</a><br>
+				<a href='<?php echo get_permalink(get_page_by_title("Prendre un atelier ICI")) ?>' class="btn btn--light">Visiter <?php echo get_bloginfo("name"); ?></a><br>
 			</div>
 		</div>
 			<?php } ?>
 			<?php if(!get_field("hide-formations", $postCur)) { ?>
 				<a id="scroll" href="#anchor-1" data-scroll>Découvrez nos prochaines formations</a>
 			<?php } else { ?>
-				<a id="scroll" href="#anchor-2" data-scroll><?php echo strtoupper(get_bloginfo("name")); ?> en quelques mots</a>
+				<a id="scroll" href="#anchor-2" data-scroll><?php echo get_bloginfo("name"); ?> en quelques mots</a>
 			<?php } ?>
 	</div>
 
@@ -41,7 +41,7 @@ $postCur = get_post(); // On stocke le post courant pour éviter le bug de la bo
 				<?php last_products(); ?>
 				<div class="clr"></div>
 				<div class="scroll-btn-container margin-top-medium">
-					<span class="scroll-btn__title">Ici Montreuil en quelques mots</span>
+					<span class="scroll-btn__title"><?php echo get_bloginfo("name") ?> en quelques mots</span>
 					<a class="scroll-btn" href="#anchor-2" data-scroll></a>
 				</div>
 			</div>

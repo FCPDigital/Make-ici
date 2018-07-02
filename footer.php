@@ -25,7 +25,7 @@
 		<div class="flex-item">
 			<h3 class="widget-title">Newsletter</h3>
 			<div id="mc_embed_signup">
-					<form action="//icimontreuil.us15.list-manage.com/subscribe/post?u=9006206a7cd32cc26b7890fbc&amp;id=2f9a6f2af1" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate newsletter" target="_blank" novalidate>
+				<form action="//icimontreuil.us15.list-manage.com/subscribe/post?u=9006206a7cd32cc26b7890fbc&amp;id=2f9a6f2af1" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate newsletter" target="_blank" novalidate>
 					<div id="mc_embed_signup_scroll">
 						<p class="marge-bottom-small">Restez informés :</p>
 						<div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_9006206a7cd32cc26b7890fbc_2f9a6f2af1" tabindex="-1" value=""></div>
