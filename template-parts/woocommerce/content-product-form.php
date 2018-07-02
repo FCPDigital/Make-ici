@@ -50,7 +50,7 @@ Contenu d'une page formation. Appelé dans :
 				<?php } ?>
 				<?php
 				//appelle de la fonction de woocommerce gérant l'affichage du panier et des variations
-				do_action( 'woocommerce_single_product_summary' );
+				// do_action( 'woocommerce_single_product_summary' );
 
 				echo do_shortcode(get_field("short_code_formulaire"));
 
