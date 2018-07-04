@@ -781,6 +781,22 @@ function create_post_type_events() {
 	);
 }
 
+// POST TYPE ENTREPRISES
+function create_post_type_residents() {
+	register_post_type( 'residents',
+		array(
+			'labels' => array(
+				'name' => __( 'Résidents' ),
+				'singular_name' => __( 'Résidents' )
+			),
+			'public' => true,
+			'has_archive' => true,
+			'menu_icon' => 'dashicons-universal-access',
+			'supports' => array( 'title', 'editor', 'custom-fields', 'thumbnail', 'excerpt' )
+		)
+	);
+}
+
 function myfeed_request($qv) {
 	if (isset($qv['feed']) && !isset($qv['post_type']))
 		$qv['post_type'] = array('post', 'events');
@@ -794,6 +810,7 @@ add_action( 'init', 'create_post_type_staff' );
 add_action( 'init', 'create_post_type_entreprise' );
 add_action( 'init', 'create_post_type_equipements' );
 add_action( 'init', 'create_post_type_events' );
+add_action( 'init', 'create_post_type_residents' );
 
 
 add_action( 'back_button', 'wpse221640_back_button' );
