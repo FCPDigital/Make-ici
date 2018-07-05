@@ -6,7 +6,7 @@
 			<?php while ( have_posts() ) : the_post(); ?>
 				<div class="col-sm-12"> 
 					<h1 class="single__title left-full-border actu"><?php echo get_the_title(); ?></h1>
-					<div class="actions">
+					<div class="actions margin-bottom-small">
 						<?php do_action("back_button"); ?>
 					</div>
 		
