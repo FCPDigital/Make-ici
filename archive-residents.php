@@ -50,16 +50,20 @@ if ( function_exists( 'get_sites' )) {
 				<select class="select select--light" name="blog" data-filters='{"modifier": "hidden", "value": false, "order": 1}'>
 					<option value="false">Tous</option>
 					<?php foreach($blogs_info as $key => $infos) { ?>
-						<option value="<?php echo $infos["id"]; ?>"><?php echo $infos["name"]; ?></option>
+						<option <?php if($original_blog_id == $infos["id"]): echo "selected"; endif; ?> value="<?php echo $infos["id"]; ?>"><?php echo $infos["name"]; ?></option>
 					<?php } ?>
 				</select>
+				<?php $field = get_field_object("savoirs_faires"); ?>
 				<select class="select select--light" name="savoirs_faires" data-filters='{"modifier": "hidden", "value": false, "order": 2}'>
 					<option value="false">Tous</option>
-					<option value="bois">Bois</option>
-					<option value="metal">Métal</option>
-					<option value="numeric">Numérique</option>
+					<?php foreach($field["choices"] as $key => $value) { ?>
+						<option value="<?php echo $key; ?>"><?php echo $value; ?></option>
+					<?php } ?>
 				</select>
 			</div>
+		</div>
+		<div id="residents-empty-message" class="hidden">
+			<p>Aucun résidents ne correspond à vos critères.</p>
 		</div>
 		<div id="masonry-resident">
 			<?php

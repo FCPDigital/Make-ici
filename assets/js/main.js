@@ -955,6 +955,7 @@ FilterInput.prototype = {
 function FilterItem(element, manager){
 	this.element = element;
 	this.manager = manager;
+	this._visible = true;
 	this.terms = JSON.parse(this.element.getAttribute("data-filters-terms"));
 }
 
@@ -965,7 +966,11 @@ FilterItem.prototype = {
 		} else {
 			this.element.classList.add(this.manager.modifier);
 		}
-		console.log("Item: After visible - ", this.element);
+		this._visible = visible;
+	},
+
+	get visible(){
+		return this._visible;
 	}
 }
 
@@ -976,6 +981,7 @@ function FilterManager(container, args) {
 		this.filters = {};
 		this.filtersSelected = {};
 		this.items = [];
+		this.itemsVisible = [];
 		this.onChange = args.onChange ? args.onChange : null;
 		this.modifier = args.modifier ? args.modifier : "hidden";
 		this.registerFilters();	
@@ -1006,7 +1012,7 @@ FilterManager.prototype = {
 
 	refresh: function(){
 		var self = this;
-		console.log(this.items);
+		this.itemsVisible = [];
 		this.items.forEach(function(item){
 			var filtersResponse = [], accept;
 			
@@ -1035,9 +1041,12 @@ FilterManager.prototype = {
 			 	filtersResponse.push(accept);
 			}
 
-			console.log("Item: After refresh - ", this.filtersSelected, filtersResponse);
-
-			item.visible = filtersResponse.indexOf(false) >= 0 ? false : true;
+			if(filtersResponse.indexOf(false) >= 0){
+				item.visible = false;
+			} else {
+				item.visible = true;
+				self.itemsVisible.push(item);	
+			}
 		})
 
 		if(this.onChange) this.onChange.call(this, this);
@@ -1098,11 +1107,16 @@ window.addEventListener("load", function(){
 			horizontalOrder: false,
 			isFitWidth: true
 		}); 
-
+		var emptyMessageElement = document.querySelector("#residents-empty-message");
 		var residentFilter = new FilterManager(document.querySelector("#residents-filter"));
 		residentFilter.onChange = function(e){
 			setTimeout(function(){
 				$residentGrid.masonry("layout")
+				if(e.itemsVisible.length > 0){
+					emptyMessageElement.classList.add("hidden");
+				} else {
+					emptyMessageElement.classList.remove("hidden");
+				}
 			}, 20)
 		}
 	}
