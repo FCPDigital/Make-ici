@@ -62,7 +62,7 @@ if ( function_exists( 'get_sites' )) {
 				</select>
 			</div>
 		</div>
-		<div id="residents-empty-message" class="hidden">
+		<div id="residents-empty-message" class="hidden text-center">
 			<p>Aucun résidents ne correspond à vos critères.</p>
 		</div>
 		<div id="masonry-resident">

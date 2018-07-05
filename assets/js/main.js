@@ -945,8 +945,8 @@ function FilterInput(element, manager){
 FilterInput.prototype = {
 	initEvents: function(){
 		var self = this;
+		self.manager.update(this.element.name, this.element.value, true);
 		this.element.addEventListener("change", function() {
-			console.log(this.value);
 			self.manager.update(this.name, this.value, true);
 		})
 	}
