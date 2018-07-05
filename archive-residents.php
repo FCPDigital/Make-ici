@@ -6,13 +6,13 @@
 		<h1 class="bold text-center margin-bottom-medium">Nos résidents</h1>
 		<div class="filter">
 			<div class="filter__list text-center margin-bottom-big">
-				<select name="blog" data-filters='{"modifier": "hidden", "value": false, "order": 1}'>
+				<select class="select select--light" name="blog" data-filters='{"modifier": "hidden", "value": false, "order": 1}'>
 					<option value="false">Tous</option>
 					<option value="">ICI Montreuil</option>
 					<option value="">ICI Marseille</option>
 					<option value="">ICI TheCamp</option>
 				</select>
-				<select name="savoirs_faires" data-filters='{"modifier": "hidden", "value": false, "order": 2}'>
+				<select class="select select--light" name="savoirs_faires" data-filters='{"modifier": "hidden", "value": false, "order": 2}'>
 					<option value="false">Tous</option>
 					<option value="bois">Bois</option>
 					<option value="metal">Métal</option>
