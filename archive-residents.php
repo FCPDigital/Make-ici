@@ -2,7 +2,7 @@
 
 
 <main id="actus" class="site-main actus landing" role="main" style="background-image: url(http://makeici.org/icimontreuil/wp-content/uploads/sites/2/2017/05/home-ici-montreuil.jpg);">
-	<div class="wrapper container">
+	<div id="residents-filter" class="wrapper container">
 		<h1 class="left-full-border main-title">Nos résidents</h1>
 		<div class="filter">
 			<div class="filter__list">
@@ -12,7 +12,7 @@
 					<option value="">ICI Marseille</option>
 					<option value="">ICI TheCamp</option>
 				</select>
-				<select name="savoir_faire" data-filters='{"modifier": "hidden", "value": false, "order": 2}'>
+				<select name="savoirs_faires" data-filters='{"modifier": "hidden", "value": false, "order": 2}'>
 					<option value="false">Tous</option>
 					<option value="bois">Bois</option>
 					<option value="metal">Métal</option>
@@ -20,22 +20,28 @@
 				</select>
 			</div>
 		</div>
-		<div id="value" class="masonry">
-			<?php 
+		<div id="masonry-resident">
+			<?php
 			if ( function_exists( 'get_sites' )) {
 				$original_blog_id = get_current_blog_id();
 				$blog_list = get_sites( 0, 'all' );
 				$residents = [];
+				$residents_blogs = [];
 				foreach ($blog_list AS $blog) {
-					switch_to_blog( $blog["blog_id"] ); 
+					switch_to_blog( (int) $blog->blog_id );
 					$posts = get_posts(array(
 						'post_type'  => 'residents',
 						'posts_per_page'=> -1,
 						'post_status'=>'publish'
 					));
-					array_merge($residents, $posts);
+					if(is_array($posts)){
+						for($i=0; $i<count($posts); $i++){
+							array_push($residents, $posts[$i]);
+							array_push($residents_blogs, $blog);
+						}
+					}
 				}
-				switch_to_blog( $original_blog_id );
+				restore_current_blog();
 			} else {
 				$residents = get_posts(array(
 					'post_type'  => 'residents',
@@ -45,15 +51,16 @@
 			}
 
 			for($i=0; $i<count($residents); $i++){
-				setup_postdata($residents[$i]);
+				$post = $residents[$i];
+				$blog = $residents_blogs[$i];
+				setup_postdata($post);
 				set_query_var( 'theme', "normal" );
-				get_template_part( "template-parts/post/content-head-actu" );
+				get_template_part( "template-parts/post/content-head-resident" );
 			}
 			?>
-		</div>			
+		</div>
 	</div>
 </main>
 
 
 <?php get_footer();
-

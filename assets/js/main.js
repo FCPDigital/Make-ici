@@ -933,6 +933,141 @@ function loadMasonry(){
 	Filter.init($grid);
 }
 
+
+function FilterInput(element, manager){
+	this.element = element;
+	this.manager = manager;
+	this.config = JSON.parse(this.element.getAttribute("data-filters"));
+	this.name = this.element.getAttribute("name");
+	this.initEvents();
+}
+
+FilterInput.prototype = {
+	initEvents: function(){
+		var self = this;
+		this.element.addEventListener("change", function() {
+			console.log(this.value);
+			self.manager.update(this.name, this.value, true);
+		})
+	}
+}
+
+function FilterItem(element, manager){
+	this.element = element;
+	this.manager = manager;
+	this.terms = JSON.parse(this.element.getAttribute("data-filters-terms"));
+}
+
+FilterItem.prototype = {
+	set visible(visible){
+		if(visible) {
+			this.element.classList.remove(this.manager.modifier);
+		} else {
+			this.element.classList.add(this.manager.modifier);
+		}
+		console.log("Item: After visible - ", this.element);
+	}
+}
+
+function FilterManager(container, args) {	
+	if(!args) args = {};
+	if( container ){
+		this.container = container;
+		this.filters = {};
+		this.filtersSelected = {};
+		this.items = [];
+		this.onChange = args.onChange ? args.onChange : null;
+		this.modifier = args.modifier ? args.modifier : "hidden";
+		this.registerFilters();	
+		this.registerItems();
+	} else {
+		return false;
+	}
+}
+
+FilterManager.prototype = {
+	registerFilters: function(){
+		var self = this;
+		var filters = this.container.querySelectorAll("*[data-filters]");
+		filters.forEach(function(filter) {
+			var filter = new FilterInput(filter, self);
+			self.filters[filter.name] = filter;
+		});
+	},
+
+	registerItems: function(){
+		var self = this;
+		var items = this.container.querySelectorAll("*[data-filters-terms]");
+		items.forEach(function(item) {
+			var item = new FilterItem(item, self);
+			self.items.push(item);
+		}) 
+	},
+
+	refresh: function(){
+		var self = this;
+		console.log(this.items);
+		this.items.forEach(function(item){
+			var filtersResponse = [], accept;
+			
+			// For each filter registered
+			for(var i in self.filtersSelected){
+				accept = false;
+				
+				// If current filter is disable, item is accepted
+				if(!self.filtersSelected[i]){
+			 	  accept = true;
+
+			 	// If current filter not exist in current item, item is refused
+			 	} else if(!item.terms[i]) {
+			 	  accept = false;
+
+			 	// Classic behaviour : Item and Filter has terms, we compare them
+			 	} else {
+			 		// for each term
+			 		for(var j=0; j<self.filtersSelected[i].length; j++){
+			 			if( item.terms[i].indexOf(self.filtersSelected[i][j]) >= 0 ){
+			 				accept = true;
+			 			}
+			 		}
+			 	}
+
+			 	filtersResponse.push(accept);
+			}
+
+			console.log("Item: After refresh - ", this.filtersSelected, filtersResponse);
+
+			item.visible = filtersResponse.indexOf(false) >= 0 ? false : true;
+		})
+
+		if(this.onChange) this.onChange.call(this, this);
+	},
+
+	update: function(name, value, replace){
+		if(!refresh) var refresh = false;
+
+		// If value is false => Disable filter
+		if(value === "false") {
+			this.filtersSelected[name] = false;
+
+		// If filter is not registered yet	
+		} else if(!this.filtersSelected[name]) {
+			this.filtersSelected[name] = [value];
+		} else {
+			// If we replace all the precendent value
+			if( replace ){
+				this.filtersSelected[name] = [value];
+			// Else if term not register yet, push
+			} else if(this.filtersSelected[name].indexOf(value) < 0) {
+				this.filtersSelected[name].push(value);
+			}
+		}
+
+		this.refresh();
+	}
+}
+
+
 ////////////////////////////////////////////////////////////////////////////////
 //
 //								Window load
@@ -953,4 +1088,23 @@ window.addEventListener("load", function(){
 	DynamicDate.init();
 	accordionManage();
 	if(window.mobilecheck()) document.querySelector('#bgvid').remove();
+
+	if( document.querySelector("#residents-filter")) {
+		var $residentGrid = $('#masonry-resident');
+		$residentGrid.masonry({
+			itemSelector: '.masonry__item',
+			columnWidth: 300,
+			gutter: 25,
+			horizontalOrder: false,
+			isFitWidth: true
+		}); 
+
+		var residentFilter = new FilterManager(document.querySelector("#residents-filter"));
+		residentFilter.onChange = function(e){
+			setTimeout(function(){
+				$residentGrid.masonry("layout")
+			}, 20)
+		}
+	}
+	
 }, false)
