@@ -11,7 +11,6 @@ if ( function_exists( 'get_sites' )) {
 	foreach ($blog_list AS $blog) {
 		switch_to_blog( (int) $blog->blog_id );
 
-		var_dump($blog);
 		if($blog->deleted == 0 && $blog->path != "/"){
 			array_push($blogs_info, array(
 					"name" => get_bloginfo( 'name' ),
@@ -19,7 +18,6 @@ if ( function_exists( 'get_sites' )) {
 					"id" => $blog->blog_id
 			));
 		}
-
 
 		$posts = get_posts(array(
 			'post_type'  => 'residents',
@@ -45,10 +43,10 @@ if ( function_exists( 'get_sites' )) {
 ?>
 <main id="actus" class="site-main actus landing" role="main" style="background-image: url(http://makeici.org/icimontreuil/wp-content/uploads/sites/2/2017/05/home-ici-montreuil.jpg);">
 	<div id="residents-filter" class="wrapper container">
-		<h1 class="text-center bold">Nos résidents</h1>
-		<div class="filter">
+		<h1 class="text-center bold margin-bottom-medium">Nos résidents</h1>
+		<div class="filter margin-bottom-big">
 			<div class="filter__list text-center">
-				<p>Filtres : </p>
+				<p class="inline">Filtres : </p>
 				<select class="select select--light" name="blog" data-filters='{"modifier": "hidden", "value": false, "order": 1}'>
 					<option value="false">Tous</option>
 					<?php foreach($blogs_info as $key => $infos) { ?>
