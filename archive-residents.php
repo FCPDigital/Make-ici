@@ -4,6 +4,7 @@
 if ( function_exists( 'get_sites' )) {
 	$original_blog_id = get_current_blog_id();
 	$blog_list = get_sites( 0, 'all' );
+	$residents_info = [];
 	$residents = [];
 	$residents_blogs = [];
 	$residents_url = [];
@@ -11,7 +12,7 @@ if ( function_exists( 'get_sites' )) {
 	foreach ($blog_list AS $blog) {
 		switch_to_blog( (int) $blog->blog_id );
 
-		if($blog->deleted == 0 && $blog->path != "/"){
+		if($blog->deleted == 0 && $blog->path != "/" && $blog->path != "/icithecamp/"){
 			array_push($blogs_info, array(
 					"name" => get_bloginfo( 'name' ),
 					"path" => $blog->path,
@@ -27,6 +28,13 @@ if ( function_exists( 'get_sites' )) {
 		if(is_array($posts)){
 			for($i=0; $i<count($posts); $i++){
 				array_push($residents, $posts[$i]);
+				array_push($residents_info, array(
+					"post" => $posts[$i],
+					"blog" => $blog,
+					"permalink" => get_post_permalink($posts[$i]),
+					"thumbnail" => get_the_post_thumbnail_url($posts[$i]),
+					"excerpt" => get_excerpt_truncate($posts[$i], 20)
+				));
 				array_push($residents_blogs, $blog);
 				array_push($residents_url, get_post_permalink($posts[$i]));
 			}
@@ -53,10 +61,10 @@ if ( function_exists( 'get_sites' )) {
 						<option <?php if($original_blog_id == $infos["id"]): echo "selected"; endif; ?> value="<?php echo $infos["id"]; ?>"><?php echo $infos["name"]; ?></option>
 					<?php } ?>
 				</select>
-				<?php $field = get_field_object("savoirs_faires"); ?>
+				<?php $field = get_savoir_faires_list(); ?>
 				<select class="select select--light" name="savoirs_faires" data-filters='{"modifier": "hidden", "value": false, "order": 2}'>
 					<option value="false">Tous</option>
-					<?php foreach($field["choices"] as $key => $value) { ?>
+					<?php foreach($field as $key => $value) { ?>
 						<option value="<?php echo $key; ?>"><?php echo $value; ?></option>
 					<?php } ?>
 				</select>
@@ -75,6 +83,7 @@ if ( function_exists( 'get_sites' )) {
 				set_query_var( 'theme', "normal" );
 				set_query_var( 'post_url', $residents_url[$i]);
 				set_query_var( 'blog',  $residents_blogs[$i]);
+				set_query_var( 'infos', $residents_info[$i]);
 				get_template_part( "template-parts/post/content-head-resident" );
 			}
 			?>

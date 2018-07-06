@@ -1,4 +1,15 @@
-<?php 
+<?php
+
+function get_savoir_faires_list(){
+	return array (
+		'bois' => 'Bois',
+		'metal' => 'Métal',
+		'numeric' => 'Numérique',
+	);
+}
+
+
+
 if(function_exists("register_field_group"))
 {
 	/****************************************************
@@ -86,11 +97,7 @@ if(function_exists("register_field_group"))
 				'label' => 'Savoirs faires',
 				'name' => 'savoirs_faires',
 				'type' => 'select',
-				'choices' => array (
-					'bois' => 'Bois',
-					'metal' => 'Métal',
-					'numeric' => 'Numérique',
-				),
+				'choices' => get_savoir_faires_list(),
 				'default_value' => '',
 				'allow_null' => 0,
 				'multiple' => 0,
